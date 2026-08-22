@@ -32,16 +32,16 @@
   @media (max-width: 767px) {
     [data-top-desktop] { display: none !important; }
     [data-top-mobile] { display: flex !important; }
+    /* The mobile bar is display:flex, which makes this row a flex ITEM — it was
+       shrinking to its content width (337px inside a 390px screen), so MENU and
+       START could never reach the right edge however the margins were set. */
+    [data-top-mobile] > div { flex: 1 1 auto; width: 100%; }
     [data-menu-body] { grid-template-columns: 1fr !important; }
     [data-menu-right] { border-left: none !important; border-top: 1px solid rgba(242,239,232,0.16); }
     [data-menurow] span[data-big] { font-size: 34px !important; }
     /* Match the pages: logo keeps the left edge, MENU packs in beside it
        instead of being pushed right by the label's auto margin. */
-    /* Mobile shows the linked OO mark instead of the full wordmark, so MENU
-       sits on the left rather than behind a 145px wordmark. */
-    [data-mark] { display: none !important; }
-    [data-markmini] { display: block !important; }
-    [data-toplabel] { margin-left: 0 !important; }
+    [data-toplabel] { margin-left: auto !important; }
   }
   @media (max-width: 430px) {
     [data-toplabel] { display: none !important; }
@@ -74,7 +74,6 @@
     <div style="padding:0 16px;height:64px;display:flex;align-items:center;gap:12px">
       <a href="/" style="display:flex;align-items:center;text-decoration:none;flex:none">
         <img data-mark="1" src="assets/logo-ink.png" alt="HackProof Studio" width="1802" height="299" style="display:block;height:24px;width:auto" />
-        <img data-markmini="1" src="assets/logo-mark-ink.png" alt="HackProof Studio" width="168" height="86" decoding="async" style="display:none;height:24px;width:auto" />
       </a>
       <span data-toplabel="1" style="margin-left:auto;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.1em;color:#62655F">{{ pageLabel }}</span>
       <button type="button" onClick="{{ openMenu }}" aria-expanded="{{ menuExpanded }}" aria-controls="project-index" style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.1em;min-height:44px;padding:0 8px">MENU</button>
