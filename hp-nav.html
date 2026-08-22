@@ -37,6 +37,10 @@
     [data-menurow] span[data-big] { font-size: 34px !important; }
     /* Match the pages: logo keeps the left edge, MENU packs in beside it
        instead of being pushed right by the label's auto margin. */
+    /* Mobile shows the linked OO mark instead of the full wordmark, so MENU
+       sits on the left rather than behind a 145px wordmark. */
+    [data-mark] { display: none !important; }
+    [data-markmini] { display: block !important; }
     [data-toplabel] { margin-left: 0 !important; }
   }
   @media (max-width: 430px) {
@@ -69,7 +73,8 @@
   <header data-top-mobile="1" style="display:none;position:sticky;top:0;z-index:40;background:rgba(242,239,232,0.94);backdrop-filter:blur(6px);border-bottom:1px solid #D8D3C8">
     <div style="padding:0 16px;height:64px;display:flex;align-items:center;gap:12px">
       <a href="/" style="display:flex;align-items:center;text-decoration:none;flex:none">
-        <img src="assets/logo-ink.png" alt="HackProof Studio" width="1802" height="299" style="display:block;height:24px;width:auto" />
+        <img data-mark="1" src="assets/logo-ink.png" alt="HackProof Studio" width="1802" height="299" style="display:block;height:24px;width:auto" />
+        <img data-markmini="1" src="assets/logo-mark-ink.png" alt="HackProof Studio" width="168" height="86" decoding="async" style="display:none;height:24px;width:auto" />
       </a>
       <span data-toplabel="1" style="margin-left:auto;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.1em;color:#62655F">{{ pageLabel }}</span>
       <button type="button" onClick="{{ openMenu }}" aria-expanded="{{ menuExpanded }}" aria-controls="project-index" style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.1em;min-height:44px;padding:0 8px">MENU</button>

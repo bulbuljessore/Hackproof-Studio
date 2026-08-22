@@ -10,7 +10,7 @@
  *
  * Bump CACHE_VERSION on every deploy. Old caches are deleted on activate.
  */
-const CACHE_VERSION = "hp-v1";
+const CACHE_VERSION = "hp-v3";
 const SHELL_CACHE = `${CACHE_VERSION}-shell`;
 const ASSET_CACHE = `${CACHE_VERSION}-assets`;
 const PAGE_CACHE = `${CACHE_VERSION}-pages`;

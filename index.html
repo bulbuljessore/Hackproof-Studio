@@ -319,8 +319,32 @@
      without restoring the badge breaks their terms. */
   .grecaptcha-badge { visibility: hidden; }
 
+  /* The hero reel runs on a CSS keyframe, not GSAP. work.html has always done it
+     this way and its reel never stalls; the homepage used to depend on GSAP and
+     froze whenever GSAP failed to start. Cards are duplicated, so -50% is one
+     full loop. */
+  @keyframes reelV { from { transform: translate3d(0,0,0); } to { transform: translate3d(0,-50%,0); } }
+  #hero [data-track] { animation: reelV 60s linear infinite; will-change: transform; }
+  #hero [data-band-inner]:hover [data-track],
+  #hero [data-band-inner]:focus-within [data-track] { animation-duration: 500s; }
+  @media (prefers-reduced-motion: reduce) {
+    #hero [data-track] { animation: none !important; }
+  }
+
+  /* Coral fill reveal. A one-shot keyframe, not inline styles: if this never
+     runs, or the attribute is stripped by a re-render, no clip-path applies and
+     the text is simply visible. It can never strand the copy invisible. */
+  @keyframes fillIn { from { clip-path: inset(100% 0 0 0); } to { clip-path: inset(0% 0 0 0); } }
+  [data-fillgo] { animation: fillIn 1.15s cubic-bezier(.22,1,.36,1) both; }
+  @media (prefers-reduced-motion: reduce) {
+    [data-fillgo] { animation: none !important; }
+  }
   /* --- mobile-only adjustments ------------------------------------------- */
   @media (max-width: 767px) {
+    /* Mobile shows the linked OO mark instead of the full wordmark. The wordmark
+       is 145px wide and was the only reason MENU and START sat mid-bar. */
+    [data-mark] { display: none !important; }
+    [data-markmini] { display: block !important; }
     /* Header: logo keeps the left edge, MENU and START pack in beside it
        instead of being pushed to the right by the label's auto margin. */
     [data-toplabel] { margin-left: 0 !important; }
@@ -379,6 +403,9 @@
             <img src="assets/logo-ink-web.png" alt="HackProof Studio" width="720" height="119" decoding="async" style="display:block;height:100%;width:auto" />
             <img data-mark-o="1" aria-hidden="true" src="assets/logo-studio-coral.png" alt="" width="1440" height="239" decoding="async" style="position:absolute;left:0;top:0;width:100%;height:100%;pointer-events:none" />
           </span>
+          <span data-markmini="1" style="display:none;position:relative;height:24px;aspect-ratio:168 / 86">
+            <img src="assets/logo-mark-ink.png" alt="HackProof Studio" width="168" height="86" decoding="async" style="display:block;height:100%;width:auto" />
+          </span>
         </a>
         <span data-toplabel="1" style="margin-left:auto;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.1em;color:#62655F">{{ activeName }}</span>
         <button type="button" onClick="{{ openIndex }}" aria-expanded="{{ indexExpanded }}" aria-controls="project-index" style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.1em;min-height:44px;padding:0 8px">MENU</button>
@@ -397,7 +424,7 @@
             <h1 style="margin:clamp(20px,3vw,32px) 0 0;font-size:clamp(2.75rem,6.2vw,6.75rem);line-height:0.9;letter-spacing:-0.05em;font-weight:500">
               <span style="display:block;overflow:hidden;padding-bottom:0.06em"><span data-hero-line="1" style="display:block">Websites built</span></span>
               <span style="display:block;overflow:hidden;padding-bottom:0.06em"><span data-hero-line="1" style="display:block">to be remembered,</span></span>
-              <span style="display:block;overflow:hidden;padding-bottom:0.06em"><span data-hero-line="1" style="display:block;position:relative;color:#62655F;width:max-content">and built to last.<span data-fill="1" aria-hidden="true" style="position:absolute;left:0;top:0;color:#FF5A3C;white-space:nowrap;clip-path:inset(100% 0 0 0)">and built to last.</span></span></span>
+              <span style="display:block;overflow:hidden;padding-bottom:0.06em"><span data-hero-line="1" style="display:block;position:relative;color:#62655F;width:max-content">and built to last.<span data-fill="1" aria-hidden="true" style="position:absolute;left:0;top:0;color:#FF5A3C;white-space:nowrap">and built to last.</span></span></span>
             </h1>
             <div data-reveal="1" style="display:flex;flex-wrap:wrap;gap:16px;margin-top:clamp(28px,3.5vw,44px)">
               <button type="button" data-btn-primary="1" onClick="{{ onNav }}" data-target="brief" style="font-size:14px;font-weight:500;letter-spacing:0.02em;min-height:52px;padding:0 30px;background:#FF5A3C;color:#F2EFE8;border-radius:3px;transition:background 200ms ease,color 200ms ease">START A PROJECT</button>
@@ -712,7 +739,7 @@
 
           <h2 data-reveal="1" style="margin:clamp(40px,6vw,88px) 0 0;font-size:clamp(2rem,4.6vw,4.25rem);line-height:0.98;letter-spacing:-0.04em;font-weight:500;color:#F2EFE8">
             <span style="display:block">We make established businesses look</span>
-            <span data-fillwrap="1" style="display:block;position:relative;color:#C9C5BB">as strong online as they are offline.<span data-fill2="1" aria-hidden="true" style="position:absolute;left:0;top:0;width:100%;color:#FF5A3C;clip-path:inset(100% 0 0 0)">as strong online as they are offline.</span></span>
+            <span data-fillwrap="1" style="display:block;position:relative;color:#C9C5BB">as strong online as they are offline.<span data-fill2="1" aria-hidden="true" style="position:absolute;left:0;top:0;width:100%;color:#FF5A3C">as strong online as they are offline.</span></span>
           </h2>
 
           <div data-pos="1" style="display:grid;grid-template-columns:repeat(12,1fr);gap:32px;margin-top:clamp(40px,5vw,72px)">
@@ -801,7 +828,7 @@
           <div>
           <h2 data-reveal="1" style="margin:clamp(40px,6vw,96px) 0 0;font-size:clamp(2.5rem,6vw,5.5rem);line-height:0.94;letter-spacing:-0.045em;font-weight:500;color:#F2EFE8;max-width:20ch">
             <span style="display:block">Beautiful on the surface.</span>
-            <span data-fillwrap="1" style="display:block;position:relative;color:#C9C5BB">Protected underneath.<span data-fill3="1" aria-hidden="true" style="position:absolute;left:0;top:0;width:100%;color:#FF5A3C;clip-path:inset(100% 0 0 0)">Protected underneath.</span></span>
+            <span data-fillwrap="1" style="display:block;position:relative;color:#C9C5BB">Protected underneath.<span data-fill3="1" aria-hidden="true" style="position:absolute;left:0;top:0;width:100%;color:#FF5A3C">Protected underneath.</span></span>
           </h2>
 
           <p data-reveal="1" style="margin:clamp(28px,3.5vw,48px) 0 0;font-size:clamp(1.125rem,1.5vw,1.5rem);line-height:1.45;color:#C9C5BB;max-width:38ch">Access, updates, backups, and monitoring are decided while the site is being designed — and reviewed long after it launches.</p>
@@ -1047,7 +1074,7 @@
 
           <div data-fitmid="1" style="margin-top:clamp(28px,4vh,52px)">
             <div>
-              <h2 style="margin:0;font-size:clamp(2.25rem,4.4vw,3.75rem);line-height:0.98;letter-spacing:-0.035em;font-weight:500;max-width:18ch">Who we work <span data-fillwrap="1" style="position:relative;display:inline-block;color:#C9C5BB">best with<span data-fill4="1" aria-hidden="true" style="position:absolute;left:0;top:0;width:100%;color:#FF5A3C;clip-path:inset(100% 0 0 0)">best with</span></span></h2>
+              <h2 style="margin:0;font-size:clamp(2.25rem,4.4vw,3.75rem);line-height:0.98;letter-spacing:-0.035em;font-weight:500;max-width:18ch">Who we work <span data-fillwrap="1" style="position:relative;display:inline-block;color:#C9C5BB">best with<span data-fill4="1" aria-hidden="true" style="position:absolute;left:0;top:0;width:100%;color:#FF5A3C">best with</span></span></h2>
               <div style="margin:clamp(24px,3.4vh,40px) 0 14px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:rgba(242,239,232,0.6);border-top:1px solid rgba(242,239,232,0.16);padding-top:14px">GOOD FIT</div>
               <p data-run="1" style="margin:0;font-size:clamp(1.125rem,1.9vw,1.75rem);line-height:1.4;letter-spacing:-0.02em;color:rgba(242,239,232,0.82);max-width:64ch">
                 <b>Established businesses</b><i>/</i><b>professional firms</b><i>/</i><b>premium service providers</b><i>/</i><b>businesses being repositioned</b><i>/</i><b>companies that value strategy and quality</b><i>/</i><b>businesses treating the website as a serious investment.</b>
@@ -1131,7 +1158,7 @@
           <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:rgba(242,239,232,0.6)">PICK WHICHEVER SUITS YOU</span>
         </div>
 
-        <h2 data-reveal="1" style="margin:clamp(28px,4vw,48px) 0 0;font-size:clamp(2rem,3.6vw,3.25rem);line-height:0.98;letter-spacing:-0.035em;font-weight:500;max-width:22ch">Two ways in. Both reach the <span data-fillwrap="1" style="position:relative;display:inline-block;color:#C9C5BB">same person.<span data-fill5="1" aria-hidden="true" style="position:absolute;left:0;top:0;width:100%;color:#FF5A3C;clip-path:inset(100% 0 0 0)">same person.</span></span></h2>
+        <h2 data-reveal="1" style="margin:clamp(28px,4vw,48px) 0 0;font-size:clamp(2rem,3.6vw,3.25rem);line-height:0.98;letter-spacing:-0.035em;font-weight:500;max-width:22ch">Two ways in. Both reach the <span data-fillwrap="1" style="position:relative;display:inline-block;color:#C9C5BB">same person.<span data-fill5="1" aria-hidden="true" style="position:absolute;left:0;top:0;width:100%;color:#FF5A3C">same person.</span></span></h2>
 
         <div data-doors="1" style="display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(242,239,232,0.16);margin-top:clamp(28px,4vw,48px)">
           <div style="background:#0D1512;padding:clamp(24px,3vw,40px);display:flex;flex-direction:column;gap:16px">
@@ -1595,8 +1622,34 @@ class Component extends DCLogic {
       compute();
     }
 
+    this.revealFills();
     this.startMotion();
   }
+
+  // Reveals the coral fills on a CSS transition. Deliberately not GSAP: the
+  // homepage used to lose every fill whenever GSAP failed to boot, while the
+  // other pages — which have always used this — kept working.
+  revealFills = () => {
+    const sel = "[data-fill],[data-fill2],[data-fill3],[data-fill4],[data-fill5]";
+    // Setting one attribute is the whole reveal. The keyframe does the rest and
+    // finishes visible, so a lost attribute or a dead frame costs the animation,
+    // never the text.
+    const sweep = () => {
+      let pending = 0;
+      Array.prototype.forEach.call(document.querySelectorAll(sel), (el) => {
+        if (el.hasAttribute("data-fillgo")) return;
+        pending++;
+        const r = el.getBoundingClientRect();
+        if (r.height > 0 && r.top < window.innerHeight * 0.86 && r.bottom > 0) {
+          el.setAttribute("data-fillgo", "1");
+        }
+      });
+      if (!pending && this.fillSweep) { clearInterval(this.fillSweep); this.fillSweep = null; }
+    };
+    sweep();
+    clearInterval(this.fillSweep);
+    this.fillSweep = setInterval(sweep, 140);
+  };
 
   startMotion = () => {
     if (this.reduced() || this.motionDone) return;
@@ -1611,6 +1664,7 @@ class Component extends DCLogic {
     const ease = "power3.out";
     try { if (g.ticker && g.ticker.wake) g.ticker.wake(); } catch (e) {}
     clearTimeout(this.watchdog);
+    if (this.fillSweep) clearInterval(this.fillSweep);
     this.watchdog = setTimeout(this.checkAlive, 2800);
 
     const curtain = document.querySelector("[data-curtain]");
@@ -1631,10 +1685,8 @@ class Component extends DCLogic {
     if (seam) tl.from(seam, { scaleY: 0, duration: 1.1, ease: "power3.inOut" }, 1.1);
     if (band) tl.from(band, { clipPath: "inset(100% 0 0 0)", duration: 1.2, ease: "power3.inOut" }, 1.05);
     if (bandInner) tl.from(bandInner, { scale: 1.07, duration: 1.6, ease: "power2.out" }, 1.05);
-    if (fill) {
-      tl.to(fill, { clipPath: "inset(8% 0 0 0)", duration: 1.9, ease: "power1.inOut" }, 1.7);
-      tl.to(fill, { clipPath: "inset(0% 0 0 0)", duration: 0.7, ease: "power2.out" }, 3.5);
-    }
+    // The coral fill is handled by revealFills() on a CSS transition, so it
+    // still runs when GSAP does not.
     g.utils.toArray("#hero [data-count]").forEach((el) => {
       const target = parseInt(el.getAttribute("data-count"), 10);
       const o = { v: 0 };
@@ -1667,9 +1719,9 @@ class Component extends DCLogic {
     if (bandInner) bandInner.style.transform = "";
     const seam = document.querySelector("#hero [data-seam]");
     if (seam) seam.style.transform = "";
-    Array.prototype.forEach.call(document.querySelectorAll("[data-fill],[data-fill2],[data-fill3],[data-fill4],[data-fill5]"), (el) => {
-      el.style.clipPath = "inset(0% 0 0 0)";
-    });
+    // Fills are deliberately NOT touched here. revealFills() owns them and has
+    // its own failsafe; snapping them visible from the watchdog would preempt
+    // the scroll reveal on everything below the fold.
     const track = document.querySelector("#hero [data-track]");
     if (track) track.style.transform = "";
     Array.prototype.forEach.call(document.querySelectorAll("[data-portrait-veil],[data-secveil]"), (el) => { el.style.display = "none"; });
@@ -1706,8 +1758,8 @@ class Component extends DCLogic {
         return;
       }
       this.reelTries = 0;
-      this.reel = g.fromTo(track, { y: 0 }, { y: -half, duration: half / 30, ease: "none", repeat: -1 });
-      this.reel.progress(keep);
+      // CSS owns the reel now (see @keyframes reelV). Nothing to do here.
+      void keep; void half;
     };
 
     this.startReel = start;
@@ -1771,14 +1823,6 @@ class Component extends DCLogic {
       made.push(g.from(el, { y: 34, opacity: 0, duration: 0.85, ease, scrollTrigger: { trigger: el, start: "top 90%" } }));
     });
 
-    [["[data-fill2]", "top 78%", 1.8, 0.7], ["[data-fill3]", "top 78%", 1.8, 0.7], ["[data-fill4]", "top 82%", 1.6, 0.6], ["[data-fill5]", "top 82%", 1.6, 0.6]].forEach((cfg) => {
-      const el = document.querySelector(cfg[0]);
-      if (!el) return;
-      const t = g.timeline({ scrollTrigger: { trigger: el, start: cfg[1] } });
-      t.to(el, { clipPath: "inset(8% 0 0 0)", duration: cfg[2], ease: "power1.inOut" });
-      t.to(el, { clipPath: "inset(0% 0 0 0)", duration: cfg[3], ease: "power2.out" });
-      made.push(t);
-    });
 
     const soft = window.innerWidth < 768 ? 4 : 6;
     g.utils.toArray("[data-sec]").forEach((sec) => {
