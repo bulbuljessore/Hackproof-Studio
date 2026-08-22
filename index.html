@@ -208,7 +208,15 @@
     [data-sec-grid] > div:last-child { margin-top: 0 !important; }
     [data-sec-grid] [data-stagger] { margin-left: 0 !important; }
     [data-doors] { grid-template-columns: 1fr !important; }
-    [data-door2] { padding-left: clamp(24px,3vw,40px) !important; }
+    /* Both doors get the same gutter wherever they are stacked. On services,
+       security and studio door 1 carries no left padding at all — it is the
+       flush column of the desktop pair — so once stacked it sat 24px out of step
+       with door 2. This belongs here, not in the 767px block: the doors stack
+       from 1023px down, so a mobile-only rule left tablet widths misaligned. */
+    [data-doors] > div {
+      padding-left: clamp(24px,3vw,40px) !important;
+      padding-right: clamp(24px,3vw,40px) !important;
+    }
     [data-condgrid] { grid-template-columns: 1fr 1fr !important; }
     [data-qrow] { grid-template-columns: 1fr !important; gap: 14px !important; }
     [data-fithead] { flex-direction: column !important; align-items: flex-start !important; }
@@ -374,6 +382,19 @@
        from JS, so this has to be !important to win. */
     [data-sec], [data-dof] { filter: none !important; }
 
+    /* "THE STUDIO" sits on the photograph, bottom left. In the one-column mobile
+       layout the original label was stranded between the portrait's coral rule
+       and the heading. The scrim keeps it readable over any part of the image. */
+    [data-studiolabel] { display: none !important; }
+    [data-portraitcap] {
+      display: block !important;
+      position: absolute; left: 0; right: 0; bottom: 0; z-index: 3;
+      padding: 44px 16px 14px;
+      font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.12em;
+      color: #F2EFE8;
+      background: linear-gradient(to top, rgba(13,21,18,0.82), rgba(13,21,18,0.45) 42%, rgba(13,21,18,0));
+      pointer-events: none;
+    }
     /* The security detail sits at its 132px floor on a phone (22vw of 390px is
        only 86px), which reads as a thumbnail rather than an image. Give it the
        column width and let max-height cap it. */
@@ -383,10 +404,6 @@
        horizontal slice of the face; a square box shows the whole photograph. */
     [data-portrait] { height: auto !important; aspect-ratio: 1 / 1; }
 
-    /* Both doors line up on the same left edge. Door 2 carries a wider left
-       gutter for the desktop two-column layout; once stacked it has to match
-       door 1 exactly — zeroing it just moved the mismatch to the other door. */
-    [data-door2] { padding-left: clamp(24px,3vw,40px) !important; }
   }
 </style>
 </helmet>
@@ -435,7 +452,7 @@
             <img data-mark-o="1" aria-hidden="true" src="assets/logo-studio-coral.png" alt="" width="1440" height="239" decoding="async" style="position:absolute;left:0;top:0;width:100%;height:100%;pointer-events:none" />
           </span>
         </a>
-        <span data-toplabel="1" style="margin-left:auto;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.1em;color:#62655F">{{ activeName }}</span>
+        <span data-toplabel="1" style="margin-left:auto;display:inline-flex;align-items:center;gap:7px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.1em;color:#151614"><span style="width:5px;height:5px;background:#FF5A3C;display:block"></span>{{ activeName }}</span>
         <button type="button" onClick="{{ openIndex }}" aria-expanded="{{ indexExpanded }}" aria-controls="project-index" style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.1em;min-height:44px;padding:0 8px">MENU</button>
         <button type="button" onClick="{{ openBrief }}" style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.1em;background:#FF5A3C;color:#F2EFE8;min-height:44px;padding:0 14px">START</button>
       </div>
@@ -1057,7 +1074,7 @@
       <section id="studio" data-sec="1" data-num="07" data-name="STUDIO" data-screen-label="Studio" data-spread="1" style="height:100vh;max-width:1440px;margin:0 auto;display:grid;grid-template-columns:1.4fr 0.78fr">
 
   <div data-spreadtext="1" style="display:flex;flex-direction:column;justify-content:center;min-height:0;overflow:hidden;padding:clamp(28px,4vh,56px) clamp(20px,2.4vw,36px) clamp(28px,4vh,56px) clamp(20px,4vw,64px)">
-    <div style="display:flex;gap:24px;align-items:baseline">
+    <div data-studiolabel="1" style="display:flex;gap:24px;align-items:baseline">
       <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:#62655F">THE STUDIO</span>
     </div>
 
@@ -1085,6 +1102,7 @@
     <figure data-portrait="1" style="margin:0;width:100%;height:min(62vh,calc(100% - 48px));position:relative;border:1px solid #D8D3C8;overflow:hidden;background:#E7E3D9;cursor:default">
       <span data-portrait-veil="1" aria-hidden="true" style="position:absolute;inset:0;z-index:2;background:#F2EFE8;transform-origin:bottom;pointer-events:none"></span>
       <img data-portrait-img="1" src="assets/founder-portrait.jpg" alt="Bulbul Ahmed, founder of HackProof Studio" width="900" height="900" loading="lazy" decoding="async" style="display:block;width:100%;height:100%;object-fit:cover;object-position:50% 22%;transform-origin:50% 30%" />
+      <span data-portraitcap="1" style="display:none">THE STUDIO</span>
       <span data-portrait-rule="1" aria-hidden="true" style="position:absolute;left:0;right:0;bottom:0;height:2px;background:#FF5A3C;transform:scaleX(0);transform-origin:left;z-index:3"></span>
     </figure>
   </div>

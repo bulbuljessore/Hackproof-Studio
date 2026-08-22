@@ -121,6 +121,49 @@
        from JS, so this has to be !important to win. */
     [data-sec], [data-dof] { filter: none !important; }
 
+    /* The form comes first. It used to sit at 1385px with the whole step ladder
+       above it, so the one thing a visitor came here to do was the last thing
+       they reached. The ladder repeats what the form header already says
+       ("STEP 01 / 04"), so below the form it reads as a summary instead. */
+    [data-briefgrid] > * { order: 1; }
+    [data-briefgrid] > [data-ladder] {
+      order: 2;
+      position: static !important;
+      margin-top: clamp(36px,7vw,56px);
+    }
+
+    /* The two rails are re-laid as compact rows: label and button share the top
+       line, the explanation sits under both. Stacked at desktop proportions they
+       ran to three full-width rows each and ate 334px before the form appeared.
+       They stay ABOVE the form on purpose — the urgent control changes what gets
+       submitted, so meeting it after writing the brief would be too late. */
+    [data-urgent] {
+      display: grid !important;
+      grid-template-columns: 1fr auto;
+      gap: 8px 12px !important;
+      align-items: center;
+      padding: 14px 16px !important;
+      margin-top: 14px !important;
+    }
+    [data-urgent] > span:first-child { grid-column: 1; grid-row: 1; }
+    [data-urgent] > button {
+      grid-column: 2; grid-row: 1;
+      margin-left: 0 !important;
+      padding: 0 14px !important;
+      white-space: nowrap;
+    }
+    [data-urgent] > p {
+      grid-column: 1 / -1; grid-row: 2;
+      font-size: 14px !important;
+      color: #62655F;
+    }
+
+    /* CLOSE was wrapping onto a line of its own at the left edge, which read as
+       a stray link rather than a control. Dropping the caption leaves it on the
+       header line, hard right, where a close control belongs. */
+    [data-briefcap] { display: none !important; }
+    [data-briefhead] { flex-wrap: nowrap !important; align-items: center !important; }
+    [data-close] { margin-left: auto !important; white-space: nowrap; }
     /* Both doors line up on the same left edge. The 24px indent is a gutter for
        the desktop two-column layout and only misaligns them once stacked. */
     [data-door2] { padding-left: 0 !important; }
@@ -135,9 +178,9 @@
 
   <main id="main">
     <section data-dof="1" data-screen-label="Open brief intro" style="max-width:1440px;margin:0 auto;padding:clamp(40px,6vw,80px) clamp(20px,4vw,64px) clamp(32px,4vw,52px)">
-      <div style="display:flex;flex-wrap:wrap;gap:16px 24px;align-items:baseline;border-bottom:1px solid #151614;padding-bottom:20px">
+      <div data-briefhead="1" style="display:flex;flex-wrap:wrap;gap:16px 24px;align-items:baseline;border-bottom:1px solid #151614;padding-bottom:20px">
         <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:#62655F">OPEN BRIEF</span>
-        <span style="margin-left:auto;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:#62655F">FOUR STEPS / ABOUT TWO MINUTES</span>
+        <span data-briefcap="1" style="margin-left:auto;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:#62655F">FOUR STEPS / ABOUT TWO MINUTES</span>
         <a data-close="1" onClick="{{ goBack }}" href="/" style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:#151614;text-decoration:none;min-height:44px;display:inline-flex;align-items:center;gap:8px;border:1px solid #D8D3C8;padding:0 14px;border-radius:3px;transition:border-color 200ms ease,color 200ms ease">CLOSE ✕</a>
       </div>
 

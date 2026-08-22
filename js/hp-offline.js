@@ -201,6 +201,35 @@
     });
   }
 
+  // Caches are dropped on the first visit of each new LOCAL day, so nothing is
+  // held longer than until midnight on the visitor's own clock. The service
+  // worker refills them on the very next request.
+  //
+  // Only Cache Storage is cleared. The IndexedDB brief queue is deliberately
+  // left alone — a brief written offline at 23:50 must still be there at 00:05.
+  function expireCachesAtLocalMidnight() {
+    try {
+      if (!("caches" in window)) return;
+      var d = new Date();
+      var today = d.getFullYear() + "-" +
+        String(d.getMonth() + 1).padStart(2, "0") + "-" +
+        String(d.getDate()).padStart(2, "0");
+      var last = null;
+      try { last = localStorage.getItem("hp-cache-day"); } catch (e) { return; }
+      if (last && last !== today) {
+        caches.keys().then(function (keys) {
+          return Promise.all(keys.map(function (k) { return caches.delete(k); }));
+        }).catch(function () {});
+      }
+      try { localStorage.setItem("hp-cache-day", today); } catch (e) {}
+    } catch (e) { /* never let housekeeping break the page */ }
+  }
+  expireCachesAtLocalMidnight();
+  // A phone left open overnight would otherwise never re-check.
+  document.addEventListener("visibilitychange", function () {
+    if (document.visibilityState === "visible") expireCachesAtLocalMidnight();
+  });
+
   // Three chances to drain the queue: reconnect, page load, and tab refocus.
   // Between them, a queued brief goes out whether the wait was two seconds or
   // two days, and whether or not Background Sync exists on the device.

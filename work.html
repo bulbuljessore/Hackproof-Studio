@@ -156,7 +156,15 @@
     [data-index-body] { grid-template-columns: 1fr !important; }
     [data-index-right] { border-left: none !important; border-top: 1px solid rgba(242,239,232,0.16); }
     [data-doors] { grid-template-columns: 1fr !important; }
-    [data-door2] { padding-left: clamp(24px,3vw,40px) !important; }
+    /* Both doors get the same gutter wherever they are stacked. On services,
+       security and studio door 1 carries no left padding at all — it is the
+       flush column of the desktop pair — so once stacked it sat 24px out of step
+       with door 2. This belongs here, not in the 767px block: the doors stack
+       from 1023px down, so a mobile-only rule left tablet widths misaligned. */
+    [data-doors] > div {
+      padding-left: clamp(24px,3vw,40px) !important;
+      padding-right: clamp(24px,3vw,40px) !important;
+    }
     [data-herogrid] { grid-template-columns: 1fr !important; gap: 24px !important; }
     [data-boxgrid] { grid-template-columns: 1fr !important; gap: 18px !important; }
     [data-tile] { width: clamp(210px,44vw,280px); }
@@ -237,10 +245,6 @@
        from JS, so this has to be !important to win. */
     [data-sec], [data-dof] { filter: none !important; }
 
-    /* Both doors line up on the same left edge. Door 2 carries a wider left
-       gutter for the desktop two-column layout; once stacked it has to match
-       door 1 exactly — zeroing it just moved the mismatch to the other door. */
-    [data-door2] { padding-left: clamp(24px,3vw,40px) !important; }
   }
 </style>
 </helmet>
