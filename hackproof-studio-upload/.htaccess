@@ -1,0 +1,111 @@
+# HackProof Studio — Apache / LiteSpeed configuration.
+#
+# The clean-URL block is not optional. Every canonical tag and every sitemap
+# entry declares /work, /services and so on, while the files on disk are
+# work.html and services.html. Without the rewrites below, every URL Google is
+# told to index returns 404.
+
+Options -Indexes
+DirectoryIndex index.html
+
+# ---------------------------------------------------------------- HTTPS + host
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  # Force HTTPS.
+  RewriteCond %{HTTPS} !=on
+  RewriteCond %{HTTP:X-Forwarded-Proto} !https
+  RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+
+  # One hostname only. Swap the two blocks if you prefer www.
+  RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
+  RewriteRule ^ https://%1%{REQUEST_URI} [R=301,L]
+
+  # ------------------------------------------------------------ retired page
+  # /contact was replaced by the Open Brief. Anything that still points there
+  # follows the lead rather than hitting a 404.
+  RewriteRule ^contact/?$ /open-brief [R=301,L]
+  RewriteRule ^contact\.html$ /open-brief [R=301,L]
+
+  # ------------------------------------------------------------ clean URLs
+  # Send /work.html to /work so a page is never reachable at two addresses.
+  # THE_REQUEST is used so this only fires for a real browser request, not for
+  # the internal rewrite below (which would otherwise loop).
+  # hp-nav.html and hp-footer.html are excluded deliberately. support.js fetches
+  # them by exact filename; redirecting would strip the extension and the nav and
+  # footer would silently vanish from the Open Brief page.
+  RewriteCond %{THE_REQUEST} \s/+([^?\s]+)\.html[\s?] [NC]
+  RewriteCond %{REQUEST_URI} !^/hp-(nav|footer)\.html$ [NC]
+  RewriteRule ^ /%1 [R=301,L,NE]
+
+  # Serve /work from work.html. Anything that exists on disk is left alone, so
+  # assets, api/brief.php, sw.js, robots.txt and the components are untouched.
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteCond %{REQUEST_FILENAME}.html -f
+  RewriteRule ^(.+?)/?$ $1.html [L]
+</IfModule>
+
+# ---------------------------------------------------------------- security
+<IfModule mod_headers.c>
+  # unpkg.com and 'unsafe-eval' are LOAD-BEARING. support.js pulls React,
+  # ReactDOM and Babel from unpkg and compiles the page with new Function().
+  # Remove either one and every page renders completely blank with HTTP 200.
+  # Covers GSAP, TidyCal, Google Analytics, Hotjar and reCAPTCHA.
+  # 'unsafe-inline' is required for style-src because the whole design is inline
+  # styles. Test with Content-Security-Policy-Report-Only first if you prefer.
+  Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://unpkg.com https://cdn.jsdelivr.net https://asset-tidycal.b-cdn.net https://www.googletagmanager.com https://www.google.com https://www.gstatic.com https://static.hotjar.com https://script.hotjar.com; connect-src 'self' https://www.google.com https://www.gstatic.com https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com https://*.hotjar.com https://*.hotjar.io wss://*.hotjar.com; img-src 'self' data: https://*.google-analytics.com https://*.googletagmanager.com https://*.hotjar.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://*.hotjar.com; font-src 'self' https://fonts.gstatic.com https://*.hotjar.com; frame-src https://tidycal.com https://www.google.com https://vars.hotjar.com; base-uri 'self'; form-action 'self'; object-src 'none'; frame-ancestors 'self'"
+
+  Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains"
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  Header always set Permissions-Policy "geolocation=(), microphone=(), camera=(), payment=()"
+</IfModule>
+
+# ---------------------------------------------------------------- caching
+<IfModule mod_headers.c>
+  # The service worker must never be served stale or visitors keep an old cache
+  # for as long as the header says, and a deploy cannot reach them.
+  <FilesMatch "^(sw\.js)$">
+    Header set Cache-Control "no-cache, no-store, must-revalidate"
+  </FilesMatch>
+
+  # HTML revalidates every time; the service worker is what makes it fast.
+  <FilesMatch "\.(html)$">
+    Header set Cache-Control "no-cache, must-revalidate"
+  </FilesMatch>
+
+  <FilesMatch "\.(webmanifest|json|xml)$">
+    Header set Cache-Control "public, max-age=3600"
+  </FilesMatch>
+
+  # Fingerprint these in the filename if you ever need to bust them sooner.
+  <FilesMatch "\.(jpg|jpeg|png|gif|webp|avif|ico|svg|ttf|woff|woff2)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+</IfModule>
+
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css \
+    text/javascript application/javascript application/json \
+    application/manifest+json image/svg+xml
+</IfModule>
+
+<IfModule mod_mime.c>
+  AddType application/manifest+json .webmanifest
+  AddType font/ttf .ttf
+</IfModule>
+
+# ---------------------------------------------------------------- protection
+# Project notes and dotfiles must never be served.
+<FilesMatch "^(CLAUDE\.md|\.thumbnail|.*\.md)$">
+  <IfModule mod_authz_core.c>
+    Require all denied
+  </IfModule>
+  <IfModule !mod_authz_core.c>
+    Order allow,deny
+    Deny from all
+  </IfModule>
+</FilesMatch>
+
+RedirectMatch 404 /\.(?!well-known)

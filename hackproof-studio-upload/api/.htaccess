@@ -1,0 +1,15 @@
+# The dedupe and rate-limit files live in .state and must never be served.
+# Ideally move STATE_DIR outside the web root entirely; this is the fallback.
+<IfModule mod_authz_core.c>
+  <FilesMatch "\.(json|txt|log)$">
+    Require all denied
+  </FilesMatch>
+</IfModule>
+<IfModule !mod_authz_core.c>
+  <FilesMatch "\.(json|txt|log)$">
+    Order allow,deny
+    Deny from all
+  </FilesMatch>
+</IfModule>
+
+RedirectMatch 404 /\.state(/|$)

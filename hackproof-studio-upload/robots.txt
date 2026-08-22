@@ -1,0 +1,7 @@
+# HackProof Studio — https://hackproofwp.com
+# /contact was retired; .htaccess 301s it to /open-brief.
+
+User-agent: *
+Allow: /
+
+Sitemap: https://hackproofwp.com/sitemap.xml

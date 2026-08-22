@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Open Brief | Start a Website or Security Project</title>
+<meta name="description" content="Send an open brief to HackProof Studio. Describe the website or security problem you need solved and get a written reply with scope, a figure and a first step." />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<link rel="canonical" href="https://hackproofwp.com/open-brief" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="HackProof Studio" />
+<meta property="og:title" content="Open brief | HackProof Studio" />
+<meta property="og:description" content="No forms sent into a void. Every brief is read by the person who would do the work, and answered in writing with scope, a figure and a first step." />
+<meta property="og:url" content="https://hackproofwp.com/open-brief" />
+<meta property="og:image" content="https://hackproofwp.com/assets/share-card.jpg" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="HackProof Studio — independent website design and security studio" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Open brief | HackProof Studio" />
+<meta name="twitter:description" content="No forms sent into a void. Every brief is read by the person who would do the work, and answered in writing with scope, a figure and a first step." />
+<meta name="twitter:image" content="https://hackproofwp.com/assets/share-card.jpg" />
+<meta name="twitter:image:alt" content="HackProof Studio — independent website design and security studio" />
+<link rel="icon" href="/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png" />
+<link rel="manifest" href="site.webmanifest" />
+<meta name="theme-color" content="#F2EFE8" />
+<script src="js/hp-offline.js" defer></script>
+<!-- reCAPTCHA v3 (invisible). Only the Open Brief page carries a form. -->
+<script src="https://www.google.com/recaptcha/api.js?render=6LdgpZItAAAAAFyEUijHWF5-olSk_I34Ln_DbaPz" async defer></script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-3TXVNF6YDR"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  if (!window.__gaBooted) {
+    window.__gaBooted = true;
+    gtag('js', new Date());
+    gtag('config', 'G-3TXVNF6YDR');
+  }
+</script>
+<!-- Hotjar Tracking Code for Hackproof Studio -->
+<script>
+  if (!window.__hjBooted) {
+    window.__hjBooted = true;
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:6765824,hjsv:6};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+  }
+</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"ContactPage","@id":"https://hackproofwp.com/open-brief#page","url":"https://hackproofwp.com/open-brief","name":"Open brief","description":"Describe the website or security problem you need solved and get a written reply with scope, a figure and a first step.","isPartOf":{"@id":"https://hackproofwp.com/#website"},"about":{"@id":"https://hackproofwp.com/#studio"},"inLanguage":"en"},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://hackproofwp.com/"},{"@type":"ListItem","position":2,"name":"Open brief","item":"https://hackproofwp.com/open-brief"}]}]}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400&display=swap" />
+<style>
+  @font-face { font-family: "TWK Everett"; src: url("fonts/everett-regular.ttf") format("truetype"); font-weight: 400; font-style: normal; font-display: swap; }
+  @font-face { font-family: "TWK Everett"; src: url("fonts/everett-regular.ttf") format("truetype"); font-weight: 500; font-style: normal; font-display: swap; }
+  html { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; scroll-behavior: smooth; }
+  body { margin: 0; background: #F2EFE8; color: #151614; font-family: "TWK Everett", "Helvetica Neue", Arial, sans-serif; font-weight: 400; text-wrap: pretty; overflow-x: hidden; }
+  * { box-sizing: border-box; }
+  a { color: #151614; text-decoration-thickness: 1px; text-underline-offset: 4px; }
+  a:hover { color: #FF5A3C; }
+  ::selection { background: #FF5A3C; color: #151614; }
+  :focus-visible { outline: 2px solid #FF5A3C; outline-offset: 3px; }
+  button { font: inherit; color: inherit; background: none; border: none; padding: 0; cursor: pointer; }
+  @keyframes curtainLift { 0%, 52% { transform: translateY(0); } 100% { transform: translateY(-100%); } }
+  @keyframes curtainLogo { 0% { opacity: 0; transform: translateY(10px); } 20% { opacity: 1; transform: none; } 42% { opacity: 1; } 52%, 100% { opacity: 0; } }
+  [data-curtain] { animation: curtainLift 1.8s cubic-bezier(.76,0,.24,1) both; }
+  [data-curtain-logo] { animation: curtainLogo 1.8s ease both; }
+  @media (prefers-reduced-motion: reduce) {
+    [data-curtain], [data-curtain-logo] { animation: none !important; }
+    [data-curtain] { display: none !important; }
+  }
+
+  input, textarea { font: inherit; color: inherit; }
+  @keyframes panelIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+  [data-panel] { animation: panelIn 300ms cubic-bezier(.22,1,.36,1) both; }
+  [data-field] { width: 100%; background: transparent; border: none; border-bottom: 1px solid #D8D3C8; padding: 12px 0; font-size: 17px; line-height: 1.4; outline: none; transition: border-color 200ms ease; }
+  [data-field]:focus { border-color: #151614; }
+  [data-field]::placeholder { color: #9A968C; }
+  [data-opt] { transition: background 180ms ease, border-color 180ms ease, color 180ms ease; }
+  [data-opt]:hover { border-color: #151614; }
+  [data-opt][data-on="1"] { background: #151614 !important; border-color: #151614 !important; color: #F2EFE8 !important; }
+  [data-primary]:hover { background: #151614 !important; color: #F2EFE8 !important; }
+  [data-ghost]:hover { border-color: #FF5A3C !important; color: #FF5A3C !important; }
+  [data-arrow] { display: inline-block; transition: transform 200ms cubic-bezier(0.22,0.61,0.36,1); }
+  [data-link]:hover [data-arrow] { transform: translate(3px,-3px); }
+  [data-seg] { transition: background 350ms ease; }
+  [data-close]:hover { border-color: #FF5A3C !important; color: #FF5A3C !important; }
+  @media (max-width: 1023px) {
+    [data-briefgrid] { grid-template-columns: 1fr !important; gap: 40px !important; }
+    [data-ladder] { position: static !important; }
+    [data-introgrid] { grid-template-columns: 1fr !important; gap: 24px !important; }
+    [data-pairfields] { grid-template-columns: 1fr !important; }
+    [data-urgent] { flex-direction: column !important; align-items: flex-start !important; }
+  }
+  /* reCAPTCHA badge hidden. Google permits this only when the disclosure below
+     is shown instead — see the notice beside the form. Removing the notice
+     without restoring the badge breaks their terms. */
+  .grecaptcha-badge { visibility: hidden; }
+
+  /* --- mobile-only adjustments ------------------------------------------- */
+  @media (max-width: 767px) {
+    /* Header: logo keeps the left edge, MENU and START pack in beside it
+       instead of being pushed to the right by the label's auto margin. */
+    [data-toplabel] { margin-left: 0 !important; }
+
+    /* No depth-of-field blur on mobile. The effect writes inline filter styles
+       from JS, so this has to be !important to win. */
+    [data-sec], [data-dof] { filter: none !important; }
+
+    /* Both doors line up on the same left edge. The 24px indent is a gutter for
+       the desktop two-column layout and only misaligns them once stacked. */
+    [data-door2] { padding-left: 0 !important; }
+  }
+</style>
+</helmet>
+
+<div data-curtain="1" aria-hidden="true" style="position:fixed;inset:0;z-index:120;background:#0D1512;display:flex;align-items:center;justify-content:center;pointer-events:none"><img data-curtain-logo="1" src="assets/logo-paper-web.png" alt="" width="720" height="119" decoding="async" style="display:block;height:clamp(26px,3.4vw,44px);width:auto" /></div>
+
+<div style="background:#F2EFE8">
+  <dc-import name="hp-nav" current="brief" page-label="OPEN BRIEF" hint-size="100%,88px"></dc-import>
+
+  <main id="main">
+    <section data-dof="1" data-screen-label="Open brief intro" style="max-width:1440px;margin:0 auto;padding:clamp(40px,6vw,80px) clamp(20px,4vw,64px) clamp(32px,4vw,52px)">
+      <div style="display:flex;flex-wrap:wrap;gap:16px 24px;align-items:baseline;border-bottom:1px solid #151614;padding-bottom:20px">
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:#62655F">OPEN BRIEF</span>
+        <span style="margin-left:auto;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:#62655F">FOUR STEPS / ABOUT TWO MINUTES</span>
+        <a data-close="1" onClick="{{ goBack }}" href="/" style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:#151614;text-decoration:none;min-height:44px;display:inline-flex;align-items:center;gap:8px;border:1px solid #D8D3C8;padding:0 14px;border-radius:3px;transition:border-color 200ms ease,color 200ms ease">CLOSE ✕</a>
+      </div>
+
+      <div data-introgrid="1" style="display:grid;grid-template-columns:1.25fr 1fr;gap:clamp(32px,5vw,80px);margin-top:clamp(28px,4vw,48px);align-items:end">
+        <h1 style="margin:0;font-size:clamp(2.5rem,5.6vw,5rem);line-height:0.94;letter-spacing:-0.045em;font-weight:500;max-width:20ch">Tell me what you are trying to fix.</h1>
+        <p style="margin:0;font-size:clamp(1.0625rem,1.3vw,1.25rem);line-height:1.55;color:#62655F;max-width:44ch">No forms sent into a void. Every brief is read by the person who would do the work, and answered in writing with scope, a figure, and the first thing I would change.</p>
+      </div>
+
+      <div data-urgent="1" style="display:flex;flex-wrap:wrap;gap:16px 28px;align-items:center;margin-top:clamp(32px,4vw,56px);border:1px solid #D8D3C8;padding:18px clamp(18px,2.4vw,28px)">
+        <span style="display:flex;align-items:center;gap:10px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:#FF5A3C"><span style="width:5px;height:5px;background:#FF5A3C;display:block"></span>SITE HACKED OR DOWN</span>
+        <p style="margin:0;font-size:17px;line-height:1.5;max-width:52ch">Mark the brief urgent and it goes to the top of the queue.</p>
+        <button type="button" data-opt="1" data-on="{{ urgentOn }}" onClick="{{ toggleUrgent }}" style="margin-left:auto;min-height:46px;padding:0 18px;border:1px solid #D8D3C8;border-radius:3px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em">{{ urgentLabel }}</button>
+      </div>
+
+      <div data-urgent="1" style="display:flex;flex-wrap:wrap;gap:16px 28px;align-items:center;margin-top:16px;border:1px solid #D8D3C8;padding:18px clamp(18px,2.4vw,28px)">
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:#62655F">RATHER TALK FIRST</span>
+        <p style="margin:0;font-size:17px;line-height:1.5;max-width:52ch">Pick a 30-minute slot in the calendar instead of writing a brief.</p>
+        <button type="button" data-opt="1" onClick="{{ openBook }}" style="margin-left:auto;min-height:46px;padding:0 18px;border:1px solid #151614;border-radius:3px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em">BOOK A MEETING <span data-arrow="1" style="margin-left:8px">↗</span></button>
+      </div>
+    </section>
+
+    <section data-dof="1" data-screen-label="Brief steps" style="max-width:1440px;margin:0 auto;padding:0 clamp(20px,4vw,64px) clamp(72px,9vw,140px)">
+      <div data-briefgrid="1" style="display:grid;grid-template-columns:0.75fr 1.6fr;gap:clamp(32px,6vw,96px);align-items:start">
+        <div data-ladder="1" style="position:sticky;top:112px">
+          <div style="display:flex;gap:6px;margin-bottom:24px">
+            <span data-seg="1" style="height:2px;flex:1;background:{{ seg1 }};display:block"></span>
+            <span data-seg="1" style="height:2px;flex:1;background:{{ seg2 }};display:block"></span>
+            <span data-seg="1" style="height:2px;flex:1;background:{{ seg3 }};display:block"></span>
+            <span data-seg="1" style="height:2px;flex:1;background:{{ seg4 }};display:block"></span>
+          </div>
+          <div style="border-top:1px solid #151614">
+            <div style="display:grid;grid-template-columns:auto 1fr;gap:16px;padding:16px 0;border-bottom:1px solid #D8D3C8">
+              <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:{{ n1 }}">01</span>
+              <div><div style="font-size:17px;line-height:1.35;color:{{ n1 }}">What are we creating?</div><div style="margin-top:6px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:#62655F">{{ sum1 }}</div></div>
+            </div>
+            <div style="display:grid;grid-template-columns:auto 1fr;gap:16px;padding:16px 0;border-bottom:1px solid #D8D3C8">
+              <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:{{ n2 }}">02</span>
+              <div><div style="font-size:17px;line-height:1.35;color:{{ n2 }}">What needs to change?</div><div style="margin-top:6px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:#62655F">{{ sum2 }}</div></div>
+            </div>
+            <div style="display:grid;grid-template-columns:auto 1fr;gap:16px;padding:16px 0;border-bottom:1px solid #D8D3C8">
+              <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:{{ n3 }}">03</span>
+              <div><div style="font-size:17px;line-height:1.35;color:{{ n3 }}">When would you like to begin?</div><div style="margin-top:6px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:#62655F">{{ sum3 }}</div></div>
+            </div>
+            <div style="display:grid;grid-template-columns:auto 1fr;gap:16px;padding:16px 0;border-bottom:1px solid #D8D3C8">
+              <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:{{ n4 }}">04</span>
+              <div><div style="font-size:17px;line-height:1.35;color:{{ n4 }}">Project information</div><div style="margin-top:6px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:#62655F">{{ sum4 }}</div></div>
+            </div>
+          </div>
+          <p style="margin:22px 0 0;font-size:15px;line-height:1.55;color:#62655F;max-width:34ch">Projects start at $1,500. Nothing you enter here is shared, and there is no mailing list.</p>
+          <p style="margin:14px 0 0;font-size:12px;line-height:1.6;color:#8A8B85;max-width:34ch">This site is protected by reCAPTCHA and the Google <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" style="color:#8A8B85">Privacy Policy</a> and <a href="https://policies.google.com/terms" target="_blank" rel="noopener noreferrer" style="color:#8A8B85">Terms of Service</a> apply.</p>
+        </div>
+
+        <div>
+          <sc-if value="{{ sent }}" hint-placeholder-val="{{ false }}">
+            <div data-panel="1" style="border-top:1px solid #151614;padding-top:clamp(28px,3vw,40px)">
+              <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:#FF5A3C">BRIEF RECEIVED</span>
+              <h2 style="margin:18px 0 0;font-size:clamp(1.875rem,3.4vw,3rem);line-height:1.02;letter-spacing:-0.035em;font-weight:500;max-width:20ch">Thanks{{ thanksName }}. It is with me.</h2>
+              <p style="margin:22px 0 0;font-size:18px;line-height:1.58;max-width:52ch">A written reply goes to <span style="color:#151614">{{ email }}</span> with scope, a figure, and the first thing I would fix. Usually within one working day.</p>
+              <div style="display:flex;flex-wrap:wrap;gap:16px;margin-top:32px">
+                <a data-ghost="1" href="https://tidycal.com/hackproofwp/thirty-minute-meeting" target="_blank" rel="noopener" style="min-height:52px;padding:0 26px;border:1px solid #151614;border-radius:3px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;text-decoration:none;display:inline-flex;align-items:center;transition:border-color 200ms ease,color 200ms ease">BOOK A CALL AS WELL <span data-arrow="1" style="margin-left:8px">↗</span></a>
+                <a data-link="1" href="/work" style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;text-decoration:none;border-bottom:1px solid #151614;padding-bottom:3px;min-height:44px;display:inline-flex;align-items:center">SEE SELECTED WORK <span data-arrow="1" style="margin-left:8px">↗</span></a>
+              </div>
+            </div>
+          </sc-if>
+
+          <sc-if value="{{ live }}" hint-placeholder-val="{{ true }}">
+            <div style="border-top:1px solid #151614;padding-top:clamp(28px,3vw,40px)">
+              <sc-if value="{{ s0 }}" hint-placeholder-val="{{ true }}">
+                <div data-panel="1">
+                  <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:#62655F">STEP 01 / 04</span>
+                  <h2 style="margin:16px 0 0;font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.04;letter-spacing:-0.03em;font-weight:500;max-width:22ch">What are we creating?</h2>
+                  <div style="margin-top:clamp(28px,3vw,40px);display:flex;flex-direction:column;gap:12px;max-width:640px">
+                    <button type="button" data-opt="1" data-val="New Website" data-on="{{ c1 }}" onClick="{{ setCreate }}" style="text-align:left;display:flex;align-items:center;gap:18px;border:1px solid #D8D3C8;border-radius:3px;padding:20px 24px;min-height:72px;font-size:19px"><span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;opacity:0.6">01</span>New Website</button>
+                    <button type="button" data-opt="1" data-val="Website Redesign" data-on="{{ c2 }}" onClick="{{ setCreate }}" style="text-align:left;display:flex;align-items:center;gap:18px;border:1px solid #D8D3C8;border-radius:3px;padding:20px 24px;min-height:72px;font-size:19px"><span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;opacity:0.6">02</span>Website Redesign</button>
+                    <button type="button" data-opt="1" data-val="Website Security" data-on="{{ c3 }}" onClick="{{ setCreate }}" style="text-align:left;display:flex;align-items:center;gap:18px;border:1px solid #D8D3C8;border-radius:3px;padding:20px 24px;min-height:72px;font-size:19px"><span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;opacity:0.6">03</span>Website Security</button>
+                  </div>
+                </div>
+              </sc-if>
+
+              <sc-if value="{{ s1 }}" hint-placeholder-val="{{ false }}">
+                <div data-panel="1">
+                  <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:#62655F">STEP 02 / 04</span>
+                  <h2 style="margin:16px 0 0;font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.04;letter-spacing:-0.03em;font-weight:500;max-width:22ch">What needs to change?</h2>
+                  <p style="margin:14px 0 0;font-size:17px;line-height:1.55;color:#62655F">Pick everything that applies.</p>
+                  <div style="margin-top:clamp(24px,3vw,36px);display:flex;flex-wrap:wrap;gap:12px;max-width:720px">
+                    <button type="button" data-opt="1" data-val="Brand Perception" data-on="{{ h1 }}" onClick="{{ toggleChange }}" style="min-height:52px;padding:0 22px;border:1px solid #D8D3C8;border-radius:3px;font-size:17px">Brand Perception</button>
+                    <button type="button" data-opt="1" data-val="Google Ads Readiness" data-on="{{ h2 }}" onClick="{{ toggleChange }}" style="min-height:52px;padding:0 22px;border:1px solid #D8D3C8;border-radius:3px;font-size:17px">Google Ads Readiness</button>
+                    <button type="button" data-opt="1" data-val="Trust and Credibility" data-on="{{ h3 }}" onClick="{{ toggleChange }}" style="min-height:52px;padding:0 22px;border:1px solid #D8D3C8;border-radius:3px;font-size:17px">Trust and Credibility</button>
+                    <button type="button" data-opt="1" data-val="User Experience" data-on="{{ h4 }}" onClick="{{ toggleChange }}" style="min-height:52px;padding:0 22px;border:1px solid #D8D3C8;border-radius:3px;font-size:17px">User Experience</button>
+                    <button type="button" data-opt="1" data-val="Performance" data-on="{{ h5 }}" onClick="{{ toggleChange }}" style="min-height:52px;padding:0 22px;border:1px solid #D8D3C8;border-radius:3px;font-size:17px">Performance</button>
+                    <button type="button" data-opt="1" data-val="Website Security" data-on="{{ h6 }}" onClick="{{ toggleChange }}" style="min-height:52px;padding:0 22px;border:1px solid #D8D3C8;border-radius:3px;font-size:17px">Website Security</button>
+                  </div>
+                </div>
+              </sc-if>
+
+              <sc-if value="{{ s2 }}" hint-placeholder-val="{{ false }}">
+                <div data-panel="1">
+                  <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:#62655F">STEP 03 / 04</span>
+                  <h2 style="margin:16px 0 0;font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.04;letter-spacing:-0.03em;font-weight:500;max-width:22ch">When would you like to begin?</h2>
+                  <div style="margin-top:clamp(28px,3vw,40px);display:flex;flex-direction:column;gap:12px;max-width:640px">
+                    <button type="button" data-opt="1" data-val="As Soon as Possible" data-on="{{ t1 }}" onClick="{{ setWhen }}" style="text-align:left;display:flex;align-items:center;gap:18px;border:1px solid #D8D3C8;border-radius:3px;padding:18px 24px;min-height:64px;font-size:18px">As Soon as Possible</button>
+                    <button type="button" data-opt="1" data-val="Within 1 to 3 Months" data-on="{{ t2 }}" onClick="{{ setWhen }}" style="text-align:left;display:flex;align-items:center;gap:18px;border:1px solid #D8D3C8;border-radius:3px;padding:18px 24px;min-height:64px;font-size:18px">Within 1 to 3 Months</button>
+                    <button type="button" data-opt="1" data-val="Within 3 to 6 Months" data-on="{{ t3 }}" onClick="{{ setWhen }}" style="text-align:left;display:flex;align-items:center;gap:18px;border:1px solid #D8D3C8;border-radius:3px;padding:18px 24px;min-height:64px;font-size:18px">Within 3 to 6 Months</button>
+                    <button type="button" data-opt="1" data-val="Planning Ahead" data-on="{{ t4 }}" onClick="{{ setWhen }}" style="text-align:left;display:flex;align-items:center;gap:18px;border:1px solid #D8D3C8;border-radius:3px;padding:18px 24px;min-height:64px;font-size:18px">Planning Ahead</button>
+                  </div>
+                </div>
+              </sc-if>
+
+              <sc-if value="{{ s3 }}" hint-placeholder-val="{{ false }}">
+                <div data-panel="1">
+                  <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:#62655F">STEP 04 / 04</span>
+                  <h2 style="margin:16px 0 0;font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.04;letter-spacing:-0.03em;font-weight:500;max-width:22ch">Project information</h2>
+                  <div style="margin-top:clamp(28px,3vw,40px);display:flex;flex-direction:column;gap:26px;max-width:760px">
+                    <div data-pairfields="1" style="display:grid;grid-template-columns:1fr 1fr;gap:26px">
+                      <label style="display:flex;flex-direction:column;gap:6px"><span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:#62655F">NAME <span style="color:#FF5A3C">*</span></span><input data-field="1" name="name" value="{{ name }}" onChange="{{ onField }}" placeholder="Your name" /></label>
+                      <label style="display:flex;flex-direction:column;gap:6px"><span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:#62655F">EMAIL <span style="color:#FF5A3C">*</span></span><input data-field="1" name="email" type="email" value="{{ email }}" onChange="{{ onField }}" placeholder="you@company.com" /></label>
+                    </div>
+                    <div data-pairfields="1" style="display:grid;grid-template-columns:1fr 1fr;gap:26px">
+                      <label style="display:flex;flex-direction:column;gap:6px"><span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:#62655F">COMPANY</span><input data-field="1" name="company" value="{{ company }}" onChange="{{ onField }}" placeholder="Business name" /></label>
+                      <label style="display:flex;flex-direction:column;gap:6px"><span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:#62655F">EXISTING WEBSITE URL</span><input data-field="1" name="url" value="{{ url }}" onChange="{{ onField }}" placeholder="yoursite.com" /></label>
+                    </div>
+                    <label style="display:flex;flex-direction:column;gap:6px"><span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:#62655F">PROJECT SUMMARY</span><textarea data-field="1" name="summary" rows="4" value="{{ summary }}" onChange="{{ onField }}" placeholder="What is happening now, and what should be true when this is finished."></textarea></label>
+                    <div style="display:flex;flex-direction:column;gap:12px">
+                      <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:#62655F">ESTIMATED BUDGET RANGE <span style="color:#FF5A3C">*</span></span>
+                      <div style="display:flex;flex-wrap:wrap;gap:10px">
+                        <button type="button" data-opt="1" data-val="$1,500 – $2,500" data-on="{{ b1 }}" onClick="{{ setBudget }}" style="min-height:46px;padding:0 18px;border:1px solid #D8D3C8;border-radius:3px;font-size:16px">$1,500 – $2,500</button>
+                        <button type="button" data-opt="1" data-val="$2,500 – $5,000" data-on="{{ b2 }}" onClick="{{ setBudget }}" style="min-height:46px;padding:0 18px;border:1px solid #D8D3C8;border-radius:3px;font-size:16px">$2,500 – $5,000</button>
+                        <button type="button" data-opt="1" data-val="$5,000+" data-on="{{ b3 }}" onClick="{{ setBudget }}" style="min-height:46px;padding:0 18px;border:1px solid #D8D3C8;border-radius:3px;font-size:16px">$5,000+</button>
+                        <button type="button" data-opt="1" data-val="Not sure yet" data-on="{{ b4 }}" onClick="{{ setBudget }}" style="min-height:46px;padding:0 18px;border:1px solid #D8D3C8;border-radius:3px;font-size:16px">Not sure yet</button>
+                      </div>
+                    </div>
+                    <label style="display:flex;flex-direction:column;gap:6px;max-width:320px"><span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:#62655F">PREFERRED START DATE <span style="color:#FF5A3C">*</span></span><input data-field="1" name="startdate" type="date" required="{{ true }}" value="{{ startdate }}" onChange="{{ onField }}" /></label>
+                    <div style="display:flex;flex-wrap:wrap;gap:16px 20px;align-items:center;border-top:1px solid #D8D3C8;padding-top:20px">
+                      <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:#62655F">PREFER A CONVERSATION?</span>
+                      <button type="button" data-ghost="1" onClick="{{ openBook }}" style="min-height:48px;padding:0 22px;border:1px solid #151614;border-radius:3px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;transition:border-color 200ms ease,color 200ms ease">BOOK A MEETING <span data-arrow="1" style="margin-left:8px">↗</span></button>
+                    </div>
+                  </div>
+                </div>
+              </sc-if>
+
+              <div style="display:flex;flex-wrap:wrap;gap:16px 20px;align-items:center;margin-top:clamp(32px,4vw,48px);border-top:1px solid #D8D3C8;padding-top:24px">
+                <sc-if value="{{ canBack }}" hint-placeholder-val="{{ false }}">
+                  <button type="button" onClick="{{ back }}" style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:#62655F;min-height:52px;padding:0 4px">← BACK</button>
+                </sc-if>
+                <button type="button" data-primary="1" onClick="{{ next }}" style="font-size:14px;font-weight:500;letter-spacing:0.02em;min-height:52px;padding:0 30px;background:#FF5A3C;color:#F2EFE8;border-radius:3px;transition:background 200ms ease,color 200ms ease">{{ nextLabel }}</button>
+                <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:#FF5A3C">{{ err }}</span>
+                <span style="margin-left:auto;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:#62655F">{{ urgentNote }}</span>
+              </div>
+            </div>
+          </sc-if>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <dc-import name="hp-footer" show-cta="{{ false }}" hint-size="100%,520px"></dc-import>
+
+  <sc-if value="{{ booking }}" hint-placeholder-val="{{ false }}">
+    <div role="dialog" aria-modal="true" aria-label="Book a meeting" style="position:fixed;inset:0;z-index:110;background:rgba(13,21,18,0.72);display:flex;align-items:center;justify-content:center;padding:clamp(16px,4vw,48px)">
+      <div style="width:min(920px,100%);max-height:calc(100vh - 64px);display:flex;flex-direction:column;background:#F2EFE8;color:#151614;border:1px solid #151614;animation:panelIn 280ms cubic-bezier(.22,1,.36,1) both">
+        <div style="display:flex;align-items:center;gap:16px;border-bottom:1px solid #D8D3C8;padding:18px clamp(18px,3vw,28px);flex:0 0 auto">
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:#FF5A3C">BOOK A MEETING</span>
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:#62655F">30 MINUTES</span>
+          <button type="button" onClick="{{ closeBook }}" style="margin-left:auto;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;min-height:44px;padding:0 4px">CLOSE ✕</button>
+        </div>
+        <div style="padding:clamp(14px,2vw,22px);overflow-y:auto;-webkit-overflow-scrolling:touch">
+          <div class="tidycal-embed" data-path="hackproofwp/thirty-minute-meeting" style="min-height:560px"></div>
+          <p style="margin:14px 2px 2px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:#62655F">TROUBLE LOADING? <a href="https://tidycal.com/hackproofwp/thirty-minute-meeting" target="_blank" rel="noopener" style="color:#151614">OPEN THE BOOKING PAGE ↗</a></p>
+        </div>
+      </div>
+    </div>
+  </sc-if>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1440}}">
+class Component extends DCLogic {
+  state = {
+    step: 0, sent: false, err: "", urgent: false, booking: false,
+    create: "", changes: [], when: "", budget: "",
+    name: "", email: "", company: "", url: "", summary: "", startdate: ""
+  };
+
+  set = (k, v) => this.setState({ [k]: v, err: "" });
+  onField = (e) => this.set(e.target.name, e.target.value);
+  setCreate = (e) => this.set("create", e.currentTarget.dataset.val);
+  setWhen = (e) => this.set("when", e.currentTarget.dataset.val);
+  setBudget = (e) => this.set("budget", e.currentTarget.dataset.val);
+  toggleUrgent = () => this.set("urgent", !this.state.urgent);
+
+  toggleChange = (e) => {
+    const v = e.currentTarget.dataset.val;
+    const list = this.state.changes.includes(v)
+      ? this.state.changes.filter((x) => x !== v)
+      : this.state.changes.concat(v);
+    this.set("changes", list);
+  };
+
+  // The brief goes to HPOffline, not straight to the network. Online it posts
+  // immediately; offline it is held in IndexedDB and retried on reconnect, on
+  // the next load, and on Background Sync where the browser supports it. The
+  // visitor sees the same confirmation either way, which is the point.
+  sendBrief = (st) => {
+    var payload = {
+      create: st.create,
+      changes: st.changes,
+      when: st.when,
+      startdate: st.startdate,
+      budget: st.budget,
+      name: st.name,
+      email: st.email,
+      company: st.company,
+      url: st.url,
+      summary: st.summary,
+      urgent: !!st.urgent,
+      submittedAt: new Date().toISOString(),
+      page: "open-brief",
+    };
+    try {
+      if (window.HPOffline) {
+        window.HPOffline.submitBrief(payload).catch(function () {});
+      } else {
+        // Helper failed to load. Keep the brief rather than losing it.
+        var held = JSON.parse(localStorage.getItem("hp-brief-fallback") || "[]");
+        held.push(payload);
+        localStorage.setItem("hp-brief-fallback", JSON.stringify(held));
+      }
+    } catch (e) { /* never block the confirmation on a storage error */ }
+  };
+
+  next = () => {
+    const st = this.state;
+    if (st.step === 0 && !st.create) return this.setState({ err: "PICK ONE TO CONTINUE" });
+    if (st.step === 1 && st.changes.length === 0) return this.setState({ err: "PICK AT LEAST ONE" });
+    if (st.step === 2 && !st.when) return this.setState({ err: "TIMING REQUIRED" });
+    if (st.step === 3) {
+      if (!st.name.trim()) return this.setState({ err: "NAME REQUIRED" });
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(st.email.trim())) return this.setState({ err: "VALID EMAIL REQUIRED" });
+      if (!st.budget) return this.setState({ err: "BUDGET RANGE REQUIRED" });
+      if (!st.startdate) return this.setState({ err: "PREFERRED START DATE REQUIRED" });
+      this.sendBrief(st);
+      this.setState({ sent: true, err: "" });
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      return;
+    }
+    this.setState({ step: st.step + 1, err: "" });
+  };
+
+  back = () => this.setState({ step: Math.max(0, this.state.step - 1), err: "" });
+
+  mountTidy = () => {
+    const inject = () => {
+      const els = [].filter.call(document.querySelectorAll(".tidycal-embed"), (n) => n.tagName === "DIV");
+      if (!els.length) return;
+      if (window.TidyCal && typeof window.TidyCal.init === "function") {
+        els.forEach((el) => window.TidyCal.init(el));
+        return;
+      }
+      if (document.querySelector("script[data-tidycal]")) return;
+      const s = document.createElement("script");
+      s.src = "https://asset-tidycal.b-cdn.net/js/embed.js";
+      s.async = true;
+      s.setAttribute("data-tidycal", "1");
+      document.body.appendChild(s);
+    };
+    requestAnimationFrame(() => requestAnimationFrame(inject));
+  };
+
+  openBook = () => this.setState({ booking: true }, this.mountTidy);
+  closeBook = () => this.setState({ booking: false });
+  onKey = (e) => { if (e.key === "Escape" && this.state.booking) this.closeBook(); };
+
+  // CLOSE returns to whichever page opened the brief; the href is the no-history fallback.
+  goBack = (e) => {
+    if (window.history && window.history.length > 1) {
+      e.preventDefault();
+      window.history.back();
+    }
+  };
+
+  // Depth of field: sections arrive soft, sharpen on entry, soften on exit.
+  // Driven from inline styles on a poll — the host throttles rAF and does not
+  // fire IntersectionObserver, so nothing here can leave a section blurred.
+  buildDof = () => {
+    if (this.dofBuilt) return;
+    if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    let secs = Array.prototype.slice.call(document.querySelectorAll("[data-dof]"));
+    if (!secs.length) return;
+    this.dofBuilt = true;
+    this.dofStart = Date.now();
+    const soft = window.innerWidth < 768 ? 4 : 6;
+    // Gate on a real scroll offset, never on rect movement: intro reveals and
+    // late-loading images shift sections by hundreds of px without any scroll.
+    const dofOffset = () => {
+      let y = window.pageYOffset || 0;
+      const doc = document.scrollingElement;
+      if (!y && doc) y = doc.scrollTop || 0;
+      if (!y) {
+        let el = secs[0] ? secs[0].parentElement : null;
+        while (el) {
+          if (el.scrollTop > 0 && el.scrollHeight - el.clientHeight > 40) { y = el.scrollTop; break; }
+          el = el.parentElement;
+        }
+      }
+      return y;
+    };
+    this.dofSweep = () => {
+      // Re-read the list: imported children (footer) mount after this runs.
+      const all = document.querySelectorAll("[data-dof]");
+      if (all.length !== secs.length) {
+        secs = Array.prototype.slice.call(all);
+        if (this.dofActive) secs.forEach((s) => { s.style.willChange = "filter, transform"; s.style.transition = "filter 260ms ease"; });
+      }
+      const h = window.innerHeight || 800;
+      const rise = Math.min(72, h * 0.07);
+      const rects = [];
+      for (let i = 0; i < secs.length; i++) rects.push(secs[i].getBoundingClientRect());
+      // Only engage once the page has genuinely scrolled. Some hosts report a
+      // scrollable document but never move it: staying sharp is the safe state.
+      if (!this.dofActive) {
+        if (dofOffset() > 8) {
+          this.dofActive = true;
+          secs.forEach((s) => { s.style.willChange = "filter, transform"; s.style.transition = "filter 260ms ease"; });
+        } else {
+          for (let i = 0; i < secs.length; i++) {
+            if (secs[i].style.filter) secs[i].style.filter = "";
+            if (secs[i].style.transform) secs[i].style.transform = "";
+          }
+          if (!this.dofSlow && Date.now() - this.dofStart > 3000) {
+            this.dofSlow = true;
+            if (this.dofPoll) clearInterval(this.dofPoll);
+            this.dofPoll = setInterval(this.dofSweep, 400);
+          }
+          return;
+        }
+      }
+      for (let i = 0; i < secs.length; i++) {
+        const s = secs[i];
+        const r = rects[i];
+        let b = 0, y = 0;
+        if (r.top > h * 0.80) {
+          const t = Math.min(1, (r.top - h * 0.80) / (h * 0.32));
+          b = soft * t; y = rise * t;
+        } else if (r.bottom < h * 0.22) {
+          b = 3 * Math.min(1, (h * 0.22 - r.bottom) / (h * 0.28));
+        }
+        const f = b > 0.1 ? "blur(" + b.toFixed(2) + "px)" : "";
+        const tr = y > 0.5 ? "translate3d(0," + y.toFixed(1) + "px,0)" : "";
+        if (s.style.filter !== f) s.style.filter = f;
+        if (s.style.transform !== tr) s.style.transform = tr;
+      }
+    };
+    window.addEventListener("scroll", this.dofSweep, { passive: true });
+    window.addEventListener("resize", this.dofSweep);
+    this.dofPoll = setInterval(this.dofSweep, 90);
+    this.dofSweep();
+  };
+
+  componentDidMount() {
+    this.buildDof();
+    // Retire the curtain once it has lifted, so a later re-render cannot replay it.
+    this.curtainTimer = setTimeout(() => {
+      const c = document.querySelector("[data-curtain]");
+      if (c) { c.style.animation = "none"; c.style.display = "none"; }
+    }, 2000); window.addEventListener("keydown", this.onKey); }
+  componentWillUnmount() {
+    if (this.dofSweep) { window.removeEventListener("scroll", this.dofSweep); window.removeEventListener("resize", this.dofSweep); }
+    if (this.dofPoll) clearInterval(this.dofPoll);
+    if (this.curtainTimer) clearTimeout(this.curtainTimer); window.removeEventListener("keydown", this.onKey); }
+
+  renderVals() {
+    const st = this.state;
+    const ink = "#151614";
+    const dim = "#62655F";
+    const coral = "#FF5A3C";
+    const line = "#D8D3C8";
+    const seg = (i) => (st.step > i ? ink : st.step === i ? coral : line);
+    const changeSum = st.changes.length ? st.changes.length + " SELECTED" : "—";
+    return {
+      sent: st.sent, live: !st.sent,
+      s0: !st.sent && st.step === 0, s1: !st.sent && st.step === 1,
+      s2: !st.sent && st.step === 2, s3: !st.sent && st.step === 3,
+      canBack: st.step > 0,
+      nextLabel: st.step === 3 ? "SUBMIT PROJECT BRIEF" : "CONTINUE",
+      err: st.err,
+      seg1: seg(0), seg2: seg(1), seg3: seg(2), seg4: seg(3),
+      n1: st.step === 0 ? coral : ink, n2: st.step === 1 ? coral : ink,
+      n3: st.step === 2 ? coral : ink, n4: st.step === 3 ? coral : ink,
+      sum1: st.create ? st.create.toUpperCase() : "—",
+      sum2: changeSum,
+      sum3: st.when ? st.when.toUpperCase() : "—",
+      sum4: st.budget ? st.budget.toUpperCase() : "—",
+      booking: st.booking, openBook: this.openBook, closeBook: this.closeBook, goBack: this.goBack,
+      c1: st.create === "New Website" ? "1" : "0",
+      c2: st.create === "Website Redesign" ? "1" : "0",
+      c3: st.create === "Website Security" ? "1" : "0",
+      h1: st.changes.includes("Brand Perception") ? "1" : "0",
+      h2: st.changes.includes("Google Ads Readiness") ? "1" : "0",
+      h3: st.changes.includes("Trust and Credibility") ? "1" : "0",
+      h4: st.changes.includes("User Experience") ? "1" : "0",
+      h5: st.changes.includes("Performance") ? "1" : "0",
+      h6: st.changes.includes("Website Security") ? "1" : "0",
+      t1: st.when === "As Soon as Possible" ? "1" : "0",
+      t2: st.when === "Within 1 to 3 Months" ? "1" : "0",
+      t3: st.when === "Within 3 to 6 Months" ? "1" : "0",
+      t4: st.when === "Planning Ahead" ? "1" : "0",
+      b1: st.budget === "$1,500 – $2,500" ? "1" : "0",
+      b2: st.budget === "$2,500 – $5,000" ? "1" : "0",
+      b3: st.budget === "$5,000+" ? "1" : "0",
+      b4: st.budget === "Not sure yet" ? "1" : "0",
+      name: st.name, email: st.email, company: st.company,
+      url: st.url, summary: st.summary, startdate: st.startdate,
+      thanksName: st.name.trim() ? ", " + st.name.trim().split(" ")[0] : "",
+      urgentOn: st.urgent ? "1" : "0",
+      urgentLabel: st.urgent ? "MARKED URGENT ✓" : "MARK AS URGENT",
+      urgentNote: st.urgent ? "PRIORITY / URGENT" : "",
+      onField: this.onField, setCreate: this.setCreate, setWhen: this.setWhen,
+      setBudget: this.setBudget, toggleChange: this.toggleChange,
+      toggleUrgent: this.toggleUrgent, next: this.next, back: this.back
+    };
+  }
+}
+</script>
+</body>
+</html>

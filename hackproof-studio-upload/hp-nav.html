@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400&display=swap" />
+<style>
+  @font-face { font-family: "TWK Everett"; src: url("fonts/everett-regular.ttf") format("truetype"); font-weight: 400; font-style: normal; font-display: swap; }
+  @font-face { font-family: "TWK Everett"; src: url("fonts/everett-regular.ttf") format("truetype"); font-weight: 500; font-style: normal; font-display: swap; }
+  @keyframes ovIn { from { opacity: 0; } to { opacity: 1; } }
+  @keyframes ovRow { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
+  [data-navlink] { transition: color 180ms ease; }
+  [data-navlink]:hover, [data-navlink][data-on="1"] { color: #FF5A3C; }
+  [data-menurow] { transition: color 200ms ease, padding-left 300ms cubic-bezier(.22,.61,.36,1); }
+  [data-menurow]:hover { color: #FF5A3C; padding-left: 12px; }
+  [data-menubtn]:hover { background: #151614; color: #F2EFE8; }
+  [data-cta]:hover { background: #151614 !important; color: #F2EFE8 !important; }
+  [data-arrow] { display: inline-block; transition: transform 200ms cubic-bezier(0.22,0.61,0.36,1); }
+  [data-link]:hover [data-arrow] { transform: translate(3px,-3px); }
+  [data-topnav] > * { flex: none; white-space: nowrap; }
+  [data-pagelabel] { flex: none; white-space: nowrap; }
+  @media (max-width: 1100px) {
+    [data-topnav] { gap: 18px !important; }
+    [data-topnav] a[data-navlink] { display: none !important; }
+  }
+  @media (max-width: 767px) {
+    [data-top-desktop] { display: none !important; }
+    [data-top-mobile] { display: flex !important; }
+    [data-menu-body] { grid-template-columns: 1fr !important; }
+    [data-menu-right] { border-left: none !important; border-top: 1px solid rgba(242,239,232,0.16); }
+    [data-menurow] span[data-big] { font-size: 34px !important; }
+    /* Match the pages: logo keeps the left edge, MENU packs in beside it
+       instead of being pushed right by the label's auto margin. */
+    [data-toplabel] { margin-left: 0 !important; }
+  }
+  @media (max-width: 430px) {
+    [data-toplabel] { display: none !important; }
+  }
+  @media (max-width: 1023px) {
+    [data-menu-body] { grid-template-columns: 1fr !important; }
+    [data-menu-right] { border-left: none !important; border-top: 1px solid rgba(242,239,232,0.16); }
+  }
+</style>
+</helmet>
+
+<div style="font-family:'TWK Everett','Helvetica Neue',Arial,sans-serif;color:#151614">
+  <header data-top-desktop="1" style="position:sticky;top:0;z-index:40;background:rgba(242,239,232,0.92);backdrop-filter:blur(6px);border-bottom:1px solid #D8D3C8">
+    <div style="max-width:1440px;margin:0 auto;padding:0 clamp(20px,4vw,64px);height:88px;display:flex;align-items:center;gap:clamp(20px,4vw,48px)">
+      <a href="/" style="display:flex;align-items:center;text-decoration:none;flex:none">
+        <img src="assets/logo-ink.png" alt="HackProof Studio" width="1802" height="299" style="display:block;height:34px;width:auto" />
+      </a>
+      <span data-pagelabel="1" style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:#62655F;border-left:1px solid #D8D3C8;padding-left:clamp(16px,2vw,24px)">{{ pageLabel }}</span>
+      <nav data-topnav="1" aria-label="Pages" style="margin-left:auto;display:flex;align-items:center;gap:28px">
+        <a data-navlink="1" data-on="{{ onWork }}" href="/work" style="font-size:14px;font-weight:500;letter-spacing:0.01em;text-decoration:none;display:inline-flex;align-items:center;min-height:44px">Work</a>
+        <a data-navlink="1" data-on="{{ onServices }}" href="/services" style="font-size:14px;font-weight:500;letter-spacing:0.01em;text-decoration:none;display:inline-flex;align-items:center;min-height:44px">Services</a>
+        <a data-navlink="1" data-on="{{ onSecurity }}" href="/security" style="font-size:14px;font-weight:500;letter-spacing:0.01em;text-decoration:none;display:inline-flex;align-items:center;min-height:44px">Security</a>
+        <a data-navlink="1" data-on="{{ onStudio }}" href="/studio" style="font-size:14px;font-weight:500;letter-spacing:0.01em;text-decoration:none;display:inline-flex;align-items:center;min-height:44px">Studio</a>
+        <button type="button" data-menubtn="1" onClick="{{ openMenu }}" aria-expanded="{{ menuExpanded }}" aria-controls="project-index" style="display:flex;align-items:center;gap:10px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;border:1px solid #151614;padding:0 16px;min-height:44px;transition:background 200ms ease,color 200ms ease">MENU <span style="color:#FF5A3C;font-size:14px">+</span></button>
+      </nav>
+    </div>
+  </header>
+
+  <header data-top-mobile="1" style="display:none;position:sticky;top:0;z-index:40;background:rgba(242,239,232,0.94);backdrop-filter:blur(6px);border-bottom:1px solid #D8D3C8">
+    <div style="padding:0 16px;height:64px;display:flex;align-items:center;gap:12px">
+      <a href="/" style="display:flex;align-items:center;text-decoration:none;flex:none">
+        <img src="assets/logo-ink.png" alt="HackProof Studio" width="1802" height="299" style="display:block;height:24px;width:auto" />
+      </a>
+      <span data-toplabel="1" style="margin-left:auto;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.1em;color:#62655F">{{ pageLabel }}</span>
+      <button type="button" onClick="{{ openMenu }}" aria-expanded="{{ menuExpanded }}" aria-controls="project-index" style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.1em;min-height:44px;padding:0 8px">MENU</button>
+    </div>
+  </header>
+
+  <sc-if value="{{ menuOpen }}" hint-placeholder-val="{{ false }}">
+    <div id="project-index" role="dialog" aria-modal="true" aria-label="Project index" style="position:fixed;inset:0;z-index:100;background:#0D1512;color:#F2EFE8;overflow-y:auto;animation:ovIn 320ms ease both">
+      <div style="min-height:100%;display:flex;flex-direction:column">
+        <div style="display:flex;align-items:center;gap:16px;padding:0 clamp(20px,4vw,64px);height:clamp(64px,8vw,88px);border-bottom:1px solid rgba(242,239,232,0.16)">
+          <img src="assets/logo-paper.png" alt="HackProof Studio" width="1802" height="299" style="display:block;height:26px;width:auto" />
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:rgba(242,239,232,0.6);margin-left:8px">PROJECT INDEX</span>
+          <button type="button" onClick="{{ closeMenu }}" style="margin-left:auto;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:#F2EFE8;min-height:44px;padding:0 4px">CLOSE ✕</button>
+        </div>
+        <div data-menu-body="1" style="flex:1;display:grid;grid-template-columns:1.3fr 1fr">
+          <div style="padding:clamp(28px,4vw,56px) clamp(20px,4vw,64px)">
+            <a data-menurow="1" href="/" onMouseEnter="{{ onHover }}" data-prev="FRONT DOOR / THE WHOLE STUDIO IN ONE SCROLL" style="display:flex;align-items:baseline;gap:clamp(16px,3vw,36px);width:100%;border-bottom:1px solid rgba(242,239,232,0.16);padding:clamp(14px,2vw,22px) 0;text-decoration:none;color:inherit;animation:ovRow 420ms cubic-bezier(.22,1,.36,1) both">
+              <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:rgba(242,239,232,0.6)">00</span>
+              <span data-big="1" style="font-size:clamp(2rem,4.4vw,3.5rem);line-height:1;letter-spacing:-0.035em;font-weight:500">Front door</span>
+            </a>
+            <a data-menurow="1" href="/work" onMouseEnter="{{ onHover }}" data-prev="SELECTED WORK / THIRTY-NINE PROJECTS" style="display:flex;align-items:baseline;gap:clamp(16px,3vw,36px);width:100%;border-bottom:1px solid rgba(242,239,232,0.16);padding:clamp(14px,2vw,22px) 0;text-decoration:none;color:inherit;animation:ovRow 420ms cubic-bezier(.22,1,.36,1) both">
+              <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:rgba(242,239,232,0.6)">01</span>
+              <span data-big="1" style="font-size:clamp(2rem,4.4vw,3.5rem);line-height:1;letter-spacing:-0.035em;font-weight:500">Selected work</span>
+            </a>
+            <a data-menurow="1" href="/services" onMouseEnter="{{ onHover }}" data-prev="SERVICES / THREE WAYS IN" style="display:flex;align-items:baseline;gap:clamp(16px,3vw,36px);width:100%;border-bottom:1px solid rgba(242,239,232,0.16);padding:clamp(14px,2vw,22px) 0;text-decoration:none;color:inherit;animation:ovRow 420ms cubic-bezier(.22,1,.36,1) 60ms both">
+              <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:rgba(242,239,232,0.6)">02</span>
+              <span data-big="1" style="font-size:clamp(2rem,4.4vw,3.5rem);line-height:1;letter-spacing:-0.035em;font-weight:500">Services</span>
+            </a>
+            <a data-menurow="1" href="/security" onMouseEnter="{{ onHover }}" data-prev="SECURITY / SPECIALIST CAPABILITY" style="display:flex;align-items:baseline;gap:clamp(16px,3vw,36px);width:100%;border-bottom:1px solid rgba(242,239,232,0.16);padding:clamp(14px,2vw,22px) 0;text-decoration:none;color:inherit;animation:ovRow 420ms cubic-bezier(.22,1,.36,1) 120ms both">
+              <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:rgba(242,239,232,0.6)">03</span>
+              <span data-big="1" style="font-size:clamp(2rem,4.4vw,3.5rem);line-height:1;letter-spacing:-0.035em;font-weight:500">Security</span>
+            </a>
+            <a data-menurow="1" href="/studio" onMouseEnter="{{ onHover }}" data-prev="STUDIO / ONE PERSON ACCOUNTABLE" style="display:flex;align-items:baseline;gap:clamp(16px,3vw,36px);width:100%;border-bottom:1px solid rgba(242,239,232,0.16);padding:clamp(14px,2vw,22px) 0;text-decoration:none;color:inherit;animation:ovRow 420ms cubic-bezier(.22,1,.36,1) 180ms both">
+              <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:rgba(242,239,232,0.6)">04</span>
+              <span data-big="1" style="font-size:clamp(2rem,4.4vw,3.5rem);line-height:1;letter-spacing:-0.035em;font-weight:500">The studio</span>
+            </a>
+            <a data-menurow="1" href="/open-brief" onMouseEnter="{{ onHover }}" data-prev="OPEN BRIEF / FOUR STEPS" style="display:flex;align-items:baseline;gap:clamp(16px,3vw,36px);width:100%;padding:clamp(14px,2vw,22px) 0;text-decoration:none;color:inherit;animation:ovRow 420ms cubic-bezier(.22,1,.36,1) 240ms both">
+              <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:#FF5A3C">05</span>
+              <span data-big="1" style="font-size:clamp(2rem,4.4vw,3.5rem);line-height:1;letter-spacing:-0.035em;font-weight:500;color:#FF5A3C">Open brief</span>
+              <span style="margin-left:auto;font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.12em;color:#FF5A3C;display:inline-flex;align-items:center;gap:8px"><span style="width:5px;height:5px;background:#FF5A3C;display:block"></span>YOU ARE HERE</span>
+            </a>
+          </div>
+          <div data-menu-right="1" style="border-left:1px solid rgba(242,239,232,0.16);padding:clamp(28px,4vw,56px) clamp(20px,4vw,64px);display:flex;flex-direction:column">
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:rgba(242,239,232,0.6)">PREVIEW</span>
+            <div style="flex:1;margin-top:18px;min-height:240px;border:1px solid rgba(242,239,232,0.16);background:repeating-linear-gradient(135deg,rgba(242,239,232,0.07) 0 6px,rgba(242,239,232,0.02) 6px 12px);display:flex;align-items:flex-end;padding:clamp(14px,2vw,20px)">
+              <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:rgba(242,239,232,0.6)">{{ previewLabel }}</span>
+            </div>
+            <div style="margin-top:20px;display:flex;flex-direction:column;gap:8px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:rgba(242,239,232,0.6)">
+              <span>INDEPENDENT WEBSITE DESIGN + SECURITY STUDIO</span>
+              <span>AVAILABLE / Q4</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </sc-if>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1440,&quot;height&quot;:120},&quot;current&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;&quot;,&quot;work&quot;,&quot;services&quot;,&quot;security&quot;,&quot;studio&quot;,&quot;brief&quot;],&quot;default&quot;:&quot;&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;pageLabel&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;HACKPROOF STUDIO&quot;,&quot;tsType&quot;:&quot;string&quot;}}">
+class Component extends DCLogic {
+  state = { menuOpen: false, hover: "SELECTED WORK / THIRTY-NINE PROJECTS" };
+
+  openMenu = () => this.setState({ menuOpen: true });
+  closeMenu = () => this.setState({ menuOpen: false });
+  onHover = (e) => this.setState({ hover: e.currentTarget.dataset.prev });
+
+  onKey = (e) => { if (e.key === "Escape" && this.state.menuOpen) this.closeMenu(); };
+
+  componentDidMount() { window.addEventListener("keydown", this.onKey); }
+  componentWillUnmount() {
+    window.removeEventListener("keydown", this.onKey);
+    // Never leave the lock behind: an unmount mid-open would freeze the page for good.
+    document.body.style.overflow = "";
+  }
+
+  // The runtime calls componentDidUpdate(prevProps) with one argument, so a `prevState`
+  // parameter is always undefined and reading it throws. Keep the previous value here.
+  componentDidUpdate() {
+    if (this.prevMenuOpen !== this.state.menuOpen) {
+      this.prevMenuOpen = this.state.menuOpen;
+      document.body.style.overflow = this.state.menuOpen ? "hidden" : "";
+    }
+  }
+
+  renderVals() {
+    const cur = this.props.current || "";
+    return {
+      menuOpen: this.state.menuOpen,
+      menuExpanded: this.state.menuOpen ? "true" : "false",
+      previewLabel: this.state.hover,
+      pageLabel: this.props.pageLabel || "HACKPROOF STUDIO",
+      onWork: cur === "work" ? "1" : "0",
+      onServices: cur === "services" ? "1" : "0",
+      onSecurity: cur === "security" ? "1" : "0",
+      onStudio: cur === "studio" ? "1" : "0",
+      openMenu: this.openMenu,
+      closeMenu: this.closeMenu,
+      onHover: this.onHover
+    };
+  }
+}
+</script>
+</body>
+</html>

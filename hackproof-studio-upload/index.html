@@ -1,0 +1,2027 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Website Design + Website Security Studio | HackProof</title>
+<meta name="description" content="HackProof Studio designs and builds custom WordPress websites with security built in, plus redesigns, hardening and malware recovery. Start a project brief." />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<link rel="canonical" href="https://hackproofwp.com/" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="HackProof Studio" />
+<meta property="og:title" content="Websites built to be remembered, and built to last." />
+<meta property="og:description" content="Independent website design and security studio. Custom WordPress builds, redesigns and hardening, run by one accountable person." />
+<meta property="og:url" content="https://hackproofwp.com/" />
+<meta property="og:image" content="https://hackproofwp.com/assets/share-card.jpg" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="HackProof Studio — independent website design and security studio" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Websites built to be remembered, and built to last." />
+<meta name="twitter:description" content="Independent website design and security studio. Custom WordPress builds, redesigns and hardening." />
+<meta name="twitter:image" content="https://hackproofwp.com/assets/share-card.jpg" />
+<meta name="twitter:image:alt" content="HackProof Studio — independent website design and security studio" />
+<link rel="icon" href="/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png" />
+<link rel="manifest" href="site.webmanifest" />
+<meta name="theme-color" content="#F2EFE8" />
+<script src="js/hp-offline.js" defer></script>
+<!-- reCAPTCHA v3 (invisible). This page carries the second brief form. -->
+<script src="https://www.google.com/recaptcha/api.js?render=6LdgpZItAAAAAFyEUijHWF5-olSk_I34Ln_DbaPz" async defer></script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-3TXVNF6YDR"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  if (!window.__gaBooted) {
+    window.__gaBooted = true;
+    gtag('js', new Date());
+    gtag('config', 'G-3TXVNF6YDR');
+  }
+</script>
+<!-- Hotjar Tracking Code for Hackproof Studio -->
+<script>
+  if (!window.__hjBooted) {
+    window.__hjBooted = true;
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:6765824,hjsv:6};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+  }
+</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://hackproofwp.com/#website","url":"https://hackproofwp.com/","name":"HackProof Studio","publisher":{"@id":"https://hackproofwp.com/#studio"},"inLanguage":"en"},{"@type":"ProfessionalService","@id":"https://hackproofwp.com/#studio","name":"HackProof Studio","url":"https://hackproofwp.com/","email":"info@hackproofwp.com","description":"Independent website design and security studio building custom WordPress websites with security integrated from the start.","founder":{"@id":"https://hackproofwp.com/#founder"},"knowsAbout":["Website design","WordPress development","Website security","WordPress hardening","Malware removal"],"areaServed":"Worldwide","hasOfferCatalog":{"@type":"OfferCatalog","name":"Services","itemListElement":[{"@type":"Offer","itemOffered":{"@type":"Service","name":"Custom website design and build"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Website redesign"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Website security"}}]}},{"@type":"Person","@id":"https://hackproofwp.com/#founder","name":"Bulbul Ahmed","jobTitle":"Founder","worksFor":{"@id":"https://hackproofwp.com/#studio"},"image":"https://hackproofwp.com/assets/founder-portrait.jpg"}]}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preload" href="fonts/everett-regular.ttf" as="font" type="font/ttf" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400&display=swap" />
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+<style>
+  @font-face { font-family: "TWK Everett"; src: url("fonts/everett-regular.ttf") format("truetype"); font-weight: 400; font-style: normal; font-display: swap; }
+  @font-face { font-family: "TWK Everett"; src: url("fonts/everett-regular.ttf") format("truetype"); font-weight: 500; font-style: normal; font-display: swap; }
+  html { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; scroll-behavior: smooth; }
+  body { margin: 0; background: #F2EFE8; color: #151614; font-family: "TWK Everett", "Helvetica Neue", Arial, sans-serif; font-weight: 400; font-feature-settings: "kern" 1, "liga" 1; text-wrap: pretty; overflow-x: hidden; }
+  * { box-sizing: border-box; }
+  a { color: #151614; text-decoration-thickness: 1px; text-underline-offset: 4px; }
+  a:hover { color: #FF5A3C; }
+  ::selection { background: #FF5A3C; color: #151614; }
+  :focus-visible { outline: 2px solid #FF5A3C; outline-offset: 3px; }
+  button { font: inherit; color: inherit; background: none; border: none; padding: 0; cursor: pointer; }
+  input, textarea { font: inherit; color: inherit; }
+  input::placeholder, textarea::placeholder { color: #62655F; }
+
+  @keyframes nudge { 0%,100% { transform: translateY(0); opacity: .55 } 50% { transform: translateY(5px); opacity: 1 } }
+  [data-cue] { animation: nudge 2.6s cubic-bezier(0.4,0,0.2,1) infinite; }
+  @media (prefers-reduced-motion: reduce) { [data-cue] { animation: none; } }
+  @keyframes ovIn { from { opacity: 0; } to { opacity: 1; } }
+  @keyframes ovRow { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
+  @keyframes panelIn { from { opacity: 0; transform: translateY(-8px); } to { opacity: 1; transform: none; } }
+
+  [data-field] { width: 100%; background: transparent; border: none; border-bottom: 1px solid #D8D3C8; padding: 12px 0; font-size: 17px; line-height: 1.4; outline: none; transition: border-color 200ms ease; }
+  [data-field]:focus { border-color: #151614; }
+  [data-field]::placeholder { color: #9A968C; }
+  [data-chip] { transition: background 180ms ease, border-color 180ms ease, color 180ms ease; }
+  @keyframes boxIn { from { opacity: 0; } to { opacity: 1; } }
+  [data-prevshot] { animation: boxIn 320ms ease both; }
+  [data-prevshot] { background-size: contain; }
+  [data-prevshot][data-prevfit="cover"] { background-size: cover; background-position: center 20%; }
+  [data-chip]:hover { border-color: #151614; }
+  [data-card] { transition: border-color 240ms ease, transform 340ms cubic-bezier(.22,.61,.36,1); }
+  [data-card]:hover { border-color: rgba(255,90,60,0.6); transform: translateY(-3px); }
+  [data-card]:hover [data-cardcta] { color: #FF5A3C !important; }
+  [data-card]:hover [data-arrow] { transform: translate(3px,-3px); }
+  [data-wshot] { opacity: 0; transition: opacity 420ms cubic-bezier(.22,1,.36,1); }
+  @keyframes studioWipe {
+    0% { clip-path: inset(0 36.7% 0 0); opacity: 1; }
+    26% { clip-path: inset(0 5.9% 0 0); opacity: 1; }
+    41% { clip-path: inset(0 5.9% 0 0); opacity: 1; }
+    47%, 100% { clip-path: inset(0 5.9% 0 0); opacity: 0; }
+  }
+  [data-mark-o] { opacity: 0; clip-path: inset(0 36.7% 0 0); transition: opacity 320ms ease; animation: studioWipe 9s cubic-bezier(.32,.1,.55,.95) 1.2s infinite both; }
+  a:hover [data-mark-o] { opacity: 1; clip-path: inset(0 5.9% 0 0); animation: none; }
+  @media (prefers-reduced-motion: reduce) {
+    [data-mark-o] { animation: none; opacity: 0; }
+  }
+  [data-portrait-img], [data-secimg-img] { transition: transform 900ms cubic-bezier(.22,.61,.36,1), filter 700ms ease; }
+  [data-portrait]:hover [data-portrait-img] { transform: scale(1.055) !important; }
+  [data-secfig]:hover [data-secimg-img] { transform: scale(1.055) !important; filter: brightness(1.18) contrast(1.04); }
+  [data-portrait], [data-secfig] { transition: border-color 320ms ease; }
+  [data-portrait]:hover { border-color: #FF5A3C; }
+  [data-secfig]:hover { border-color: rgba(255,90,60,0.75); }
+  [data-portrait] [data-portrait-rule], [data-secfig] [data-secrule] { transition: transform 620ms cubic-bezier(.22,1,.36,1); }
+  [data-portrait]:hover [data-portrait-rule], [data-secfig]:hover [data-secrule] { transform: scaleX(1) !important; }
+  @media (hover: none) {
+    [data-portrait-rule], [data-secrule] { transform: scaleX(1) !important; }
+  }
+  [data-wshot][data-on="1"] { opacity: 1; }
+  @media (min-width: 1024px) and (max-width: 1300px) {
+    [data-cardfoot] { flex-wrap: wrap; row-gap: 6px; }
+    [data-cardfoot] > span:first-child { white-space: normal !important; overflow: visible !important; text-overflow: clip !important; line-height: 1.6; }
+    [data-cardfoot] [data-cardcta] { margin-left: 0 !important; }
+  }
+  [data-chip][data-on="1"] { background: #151614 !important; border-color: #151614 !important; color: #F2EFE8 !important; }
+  [data-brief-primary]:hover { background: #FF5A3C !important; color: #F2EFE8 !important; }
+  [data-brief-ghost]:hover { border-color: #FF5A3C !important; color: #FF5A3C !important; }
+  [data-btn-primary]:hover { background: #151614 !important; color: #F2EFE8 !important; }
+  [data-btn-dark]:hover { background: #F2EFE8 !important; color: #FF5A3C !important; }
+  [data-ghost]:hover { border-color: #FF5A3C !important; color: #FF5A3C !important; }
+  [data-btn-ghost]:hover { background: #151614 !important; color: #F2EFE8 !important; }
+  [data-arrow] { display: inline-block; transition: transform 200ms cubic-bezier(0.22,0.61,0.36,1); }
+  [data-link]:hover [data-arrow] { transform: translate(3px,-3px); }
+  [data-link-down]:hover [data-arrow] { transform: translateY(3px); }
+  [data-navrow] { transition: color 180ms ease, padding-left 240ms cubic-bezier(0.22,0.61,0.36,1); }
+  [data-navrow]:hover, [data-navrow][data-on="1"] { color: #FF5A3C; padding-left: 12px; }
+  [data-navrow] [data-navarrow] { opacity: 0; transform: translate(-8px,8px) rotate(-10deg); transition: opacity 220ms ease, transform 320ms cubic-bezier(.22,1,.36,1); }
+  [data-navrow]:hover [data-navarrow], [data-navrow]:focus-visible [data-navarrow] { opacity: 1; transform: none; }
+  [data-navrow] [data-navarrowon] { opacity: 1; transform: none; }
+  [data-navrow] [data-navnum] { transition: color 200ms ease; }
+  [data-navrow]:hover [data-navnum] { color: #FF5A3C; }
+  [data-navrow][data-navcur] { padding-left: 0 !important; }
+  [data-row]:hover [data-rowtitle] { color: #FF5A3C; }
+  [data-media] { overflow: hidden; }
+  [data-media] > span { transition: transform 700ms cubic-bezier(0.22,0.61,0.36,1); display: block; width: 100%; height: 100%; }
+  [data-project]:hover [data-media] > span { transform: scale(1.03); }
+  [data-nav-a][data-on="1"] { color: #FF5A3C; }
+  [data-nav-a]:hover { color: #FF5A3C; }
+  [data-link-down]:hover { color: #FF5A3C; border-color: #FF5A3C !important; }
+  [data-footnav] button:hover, [data-footmail]:hover { color: #FF5A3C !important; }
+  [data-footbrief] { transition: color 180ms ease; }
+  [data-footbrief]:hover { color: #F2EFE8 !important; }
+  [data-panel] { animation: panelIn 260ms cubic-bezier(0.22,0.61,0.36,1) both; }
+  [data-seg][data-on="1"] { background: #FF5A3C !important; }
+  [data-stab] { transition: color 200ms ease, border-color 200ms ease, background 200ms ease; }
+  [data-stab]:hover { border-color: #151614; }
+  [data-svcpanel] { animation: panelIn 300ms cubic-bezier(0.22,0.61,0.36,1) both; }
+  [data-svcpanel]:focus { outline: none; }
+  [data-wrow] { transition: color 220ms ease, opacity 220ms ease, padding-left 300ms cubic-bezier(0.22,0.61,0.36,1); }
+  [data-wrow][data-on="0"] { opacity: 0.34; }
+  [data-wrow][data-on="1"] { padding-left: 16px; }
+  [data-wrow][data-on="1"] [data-wnum] { color: #FF5A3C !important; }
+  [data-wrow][data-on="1"] [data-warr] { opacity: 1; transform: none; }
+  [data-warr] { opacity: 0; transform: translate(-6px,6px); transition: opacity 220ms ease, transform 220ms ease; }
+  [data-wrow]:hover { color: #151614; }
+
+  @media (max-width: 1120px) {
+    [data-footbase] { grid-template-columns: 1fr !important; justify-items: center !important; gap: 18px !important; text-align: center; }
+    [data-footbase] > * { justify-self: center !important; }
+    [data-footnav] { justify-content: center !important; gap: 12px 20px !important; }
+  }
+  @media (max-width: 1023px) {
+    [data-rail] { display: none !important; }
+    [data-shell] { padding-left: 0 !important; }
+    [data-seam] { display: none !important; }
+    [data-band] { position: static !important; width: auto !important; height: auto !important; overflow: visible !important; clip-path: none !important; margin-top: 40px; }
+    [data-band-inner] { position: relative !important; inset: auto !important; height: clamp(430px,92vw,640px); border-left: none !important; border: 1px solid #D8D3C8; }
+    [data-heroshell] { padding-right: clamp(20px,4vw,64px) !important; min-height: calc(100dvh - 65px) !important; }
+    [data-rail-proof] { grid-template-columns: 1fr 1fr !important; }
+    #work [data-pin] { min-height: 0 !important; }
+    [data-workgrid] { grid-template-columns: 1fr !important; }
+    [data-workgrid] > div { grid-column: 1 !important; grid-row: auto !important; }
+    [data-wpanel] { display: none !important; }
+    [data-wmobile] { display: block !important; }
+    [data-wrow][data-on="0"] { opacity: 1; }
+    [data-wrow][data-on="1"] { padding-left: 0; }
+    [data-warr] { opacity: 1; transform: none; }
+    [data-pos] { grid-template-columns: 1fr !important; gap: 24px !important; }
+    [data-pos] > * { grid-column: 1 / -1 !important; grid-row: auto !important; }
+    [data-marks] { flex-direction: column !important; gap: 24px !important; }
+    [data-svcgrid] { grid-template-columns: 1fr !important; gap: 32px !important; }
+    [data-secshell] { min-height: 0 !important; }
+    [data-strip] { flex-direction: column !important; align-items: flex-start !important; gap: 14px !important; }
+    [data-strip] span[data-sep] { display: none !important; }
+    [data-strip] > span { margin-left: 0 !important; }
+    [data-stabs] { flex-direction: column !important; align-items: stretch !important; }
+    [data-pair] { grid-template-columns: 1fr !important; }
+    [data-pair] > div { margin-top: 0 !important; }
+    [data-sec-grid] { grid-template-columns: 1fr !important; }
+    [data-sec-grid] > div:last-child { margin-top: 0 !important; }
+    [data-sec-grid] [data-stagger] { margin-left: 0 !important; }
+    [data-doors] { grid-template-columns: 1fr !important; }
+    [data-door2] { padding-left: clamp(24px,3vw,40px) !important; }
+    [data-condgrid] { grid-template-columns: 1fr 1fr !important; }
+    [data-qrow] { grid-template-columns: 1fr !important; gap: 14px !important; }
+    [data-fithead] { flex-direction: column !important; align-items: flex-start !important; }
+    [data-index-body] { grid-template-columns: 1fr !important; }
+    [data-index-right] { border-left: none !important; border-top: 1px solid rgba(242,239,232,0.16); }
+    [data-bleed] { margin-right: 0 !important; }
+    [data-svc-meta] { grid-template-columns: 1fr 1fr !important; }
+  }
+  @media (max-width: 639px) {
+    [data-spread] { grid-template-columns: 1fr !important; grid-template-rows: 32vh 1fr !important; }
+    [data-spreadimg] { order: -1; padding: 0 clamp(20px,4vw,64px) clamp(16px,2vh,24px) !important; }
+    [data-spreadtext] { padding: clamp(20px,3vh,32px) clamp(20px,4vw,64px) !important; }
+  }
+  @media (max-width: 640px) {
+    [data-secgrid] { grid-template-columns: 1fr !important; }
+    [data-secimg] > div { width: 100% !important; aspect-ratio: 16/9 !important; }
+    [data-condgrid] { grid-template-columns: 1fr !important; }
+  }
+  @media (max-width: 767px) {
+    [data-top-desktop] { display: none !important; }
+    [data-top-mobile] { display: flex !important; }
+    [data-index-nav] span[data-big] { font-size: 34px !important; }
+    [data-footbase] { grid-template-columns: 1fr !important; justify-items: center !important; gap: 18px !important; text-align: center; }
+    [data-footbase] > * { justify-self: center !important; }
+    [data-footnav] { justify-content: center !important; }
+  }
+  [data-run] b { font-weight: 400; color: #F2EFE8; }
+  [data-run] i { font-style: normal; color: #FF5A3C; padding: 0 0.34em; }
+  [data-qrow] [data-qtitle] { transition: color .25s ease; }
+  [data-qrow]:hover [data-qtitle] { color: #FF5A3C; }
+  [data-row] button { text-align: left; }
+  [data-detail] { display: grid; grid-template-rows: 0fr; transition: grid-template-rows .5s cubic-bezier(.22,1,.36,1); }
+  [data-row][data-open="1"] [data-detail] { grid-template-rows: 1fr; }
+  [data-detail] > div { overflow: hidden; min-height: 0; }
+  [data-detail-inner] { opacity: 0; transform: translateY(10px); transition: opacity .38s ease .1s, transform .44s cubic-bezier(.22,1,.36,1) .08s; }
+  [data-row][data-open="1"] [data-detail-inner] { opacity: 1; transform: none; }
+  [data-row] [data-rowname] { transition: color .3s ease, letter-spacing .4s cubic-bezier(.22,1,.36,1); }
+  [data-row][data-open="1"] [data-rowname] { color: #151614; }
+  [data-row]:not([data-open="1"]) [data-rowname] { color: #62655F; }
+  [data-row]:not([data-open="1"]):hover [data-rowname] { color: #151614; }
+  [data-row] [data-marker] { transition: background .3s ease, border-color .3s ease, transform .4s cubic-bezier(.22,1,.36,1); }
+  [data-row][data-open="1"] [data-marker] { background: #FF5A3C !important; border-color: #FF5A3C !important; transform: scale(1.15); }
+  [data-seg] { transition: background .35s ease, opacity .35s ease; }
+  [data-seg][data-on="1"] { background: #FF5A3C !important; }
+  [data-seg]:not([data-on="1"]):hover { background: #A9A69C !important; }
+  @media (max-height: 720px) {
+    [data-spreadtext] h2 { font-size: 1.5rem !important; line-height: 1.05 !important; margin: 0 !important; }
+    [data-spreadtext] p { font-size: 14px !important; line-height: 1.45 !important; margin-top: 12px !important; }
+    [data-spreadtext] > div:nth-child(2) { padding: 22px 0 26px !important; }
+    [data-spreadtext] > div:last-child { padding-top: 12px !important; }
+    [data-spreadtext] > div:last-child span[style*="2rem"], [data-spreadtext] > div:last-child > div > div > span:first-child { font-size: 1.25rem !important; }
+    [data-ledger] h2 { font-size: 1.9rem !important; }
+    [data-rowhead] { padding: 5px 0 !important; }
+    [data-detail-inner] { padding-bottom: 10px !important; }
+    [data-detail-inner] p, [data-detail-inner] div div { font-size: 14px !important; line-height: 1.45 !important; }
+    [data-ledger] > div:last-child > div:last-child p { font-size: 14px !important; }
+    [data-proccta] { margin-bottom: 16px !important; gap: 10px 24px !important; }
+    [data-proccta] p { font-size: 14px !important; }
+    [data-proccta] button { min-height: 44px !important; padding: 0 20px !important; }
+  }
+  @media (max-width: 860px) {
+    [data-ledger] { height: auto !important; min-height: 100vh !important; }
+    [data-detailgrid] { grid-template-columns: 1fr !important; gap: 20px !important; }
+    [data-rowhead] { grid-template-columns: 46px 1fr auto !important; }
+    [data-ruler-labels] { display: none !important; }
+  }
+
+  @media (min-width: 1024px) and (max-height: 760px) {
+    [data-spreadtext] h2 { font-size: 2.1rem !important; }
+    [data-spreadtext] p { font-size: 15px !important; line-height: 1.5 !important; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+  }
+
+  /* --- responsive + touch fixes ------------------------------------------ */
+  /* The mobile top bar overflowed at 375px on every page with a label longer
+     than "WORK" (services/security 401px, studio 385px). The label shrinks
+     first, then drops out entirely, so MENU and START always stay reachable. */
+  @media (max-width: 767px) {
+    [data-top-mobile] > div { gap: 8px !important; padding: 0 12px !important; }
+    [data-toplabel] { min-width: 0; overflow: hidden; white-space: nowrap; flex-shrink: 1; }
+  }
+  @media (max-width: 430px) {
+    [data-toplabel] { display: none !important; }
+  }
+  /* Hit areas below the 24px minimum, enlarged without moving anything:
+     the process-stage bars render 8px tall and the footer email link 14px. */
+  [data-segwrap] { position: relative; }
+  [data-segwrap]::after { content: ""; position: absolute; left: 0; right: 0; top: -14px; bottom: -14px; }
+  [data-footmail] { position: relative; }
+  [data-footmail]::after { content: ""; position: absolute; left: -6px; right: -6px; top: -9px; bottom: -9px; }
+
+  /* The desktop header is still shown from 768px up, where its nav ran 3px past
+     the viewport on the longer pages. Tighten the rhythm across the tablet band
+     rather than dropping to the compact bar and changing the design at 768. */
+  @media (max-width: 900px) {
+    [data-top-desktop] > div { gap: 20px !important; padding-left: 20px !important; padding-right: 20px !important; }
+    [data-top-desktop] nav { gap: 18px !important; }
+  }
+  /* The vertical rail CTA renders 23px wide, a hair under the 24px minimum.
+     Widen the hit box only; the visible bar is unchanged. */
+  [data-rail] a, [data-rail] button { position: relative; }
+  [data-rail] a::after, [data-rail] button::after { content: ""; position: absolute; left: -6px; right: -6px; top: 0; bottom: 0; }
+  /* reCAPTCHA badge hidden. Google permits this only when the disclosure below
+     is shown instead — see the notice beside the form. Removing the notice
+     without restoring the badge breaks their terms. */
+  .grecaptcha-badge { visibility: hidden; }
+
+  /* --- mobile-only adjustments ------------------------------------------- */
+  @media (max-width: 767px) {
+    /* Header: logo keeps the left edge, MENU and START pack in beside it
+       instead of being pushed to the right by the label's auto margin. */
+    [data-toplabel] { margin-left: 0 !important; }
+
+    /* No depth-of-field blur on mobile. The effect writes inline filter styles
+       from JS, so this has to be !important to win. */
+    [data-sec], [data-dof] { filter: none !important; }
+
+    /* Both doors line up on the same left edge. The 24px indent is a gutter for
+       the desktop two-column layout and only misaligns them once stacked. */
+    [data-door2] { padding-left: 0 !important; }
+  }
+</style>
+</helmet>
+
+<div style="background:#F2EFE8;position:relative">
+  <a href="#main" style="position:absolute;left:-9999px;top:0;z-index:200;background:#151614;color:#F2EFE8;padding:14px 20px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em" onFocus="{{ onSkipFocus }}" onBlur="{{ onSkipBlur }}">SKIP TO CONTENT</a>
+
+  <div data-curtain="1" aria-hidden="true" style="display:none;position:fixed;inset:0;z-index:120;background:#0D1512;align-items:center;justify-content:center;pointer-events:none">
+    <img data-curtain-logo="1" src="assets/logo-paper-web.png" alt="HackProof Studio" width="720" height="119" loading="lazy" decoding="async" style="display:block;height:clamp(26px,3.4vw,44px);width:auto" />
+  </div>
+
+  <aside data-rail="1" aria-hidden="true" style="position:fixed;top:0;left:0;bottom:0;width:72px;border-right:1px solid #D8D3C8;background:#F2EFE8;z-index:50;display:flex;flex-direction:column;align-items:center;padding:26px 0 22px">
+    <span style="width:5px;height:5px;background:#FF5A3C;display:block"></span>
+    <div style="margin-top:24px;writing-mode:vertical-rl;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:#151614">{{ activeName }}</div>
+    <div style="margin-top:22px;position:relative;width:1px;flex:1;background:#D8D3C8">
+      <div data-progress="1" style="position:absolute;top:0;left:0;width:1px;height:100%;background:#FF5A3C;transform:scaleY(0);transform-origin:top"></div>
+    </div>
+    <button type="button" onClick="{{ onNav }}" data-target="brief" style="margin-top:22px;writing-mode:vertical-rl;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;padding:8px 4px;min-height:96px">START <span data-arrow="1">↗</span></button>
+  </aside>
+
+  <div data-shell="1" style="padding-left:72px">
+    <header data-top-desktop="1" style="position:sticky;top:0;z-index:40;background:rgba(242,239,232,0.92);backdrop-filter:blur(6px);border-bottom:1px solid #D8D3C8">
+      <div style="max-width:1440px;margin:0 auto;padding:0 clamp(20px,4vw,64px);height:88px;display:flex;align-items:center;gap:clamp(20px,4vw,48px)">
+        <a href="#top" style="display:flex;align-items:center;text-decoration:none;flex:none">
+          <span data-mark="1" style="position:relative;display:block;height:34px;aspect-ratio:720 / 119">
+            <img src="assets/logo-ink-web.png" alt="HackProof Studio" width="720" height="119" decoding="async" style="display:block;height:100%;width:auto" />
+            <img data-mark-o="1" aria-hidden="true" src="assets/logo-studio-coral.png" alt="" width="1440" height="239" decoding="async" style="position:absolute;left:0;top:0;width:100%;height:100%;pointer-events:none" />
+          </span>
+        </a>
+        <button type="button" data-link-down="1" onClick="{{ onNav }}" data-target="work" style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;border-bottom:1px solid #D8D3C8;padding:6px 0;min-height:44px">VIEW SELECTED WORK <span data-arrow="1">↓</span></button>
+        <nav aria-label="Sections" style="margin-left:auto;display:flex;align-items:center;gap:28px">
+          <a data-nav-a="1" href="/work" style="font-size:14px;font-weight:500;letter-spacing:0.01em;min-height:44px;display:inline-flex;align-items:center;text-decoration:none;color:inherit">Work</a>
+          <a data-nav-a="1" href="/services" style="font-size:14px;font-weight:500;letter-spacing:0.01em;min-height:44px;display:inline-flex;align-items:center;text-decoration:none;color:inherit">Services</a>
+          <a data-nav-a="1" href="/security" style="font-size:14px;font-weight:500;letter-spacing:0.01em;min-height:44px;display:inline-flex;align-items:center;text-decoration:none;color:inherit">Security</a>
+          <a data-nav-a="1" href="/studio" style="font-size:14px;font-weight:500;letter-spacing:0.01em;min-height:44px;display:inline-flex;align-items:center;text-decoration:none;color:inherit">Studio</a>
+          <button type="button" onClick="{{ openIndex }}" aria-expanded="{{ indexExpanded }}" aria-controls="project-index" style="display:flex;align-items:center;gap:10px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;border:1px solid #151614;padding:0 16px;min-height:44px">MENU <span style="color:#FF5A3C;font-size:14px">+</span></button>
+        </nav>
+      </div>
+    </header>
+
+    <header data-top-mobile="1" style="display:none;position:sticky;top:0;z-index:40;background:rgba(242,239,232,0.94);backdrop-filter:blur(6px);border-bottom:1px solid #D8D3C8">
+      <div style="padding:0 16px;height:64px;display:flex;align-items:center;gap:12px">
+        <a href="#top" style="display:flex;align-items:center;text-decoration:none;flex:none">
+          <span data-mark="1" style="position:relative;display:block;height:24px;aspect-ratio:720 / 119">
+            <img src="assets/logo-ink-web.png" alt="HackProof Studio" width="720" height="119" decoding="async" style="display:block;height:100%;width:auto" />
+            <img data-mark-o="1" aria-hidden="true" src="assets/logo-studio-coral.png" alt="" width="1440" height="239" decoding="async" style="position:absolute;left:0;top:0;width:100%;height:100%;pointer-events:none" />
+          </span>
+        </a>
+        <span data-toplabel="1" style="margin-left:auto;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.1em;color:#62655F">{{ activeName }}</span>
+        <button type="button" onClick="{{ openIndex }}" aria-expanded="{{ indexExpanded }}" aria-controls="project-index" style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.1em;min-height:44px;padding:0 8px">MENU</button>
+        <button type="button" onClick="{{ openBrief }}" style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.1em;background:#FF5A3C;color:#F2EFE8;min-height:44px;padding:0 14px">START</button>
+      </div>
+    </header>
+
+    <main id="main">
+      <section id="hero" data-sec="1" data-num="01" data-name="HOME" data-screen-label="Hero" style="position:relative;overflow:hidden">
+        <div data-heroshell="1" style="max-width:1440px;margin:0 auto;padding:clamp(20px,3vw,32px) clamp(20px,4vw,64px) clamp(24px,3vw,40px);padding-right:clamp(70px,calc(30vw + 50px),490px);min-height:calc(100dvh - 89px);display:flex;flex-direction:column">
+          <div data-mid="1" style="flex:1;display:flex;flex-direction:column;justify-content:center;padding:clamp(24px,4vw,56px) 0">
+            <div data-reveal="1" style="display:flex;flex-wrap:wrap;gap:12px 20px;align-items:center">
+              <span style="width:28px;height:1px;background:#FF5A3C;display:block"></span>
+              <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:#62655F">INDEPENDENT WEBSITE DESIGN + SECURITY STUDIO</span>
+            </div>
+            <h1 style="margin:clamp(20px,3vw,32px) 0 0;font-size:clamp(2.75rem,6.2vw,6.75rem);line-height:0.9;letter-spacing:-0.05em;font-weight:500">
+              <span style="display:block;overflow:hidden;padding-bottom:0.06em"><span data-hero-line="1" style="display:block">Websites built</span></span>
+              <span style="display:block;overflow:hidden;padding-bottom:0.06em"><span data-hero-line="1" style="display:block">to be remembered,</span></span>
+              <span style="display:block;overflow:hidden;padding-bottom:0.06em"><span data-hero-line="1" style="display:block;position:relative;color:#62655F;width:max-content">and built to last.<span data-fill="1" aria-hidden="true" style="position:absolute;left:0;top:0;color:#FF5A3C;white-space:nowrap;clip-path:inset(100% 0 0 0)">and built to last.</span></span></span>
+            </h1>
+            <div data-reveal="1" style="display:flex;flex-wrap:wrap;gap:16px;margin-top:clamp(28px,3.5vw,44px)">
+              <button type="button" data-btn-primary="1" onClick="{{ onNav }}" data-target="brief" style="font-size:14px;font-weight:500;letter-spacing:0.02em;min-height:52px;padding:0 30px;background:#FF5A3C;color:#F2EFE8;border-radius:3px;transition:background 200ms ease,color 200ms ease">START A PROJECT</button>
+              <button type="button" data-btn-ghost="1" onClick="{{ onNav }}" data-target="work" style="font-size:14px;font-weight:500;letter-spacing:0.02em;min-height:52px;padding:0 28px;border:1px solid #151614;border-radius:3px;transition:background 200ms ease,color 200ms ease">VIEW SELECTED WORK</button>
+            </div>
+          </div>
+
+          <div style="padding-top:clamp(20px,3vw,36px)">
+            <div data-rail-proof="1" style="display:grid;grid-template-columns:auto auto auto 1fr;gap:20px clamp(28px,4vw,64px);align-items:end;border-top:1px solid #151614;padding-top:20px">
+              <div>
+                <div style="display:flex;align-items:baseline;gap:2px"><span data-count="500" style="font-size:clamp(2.25rem,3.6vw,3.5rem);line-height:1;letter-spacing:-0.03em;font-weight:500;font-variant-numeric:tabular-nums">500</span><span style="font-size:clamp(1.25rem,2vw,2rem);line-height:1;font-weight:500;color:#FF5A3C">+</span></div>
+                <div style="margin-top:10px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:#62655F">WEBSITES DESIGNED</div>
+              </div>
+              <div>
+                <div style="display:flex;align-items:baseline;gap:2px"><span data-count="13" style="font-size:clamp(2.25rem,3.6vw,3.5rem);line-height:1;letter-spacing:-0.03em;font-weight:500;font-variant-numeric:tabular-nums">13</span><span style="font-size:clamp(1.25rem,2vw,2rem);line-height:1;font-weight:500;color:#FF5A3C">+</span></div>
+                <div style="margin-top:10px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:#62655F">YEARS OF EXPERIENCE</div>
+              </div>
+              <div>
+                <div style="font-size:clamp(2.25rem,3.6vw,3.5rem);line-height:1;letter-spacing:-0.03em;font-weight:500">One</div>
+                <div style="margin-top:10px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:#62655F">PERSON ACCOUNTABLE</div>
+              </div>
+              <div style="display:flex;flex-wrap:wrap;gap:12px 24px;align-items:center;justify-content:flex-end">
+                <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:#62655F">SECURE DEVELOPMENT IN EVERY BUILD</span>
+                <span style="display:flex;align-items:center;gap:10px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:#FF5A3C"><span style="width:5px;height:5px;background:#FF5A3C;display:block"></span>AVAILABLE / Q4</span>
+              </div>
+            </div>
+            <div style="margin-top:28px;display:flex;justify-content:space-between;align-items:center;gap:24px">
+              <button type="button" data-cue="1" onClick="{{ onNav }}" data-target="work" style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:#62655F;min-height:44px">SELECTED WORK ↓</button>
+            </div>
+          </div>
+
+          <div data-band="1" style="position:absolute;top:0;bottom:0;right:0;width:clamp(70px,calc(30vw + 50px),490px);overflow:hidden;clip-path:inset(0 0 0 0)">
+            <div data-band-inner="1" style="position:absolute;inset:-4%;overflow:hidden;background:#0D1512;border-left:1px solid #D8D3C8;-webkit-mask-image:linear-gradient(to bottom,transparent 0,#000 7%,#000 93%,transparent 100%);mask-image:linear-gradient(to bottom,transparent 0,#000 7%,#000 93%,transparent 100%)">
+              <div data-track="1" style="position:absolute;left:0;right:0;top:0;display:flex;flex-direction:column;gap:clamp(16px,2vw,26px);padding:clamp(16px,2vw,30px);will-change:transform">
+                <a data-card="1" href="#work" style="display:block;text-decoration:none;border-radius:5px;overflow:hidden;background:#151614;border:1px solid rgba(242,239,232,0.14);box-shadow:0 26px 54px -24px rgba(0,0,0,0.7)">
+                  <span style="display:flex;align-items:center;gap:5px;height:22px;padding:0 9px;background:#22261F;border-bottom:1px solid rgba(242,239,232,0.1)">
+                    <span style="width:6px;height:6px;border-radius:50%;background:rgba(242,239,232,0.28);display:block"></span>
+                    <span style="width:6px;height:6px;border-radius:50%;background:rgba(242,239,232,0.28);display:block"></span>
+                    <span style="width:6px;height:6px;border-radius:50%;background:rgba(242,239,232,0.28);display:block"></span>
+                  </span>
+                  <img src="assets/shot-01-monolith.jpg" alt="Monolith Real Estate — website design and build" width="1280" height="609" decoding="async" style="display:block;width:100%;height:auto" />
+                  <span style="display:flex;align-items:center;gap:10px 14px;padding:11px 12px;border-top:1px solid rgba(242,239,232,0.1)" data-cardfoot="1">
+                    <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:rgba(242,239,232,0.62);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">MONOLITH · PROPERTY DEVELOPMENT · 2026</span>
+                    <span data-cardcta="1" style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:#F2EFE8;margin-left:auto;white-space:nowrap">CASE STUDY <span data-arrow="1">↗</span></span>
+                  </span>
+                </a>
+                <a data-card="1" href="#work" style="display:block;text-decoration:none;border-radius:5px;overflow:hidden;background:#151614;border:1px solid rgba(242,239,232,0.14);box-shadow:0 26px 54px -24px rgba(0,0,0,0.7)">
+                  <span style="display:flex;align-items:center;gap:5px;height:22px;padding:0 9px;background:#22261F;border-bottom:1px solid rgba(242,239,232,0.1)">
+                    <span style="width:6px;height:6px;border-radius:50%;background:rgba(242,239,232,0.28);display:block"></span>
+                    <span style="width:6px;height:6px;border-radius:50%;background:rgba(242,239,232,0.28);display:block"></span>
+                    <span style="width:6px;height:6px;border-radius:50%;background:rgba(242,239,232,0.28);display:block"></span>
+                  </span>
+                  <img src="assets/shot-02-aboutsmiles.jpg" alt="About Smiles Sydney, dental group — website design and build" width="1280" height="684" loading="lazy" decoding="async" style="display:block;width:100%;height:auto" />
+                  <span style="display:flex;align-items:center;gap:10px 14px;padding:11px 12px;border-top:1px solid rgba(242,239,232,0.1)" data-cardfoot="1">
+                    <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:rgba(242,239,232,0.62);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">ABOUT SMILES · DENTAL GROUP · 2025</span>
+                    <span data-cardcta="1" style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:#F2EFE8;margin-left:auto;white-space:nowrap">CASE STUDY <span data-arrow="1">↗</span></span>
+                  </span>
+                </a>
+                <a data-card="1" href="#work" style="display:block;text-decoration:none;border-radius:5px;overflow:hidden;background:#151614;border:1px solid rgba(242,239,232,0.14);box-shadow:0 26px 54px -24px rgba(0,0,0,0.7)">
+                  <span style="display:flex;align-items:center;gap:5px;height:22px;padding:0 9px;background:#22261F;border-bottom:1px solid rgba(242,239,232,0.1)">
+                    <span style="width:6px;height:6px;border-radius:50%;background:rgba(242,239,232,0.28);display:block"></span>
+                    <span style="width:6px;height:6px;border-radius:50%;background:rgba(242,239,232,0.28);display:block"></span>
+                    <span style="width:6px;height:6px;border-radius:50%;background:rgba(242,239,232,0.28);display:block"></span>
+                  </span>
+                  <img src="assets/shot-03-lexmens.jpg" alt="Lexmens Compensation Lawyers — website design and build" width="1280" height="617" loading="lazy" decoding="async" style="display:block;width:100%;height:auto" />
+                  <span style="display:flex;align-items:center;gap:10px 14px;padding:11px 12px;border-top:1px solid rgba(242,239,232,0.1)" data-cardfoot="1">
+                    <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:rgba(242,239,232,0.62);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">LEXMENS · LEGAL PRACTICE · 2025</span>
+                    <span data-cardcta="1" style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:#F2EFE8;margin-left:auto;white-space:nowrap">CASE STUDY <span data-arrow="1">↗</span></span>
+                  </span>
+                </a>
+                <a data-card="1" href="#work" style="display:block;text-decoration:none;border-radius:5px;overflow:hidden;background:#151614;border:1px solid rgba(242,239,232,0.14);box-shadow:0 26px 54px -24px rgba(0,0,0,0.7)">
+                  <span style="display:flex;align-items:center;gap:5px;height:22px;padding:0 9px;background:#22261F;border-bottom:1px solid rgba(242,239,232,0.1)">
+                    <span style="width:6px;height:6px;border-radius:50%;background:rgba(242,239,232,0.28);display:block"></span>
+                    <span style="width:6px;height:6px;border-radius:50%;background:rgba(242,239,232,0.28);display:block"></span>
+                    <span style="width:6px;height:6px;border-radius:50%;background:rgba(242,239,232,0.28);display:block"></span>
+                  </span>
+                  <img src="assets/shot-04-spacesolar.jpg" alt="Space Solar — website design and build" width="1280" height="596" loading="lazy" decoding="async" style="display:block;width:100%;height:auto" />
+                  <span style="display:flex;align-items:center;gap:10px 14px;padding:11px 12px;border-top:1px solid rgba(242,239,232,0.1)" data-cardfoot="1">
+                    <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:rgba(242,239,232,0.62);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">SPACE SOLAR · SOLAR ENERGY · 2024</span>
+                    <span data-cardcta="1" style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:#F2EFE8;margin-left:auto;white-space:nowrap">CASE STUDY <span data-arrow="1">↗</span></span>
+                  </span>
+                </a>
+                <a data-card="1" href="#work" style="display:block;text-decoration:none;border-radius:5px;overflow:hidden;background:#151614;border:1px solid rgba(242,239,232,0.14);box-shadow:0 26px 54px -24px rgba(0,0,0,0.7)">
+                  <span style="display:flex;align-items:center;gap:5px;height:22px;padding:0 9px;background:#22261F;border-bottom:1px solid rgba(242,239,232,0.1)">
+                    <span style="width:6px;height:6px;border-radius:50%;background:rgba(242,239,232,0.28);display:block"></span>
+                    <span style="width:6px;height:6px;border-radius:50%;background:rgba(242,239,232,0.28);display:block"></span>
+                    <span style="width:6px;height:6px;border-radius:50%;background:rgba(242,239,232,0.28);display:block"></span>
+                  </span>
+                  <img src="assets/shot-05-ohara.jpg" alt="Dr Justine O’Hara, plastic surgeon — website design and build" width="1280" height="614" loading="lazy" decoding="async" style="display:block;width:100%;height:auto" />
+                  <span style="display:flex;align-items:center;gap:10px 14px;padding:11px 12px;border-top:1px solid rgba(242,239,232,0.1)" data-cardfoot="1">
+                    <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:rgba(242,239,232,0.62);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">DR JUSTINE O’HARA · PLASTIC SURGERY · 2026</span>
+                    <span data-cardcta="1" style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:#F2EFE8;margin-left:auto;white-space:nowrap">CASE STUDY <span data-arrow="1">↗</span></span>
+                  </span>
+                </a>
+                <a data-card="1" href="#work" style="display:block;text-decoration:none;border-radius:5px;overflow:hidden;background:#151614;border:1px solid rgba(242,239,232,0.14);box-shadow:0 26px 54px -24px rgba(0,0,0,0.7)">
+                  <span style="display:flex;align-items:center;gap:5px;height:22px;padding:0 9px;background:#22261F;border-bottom:1px solid rgba(242,239,232,0.1)">
+                    <span style="width:6px;height:6px;border-radius:50%;background:rgba(242,239,232,0.28);display:block"></span>
+                    <span style="width:6px;height:6px;border-radius:50%;background:rgba(242,239,232,0.28);display:block"></span>
+                    <span style="width:6px;height:6px;border-radius:50%;background:rgba(242,239,232,0.28);display:block"></span>
+                  </span>
+                  <img src="assets/shot-06-roofsmart.jpg" alt="Roof Smart Roofing — website design and build" width="1280" height="610" loading="lazy" decoding="async" style="display:block;width:100%;height:auto" />
+                  <span style="display:flex;align-items:center;gap:10px 14px;padding:11px 12px;border-top:1px solid rgba(242,239,232,0.1)" data-cardfoot="1">
+                    <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:rgba(242,239,232,0.62);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">ROOF SMART · ROOFING TRADE · 2024</span>
+                    <span data-cardcta="1" style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:#F2EFE8;margin-left:auto;white-space:nowrap">CASE STUDY <span data-arrow="1">↗</span></span>
+                  </span>
+                </a>
+                <a data-card="1" href="#work" aria-hidden="true" tabindex="-1" style="display:block;text-decoration:none;border-radius:5px;overflow:hidden;background:#151614;border:1px solid rgba(242,239,232,0.14);box-shadow:0 26px 54px -24px rgba(0,0,0,0.7)">
+                  <span style="display:flex;align-items:center;gap:5px;height:22px;padding:0 9px;background:#22261F;border-bottom:1px solid rgba(242,239,232,0.1)">
+                    <span style="width:6px;height:6px;border-radius:50%;background:rgba(242,239,232,0.28);display:block"></span>
+                    <span style="width:6px;height:6px;border-radius:50%;background:rgba(242,239,232,0.28);display:block"></span>
+                    <span style="width:6px;height:6px;border-radius:50%;background:rgba(242,239,232,0.28);display:block"></span>
+                  </span>
+                  <img src="assets/shot-01-monolith.jpg" alt="" width="1280" height="609" loading="lazy" decoding="async" style="display:block;width:100%;height:auto" />
+                  <span style="display:flex;align-items:center;gap:10px 14px;padding:11px 12px;border-top:1px solid rgba(242,239,232,0.1)" data-cardfoot="1">
+                    <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:rgba(242,239,232,0.62);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">MONOLITH · PROPERTY DEVELOPMENT · 2026</span>
+                    <span data-cardcta="1" style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:#F2EFE8;margin-left:auto;white-space:nowrap">CASE STUDY <span data-arrow="1">↗</span></span>
+                  </span>
+                </a>
+                <a data-card="1" href="#work" aria-hidden="true" tabindex="-1" style="display:block;text-decoration:none;border-radius:5px;overflow:hidden;background:#151614;border:1px solid rgba(242,239,232,0.14);box-shadow:0 26px 54px -24px rgba(0,0,0,0.7)">
+                  <span style="display:flex;align-items:center;gap:5px;height:22px;padding:0 9px;background:#22261F;border-bottom:1px solid rgba(242,239,232,0.1)">
+                    <span style="width:6px;height:6px;border-radius:50%;background:rgba(242,239,232,0.28);display:block"></span>
+                    <span style="width:6px;height:6px;border-radius:50%;background:rgba(242,239,232,0.28);display:block"></span>
+                    <span style="width:6px;height:6px;border-radius:50%;background:rgba(242,239,232,0.28);display:block"></span>
+                  </span>
+                  <img src="assets/shot-02-aboutsmiles.jpg" alt="" width="1280" height="684" loading="lazy" decoding="async" style="display:block;width:100%;height:auto" />
+                  <span style="display:flex;align-items:center;gap:10px 14px;padding:11px 12px;border-top:1px solid rgba(242,239,232,0.1)" data-cardfoot="1">
+                    <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:rgba(242,239,232,0.62);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">ABOUT SMILES · DENTAL GROUP · 2025</span>
+                    <span data-cardcta="1" style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:#F2EFE8;margin-left:auto;white-space:nowrap">CASE STUDY <span data-arrow="1">↗</span></span>
+                  </span>
+                </a>
+                <a data-card="1" href="#work" aria-hidden="true" tabindex="-1" style="display:block;text-decoration:none;border-radius:5px;overflow:hidden;background:#151614;border:1px solid rgba(242,239,232,0.14);box-shadow:0 26px 54px -24px rgba(0,0,0,0.7)">
+                  <span style="display:flex;align-items:center;gap:5px;height:22px;padding:0 9px;background:#22261F;border-bottom:1px solid rgba(242,239,232,0.1)">
+                    <span style="width:6px;height:6px;border-radius:50%;background:rgba(242,239,232,0.28);display:block"></span>
+                    <span style="width:6px;height:6px;border-radius:50%;background:rgba(242,239,232,0.28);display:block"></span>
+                    <span style="width:6px;height:6px;border-radius:50%;background:rgba(242,239,232,0.28);display:block"></span>
+                  </span>
+                  <img src="assets/shot-03-lexmens.jpg" alt="" width="1280" height="617" loading="lazy" decoding="async" style="display:block;width:100%;height:auto" />
+                  <span style="display:flex;align-items:center;gap:10px 14px;padding:11px 12px;border-top:1px solid rgba(242,239,232,0.1)" data-cardfoot="1">
+                    <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:rgba(242,239,232,0.62);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">LEXMENS · LEGAL PRACTICE · 2025</span>
+                    <span data-cardcta="1" style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:#F2EFE8;margin-left:auto;white-space:nowrap">CASE STUDY <span data-arrow="1">↗</span></span>
+                  </span>
+                </a>
+                <a data-card="1" href="#work" aria-hidden="true" tabindex="-1" style="display:block;text-decoration:none;border-radius:5px;overflow:hidden;background:#151614;border:1px solid rgba(242,239,232,0.14);box-shadow:0 26px 54px -24px rgba(0,0,0,0.7)">
+                  <span style="display:flex;align-items:center;gap:5px;height:22px;padding:0 9px;background:#22261F;border-bottom:1px solid rgba(242,239,232,0.1)">
+                    <span style="width:6px;height:6px;border-radius:50%;background:rgba(242,239,232,0.28);display:block"></span>
+                    <span style="width:6px;height:6px;border-radius:50%;background:rgba(242,239,232,0.28);display:block"></span>
+                    <span style="width:6px;height:6px;border-radius:50%;background:rgba(242,239,232,0.28);display:block"></span>
+                  </span>
+                  <img src="assets/shot-04-spacesolar.jpg" alt="" width="1280" height="596" loading="lazy" decoding="async" style="display:block;width:100%;height:auto" />
+                  <span style="display:flex;align-items:center;gap:10px 14px;padding:11px 12px;border-top:1px solid rgba(242,239,232,0.1)" data-cardfoot="1">
+                    <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:rgba(242,239,232,0.62);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">SPACE SOLAR · SOLAR ENERGY · 2024</span>
+                    <span data-cardcta="1" style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:#F2EFE8;margin-left:auto;white-space:nowrap">CASE STUDY <span data-arrow="1">↗</span></span>
+                  </span>
+                </a>
+                <a data-card="1" href="#work" aria-hidden="true" tabindex="-1" style="display:block;text-decoration:none;border-radius:5px;overflow:hidden;background:#151614;border:1px solid rgba(242,239,232,0.14);box-shadow:0 26px 54px -24px rgba(0,0,0,0.7)">
+                  <span style="display:flex;align-items:center;gap:5px;height:22px;padding:0 9px;background:#22261F;border-bottom:1px solid rgba(242,239,232,0.1)">
+                    <span style="width:6px;height:6px;border-radius:50%;background:rgba(242,239,232,0.28);display:block"></span>
+                    <span style="width:6px;height:6px;border-radius:50%;background:rgba(242,239,232,0.28);display:block"></span>
+                    <span style="width:6px;height:6px;border-radius:50%;background:rgba(242,239,232,0.28);display:block"></span>
+                  </span>
+                  <img src="assets/shot-05-ohara.jpg" alt="" width="1280" height="614" loading="lazy" decoding="async" style="display:block;width:100%;height:auto" />
+                  <span style="display:flex;align-items:center;gap:10px 14px;padding:11px 12px;border-top:1px solid rgba(242,239,232,0.1)" data-cardfoot="1">
+                    <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:rgba(242,239,232,0.62);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">DR JUSTINE O’HARA · PLASTIC SURGERY · 2026</span>
+                    <span data-cardcta="1" style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:#F2EFE8;margin-left:auto;white-space:nowrap">CASE STUDY <span data-arrow="1">↗</span></span>
+                  </span>
+                </a>
+                <a data-card="1" href="#work" aria-hidden="true" tabindex="-1" style="display:block;text-decoration:none;border-radius:5px;overflow:hidden;background:#151614;border:1px solid rgba(242,239,232,0.14);box-shadow:0 26px 54px -24px rgba(0,0,0,0.7)">
+                  <span style="display:flex;align-items:center;gap:5px;height:22px;padding:0 9px;background:#22261F;border-bottom:1px solid rgba(242,239,232,0.1)">
+                    <span style="width:6px;height:6px;border-radius:50%;background:rgba(242,239,232,0.28);display:block"></span>
+                    <span style="width:6px;height:6px;border-radius:50%;background:rgba(242,239,232,0.28);display:block"></span>
+                    <span style="width:6px;height:6px;border-radius:50%;background:rgba(242,239,232,0.28);display:block"></span>
+                  </span>
+                  <img src="assets/shot-06-roofsmart.jpg" alt="" width="1280" height="610" loading="lazy" decoding="async" style="display:block;width:100%;height:auto" />
+                  <span style="display:flex;align-items:center;gap:10px 14px;padding:11px 12px;border-top:1px solid rgba(242,239,232,0.1)" data-cardfoot="1">
+                    <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:rgba(242,239,232,0.62);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">ROOF SMART · ROOFING TRADE · 2024</span>
+                    <span data-cardcta="1" style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:#F2EFE8;margin-left:auto;white-space:nowrap">CASE STUDY <span data-arrow="1">↗</span></span>
+                  </span>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div data-seam="1" style="position:absolute;top:0;bottom:0;right:clamp(70px,calc(30vw + 50px),490px);width:1px;background:#FF5A3C;transform-origin:top"></div>
+        </div>
+      </section>
+
+      <section id="work" data-sec="1" data-num="02" data-name="WORK" data-screen-label="Selected work" style="position:relative">
+        <div data-pin="1" style="max-width:1440px;margin:0 auto;padding:clamp(64px,8vw,116px) clamp(20px,4vw,64px);display:flex;flex-direction:column">
+          <div style="display:flex;flex-wrap:wrap;gap:16px 24px;align-items:baseline">
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:#62655F">SELECTED WORK</span>
+            <span style="margin-left:auto;display:flex;align-items:center;gap:14px">
+              <span style="display:flex;gap:6px">
+                <span data-seg="1" data-on="{{ w0 }}" style="width:28px;height:2px;background:#D8D3C8;display:block"></span>
+                <span data-seg="1" data-on="{{ w1 }}" style="width:28px;height:2px;background:#D8D3C8;display:block"></span>
+                <span data-seg="1" data-on="{{ w2 }}" style="width:28px;height:2px;background:#D8D3C8;display:block"></span>
+                <span data-seg="1" data-on="{{ w3 }}" style="width:28px;height:2px;background:#D8D3C8;display:block"></span>
+              </span>
+              <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:#62655F;font-variant-numeric:tabular-nums">{{ workStep }} / 04</span>
+            </span>
+          </div>
+
+          <div data-workgrid="1" style="display:grid;grid-template-columns:1fr 1.25fr;gap:clamp(32px,5vw,80px);margin-top:clamp(20px,2.4vw,32px);align-items:stretch">
+            <div style="grid-column:2;grid-row:1">
+              <h2 style="margin:0 0 clamp(24px,3.2vw,44px);font-size:clamp(2.25rem,4.2vw,3.75rem);line-height:0.98;letter-spacing:-0.035em;font-weight:500;max-width:20ch">Four projects, and what changed because of them.</h2>
+
+              <div style="border-top:1px solid #151614">
+                <button type="button" data-wrow="1" data-i="0" data-on="{{ w0 }}" onMouseEnter="{{ onWork }}" onFocus="{{ onWork }}" onClick="{{ onWork }}" style="width:100%;text-align:left;display:flex;gap:clamp(14px,2vw,24px);align-items:baseline;border-bottom:1px solid #D8D3C8;padding:clamp(16px,2vw,26px) 0;min-height:64px">
+                  <span data-wnum="1" style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:#62655F">01</span>
+                  <span style="font-size:clamp(1.375rem,2.2vw,2rem);line-height:1.04;letter-spacing:-0.025em;font-weight:500">Metal Roofing Australia</span>
+                  <span style="margin-left:auto;display:flex;gap:clamp(12px,1.6vw,24px);align-items:baseline"><span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:#62655F">2025</span><span data-warr="1" style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#FF5A3C">↗</span></span>
+                </button>
+                <div data-wmobile="1" style="display:none;margin:0 0 24px">
+                  <span style="display:flex;flex-direction:column;border-radius:5px;overflow:hidden;background:#0D1512;border:1px solid rgba(21,22,20,0.18);box-shadow:0 20px 40px -22px rgba(21,22,20,0.38)">
+                    <span style="display:flex;align-items:center;gap:5px;height:24px;padding:0 10px;background:#FF5A3C;border-bottom:1px solid rgba(21,22,20,0.16);flex:none">
+                    <span style="width:6px;height:6px;border-radius:50%;background:rgba(21,22,20,0.3);display:block"></span>
+                    <span style="width:6px;height:6px;border-radius:50%;background:rgba(21,22,20,0.3);display:block"></span>
+                    <span style="width:6px;height:6px;border-radius:50%;background:rgba(21,22,20,0.3);display:block"></span>
+                  </span>
+                    <img src="assets/work-metalroofing.jpg" alt="Metal Roofing Australia — website design and build" width="1280" height="807" loading="lazy" decoding="async" style="display:block;width:100%;height:auto" />
+                  </span>
+                  <p style="margin:16px 0 0;font-size:17px;line-height:1.58">Full-bleed job photography behind an oversized wordmark, with the quote route and phone number placed side by side above the fold.</p>
+                </div>
+
+                <button type="button" data-wrow="1" data-i="1" data-on="{{ w1 }}" onMouseEnter="{{ onWork }}" onFocus="{{ onWork }}" onClick="{{ onWork }}" style="width:100%;text-align:left;display:flex;gap:clamp(14px,2vw,24px);align-items:baseline;border-bottom:1px solid #D8D3C8;padding:clamp(16px,2vw,26px) 0;min-height:64px">
+                  <span data-wnum="1" style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:#62655F">02</span>
+                  <span style="font-size:clamp(1.375rem,2.2vw,2rem);line-height:1.04;letter-spacing:-0.025em;font-weight:500">Facelines</span>
+                  <span style="margin-left:auto;display:flex;gap:clamp(12px,1.6vw,24px);align-items:baseline"><span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:#62655F">2025</span><span data-warr="1" style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#FF5A3C">↗</span></span>
+                </button>
+                <div data-wmobile="1" style="display:none;margin:0 0 24px">
+                  <span style="display:flex;flex-direction:column;border-radius:5px;overflow:hidden;background:#0D1512;border:1px solid rgba(21,22,20,0.18);box-shadow:0 20px 40px -22px rgba(21,22,20,0.38)">
+                    <span style="display:flex;align-items:center;gap:5px;height:24px;padding:0 10px;background:#FF5A3C;border-bottom:1px solid rgba(21,22,20,0.16);flex:none">
+                    <span style="width:6px;height:6px;border-radius:50%;background:rgba(21,22,20,0.3);display:block"></span>
+                    <span style="width:6px;height:6px;border-radius:50%;background:rgba(21,22,20,0.3);display:block"></span>
+                    <span style="width:6px;height:6px;border-radius:50%;background:rgba(21,22,20,0.3);display:block"></span>
+                  </span>
+                    <img src="assets/work-facelines.jpg" alt="Facelines nurse-led aesthetic clinic — website design and build" width="1280" height="612" loading="lazy" decoding="async" style="display:block;width:100%;height:auto" />
+                  </span>
+                  <p style="margin:16px 0 0;font-size:17px;line-height:1.58">A restrained, warm palette with a serif headline set beside a single portrait. Booking sits top right; there is no before-and-after wall.</p>
+                </div>
+
+                <button type="button" data-wrow="1" data-i="2" data-on="{{ w2 }}" onMouseEnter="{{ onWork }}" onFocus="{{ onWork }}" onClick="{{ onWork }}" style="width:100%;text-align:left;display:flex;gap:clamp(14px,2vw,24px);align-items:baseline;border-bottom:1px solid #D8D3C8;padding:clamp(16px,2vw,26px) 0;min-height:64px">
+                  <span data-wnum="1" style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:#62655F">03</span>
+                  <span style="font-size:clamp(1.375rem,2.2vw,2rem);line-height:1.04;letter-spacing:-0.025em;font-weight:500">ACR Carpentry & Excavation</span>
+                  <span style="margin-left:auto;display:flex;gap:clamp(12px,1.6vw,24px);align-items:baseline"><span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:#62655F">2026</span><span data-warr="1" style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#FF5A3C">↗</span></span>
+                </button>
+                <div data-wmobile="1" style="display:none;margin:0 0 24px">
+                  <span style="display:flex;flex-direction:column;border-radius:5px;overflow:hidden;background:#0D1512;border:1px solid rgba(21,22,20,0.18);box-shadow:0 20px 40px -22px rgba(21,22,20,0.38)">
+                    <span style="display:flex;align-items:center;gap:5px;height:24px;padding:0 10px;background:#FF5A3C;border-bottom:1px solid rgba(21,22,20,0.16);flex:none">
+                    <span style="width:6px;height:6px;border-radius:50%;background:rgba(21,22,20,0.3);display:block"></span>
+                    <span style="width:6px;height:6px;border-radius:50%;background:rgba(21,22,20,0.3);display:block"></span>
+                    <span style="width:6px;height:6px;border-radius:50%;background:rgba(21,22,20,0.3);display:block"></span>
+                  </span>
+                    <img src="assets/work-acr.jpg" alt="ACR Carpentry & Excavation — website design and build" width="1280" height="616" loading="lazy" decoding="async" style="display:block;width:100%;height:auto" />
+                  </span>
+                  <p style="margin:16px 0 0;font-size:17px;line-height:1.58">Two trades presented as one service. Dark ground with orange accents, a full-bleed machinery photograph, and the direct number held in the header on every screen.</p>
+                </div>
+
+                <button type="button" data-wrow="1" data-i="3" data-on="{{ w3 }}" onMouseEnter="{{ onWork }}" onFocus="{{ onWork }}" onClick="{{ onWork }}" style="width:100%;text-align:left;display:flex;gap:clamp(14px,2vw,24px);align-items:baseline;border-bottom:1px solid #D8D3C8;padding:clamp(16px,2vw,26px) 0;min-height:64px">
+                  <span data-wnum="1" style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:#62655F">04</span>
+                  <span style="font-size:clamp(1.375rem,2.2vw,2rem);line-height:1.04;letter-spacing:-0.025em;font-weight:500">hD Lawyers</span>
+                  <span style="margin-left:auto;display:flex;gap:clamp(12px,1.6vw,24px);align-items:baseline"><span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:#62655F">2024</span><span data-warr="1" style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#FF5A3C">↗</span></span>
+                </button>
+                <div data-wmobile="1" style="display:none;margin:0 0 8px">
+                  <span style="display:flex;flex-direction:column;border-radius:5px;overflow:hidden;background:#0D1512;border:1px solid rgba(21,22,20,0.18);box-shadow:0 20px 40px -22px rgba(21,22,20,0.38)">
+                    <span style="display:flex;align-items:center;gap:5px;height:24px;padding:0 10px;background:#FF5A3C;border-bottom:1px solid rgba(21,22,20,0.16);flex:none">
+                    <span style="width:6px;height:6px;border-radius:50%;background:rgba(21,22,20,0.3);display:block"></span>
+                    <span style="width:6px;height:6px;border-radius:50%;background:rgba(21,22,20,0.3);display:block"></span>
+                    <span style="width:6px;height:6px;border-radius:50%;background:rgba(21,22,20,0.3);display:block"></span>
+                  </span>
+                    <img src="assets/work-hdlawyers.jpg" alt="hD Lawyers, personal injury — website design and build" width="1280" height="614" loading="lazy" decoding="async" style="display:block;width:100%;height:auto" />
+                  </span>
+                  <p style="margin:16px 0 0;font-size:17px;line-height:1.58">A near-black ground with gold accents, a boardroom photograph, and the three-step appointment form held beside the headline.</p>
+                </div>
+              </div>
+
+              <div style="display:flex;flex-wrap:wrap;gap:20px;align-items:center;margin-top:clamp(18px,2.2vw,28px)">
+                <button type="button" data-btn-ghost="1" onClick="{{ onNav }}" data-target="workpage" style="font-size:14px;font-weight:500;letter-spacing:0.02em;min-height:52px;padding:0 28px;border:1px solid #151614;border-radius:3px;transition:background 200ms ease,color 200ms ease">EXPLORE ALL WORK</button>
+              </div>
+            </div>
+
+            <div data-wpanel="1" style="align-self:stretch;grid-column:1;grid-row:1;display:flex;flex-direction:column">
+              <div style="position:relative;border-radius:5px;overflow:hidden;background:#0D1512;border:1px solid rgba(21,22,20,0.18);box-shadow:0 26px 54px -26px rgba(21,22,20,0.42);display:flex;flex-direction:column">
+                  <span style="display:flex;align-items:center;gap:5px;height:24px;padding:0 10px;background:#FF5A3C;border-bottom:1px solid rgba(21,22,20,0.16);flex:none">
+                    <span style="width:6px;height:6px;border-radius:50%;background:rgba(21,22,20,0.3);display:block"></span>
+                    <span style="width:6px;height:6px;border-radius:50%;background:rgba(21,22,20,0.3);display:block"></span>
+                    <span style="width:6px;height:6px;border-radius:50%;background:rgba(21,22,20,0.3);display:block"></span>
+                  </span>
+                  <span data-workimg="1" style="position:relative;display:block;background:#0D1512;aspect-ratio:{{ workRatio }}">
+                    <img data-wshot="1" data-on="{{ w0 }}" src="assets/work-metalroofing.jpg" alt="Metal Roofing Australia — website design and build" width="1280" height="807" loading="lazy" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover" />
+                    <img data-wshot="1" data-on="{{ w1 }}" src="assets/work-facelines.jpg" alt="Facelines nurse-led aesthetic clinic — website design and build" width="1280" height="612" loading="lazy" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover" />
+                    <img data-wshot="1" data-on="{{ w2 }}" src="assets/work-acr.jpg" alt="ACR Carpentry & Excavation — website design and build" width="1280" height="616" loading="lazy" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover" />
+                    <img data-wshot="1" data-on="{{ w3 }}" src="assets/work-hdlawyers.jpg" alt="hD Lawyers, personal injury — website design and build" width="1280" height="614" loading="lazy" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover" />
+                  </span>
+                  <span style="position:absolute;right:0;top:clamp(34px,4vw,54px);width:3px;height:48px;background:#FF5A3C;z-index:2"></span>
+                </div>
+              <div style="display:flex;justify-content:space-between;gap:24px;margin-top:auto;padding-top:22px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:#62655F">
+                <span>{{ workIndustry }}</span><span>{{ workScope }}</span>
+              </div>
+              <p style="margin:18px 0 0;font-size:18px;line-height:1.58;max-width:44ch">{{ workChallenge }}</p>
+              <div style="display:flex;flex-wrap:wrap;gap:16px;align-items:center;margin-top:22px">
+                <a data-link="1" href="#work" style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:0.06em;text-decoration:none;border-bottom:1px solid #151614;padding-bottom:3px;min-height:44px;display:inline-flex;align-items:center">VIEW CASE STUDY <span data-arrow="1">↗</span></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="pov" data-sec="1" data-num="03" data-name="VIEW" data-screen-label="Positioning" style="background:#0D1512;padding:clamp(72px,10vw,150px) 0">
+        <div style="max-width:1440px;margin:0 auto;padding:0 clamp(20px,4vw,64px)">
+          <div style="display:flex;flex-wrap:wrap;gap:16px 24px;align-items:baseline">
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:#C9C5BB">OUR POINT OF VIEW</span>
+          </div>
+
+          <h2 data-reveal="1" style="margin:clamp(40px,6vw,88px) 0 0;font-size:clamp(2rem,4.6vw,4.25rem);line-height:0.98;letter-spacing:-0.04em;font-weight:500;color:#F2EFE8">
+            <span style="display:block">We make established businesses look</span>
+            <span data-fillwrap="1" style="display:block;position:relative;color:#C9C5BB">as strong online as they are offline.<span data-fill2="1" aria-hidden="true" style="position:absolute;left:0;top:0;width:100%;color:#FF5A3C;clip-path:inset(100% 0 0 0)">as strong online as they are offline.</span></span>
+          </h2>
+
+          <div data-pos="1" style="display:grid;grid-template-columns:repeat(12,1fr);gap:32px;margin-top:clamp(40px,5vw,72px)">
+            <p data-reveal="1" style="grid-column:1 / span 5;margin:0;font-size:clamp(1.125rem,1.4vw,1.375rem);line-height:1.5;color:#F2EFE8;max-width:44ch">Design is not decoration. It is the difference between a business being taken at its word and being asked to prove itself.</p>
+            <p data-reveal="1" style="grid-column:8 / span 5;margin:0;font-size:18px;line-height:1.58;color:#C9C5BB;max-width:46ch">Strategy, presentation, performance, and security are decided together. Treating them as four separate stages is what leaves a website looking good and behaving badly six months later.</p>
+          </div>
+
+          <div data-marks="1" style="display:flex;gap:clamp(24px,4vw,64px);margin-top:clamp(56px,8vw,120px);border-top:1px solid rgba(242,239,232,0.16);padding-top:24px">
+            <div style="flex:1">
+              <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:#FF5A3C">UNDERSTOOD</div>
+              <p style="margin:14px 0 0;font-size:18px;line-height:1.58;color:#C9C5BB;max-width:34ch">Before a sentence is read.</p>
+            </div>
+            <div style="flex:1">
+              <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:#FF5A3C">BELIEVED</div>
+              <p style="margin:14px 0 0;font-size:18px;line-height:1.58;color:#C9C5BB;max-width:34ch">Because the site behaves as well as it looks.</p>
+            </div>
+            <div style="flex:1">
+              <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:#FF5A3C">CONTACTED</div>
+              <p style="margin:14px 0 0;font-size:18px;line-height:1.58;color:#C9C5BB;max-width:34ch">One next step, in the same place every time.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="services" data-sec="1" data-num="04" data-name="SERVICES" data-screen-label="Services" style="max-width:1440px;margin:0 auto;padding:clamp(64px,8vw,120px) clamp(20px,4vw,64px) clamp(72px,9vw,132px)">
+        <div style="display:flex;flex-wrap:wrap;gap:16px 24px;align-items:baseline">
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:#62655F">SERVICES</span>
+          <span style="margin-left:auto;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:#62655F">THREE WAYS IN</span>
+        </div>
+
+        <div data-two="1" style="display:grid;grid-template-columns:1.2fr 1fr;gap:clamp(32px,5vw,72px);margin-top:clamp(28px,4vw,48px);align-items:end">
+          <h2 data-reveal="1" style="margin:0;font-size:clamp(2.25rem,4.4vw,4rem);line-height:0.98;letter-spacing:-0.035em;font-weight:500;max-width:18ch">Where are you starting from?</h2>
+          <p data-reveal="1" style="margin:0;font-size:clamp(1.0625rem,1.2vw,1.125rem);line-height:1.58;max-width:46ch;color:#62655F">Pick the sentence that sounds like your situation. Each one is scoped, priced, and delivered by the person who designed it.</p>
+        </div>
+
+        <div data-stabs="1" role="tablist" aria-label="Services" style="display:flex;flex-wrap:wrap;gap:12px;margin-top:clamp(28px,3.5vw,44px)">
+          <button type="button" role="tab" id="stab-0" data-stab="1" data-i="0" aria-selected="{{ a0 }}" aria-controls="spanel" onClick="{{ onTab }}" onKeyDown="{{ onTabKey }}" style="text-align:left;font-size:17px;line-height:1.3;border:1px solid #D8D3C8;padding:16px 22px;min-height:56px;border-radius:3px;background:transparent;color:#151614">I need a new website</button>
+          <button type="button" role="tab" id="stab-1" data-stab="1" data-i="1" aria-selected="{{ a1 }}" aria-controls="spanel" onClick="{{ onTab }}" onKeyDown="{{ onTabKey }}" style="text-align:left;font-size:17px;line-height:1.3;border:1px solid #D8D3C8;padding:16px 22px;min-height:56px;border-radius:3px;background:transparent;color:#151614">My website no longer fits the business</button>
+          <button type="button" role="tab" id="stab-2" data-stab="1" data-i="2" aria-selected="{{ a2 }}" aria-controls="spanel" onClick="{{ onTab }}" onKeyDown="{{ onTabKey }}" style="text-align:left;font-size:17px;line-height:1.3;border:1px solid #D8D3C8;padding:16px 22px;min-height:56px;border-radius:3px;background:transparent;color:#151614">Nobody is looking after my site</button>
+        </div>
+
+        <div id="spanel" data-svcpanel="{{ panelKey }}" role="tabpanel" tabIndex="{{ zero }}" style="margin-top:clamp(32px,4vw,56px);border-top:1px solid #151614;padding-top:clamp(28px,3vw,40px)">
+          <div data-svcgrid="1" style="display:grid;grid-template-columns:1.15fr 1fr;gap:clamp(32px,5vw,72px)">
+            <div>
+              <div style="display:flex;align-items:baseline;gap:16px">
+                <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:0.06em;color:#FF5A3C">{{ num }}</span>
+                <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:#62655F">{{ kicker }}</span>
+              </div>
+              <h3 style="margin:20px 0 0;font-size:clamp(2rem,3.4vw,3rem);line-height:1.02;letter-spacing:-0.03em;font-weight:500;max-width:18ch">{{ title }}</h3>
+              <p style="margin:24px 0 0;font-size:clamp(1.125rem,1.4vw,1.375rem);line-height:1.5;max-width:48ch">{{ blurb }}</p>
+              <div style="margin-top:28px;border-top:1px solid #D8D3C8;padding-top:16px">
+                <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:#62655F">WHAT IT IS NOT</div>
+                <p style="margin:12px 0 0;font-size:18px;line-height:1.58;color:#62655F;max-width:46ch">{{ notThis }}</p>
+              </div>
+              <button type="button" data-btn-primary="1" onClick="{{ onNav }}" data-target="brief" style="margin-top:28px;font-size:14px;font-weight:500;letter-spacing:0.02em;min-height:52px;padding:0 30px;background:#FF5A3C;color:#F2EFE8;border-radius:3px;transition:background 200ms ease,color 200ms ease">START A PROJECT</button>
+            </div>
+            <div>
+              <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:#62655F;margin-bottom:20px">HOW IT RUNS</div>
+              <div style="display:grid;gap:0">
+                <div style="display:grid;grid-template-columns:auto 1fr;gap:20px;border-top:1px solid #D8D3C8;padding:16px 0">
+                  <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:#151614">01</span>
+                  <div><div style="font-size:18px;line-height:1.4;font-weight:500">{{ sv1t }}</div><p style="margin:8px 0 0;font-size:17px;line-height:1.55;color:#62655F;max-width:40ch">{{ sv1d }}</p></div>
+                </div>
+                <div style="display:grid;grid-template-columns:auto 1fr;gap:20px;border-top:1px solid #D8D3C8;padding:16px 0">
+                  <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:#151614">02</span>
+                  <div><div style="font-size:18px;line-height:1.4;font-weight:500">{{ sv2t }}</div><p style="margin:8px 0 0;font-size:17px;line-height:1.55;color:#62655F;max-width:40ch">{{ sv2d }}</p></div>
+                </div>
+                <div style="display:grid;grid-template-columns:auto 1fr;gap:20px;border-top:1px solid #D8D3C8;border-bottom:1px solid #D8D3C8;padding:16px 0">
+                  <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:#151614">03</span>
+                  <div><div style="font-size:18px;line-height:1.4;font-weight:500">{{ sv3t }}</div><p style="margin:8px 0 0;font-size:17px;line-height:1.55;color:#62655F;max-width:40ch">{{ sv3d }}</p></div>
+                </div>
+              </div>
+              <div style="margin-top:24px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:#62655F;line-height:1.9">{{ tags }}</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="security" data-sec="1" data-num="05" data-name="SECURITY" data-screen-label="Security" style="background:#0D1512">
+        <div data-secshell="1" style="max-width:1440px;margin:0 auto;padding:clamp(56px,7vw,96px) clamp(20px,4vw,64px);min-height:100dvh;display:flex;flex-direction:column;justify-content:center">
+          <div style="display:flex;flex-wrap:wrap;gap:16px 24px;align-items:baseline">
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:#C9C5BB">SECURITY</span>
+          </div>
+
+          <div data-secgrid="1" style="display:grid;grid-template-columns:1fr auto;gap:clamp(28px,5vw,72px);align-items:end">
+          <div>
+          <h2 data-reveal="1" style="margin:clamp(40px,6vw,96px) 0 0;font-size:clamp(2.5rem,6vw,5.5rem);line-height:0.94;letter-spacing:-0.045em;font-weight:500;color:#F2EFE8;max-width:20ch">
+            <span style="display:block">Beautiful on the surface.</span>
+            <span data-fillwrap="1" style="display:block;position:relative;color:#C9C5BB">Protected underneath.<span data-fill3="1" aria-hidden="true" style="position:absolute;left:0;top:0;width:100%;color:#FF5A3C;clip-path:inset(100% 0 0 0)">Protected underneath.</span></span>
+          </h2>
+
+          <p data-reveal="1" style="margin:clamp(28px,3.5vw,48px) 0 0;font-size:clamp(1.125rem,1.5vw,1.5rem);line-height:1.45;color:#C9C5BB;max-width:38ch">Access, updates, backups, and monitoring are decided while the site is being designed — and reviewed long after it launches.</p>
+          </div>
+          <div data-secimg="1">
+            <figure data-secfig="1" style="margin:0;width:clamp(132px,22vw,320px);aspect-ratio:4/5;max-height:46vh;position:relative;border:1px solid rgba(242,239,232,0.22);overflow:hidden;background:#0D1512">
+              <span data-secveil="1" aria-hidden="true" style="position:absolute;inset:0;z-index:2;background:#0D1512;transform-origin:bottom;pointer-events:none"></span>
+              <img data-secimg-img="1" src="assets/security-detail.jpg" alt="A locked, perforated server cabinet door in a dark data hall, amber status lights visible through the mesh" width="960" height="1200" loading="lazy" decoding="async" style="display:block;width:100%;height:100%;object-fit:cover;transform-origin:50% 40%" />
+              <span data-secrule="1" aria-hidden="true" style="position:absolute;left:0;right:0;bottom:0;height:2px;background:#FF5A3C;transform:scaleX(0);transform-origin:left;z-index:3"></span>
+              <figcaption style="position:absolute;left:0;right:0;bottom:0;z-index:3;padding:clamp(12px,1.6vw,18px);font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:rgba(242,239,232,0.72);background:linear-gradient(to top,rgba(13,21,18,0.82),rgba(13,21,18,0))">MAINTAINED, NOT ASSUMED</figcaption>
+            </figure>
+          </div>
+          </div>
+
+          <div data-strip="1" style="display:flex;flex-wrap:wrap;gap:clamp(16px,2vw,28px);align-items:center;margin-top:clamp(48px,7vw,104px);border-top:1px solid rgba(242,239,232,0.16);padding-top:24px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:#C9C5BB">
+            <span style="color:#F2EFE8">SECURE BY DESIGN</span>
+            <span data-sep="1" style="color:#FF5A3C">/</span>
+            <span style="color:#F2EFE8">BUILT FOR RELIABILITY</span>
+            <span data-sep="1" style="color:#FF5A3C">/</span>
+            <span style="color:#F2EFE8">PROTECTED BEYOND LAUNCH</span>
+            <span style="margin-left:auto">INCLUDED IN EVERY BUILD</span>
+          </div>
+        </div>
+      </section>
+
+      <section id="process" data-sec="1" data-num="06" data-name="PROCESS" data-screen-label="Process" data-ledger="1" style="height:100vh;display:flex;flex-direction:column;max-width:1440px;margin:0 auto;padding:clamp(28px,4vh,56px) clamp(20px,4vw,64px)">
+
+  <div style="display:flex;gap:24px;align-items:baseline">
+    <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:#62655F">PROCESS</span>
+  </div>
+
+  <div style="display:flex;flex-wrap:wrap;gap:32px;align-items:flex-end;justify-content:space-between;margin-top:clamp(20px,3vh,40px)">
+    <h2 style="margin:0;font-size:clamp(2.1rem,4vw,3.6rem);line-height:0.98;letter-spacing:-0.035em;font-weight:500;max-width:18ch">From first conversation to launch.</h2>
+    <div style="display:flex;gap:clamp(28px,4vw,56px);padding-bottom:6px">
+      <div>
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.12em;color:#62655F">TYPICAL SPAN</div>
+        <div style="margin-top:8px;font-size:20px;letter-spacing:-0.01em">5–6 weeks</div>
+      </div>
+      <div>
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.12em;color:#62655F">HANDS ON IT</div>
+        <div style="margin-top:8px;font-size:20px;letter-spacing:-0.01em">One</div>
+      </div>
+    </div>
+  </div>
+
+  <div style="margin-top:clamp(22px,3.4vh,44px)">
+    <div style="display:flex;gap:3px;height:8px">
+      <button data-segwrap="1" data-on="{{ pOn0 }}" onClick="{{ pSet0 }}" onMouseEnter="{{ pSet0 }}" aria-label="Discover" style="flex:1 1 0;min-width:0;height:100%;padding:0">
+        <span data-seg="1" data-on="{{ pOn0 }}" style="display:block;width:100%;height:100%;background:#D8D3C8"></span>
+      </button>
+      <button data-segwrap="1" data-on="{{ pOn1 }}" onClick="{{ pSet1 }}" onMouseEnter="{{ pSet1 }}" aria-label="Define" style="flex:1 1 0;min-width:0;height:100%;padding:0">
+        <span data-seg="1" data-on="{{ pOn1 }}" style="display:block;width:100%;height:100%;background:#D8D3C8"></span>
+      </button>
+      <button data-segwrap="1" data-on="{{ pOn2 }}" onClick="{{ pSet2 }}" onMouseEnter="{{ pSet2 }}" aria-label="Design" style="flex:1.5 1 0;min-width:0;height:100%;padding:0">
+        <span data-seg="1" data-on="{{ pOn2 }}" style="display:block;width:100%;height:100%;background:#D8D3C8"></span>
+      </button>
+      <button data-segwrap="1" data-on="{{ pOn3 }}" onClick="{{ pSet3 }}" onMouseEnter="{{ pSet3 }}" aria-label="Build and secure" style="flex:2 1 0;min-width:0;height:100%;padding:0">
+        <span data-seg="1" data-on="{{ pOn3 }}" style="display:block;width:100%;height:100%;background:#D8D3C8"></span>
+      </button>
+      <button data-segwrap="1" data-on="{{ pOn4 }}" onClick="{{ pSet4 }}" onMouseEnter="{{ pSet4 }}" aria-label="Launch and support" style="flex:0.6 1 0;min-width:0;height:100%;padding:0">
+        <span data-seg="1" data-on="{{ pOn4 }}" style="display:block;width:100%;height:100%;background:#D8D3C8"></span>
+      </button>
+    </div>
+    <div data-ruler-labels="1" style="display:flex;gap:3px;margin-top:10px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.1em;color:#62655F">
+      <span style="flex:1 1 0">WK 1</span>
+      <span style="flex:1 1 0">WK 2</span>
+      <span style="flex:1.5 1 0">WK 3</span>
+      <span style="flex:2 1 0">WK 4–5</span>
+      <span style="flex:0.6 1 0">WK 6</span>
+    </div>
+  </div>
+
+  <div style="flex:0 0 auto;display:flex;flex-direction:column;justify-content:flex-start;margin-top:clamp(16px,2.4vh,28px);min-height:0">
+
+    <div data-row="1" data-open="{{ pOn0 }}" style="border-top:1px solid #D8D3C8">
+      <button onClick="{{ pSet0 }}" onMouseEnter="{{ pSet0 }}" style="display:block;width:100%">
+        <div data-rowhead="1" style="display:grid;grid-template-columns:64px 1fr 1fr auto;gap:20px;align-items:center;padding:clamp(12px,1.7vh,20px) 0">
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:#62655F">01</span>
+          <span data-rowname="1" style="font-size:clamp(1.15rem,1.9vw,1.6rem);letter-spacing:-0.02em">Discover</span>
+          <span style="font-size:14px;line-height:1.4;color:#62655F">One call, then a short written read-out.</span>
+          <span style="display:flex;align-items:center;gap:14px;font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.12em;color:#62655F">1 WEEK<span data-marker="1" style="width:11px;height:11px;border:1px solid #62655F;background:#F2EFE8"></span></span>
+        </div>
+      </button>
+      <div data-detail="1"><div><div data-detail-inner="1" data-detailgrid="1" style="display:grid;grid-template-columns:64px 1.2fr 1fr 1fr;gap:20px;padding:0 0 clamp(18px,2.6vh,30px)">
+        <span></span>
+        <p style="margin:0;font-size:15px;line-height:1.55;max-width:36ch">We look at the business, the audience, and the current site together. You hear what is working before anything is proposed.</p>
+        <div>
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.12em;color:#FF5A3C">YOU GET</div>
+          <div style="margin-top:8px;font-size:15px;line-height:1.5;color:#62655F">A written read-out: what is holding the site back, ranked.</div>
+        </div>
+        <div>
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.12em;color:#62655F">WE NEED</div>
+          <div style="margin-top:8px;font-size:15px;line-height:1.5;color:#62655F">One hour of your time and access to analytics.</div>
+        </div>
+      </div></div></div>
+    </div>
+
+    <div data-row="1" data-open="{{ pOn1 }}" style="border-top:1px solid #D8D3C8">
+      <button onClick="{{ pSet1 }}" onMouseEnter="{{ pSet1 }}" style="display:block;width:100%">
+        <div data-rowhead="1" style="display:grid;grid-template-columns:64px 1fr 1fr auto;gap:20px;align-items:center;padding:clamp(12px,1.7vh,20px) 0">
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:#62655F">02</span>
+          <span data-rowname="1" style="font-size:clamp(1.15rem,1.9vw,1.6rem);letter-spacing:-0.02em">Define</span>
+          <span style="font-size:14px;line-height:1.4;color:#62655F">Scope agreed in writing before design.</span>
+          <span style="display:flex;align-items:center;gap:14px;font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.12em;color:#62655F">1 WEEK<span data-marker="1" style="width:11px;height:11px;border:1px solid #62655F;background:#F2EFE8"></span></span>
+        </div>
+      </button>
+      <div data-detail="1"><div><div data-detail-inner="1" data-detailgrid="1" style="display:grid;grid-template-columns:64px 1.2fr 1fr 1fr;gap:20px;padding:0 0 clamp(18px,2.6vh,30px)">
+        <span></span>
+        <p style="margin:0;font-size:15px;line-height:1.55;max-width:36ch">Structure, priorities, and messaging are agreed in writing. Design starts once the argument is settled.</p>
+        <div>
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.12em;color:#FF5A3C">YOU GET</div>
+          <div style="margin-top:8px;font-size:15px;line-height:1.5;color:#62655F">A page map, a fixed scope, and a fixed price.</div>
+        </div>
+        <div>
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.12em;color:#62655F">WE NEED</div>
+          <div style="margin-top:8px;font-size:15px;line-height:1.5;color:#62655F">One round of notes, and a sign-off.</div>
+        </div>
+      </div></div></div>
+    </div>
+
+    <div data-row="1" data-open="{{ pOn2 }}" style="border-top:1px solid #D8D3C8">
+      <button onClick="{{ pSet2 }}" onMouseEnter="{{ pSet2 }}" style="display:block;width:100%">
+        <div data-rowhead="1" style="display:grid;grid-template-columns:64px 1fr 1fr auto;gap:20px;align-items:center;padding:clamp(12px,1.7vh,20px) 0">
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:#62655F">03</span>
+          <span data-rowname="1" style="font-size:clamp(1.15rem,1.9vw,1.6rem);letter-spacing:-0.02em">Design</span>
+          <span style="font-size:14px;line-height:1.4;color:#62655F">Real type, real layout, page by page.</span>
+          <span style="display:flex;align-items:center;gap:14px;font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.12em;color:#62655F">1–2 WEEKS<span data-marker="1" style="width:11px;height:11px;border:1px solid #62655F;background:#F2EFE8"></span></span>
+        </div>
+      </button>
+      <div data-detail="1"><div><div data-detail-inner="1" data-detailgrid="1" style="display:grid;grid-template-columns:64px 1.2fr 1fr 1fr;gap:20px;padding:0 0 clamp(18px,2.6vh,30px)">
+        <span></span>
+        <p style="margin:0;font-size:15px;line-height:1.55;max-width:36ch">Page by page, in real type and real layout. Feedback happens on the actual thing, not a mood board.</p>
+        <div>
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.12em;color:#FF5A3C">YOU GET</div>
+          <div style="margin-top:8px;font-size:15px;line-height:1.5;color:#62655F">A live link you can open on your own phone.</div>
+        </div>
+        <div>
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.12em;color:#62655F">WE NEED</div>
+          <div style="margin-top:8px;font-size:15px;line-height:1.5;color:#62655F">Copy, logos, and photography, or a decision to commission them.</div>
+        </div>
+      </div></div></div>
+    </div>
+
+    <div data-row="1" data-open="{{ pOn3 }}" style="border-top:1px solid #D8D3C8">
+      <button onClick="{{ pSet3 }}" onMouseEnter="{{ pSet3 }}" style="display:block;width:100%">
+        <div data-rowhead="1" style="display:grid;grid-template-columns:64px 1fr 1fr auto;gap:20px;align-items:center;padding:clamp(12px,1.7vh,20px) 0">
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:#62655F">04</span>
+          <span data-rowname="1" style="font-size:clamp(1.15rem,1.9vw,1.6rem);letter-spacing:-0.02em">Build + secure</span>
+          <span style="font-size:14px;line-height:1.4;color:#62655F">Development and hardening in one pass.</span>
+          <span style="display:flex;align-items:center;gap:14px;font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.12em;color:#62655F">2 WEEKS<span data-marker="1" style="width:11px;height:11px;border:1px solid #62655F;background:#F2EFE8"></span></span>
+        </div>
+      </button>
+      <div data-detail="1"><div><div data-detail-inner="1" data-detailgrid="1" style="display:grid;grid-template-columns:64px 1.2fr 1fr 1fr;gap:20px;padding:0 0 clamp(18px,2.6vh,30px)">
+        <span></span>
+        <p style="margin:0;font-size:15px;line-height:1.55;max-width:36ch">Development and hardening happen in the same pass, so nothing is left for later.</p>
+        <div>
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.12em;color:#FF5A3C">YOU GET</div>
+          <div style="margin-top:8px;font-size:15px;line-height:1.5;color:#62655F">A staging site, plus the hardening and backup setup documented.</div>
+        </div>
+        <div>
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.12em;color:#62655F">WE NEED</div>
+          <div style="margin-top:8px;font-size:15px;line-height:1.5;color:#62655F">Hosting and domain access, or permission to move them.</div>
+        </div>
+      </div></div></div>
+    </div>
+
+    <div data-row="1" data-open="{{ pOn4 }}" style="border-top:1px solid #D8D3C8;border-bottom:1px solid #D8D3C8">
+      <button onClick="{{ pSet4 }}" onMouseEnter="{{ pSet4 }}" style="display:block;width:100%">
+        <div data-rowhead="1" style="display:grid;grid-template-columns:64px 1fr 1fr auto;gap:20px;align-items:center;padding:clamp(12px,1.7vh,20px) 0">
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:#62655F">05</span>
+          <span data-rowname="1" style="font-size:clamp(1.15rem,1.9vw,1.6rem);letter-spacing:-0.02em">Launch + support</span>
+          <span style="font-size:14px;line-height:1.4;color:#62655F">Handover you can act on, support if you want it.</span>
+          <span style="display:flex;align-items:center;gap:14px;font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.12em;color:#62655F">3 DAYS<span data-marker="1" style="width:11px;height:11px;border:1px solid #62655F;background:#F2EFE8"></span></span>
+        </div>
+      </button>
+      <div data-detail="1"><div><div data-detail-inner="1" data-detailgrid="1" style="display:grid;grid-template-columns:64px 1.2fr 1fr 1fr;gap:20px;padding:0 0 clamp(18px,2.6vh,30px)">
+        <span></span>
+        <p style="margin:0;font-size:15px;line-height:1.55;max-width:36ch">Launch, monitoring, and a clear handover. Support continues if you want it.</p>
+        <div>
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.12em;color:#FF5A3C">YOU GET</div>
+          <div style="margin-top:8px;font-size:15px;line-height:1.5;color:#62655F">Monitoring in place, and a walkthrough of how to edit it.</div>
+        </div>
+        <div>
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.12em;color:#62655F">WE NEED</div>
+          <div style="margin-top:8px;font-size:15px;line-height:1.5;color:#62655F">A launch date, and someone to hand the keys to.</div>
+        </div>
+      </div></div></div>
+    </div>
+
+  </div>
+
+  <div data-proccta="1" style="display:flex;flex-wrap:wrap;gap:18px 32px;align-items:center;justify-content:space-between;margin-top:auto;margin-bottom:50px">
+    <p style="margin:0;font-size:16px;line-height:1.5;max-width:46ch">Nothing moves to the next stage until you have signed off on the last one.</p>
+    <button type="button" data-btn-primary="1" onClick="{{ onNav }}" data-target="brief" style="min-height:52px;padding:0 28px;background:#FF5A3C;color:#F2EFE8;border-radius:3px;font-size:14px;font-weight:500;letter-spacing:0.02em;transition:background 200ms ease,color 200ms ease">START AT STAGE ONE</button>
+  </div>
+</section>
+
+      <section id="studio" data-sec="1" data-num="07" data-name="STUDIO" data-screen-label="Studio" data-spread="1" style="height:100vh;max-width:1440px;margin:0 auto;display:grid;grid-template-columns:1.4fr 0.78fr">
+
+  <div data-spreadtext="1" style="display:flex;flex-direction:column;justify-content:center;min-height:0;overflow:hidden;padding:clamp(28px,4vh,56px) clamp(20px,2.4vw,36px) clamp(28px,4vh,56px) clamp(20px,4vw,64px)">
+    <div style="display:flex;gap:24px;align-items:baseline">
+      <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:#62655F">THE STUDIO</span>
+    </div>
+
+    <div style="flex:0 0 auto;display:flex;flex-direction:column;padding:clamp(26px,3.4vh,44px) 0 clamp(30px,4.4vh,56px)">
+      <h2 data-spreadhead="1" style="margin:0;font-size:clamp(2rem,3.6vw,3.25rem);line-height:1;letter-spacing:-0.035em;font-weight:500;max-width:16ch">Experience without the agency layers.</h2>
+      <p style="margin:clamp(20px,3vh,36px) 0 0;font-size:clamp(1rem,1.2vw,1.1875rem);line-height:1.58;max-width:44ch">Thirteen years of building and looking after websites, on both sides of the work: the design that decides how a business is read, and the maintenance that decides whether it stays standing.</p>
+      <p style="margin:clamp(16px,2.4vh,26px) 0 0;font-size:clamp(0.9375rem,1.1vw,1.0625rem);line-height:1.58;color:#62655F;max-width:44ch">You deal with the person doing the work. Strategy, design, and delivery are not handed down a chain, and specialists join only where a project genuinely needs them.</p>
+    </div>
+
+    <div style="flex:0 0 auto;border-top:1px solid #151614;padding-top:clamp(16px,2.4vh,24px);display:flex;flex-wrap:wrap;gap:18px 32px;align-items:flex-end;justify-content:space-between">
+      <div>
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:#62655F">FOUNDER</div>
+        <div style="margin-top:10px;display:flex;align-items:baseline;gap:14px;flex-wrap:wrap">
+          <span style="font-size:clamp(1.5rem,2.2vw,2rem);line-height:1;letter-spacing:-0.025em;font-weight:500;color:#151614">Bulbul Ahmed</span>
+        </div>
+      </div>
+      <div style="display:grid;gap:6px;text-align:right;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:#62655F">
+        <span>13+ YEARS</span>
+        <span>DESIGN + SECURITY</span>
+      </div>
+    </div>
+  </div>
+
+  <div data-spreadimg="1" style="position:relative;height:100%;min-height:0;display:flex;align-items:center;padding:0 clamp(50px,5vw,80px) 0 0">
+    <figure data-portrait="1" style="margin:0;width:100%;height:min(62vh,calc(100% - 48px));position:relative;border:1px solid #D8D3C8;overflow:hidden;background:#E7E3D9;cursor:default">
+      <span data-portrait-veil="1" aria-hidden="true" style="position:absolute;inset:0;z-index:2;background:#F2EFE8;transform-origin:bottom;pointer-events:none"></span>
+      <img data-portrait-img="1" src="assets/founder-portrait.jpg" alt="Bulbul Ahmed, founder of HackProof Studio" width="900" height="900" loading="lazy" decoding="async" style="display:block;width:100%;height:100%;object-fit:cover;object-position:50% 22%;transform-origin:50% 30%" />
+      <span data-portrait-rule="1" aria-hidden="true" style="position:absolute;left:0;right:0;bottom:0;height:2px;background:#FF5A3C;transform:scaleX(0);transform-origin:left;z-index:3"></span>
+    </figure>
+  </div>
+</section>
+
+      <section data-screen-label="Client fit" style="background:#0D1512;color:#F2EFE8;padding:clamp(56px,9vh,120px) 0">
+        <div style="max-width:1440px;margin:0 auto;padding:0 clamp(20px,4vw,64px)">
+
+          <div data-fithead="1" style="display:flex;flex-wrap:wrap;gap:16px 32px;align-items:baseline;justify-content:space-between;border-bottom:1px solid rgba(242,239,232,0.16);padding-bottom:18px">
+            <div style="display:flex;gap:24px;align-items:baseline">
+              <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:rgba(242,239,232,0.6)">FIT</span>
+            </div>
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:rgba(242,239,232,0.6)">A SHORT, HONEST FILTER</span>
+          </div>
+
+          <div data-fitmid="1" style="margin-top:clamp(28px,4vh,52px)">
+            <div>
+              <h2 style="margin:0;font-size:clamp(2.25rem,4.4vw,3.75rem);line-height:0.98;letter-spacing:-0.035em;font-weight:500;max-width:18ch">Who we work <span data-fillwrap="1" style="position:relative;display:inline-block;color:#C9C5BB">best with<span data-fill4="1" aria-hidden="true" style="position:absolute;left:0;top:0;width:100%;color:#FF5A3C;clip-path:inset(100% 0 0 0)">best with</span></span></h2>
+              <div style="margin:clamp(24px,3.4vh,40px) 0 14px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:rgba(242,239,232,0.6);border-top:1px solid rgba(242,239,232,0.16);padding-top:14px">GOOD FIT</div>
+              <p data-run="1" style="margin:0;font-size:clamp(1.125rem,1.9vw,1.75rem);line-height:1.4;letter-spacing:-0.02em;color:rgba(242,239,232,0.82);max-width:64ch">
+                <b>Established businesses</b><i>/</i><b>professional firms</b><i>/</i><b>premium service providers</b><i>/</i><b>businesses being repositioned</b><i>/</i><b>companies that value strategy and quality</b><i>/</i><b>businesses treating the website as a serious investment.</b>
+              </p>
+            </div>
+          </div>
+          <div style="border-top:1px solid rgba(242,239,232,0.16);margin-top:clamp(36px,5vh,64px);padding-top:clamp(20px,2.6vh,30px)">
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:rgba(242,239,232,0.6)">IT WORKS BEST WHEN</span>
+            <div data-condgrid="1" style="display:grid;grid-template-columns:repeat(5,1fr);gap:clamp(20px,2.5vw,36px);margin-top:clamp(20px,2.8vh,32px)">
+              <div data-cond="1">
+                <p style="margin:0;padding-top:0;font-size:16px;line-height:1.45;color:rgba(242,239,232,0.82)">Decision-makers are in the room</p>
+              </div>
+              <div data-cond="1">
+                <p style="margin:0;padding-top:0;font-size:16px;line-height:1.45;color:rgba(242,239,232,0.82)">The offer is already clear</p>
+              </div>
+              <div data-cond="1">
+                <p style="margin:0;padding-top:0;font-size:16px;line-height:1.45;color:rgba(242,239,232,0.82)">You are willing to improve the messaging</p>
+              </div>
+              <div data-cond="1">
+                <p style="margin:0;padding-top:0;font-size:16px;line-height:1.45;color:rgba(242,239,232,0.82)">Quality matters more than the lowest price</p>
+              </div>
+              <div data-cond="1">
+                <p style="margin:0;padding-top:0;font-size:16px;line-height:1.45;color:rgba(242,239,232,0.82)">Content and feedback can arrive on time</p>
+              </div>
+            </div>
+          </div>
+
+          <p style="margin:clamp(32px,4.4vh,56px) 0 0;font-size:clamp(1rem,1.2vw,1.1875rem);line-height:1.55;color:rgba(242,239,232,0.6);max-width:48ch">If none of this sounds like you, it is better to know now than three emails in.</p>
+        </div>
+      </section>
+
+      <section data-screen-label="Before we begin" style="max-width:1440px;margin:0 auto;padding:clamp(56px,9vh,120px) clamp(20px,4vw,64px)">
+        <div style="display:flex;flex-wrap:wrap;gap:16px 32px;align-items:baseline;justify-content:space-between">
+          <h2 style="margin:0;font-size:clamp(2rem,4vw,3.5rem);line-height:1;letter-spacing:-0.03em;font-weight:500">Before we begin</h2>
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:#62655F">ASKED FIRST, ANSWERED PLAINLY</span>
+        </div>
+
+        <div style="margin-top:clamp(28px,4vh,52px)">
+          <div data-qrow="1" style="display:grid;grid-template-columns:1fr 1.25fr;gap:clamp(24px,5vw,72px);border-top:1px solid #151614;padding:clamp(22px,3vh,34px) 0">
+            <div style="display:flex;gap:16px;align-items:flex-start">
+              <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:#FF5A3C;padding-top:8px">Q</span>
+              <h3 data-qtitle="1" style="margin:0;font-size:clamp(1.375rem,2.2vw,2rem);line-height:1.1;letter-spacing:-0.025em;font-weight:500;max-width:18ch">How long does a website project take?</h3>
+            </div>
+            <p style="margin:0;font-size:17px;line-height:1.6;color:#62655F;max-width:56ch">It depends on scope and on how quickly content and feedback come back. You get a dated schedule before design starts, and it holds unless the scope changes.</p>
+          </div>
+
+          <div data-qrow="1" style="display:grid;grid-template-columns:1fr 1.25fr;gap:clamp(24px,5vw,72px);border-top:1px solid #D8D3C8;padding:clamp(22px,3vh,34px) 0">
+            <div style="display:flex;gap:16px;align-items:flex-start">
+              <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:#FF5A3C;padding-top:8px">Q</span>
+              <h3 data-qtitle="1" style="margin:0;font-size:clamp(1.375rem,2.2vw,2rem);line-height:1.1;letter-spacing:-0.025em;font-weight:500;max-width:18ch">Do you redesign existing websites?</h3>
+            </div>
+            <p style="margin:0;font-size:17px;line-height:1.6;color:#62655F;max-width:56ch">Often. We start by auditing what you have, keep the parts that still earn their place, and rebuild the rest around a clearer structure.</p>
+          </div>
+
+          <div data-qrow="1" style="display:grid;grid-template-columns:1fr 1.25fr;gap:clamp(24px,5vw,72px);border-top:1px solid #D8D3C8;padding:clamp(22px,3vh,34px) 0">
+            <div style="display:flex;gap:16px;align-items:flex-start">
+              <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:#FF5A3C;padding-top:8px">Q</span>
+              <h3 data-qtitle="1" style="margin:0;font-size:clamp(1.375rem,2.2vw,2rem);line-height:1.1;letter-spacing:-0.025em;font-weight:500;max-width:18ch">Is website security included?</h3>
+            </div>
+            <p style="margin:0;font-size:17px;line-height:1.6;color:#62655F;max-width:56ch">Secure development is part of every build: access, updates, backups, and hardening are set up before launch. Ongoing monitoring is arranged separately.</p>
+          </div>
+
+          <div data-qrow="1" style="display:grid;grid-template-columns:1fr 1.25fr;gap:clamp(24px,5vw,72px);border-top:1px solid #D8D3C8;border-bottom:1px solid #D8D3C8;padding:clamp(22px,3vh,34px) 0">
+            <div style="display:flex;gap:16px;align-items:flex-start">
+              <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:#FF5A3C;padding-top:8px">Q</span>
+              <h3 data-qtitle="1" style="margin:0;font-size:clamp(1.375rem,2.2vw,2rem);line-height:1.1;letter-spacing:-0.025em;font-weight:500;max-width:18ch">What happens after launch?</h3>
+            </div>
+            <p style="margin:0;font-size:17px;line-height:1.6;color:#62655F;max-width:56ch">You get a handover you can act on, and the option of ongoing monitoring and support. Nothing is locked to us.</p>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <footer id="brief" data-sec="1" data-num="10" data-name="BRIEF" data-screen-label="Start footer" style="background:#0D1512;color:#F2EFE8;padding:clamp(72px,10vw,156px) 0 32px">
+      <div style="max-width:1440px;margin:0 auto;padding:0 clamp(20px,4vw,64px)">
+        <div style="display:flex;flex-wrap:wrap;gap:16px 24px;align-items:baseline;justify-content:space-between;border-top:1px solid rgba(242,239,232,0.16);padding-top:20px">
+          <div style="display:flex;gap:24px;align-items:baseline">
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:rgba(242,239,232,0.6)">START</span>
+          </div>
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:rgba(242,239,232,0.6)">PICK WHICHEVER SUITS YOU</span>
+        </div>
+
+        <h2 data-reveal="1" style="margin:clamp(28px,4vw,48px) 0 0;font-size:clamp(2rem,3.6vw,3.25rem);line-height:0.98;letter-spacing:-0.035em;font-weight:500;max-width:22ch">Two ways in. Both reach the <span data-fillwrap="1" style="position:relative;display:inline-block;color:#C9C5BB">same person.<span data-fill5="1" aria-hidden="true" style="position:absolute;left:0;top:0;width:100%;color:#FF5A3C;clip-path:inset(100% 0 0 0)">same person.</span></span></h2>
+
+        <div data-doors="1" style="display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(242,239,232,0.16);margin-top:clamp(28px,4vw,48px)">
+          <div style="background:#0D1512;padding:clamp(24px,3vw,40px);display:flex;flex-direction:column;gap:16px">
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:#FF5A3C">DOOR 01</span>
+            <div style="font-size:clamp(1.5rem,2.4vw,2.125rem);line-height:1.05;letter-spacing:-0.025em;font-weight:500">Book a call</div>
+            <p style="margin:0;font-size:16px;line-height:1.55;color:rgba(242,239,232,0.6);max-width:34ch">Thirty minutes on the calendar. Your site open, questions answered live.</p>
+            <button type="button" data-btn-dark="1" onClick="{{ openBook }}" style="margin-top:auto;align-self:flex-start;min-height:52px;padding:0 28px;background:#FF5A3C;color:#F2EFE8;border-radius:3px;font-size:14px;font-weight:500;letter-spacing:0.02em;transition:background 200ms ease,color 200ms ease">OPEN THE CALENDAR</button>
+          </div>
+          <div data-door2="1" style="background:#0D1512;padding:clamp(24px,3vw,40px) clamp(24px,3vw,40px) clamp(24px,3vw,40px) clamp(36px,5vw,80px);display:flex;flex-direction:column;gap:16px">
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:rgba(242,239,232,0.6)">DOOR 02</span>
+            <div style="font-size:clamp(1.5rem,2.4vw,2.125rem);line-height:1.05;letter-spacing:-0.025em;font-weight:500">Send a brief</div>
+            <p style="margin:0;font-size:16px;line-height:1.55;color:rgba(242,239,232,0.6);max-width:42ch">Four short steps, right here. A written reply with scope and a figure.</p>
+            <div style="margin-top:auto;display:flex;align-items:center;gap:18px 32px;flex-wrap:wrap;justify-content:space-between">
+              <button type="button" data-ghost="1" onClick="{{ openBrief }}" style="min-height:52px;padding:15px 22px;border:1px solid rgba(242,239,232,0.3);border-radius:3px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:#F2EFE8;transition:border-color 200ms ease,color 200ms ease">START A BRIEF →</button>
+              <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:rgba(242,239,232,0.62)">REPLY WITHIN ONE WORKING DAY</span>
+            </div>
+          </div>
+        </div>
+
+        <div data-footbase="1" style="border-top:1px solid rgba(242,239,232,0.16);margin-top:clamp(56px,8vw,110px);padding-top:28px;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:24px 32px">
+          <a data-footmail="1" href="mailto:info@hackproofwp.com" style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:rgba(242,239,232,0.6);text-decoration:none;justify-self:start;transition:color 180ms ease">info@hackproofwp.com</a>
+          <a href="#top" style="justify-self:center;display:flex;align-items:center;text-decoration:none">
+            <span data-mark="1" style="position:relative;display:block;height:30px;aspect-ratio:720 / 119">
+            <img src="assets/logo-paper-web.png" alt="HackProof Studio" width="720" height="119" loading="lazy" decoding="async" style="display:block;height:100%;width:auto" />
+            <img data-mark-o="1" aria-hidden="true" src="assets/logo-studio-coral.png" alt="" width="1440" height="239" decoding="async" style="position:absolute;left:0;top:0;width:100%;height:100%;pointer-events:none" />
+          </span>
+          </a>
+          <nav data-footnav="1" aria-label="Footer" style="display:flex;flex-wrap:wrap;gap:12px 26px;justify-self:end;align-items:center">
+            <a href="/work" style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:rgba(242,239,232,0.6);text-decoration:none;min-height:44px;display:inline-flex;align-items:center">WORK</a>
+            <a href="/services" style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:rgba(242,239,232,0.6);text-decoration:none;min-height:44px;display:inline-flex;align-items:center">SERVICES</a>
+            <a href="/security" style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:rgba(242,239,232,0.6);text-decoration:none;min-height:44px;display:inline-flex;align-items:center">SECURITY</a>
+            <a href="/studio" style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:rgba(242,239,232,0.6);text-decoration:none;min-height:44px;display:inline-flex;align-items:center">STUDIO</a>
+            <a data-footbrief="1" href="/open-brief" style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:#FF5A3C;text-decoration:none;display:flex;align-items:center;min-height:44px">OPEN BRIEF</a>
+          </nav>
+        </div>
+
+        <div style="border-top:1px solid rgba(242,239,232,0.16);margin-top:24px;padding-top:20px;display:flex;justify-content:center">
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:rgba(242,239,232,0.62);text-align:center">{{ copyright }}</span>
+        </div>
+      </div>
+    </footer>
+
+  <sc-if value="{{ booking }}" hint-placeholder-val="{{ false }}">
+    <div role="dialog" aria-modal="true" aria-label="Book a call" style="position:fixed;inset:0;z-index:110;background:rgba(13,21,18,0.72);display:flex;align-items:center;justify-content:center;padding:clamp(16px,4vw,48px);animation:ovIn 240ms ease both">
+      <div style="width:min(920px,100%);max-height:calc(100vh - 64px);display:flex;flex-direction:column;background:#F2EFE8;color:#151614;border:1px solid #151614;animation:panelIn 280ms cubic-bezier(.22,1,.36,1) both">
+        <div style="display:flex;align-items:center;gap:16px;border-bottom:1px solid #D8D3C8;padding:18px clamp(18px,3vw,28px);flex:0 0 auto">
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:#FF5A3C">BOOK A CALL</span>
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:#62655F">30 MINUTES</span>
+          <button type="button" onClick="{{ closeBook }}" style="margin-left:auto;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;min-height:44px;padding:0 4px">CLOSE ✕</button>
+        </div>
+        <div style="padding:clamp(14px,2vw,22px);overflow-y:auto;-webkit-overflow-scrolling:touch">
+          <div class="tidycal-embed" data-path="hackproofwp/thirty-minute-meeting" style="min-height:560px"></div>
+          <p style="margin:14px 2px 2px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:#62655F">TROUBLE LOADING? <a href="https://tidycal.com/hackproofwp/thirty-minute-meeting" target="_blank" rel="noopener" style="color:#151614">OPEN THE BOOKING PAGE ↗</a></p>
+        </div>
+      </div>
+    </div>
+  </sc-if>
+
+  <sc-if value="{{ brief }}" hint-placeholder-val="{{ false }}">
+    <div role="dialog" aria-modal="true" aria-label="Send a brief" style="position:fixed;inset:0;z-index:112;background:rgba(13,21,18,0.72);display:flex;align-items:center;justify-content:center;padding:clamp(12px,3vw,40px);animation:ovIn 240ms ease both">
+      <div style="width:min(760px,100%);max-height:calc(100vh - 48px);display:flex;flex-direction:column;background:#F2EFE8;color:#151614;border:1px solid #151614;animation:panelIn 280ms cubic-bezier(.22,1,.36,1) both">
+        <div style="flex:0 0 auto;display:flex;align-items:center;gap:16px;border-bottom:1px solid #D8D3C8;padding:18px clamp(18px,3vw,28px)">
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:#FF5A3C">SEND A BRIEF</span>
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:#62655F;font-variant-numeric:tabular-nums">{{ bcounter }}</span>
+          <button type="button" onClick="{{ closeBrief }}" style="margin-left:auto;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;min-height:44px;padding:0 4px">CLOSE ✕</button>
+        </div>
+
+        <div style="flex:1;overflow-y:auto;padding:clamp(22px,3vw,36px) clamp(18px,3vw,28px)">
+          <sc-if value="{{ bsent }}" hint-placeholder-val="{{ false }}">
+            <div data-panel="1" style="display:flex;flex-direction:column;gap:18px;max-width:52ch">
+              <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:#FF5A3C">BRIEF RECEIVED</span>
+              <div style="font-size:clamp(1.5rem,2.6vw,2.125rem);line-height:1.08;letter-spacing:-0.03em;font-weight:500">Thanks{{ bthanks }}. It's with me.</div>
+              <p style="margin:0;font-size:17px;line-height:1.58;color:#3C3F39">A written reply goes to <span style="color:#151614">{{ bemail }}</span> with scope, a figure and the first thing I'd fix. Usually within one working day.</p>
+              <button type="button" data-brief-ghost="1" onClick="{{ briefToBook }}" style="align-self:flex-start;min-height:52px;padding:0 24px;border:1px solid #151614;border-radius:3px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em">BOOK A CALL INSTEAD</button>
+            </div>
+          </sc-if>
+
+          <sc-if value="{{ bs0 }}" hint-placeholder-val="{{ true }}">
+            <div data-panel="1" style="display:flex;flex-direction:column">
+              <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:#62655F">01 / SCOPE</span>
+              <div style="margin-top:14px;font-size:clamp(1.375rem,2.2vw,1.875rem);line-height:1.1;letter-spacing:-0.028em;font-weight:500;max-width:24ch">What do you need doing?</div>
+              <p style="margin:12px 0 0;font-size:16px;line-height:1.55;color:#62655F">Pick everything that applies.</p>
+              <div style="margin-top:24px;display:flex;flex-wrap:wrap;gap:10px">
+                <button type="button" data-chip="1" data-val="New website" data-on="{{ bnNew }}" onClick="{{ bneedT }}" style="min-height:46px;padding:0 18px;border:1px solid #D8D3C8;border-radius:3px;font-size:16px">New website</button>
+                <button type="button" data-chip="1" data-val="Rebuild an existing site" data-on="{{ bnRebuild }}" onClick="{{ bneedT }}" style="min-height:46px;padding:0 18px;border:1px solid #D8D3C8;border-radius:3px;font-size:16px">Rebuild an existing site</button>
+                <button type="button" data-chip="1" data-val="Security and hardening" data-on="{{ bnSec }}" onClick="{{ bneedT }}" style="min-height:46px;padding:0 18px;border:1px solid #D8D3C8;border-radius:3px;font-size:16px">Security and hardening</button>
+                <button type="button" data-chip="1" data-val="Speed and Core Web Vitals" data-on="{{ bnSpeed }}" onClick="{{ bneedT }}" style="min-height:46px;padding:0 18px;border:1px solid #D8D3C8;border-radius:3px;font-size:16px">Speed and Core Web Vitals</button>
+                <button type="button" data-chip="1" data-val="Ongoing care" data-on="{{ bnCare }}" onClick="{{ bneedT }}" style="min-height:46px;padding:0 18px;border:1px solid #D8D3C8;border-radius:3px;font-size:16px">Ongoing care</button>
+                <button type="button" data-chip="1" data-val="A clean-up after an incident" data-on="{{ bnClean }}" onClick="{{ bneedT }}" style="min-height:46px;padding:0 18px;border:1px solid #D8D3C8;border-radius:3px;font-size:16px">A clean-up after an incident</button>
+              </div>
+            </div>
+          </sc-if>
+
+          <sc-if value="{{ bs1 }}" hint-placeholder-val="{{ false }}">
+            <div data-panel="1" style="display:flex;flex-direction:column">
+              <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:#62655F">02 / THE SITE</span>
+              <div style="margin-top:14px;font-size:clamp(1.375rem,2.2vw,1.875rem);line-height:1.1;letter-spacing:-0.028em;font-weight:500;max-width:24ch">Where does it live now?</div>
+              <div style="margin-top:28px;display:flex;flex-direction:column;gap:26px;max-width:52ch">
+                <label style="display:flex;flex-direction:column;gap:8px">
+                  <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:#62655F">SITE URL (OPTIONAL)</span>
+                  <input data-field="1" type="url" name="burl" placeholder="yourdomain.com" value="{{ burl }}" onChange="{{ bfield }}" />
+                </label>
+                <div style="display:flex;flex-direction:column;gap:12px">
+                  <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:#62655F">PLATFORM</span>
+                  <div style="display:flex;flex-wrap:wrap;gap:10px">
+                    <button type="button" data-chip="1" data-val="WordPress" data-on="{{ bpWp }}" onClick="{{ bplat }}" style="min-height:44px;padding:0 16px;border:1px solid #D8D3C8;border-radius:3px;font-size:15px">WordPress</button>
+                    <button type="button" data-chip="1" data-val="Webflow" data-on="{{ bpWf }}" onClick="{{ bplat }}" style="min-height:44px;padding:0 16px;border:1px solid #D8D3C8;border-radius:3px;font-size:15px">Webflow</button>
+                    <button type="button" data-chip="1" data-val="Shopify" data-on="{{ bpSh }}" onClick="{{ bplat }}" style="min-height:44px;padding:0 16px;border:1px solid #D8D3C8;border-radius:3px;font-size:15px">Shopify</button>
+                    <button type="button" data-chip="1" data-val="Something else" data-on="{{ bpOther }}" onClick="{{ bplat }}" style="min-height:44px;padding:0 16px;border:1px solid #D8D3C8;border-radius:3px;font-size:15px">Something else</button>
+                    <button type="button" data-chip="1" data-val="Nothing yet" data-on="{{ bpNone }}" onClick="{{ bplat }}" style="min-height:44px;padding:0 16px;border:1px solid #D8D3C8;border-radius:3px;font-size:15px">Nothing yet</button>
+                  </div>
+                </div>
+                <label style="display:flex;flex-direction:column;gap:8px">
+                  <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:#62655F">WHAT'S THE PROBLEM?</span>
+                  <textarea data-field="1" name="bbrief" rows="3" placeholder="A sentence or two is plenty." value="{{ bbrief }}" onChange="{{ bfield }}" style="resize:vertical"></textarea>
+                </label>
+              </div>
+            </div>
+          </sc-if>
+
+          <sc-if value="{{ bs2 }}" hint-placeholder-val="{{ false }}">
+            <div data-panel="1" style="display:flex;flex-direction:column">
+              <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:#62655F">03 / TIMING &amp; BUDGET</span>
+              <div style="margin-top:14px;font-size:clamp(1.375rem,2.2vw,1.875rem);line-height:1.1;letter-spacing:-0.028em;font-weight:500;max-width:26ch">When do you want to start, and what's the budget?</div>
+              <div style="margin-top:28px;display:flex;flex-direction:column;gap:26px;max-width:52ch">
+                <div style="display:flex;flex-direction:column;gap:12px">
+                  <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:#62655F">WHEN WOULD YOU LIKE TO START? <span style="color:#FF5A3C">*</span></span>
+                  <div style="display:flex;flex-wrap:wrap;gap:10px">
+                    <button type="button" data-chip="1" data-val="As soon as possible" data-on="{{ btAsap }}" onClick="{{ btime }}" style="min-height:44px;padding:0 16px;border:1px solid #D8D3C8;border-radius:3px;font-size:15px">As soon as possible</button>
+                    <button type="button" data-chip="1" data-val="Within 4 weeks" data-on="{{ bt4 }}" onClick="{{ btime }}" style="min-height:44px;padding:0 16px;border:1px solid #D8D3C8;border-radius:3px;font-size:15px">Within 4 weeks</button>
+                    <button type="button" data-chip="1" data-val="One to three months" data-on="{{ bt3m }}" onClick="{{ btime }}" style="min-height:44px;padding:0 16px;border:1px solid #D8D3C8;border-radius:3px;font-size:15px">One to three months</button>
+                    <button type="button" data-chip="1" data-val="Still exploring" data-on="{{ btExp }}" onClick="{{ btime }}" style="min-height:44px;padding:0 16px;border:1px solid #D8D3C8;border-radius:3px;font-size:15px">Still exploring</button>
+                  </div>
+                </div>
+                <div style="display:flex;flex-direction:column;gap:12px">
+                  <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:#62655F">BUDGET, USD <span style="color:#FF5A3C">*</span></span>
+                  <div style="display:flex;flex-wrap:wrap;gap:10px">
+                    <button type="button" data-chip="1" data-val="$1,500 – $2,500" data-on="{{ bb1 }}" onClick="{{ bbud }}" style="min-height:44px;padding:0 16px;border:1px solid #D8D3C8;border-radius:3px;font-size:15px">$1,500 – $2,500</button>
+                    <button type="button" data-chip="1" data-val="$2,500 – $5,000" data-on="{{ bb2 }}" onClick="{{ bbud }}" style="min-height:44px;padding:0 16px;border:1px solid #D8D3C8;border-radius:3px;font-size:15px">$2,500 – $5,000</button>
+                    <button type="button" data-chip="1" data-val="$5,000+" data-on="{{ bb3 }}" onClick="{{ bbud }}" style="min-height:44px;padding:0 16px;border:1px solid #D8D3C8;border-radius:3px;font-size:15px">$5,000+</button>
+                  </div>
+                  <p style="margin:2px 0 0;font-size:15px;line-height:1.55;color:#62655F">Projects start at $1,500.</p>
+                </div>
+              </div>
+            </div>
+          </sc-if>
+
+          <sc-if value="{{ bs3 }}" hint-placeholder-val="{{ false }}">
+            <div data-panel="1" style="display:flex;flex-direction:column">
+              <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:#62655F">04 / YOUR DETAILS</span>
+              <div style="margin-top:14px;font-size:clamp(1.375rem,2.2vw,1.875rem);line-height:1.1;letter-spacing:-0.028em;font-weight:500;max-width:24ch">Where should the reply go?</div>
+              <div style="margin-top:28px;display:flex;flex-direction:column;gap:24px;max-width:52ch">
+                <label style="display:flex;flex-direction:column;gap:8px">
+                  <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:#62655F">NAME <span style="color:#FF5A3C">*</span></span>
+                  <input data-field="1" type="text" name="bname" placeholder="First and last" value="{{ bname }}" onChange="{{ bfield }}" />
+                </label>
+                <label style="display:flex;flex-direction:column;gap:8px">
+                  <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:#62655F">EMAIL <span style="color:#FF5A3C">*</span></span>
+                  <input data-field="1" type="email" name="bemail" placeholder="you@company.com" value="{{ bemail }}" onChange="{{ bfield }}" />
+                </label>
+                <label style="display:flex;flex-direction:column;gap:8px">
+                  <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:#62655F">PHONE <span style="color:#FF5A3C">*</span></span>
+                  <input data-field="1" type="tel" name="bphone" placeholder="+1 555 000 0000" value="{{ bphone }}" onChange="{{ bfield }}" />
+                </label>
+                <label style="display:flex;flex-direction:column;gap:8px">
+                  <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:#62655F">COMPANY (OPTIONAL)</span>
+                  <input data-field="1" type="text" name="bcompany" placeholder="Where you work" value="{{ bcompany }}" onChange="{{ bfield }}" />
+                </label>
+              </div>
+            </div>
+          </sc-if>
+        </div>
+
+        <sc-if value="{{ bnotSent }}" hint-placeholder-val="{{ true }}">
+          <div style="flex:0 0 auto;display:flex;align-items:center;gap:14px;flex-wrap:wrap;border-top:1px solid #D8D3C8;padding:16px clamp(18px,3vw,28px)">
+            <sc-if value="{{ bcanBack }}" hint-placeholder-val="{{ false }}">
+              <button type="button" data-brief-ghost="1" onClick="{{ bback }}" style="min-height:50px;padding:0 20px;border:1px solid #D8D3C8;border-radius:3px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:#62655F">BACK</button>
+            </sc-if>
+            <button type="button" data-brief-primary="1" onClick="{{ bnext }}" style="min-height:50px;padding:0 28px;background:#151614;color:#F2EFE8;border-radius:3px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em">{{ bnextLabel }}</button>
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:#FF5A3C">{{ berror }}</span>
+            <span style="margin-left:auto;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:#62655F">REPLY WITHIN ONE WORKING DAY</span>
+          </div>
+        </sc-if>
+      </div>
+    </div>
+  </sc-if>
+
+  <sc-if value="{{ indexOpen }}" hint-placeholder-val="{{ false }}">
+    <div id="project-index" role="dialog" aria-modal="true" aria-label="Project index" style="position:fixed;inset:0;z-index:100;background:#0D1512;color:#F2EFE8;overflow-y:auto;animation:ovIn 320ms ease both">
+      <div style="min-height:100%;display:flex;flex-direction:column">
+        <div style="display:flex;align-items:center;gap:16px;padding:0 clamp(20px,4vw,64px);height:clamp(64px,8vw,88px);border-bottom:1px solid rgba(242,239,232,0.16)">
+          <img src="assets/logo-paper-web.png" alt="HackProof Studio" width="720" height="119" loading="lazy" decoding="async" style="display:block;height:26px;width:auto" />
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:rgba(242,239,232,0.6);margin-left:8px">PROJECT INDEX</span>
+          <button type="button" onClick="{{ closeIndex }}" style="margin-left:auto;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:#F2EFE8;min-height:44px;padding:0 4px">CLOSE ✕</button>
+        </div>
+        <div data-index-body="1" style="flex:1;display:grid;grid-template-columns:1.3fr 1fr">
+          <div data-index-nav="1" style="padding:clamp(28px,4vw,56px) clamp(20px,4vw,64px)">
+            <a data-navrow="1" data-navcur="1" aria-current="page" href="#top" onClick="{{ closeIndex }}" onMouseEnter="{{ onHover }}" data-prev="00" style="color:#FF5A3C;text-decoration:none;display:grid;grid-template-columns:auto 1fr auto;align-items:baseline;gap:clamp(14px,3vw,32px);width:100%;border-bottom:1px solid rgba(242,239,232,0.16);padding:clamp(14px,2vw,22px) 0;animation:ovRow 420ms cubic-bezier(.22,1,.36,1) 0ms both">
+              <span data-navnum="1" style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:#FF5A3C">00</span>
+              <span data-big="1" style="font-size:clamp(2rem,4.4vw,3.5rem);line-height:1;letter-spacing:-0.035em;font-weight:500">Front door</span>
+              <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.12em;color:#FF5A3C;display:inline-flex;align-items:center;gap:8px"><span style="width:5px;height:5px;background:#FF5A3C;display:block"></span>YOU ARE HERE</span>
+            </a>
+            <a data-navrow="1" href="/work" onMouseEnter="{{ onHover }}" data-prev="01" style="color:inherit;text-decoration:none;display:grid;grid-template-columns:auto 1fr auto;align-items:baseline;gap:clamp(14px,3vw,32px);width:100%;border-bottom:1px solid rgba(242,239,232,0.16);padding:clamp(14px,2vw,22px) 0;animation:ovRow 420ms cubic-bezier(.22,1,.36,1) 60ms both">
+              <span data-navnum="1" style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:rgba(242,239,232,0.4)">01</span>
+              <span data-big="1" style="font-size:clamp(2rem,4.4vw,3.5rem);line-height:1;letter-spacing:-0.035em;font-weight:500">Work</span>
+              <span data-navarrow="1" aria-hidden="true" style="font-size:clamp(1rem,1.6vw,1.375rem);line-height:1;color:inherit">↗</span>
+            </a>
+            <a data-navrow="1" href="/services" onMouseEnter="{{ onHover }}" data-prev="02" style="color:inherit;text-decoration:none;display:grid;grid-template-columns:auto 1fr auto;align-items:baseline;gap:clamp(14px,3vw,32px);width:100%;border-bottom:1px solid rgba(242,239,232,0.16);padding:clamp(14px,2vw,22px) 0;animation:ovRow 420ms cubic-bezier(.22,1,.36,1) 120ms both">
+              <span data-navnum="1" style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:rgba(242,239,232,0.4)">02</span>
+              <span data-big="1" style="font-size:clamp(2rem,4.4vw,3.5rem);line-height:1;letter-spacing:-0.035em;font-weight:500">Services</span>
+              <span data-navarrow="1" aria-hidden="true" style="font-size:clamp(1rem,1.6vw,1.375rem);line-height:1;color:inherit">↗</span>
+            </a>
+            <a data-navrow="1" href="/security" onMouseEnter="{{ onHover }}" data-prev="03" style="color:inherit;text-decoration:none;display:grid;grid-template-columns:auto 1fr auto;align-items:baseline;gap:clamp(14px,3vw,32px);width:100%;border-bottom:1px solid rgba(242,239,232,0.16);padding:clamp(14px,2vw,22px) 0;animation:ovRow 420ms cubic-bezier(.22,1,.36,1) 180ms both">
+              <span data-navnum="1" style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:rgba(242,239,232,0.4)">03</span>
+              <span data-big="1" style="font-size:clamp(2rem,4.4vw,3.5rem);line-height:1;letter-spacing:-0.035em;font-weight:500">Security</span>
+              <span data-navarrow="1" aria-hidden="true" style="font-size:clamp(1rem,1.6vw,1.375rem);line-height:1;color:inherit">↗</span>
+            </a>
+            <a data-navrow="1" href="/studio" onMouseEnter="{{ onHover }}" data-prev="04" style="color:inherit;text-decoration:none;display:grid;grid-template-columns:auto 1fr auto;align-items:baseline;gap:clamp(14px,3vw,32px);width:100%;border-bottom:1px solid rgba(242,239,232,0.16);padding:clamp(14px,2vw,22px) 0;animation:ovRow 420ms cubic-bezier(.22,1,.36,1) 240ms both">
+              <span data-navnum="1" style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:rgba(242,239,232,0.4)">04</span>
+              <span data-big="1" style="font-size:clamp(2rem,4.4vw,3.5rem);line-height:1;letter-spacing:-0.035em;font-weight:500">The studio</span>
+              <span data-navarrow="1" aria-hidden="true" style="font-size:clamp(1rem,1.6vw,1.375rem);line-height:1;color:inherit">↗</span>
+            </a>
+            <a data-navrow="1" href="/open-brief" onMouseEnter="{{ onHover }}" data-prev="05" style="color:inherit;text-decoration:none;display:grid;grid-template-columns:auto 1fr auto;align-items:baseline;gap:clamp(14px,3vw,32px);width:100%;padding:clamp(14px,2vw,22px) 0;animation:ovRow 420ms cubic-bezier(.22,1,.36,1) 300ms both">
+              <span data-navnum="1" style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:rgba(242,239,232,0.4)">05</span>
+              <span data-big="1" style="font-size:clamp(2rem,4.4vw,3.5rem);line-height:1;letter-spacing:-0.035em;font-weight:500">Open brief</span>
+              <span data-navarrow="1" data-navarrowon="1" aria-hidden="true" style="font-size:clamp(1rem,1.6vw,1.375rem);line-height:1;color:#FF5A3C">↗</span>
+            </a>
+          </div>
+          <div data-index-right="1" style="border-left:1px solid rgba(242,239,232,0.16);padding:clamp(28px,4vw,56px) clamp(20px,4vw,64px);display:flex;flex-direction:column">
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:rgba(242,239,232,0.6)">PREVIEW</span>
+            <div style="margin-top:18px;position:relative;overflow:hidden;border:1px solid rgba(242,239,232,0.16);background:#0B120F;aspect-ratio:16 / 10">
+              <span aria-hidden="true" style="position:absolute;inset:0;background:repeating-linear-gradient(135deg,rgba(242,239,232,0.06) 0 6px,rgba(242,239,232,0.015) 6px 12px)"></span>
+              <span data-prevshot="1" data-prevfit="{{ previewFit }}" role="img" aria-label="{{ previewLabel }}" style="position:absolute;inset:0;background-image:{{ previewCss }};background-repeat:no-repeat;background-position:center;background-color:#0B120F"></span>
+              <sc-if value="{{ previewForm }}" hint-placeholder-val="{{ false }}">
+                <span data-prevform="1" style="position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;gap:clamp(10px,1.6vw,16px);padding:clamp(18px,2.6vw,32px)">
+                  <span style="display:flex;flex-direction:column;gap:7px"><span style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:0.12em;color:#FF5A3C">NAME</span><span style="height:1px;background:rgba(242,239,232,0.28);display:block"></span></span>
+                  <span style="display:flex;flex-direction:column;gap:7px"><span style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:0.12em;color:rgba(242,239,232,0.45)">WEBSITE</span><span style="height:1px;background:rgba(242,239,232,0.28);display:block"></span></span>
+                  <span style="display:flex;flex-direction:column;gap:7px"><span style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:0.12em;color:rgba(242,239,232,0.45)">BUDGET</span><span style="height:1px;background:rgba(242,239,232,0.28);display:block"></span></span>
+                  <span style="display:flex;flex-direction:column;gap:7px"><span style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:0.12em;color:rgba(242,239,232,0.45)">TIMING</span><span style="height:1px;background:rgba(242,239,232,0.28);display:block"></span></span>
+                </span>
+              </sc-if>
+            </div>
+            <span style="margin-top:16px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:rgba(242,239,232,0.88)">{{ previewLabel }}</span>
+            <span style="margin-top:8px;font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.12em;color:rgba(242,239,232,0.45);line-height:1.8">{{ previewNote }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </sc-if>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1440},&quot;motionLevel&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;full&quot;,&quot;minimal&quot;],&quot;default&quot;:&quot;full&quot;,&quot;tsType&quot;:&quot;\&quot;full\&quot; | \&quot;minimal\&quot;&quot;,&quot;section&quot;:&quot;Behaviour&quot;}}">
+class Component extends DCLogic {
+  state = {
+    indexOpen: false, svc: 0, active: 0, proc: 0,
+    work: 0, stab: 0,
+    hover: "00", clock: "", booking: false,
+    brief: false, bstep: 0, bsent: false, berr: "",
+    bneed: [], bplatform: "", btimeline: "", bbudget: "",
+    burl: "", bbrief: "", bname: "", bemail: "", bphone: "", bcompany: ""
+  };
+
+  bset = (k, v) => this.setState({ [k]: v, berr: "" });
+  bfield = (e) => this.bset(e.target.name, e.target.value);
+
+  bneedT = (e) => {
+    const v = e.currentTarget.dataset.val;
+    const list = this.state.bneed.includes(v)
+      ? this.state.bneed.filter((x) => x !== v)
+      : this.state.bneed.concat(v);
+    this.bset("bneed", list);
+  };
+
+  // The homepage carries its own brief form. It goes through the same offline
+  // queue as the Open Brief page: online it posts immediately, offline it is held
+  // and retried until it lands. page:"homepage" tells the two apart in the email.
+  sendHomeBrief = (st) => {
+    var payload = {
+      create: (st.bneed || []).join(", "),
+      changes: st.bneed || [],
+      when: st.btimeline,
+      budget: st.bbudget,
+      name: st.bname,
+      email: st.bemail,
+      phone: st.bphone,
+      company: st.bcompany,
+      url: st.burl,
+      summary: st.bbrief,
+      submittedAt: new Date().toISOString(),
+      page: "homepage",
+    };
+    try {
+      if (window.HPOffline) {
+        window.HPOffline.submitBrief(payload).catch(function () {});
+      } else {
+        var held = JSON.parse(localStorage.getItem("hp-brief-fallback") || "[]");
+        held.push(payload);
+        localStorage.setItem("hp-brief-fallback", JSON.stringify(held));
+      }
+    } catch (e) { /* never block the confirmation on a storage error */ }
+  };
+
+  bnext = () => {
+    const st = this.state;
+    if (st.bstep === 0 && st.bneed.length === 0) return this.setState({ berr: "PICK AT LEAST ONE" });
+    if (st.bstep === 2) {
+      if (!st.btimeline) return this.setState({ berr: "START DATE REQUIRED" });
+      if (!st.bbudget) return this.setState({ berr: "BUDGET REQUIRED" });
+    }
+    if (st.bstep === 3) {
+      if (!st.bname.trim()) return this.setState({ berr: "NAME REQUIRED" });
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(st.bemail.trim())) return this.setState({ berr: "VALID EMAIL REQUIRED" });
+      if (st.bphone.replace(/[^0-9]/g, "").length < 7) return this.setState({ berr: "VALID PHONE REQUIRED" });
+      this.sendHomeBrief(st);
+      return this.setState({ bsent: true, berr: "" });
+    }
+    this.setState({ bstep: st.bstep + 1, berr: "" });
+  };
+
+  bback = () => this.setState({ bstep: Math.max(0, this.state.bstep - 1), berr: "" });
+
+  services = [
+    {
+      num: "01", kicker: "THE CORE ENGAGEMENT", title: "Custom website design + build",
+      blurb: "Positioning, structure, and interface designed in one pass, then built and hardened by the same hands. The result argues your case and holds up after launch.",
+      notThis: "Not a template configured to look bespoke, and not a design handed to someone else to build.",
+      s1t: "Discover and define", s1d: "Business, audience, and the current site reviewed together, then a written scope.",
+      s2t: "Design in real layout", s2d: "Page by page in real type, reviewed on the actual thing rather than a mood board.",
+      s3t: "Build, secure, launch", s3d: "Development and hardening in the same pass, then a handover you can act on.",
+      tags: "STRATEGY · CONTENT HIERARCHY · UX DIRECTION · VISUAL DESIGN · RESPONSIVE · DEVELOPMENT · LAUNCH"
+    },
+    {
+      num: "02", kicker: "KEEP WHAT WORKS", title: "Website redesign",
+      blurb: "For businesses that have outgrown their site. We keep the parts still earning their place and rebuild the rest around a clearer structure and a stronger first impression.",
+      notThis: "Not a coat of paint on a broken structure, and not a rebuild for its own sake.",
+      s1t: "Audit what exists", s1d: "Content, structure, performance, and access reviewed before anything is changed.",
+      s2t: "Restructure and reposition", s2d: "Messaging and hierarchy reworked around what actually wins the business.",
+      s3t: "Rebuild and migrate", s3d: "New front end, cleaner content, and a controlled switch-over.",
+      tags: "AUDIT · REPOSITIONING · CONTENT RESTRUCTURE · UX · VISUAL TRANSFORMATION · PERFORMANCE"
+    },
+    {
+      num: "03", kicker: "KEEP IT STANDING", title: "Website security",
+      blurb: "Access, updates, backups, and monitoring set up properly and reviewed on a schedule. Included in every build, and available on its own for sites we did not make.",
+      notThis: "Not a plugin installed and forgotten, and not a promise that nothing will ever go wrong.",
+      s1t: "Review", s1d: "Access, dependencies, backups, and exposure documented as they stand today.",
+      s2t: "Harden", s2d: "Accounts, updates, and backup routines put in order, with one owner per task.",
+      s3t: "Monitor", s3d: "Ongoing checks after launch, with a route to reach someone when it matters.",
+      tags: "SECURITY REVIEW · HARDENING · ACCESS PROTECTION · MALWARE PROTECTION · MONITORING · SUPPORT"
+    }
+  ];
+
+  projects = [
+    { industry: "ROOFING CONTRACTOR", scope: "SCOPE ON REQUEST", ratio: "1280 / 807", challenge: "Full-bleed job photography behind an oversized wordmark, with the quote route and phone number placed side by side above the fold." },
+    { industry: "AESTHETIC CLINIC", scope: "SCOPE ON REQUEST", ratio: "1280 / 612", challenge: "A restrained, warm palette with a serif headline set beside a single portrait. Booking sits top right; there is no before-and-after wall." },
+    { industry: "CARPENTRY + EXCAVATION", scope: "SCOPE ON REQUEST", ratio: "1280 / 616", challenge: "Two trades presented as one service. Dark ground with orange accents, a full-bleed machinery photograph, and the direct number held in the header on every screen." },
+    { industry: "PERSONAL INJURY LAW", scope: "SCOPE ON REQUEST", ratio: "1280 / 614", challenge: "A near-black ground with gold accents, a boardroom photograph, and the three-step appointment form held beside the headline." }
+  ];
+
+  syncTabs() {
+    const active = this.state.stab;
+    document.querySelectorAll("[data-stab]").forEach((el) => {
+      const on = parseInt(el.getAttribute("data-i"), 10) === active;
+      el.style.background = on ? "#151614" : "transparent";
+      el.style.color = on ? "#F2EFE8" : "#151614";
+      el.style.borderColor = on ? "#151614" : "#D8D3C8";
+    });
+  }
+
+  componentDidUpdate() {
+    this.syncTabs();
+    // Same rule as work/services/security/studio: nothing scrolls behind a full-screen overlay.
+    document.body.style.overflow = (this.state.indexOpen || this.state.booking) ? "hidden" : "";
+  }
+
+  setWork(i) {
+    if (i === this.state.work || i < 0 || i > 3) return;
+    this.setState({ work: i });
+    const g = window.gsap;
+    const img = document.querySelector("[data-workimg]");
+    if (!g || !img) return;
+    if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    g.fromTo(img, { clipPath: "inset(100% 0 0 0)" }, { clipPath: "inset(0% 0 0 0)", duration: 0.7, ease: "power3.inOut" });
+  }
+
+  sections = [
+    { num: "01", name: "HOME", id: "hero" },
+    { num: "02", name: "WORK", id: "work" },
+    { num: "03", name: "VIEW", id: "pov" },
+    { num: "04", name: "SERVICES", id: "services" },
+    { num: "05", name: "SECURITY", id: "security" },
+    { num: "06", name: "PROCESS", id: "process" },
+    { num: "07", name: "STUDIO", id: "studio" },
+    { num: "10", name: "BRIEF", id: "brief" }
+  ];
+
+  reduced() {
+    if (this.props.motionLevel === "minimal") return true;
+    return window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  }
+
+  tick = () => {
+    const d = new Date();
+    const clock = d.getHours().toString().padStart(2, "0") + ":" + d.getMinutes().toString().padStart(2, "0");
+    if (clock !== this.state.clock) this.setState({ clock });
+  };
+
+  scrollTo(id) {
+    const el = document.getElementById(id);
+    if (!el) return;
+    const top = el.getBoundingClientRect().top + window.pageYOffset - 72;
+    window.scrollTo({ top: Math.max(0, top), behavior: this.reduced() ? "auto" : "smooth" });
+  }
+
+  mountTidy = () => {
+    const inject = () => {
+      const els = [].filter.call(document.querySelectorAll(".tidycal-embed"), (n) => n.tagName === "DIV");
+      if (!els.length) return;
+      if (window.TidyCal && typeof window.TidyCal.init === "function") {
+        els.forEach((el) => window.TidyCal.init(el));
+        return;
+      }
+      if (document.querySelector("script[data-tidycal]")) return;
+      const s = document.createElement("script");
+      s.src = "https://asset-tidycal.b-cdn.net/js/embed.js";
+      s.async = true;
+      s.setAttribute("data-tidycal", "1");
+      document.body.appendChild(s);
+    };
+    requestAnimationFrame(() => requestAnimationFrame(inject));
+  };
+
+  onKey = (e) => {
+    if (e.key !== "Escape") return;
+    if (this.state.booking) this.setState({ booking: false });
+    else if (this.state.brief) this.setState({ brief: false });
+    else if (this.state.indexOpen) this.setState({ indexOpen: false });
+  };
+
+  componentDidMount() {
+    document.documentElement.lang = "en";
+    this.tick();
+    this.syncTabs();
+    this.clockId = setInterval(this.tick, 20000);
+    document.addEventListener("keydown", this.onKey);
+
+    const list = Array.prototype.slice.call(document.querySelectorAll("[data-sec]"));
+    if (list.length) {
+      const compute = () => {
+        this.raf = 0;
+        const line = window.pageYOffset + window.innerHeight * 0.4;
+        let i = 0;
+        for (let n = 0; n < list.length; n++) {
+          const top = list[n].getBoundingClientRect().top + window.pageYOffset;
+          if (top <= line) i = n;
+        }
+        if (i !== this.state.active) this.setState({ active: i });
+      };
+      this.onScroll = () => { if (!this.raf) this.raf = requestAnimationFrame(compute); };
+      window.addEventListener("scroll", this.onScroll, { passive: true });
+      window.addEventListener("resize", this.onScroll);
+      compute();
+    }
+
+    this.startMotion();
+  }
+
+  startMotion = () => {
+    if (this.reduced() || this.motionDone) return;
+    const g = window.gsap;
+    if (!g || !g.timeline) {
+      this.motionTries = (this.motionTries || 0) + 1;
+      if (this.motionTries > 150) return;
+      this.motionTimer = setTimeout(this.startMotion, 60);
+      return;
+    }
+    this.motionDone = true;
+    const ease = "power3.out";
+    try { if (g.ticker && g.ticker.wake) g.ticker.wake(); } catch (e) {}
+    clearTimeout(this.watchdog);
+    this.watchdog = setTimeout(this.checkAlive, 2800);
+
+    const curtain = document.querySelector("[data-curtain]");
+    const cLogo = document.querySelector("[data-curtain-logo]");
+    const band = document.querySelector("#hero [data-band]");
+    const bandInner = document.querySelector("#hero [data-band-inner]");
+    const seam = document.querySelector("#hero [data-seam]");
+    const fill = document.querySelector("#hero [data-fill]");
+    if (curtain) curtain.style.display = "flex";
+
+    const tl = g.timeline({ defaults: { ease } });
+    if (cLogo) tl.from(cLogo, { opacity: 0, y: 10, duration: 0.5, ease: "power2.out" }, 0.1);
+    if (cLogo) tl.to(cLogo, { opacity: 0, duration: 0.3, ease: "power1.in" }, 0.75);
+    if (curtain) tl.to(curtain, { yPercent: -100, duration: 0.95, ease: "power4.inOut", onComplete: () => { curtain.style.display = "none"; } }, 0.85);
+
+    tl.from("[data-hero-line]", { yPercent: 112, duration: 1.05, stagger: 0.075 }, 1.15);
+    tl.from("#hero [data-reveal]", { y: 14, opacity: 0, duration: 0.7, stagger: 0.09 }, 1.3);
+    if (seam) tl.from(seam, { scaleY: 0, duration: 1.1, ease: "power3.inOut" }, 1.1);
+    if (band) tl.from(band, { clipPath: "inset(100% 0 0 0)", duration: 1.2, ease: "power3.inOut" }, 1.05);
+    if (bandInner) tl.from(bandInner, { scale: 1.07, duration: 1.6, ease: "power2.out" }, 1.05);
+    if (fill) {
+      tl.to(fill, { clipPath: "inset(8% 0 0 0)", duration: 1.9, ease: "power1.inOut" }, 1.7);
+      tl.to(fill, { clipPath: "inset(0% 0 0 0)", duration: 0.7, ease: "power2.out" }, 3.5);
+    }
+    g.utils.toArray("#hero [data-count]").forEach((el) => {
+      const target = parseInt(el.getAttribute("data-count"), 10);
+      const o = { v: 0 };
+      el.textContent = "0";
+      tl.to(o, { v: target, duration: 1.2, ease: "power2.out", onUpdate: () => { el.textContent = Math.round(o.v); } }, 1.5);
+    });
+    this.buildReel(g);
+
+    this.buildScroll();
+  }
+
+  checkAlive = () => {
+    const curtain = document.querySelector("[data-curtain]");
+    const covered = curtain && curtain.style.display !== "none" && curtain.getBoundingClientRect().height > window.innerHeight * 0.6;
+    const line = document.querySelector("#hero [data-hero-line]");
+    const hidden = line && /translate\(\s*0%?,\s*(?!0)/.test(line.style.transform || "");
+    if (covered || hidden) this.forceStatic();
+  };
+
+  forceStatic = () => {
+    const curtain = document.querySelector("[data-curtain]");
+    if (curtain) { curtain.style.display = "none"; curtain.style.pointerEvents = "none"; }
+    Array.prototype.forEach.call(document.querySelectorAll("#hero [data-hero-line],#hero [data-reveal],[data-curtain-logo]"), (el) => {
+      el.style.transform = "";
+      el.style.opacity = "";
+    });
+    const band = document.querySelector("#hero [data-band]");
+    if (band) band.style.clipPath = "inset(0 0 0 0)";
+    const bandInner = document.querySelector("#hero [data-band-inner]");
+    if (bandInner) bandInner.style.transform = "";
+    const seam = document.querySelector("#hero [data-seam]");
+    if (seam) seam.style.transform = "";
+    Array.prototype.forEach.call(document.querySelectorAll("[data-fill],[data-fill2],[data-fill3],[data-fill4],[data-fill5]"), (el) => {
+      el.style.clipPath = "inset(0% 0 0 0)";
+    });
+    const track = document.querySelector("#hero [data-track]");
+    if (track) track.style.transform = "";
+    Array.prototype.forEach.call(document.querySelectorAll("[data-portrait-veil],[data-secveil]"), (el) => { el.style.display = "none"; });
+    Array.prototype.forEach.call(document.querySelectorAll("[data-portrait-img],[data-secimg-img]"), (el) => { el.style.transform = ""; });
+    Array.prototype.forEach.call(document.querySelectorAll("#hero [data-count]"), (el) => {
+      const t = el.getAttribute("data-count");
+      if (t && el.textContent !== t) el.textContent = t;
+    });
+    this.clearScrollStyles();
+  };
+
+  buildReel = (g) => {
+    const track = document.querySelector("#hero [data-track]");
+    const band = document.querySelector("#hero [data-band-inner]");
+    if (!track || !band) return;
+
+    const start = () => {
+      const keep = this.reel ? this.reel.progress() : 0;
+      if (this.reel) { this.reel.kill(); this.reel = null; }
+      const cards = track.children;
+      const mid = Math.floor(cards.length / 2);
+      if (!cards[mid] || !cards[0]) return;
+      const half = cards[mid].offsetTop - cards[0].offsetTop;
+      if (this.reduced()) { g.set(track, { y: 0 }); return; }
+      if (!(half > 40)) {
+        // Cards have not laid out yet (lazy images on a narrow viewport).
+        // Retry rather than give up, or the reel never starts on mobile.
+        g.set(track, { y: 0 });
+        this.reelTries = (this.reelTries || 0) + 1;
+        if (this.reelTries <= 40) {
+          clearTimeout(this.reelRetry);
+          this.reelRetry = setTimeout(start, 250);
+        }
+        return;
+      }
+      this.reelTries = 0;
+      this.reel = g.fromTo(track, { y: 0 }, { y: -half, duration: half / 30, ease: "none", repeat: -1 });
+      this.reel.progress(keep);
+    };
+
+    this.startReel = start;
+    start();
+    if (window.ResizeObserver) {
+      this.reelObs = new ResizeObserver(() => {
+        clearTimeout(this.reelTimer);
+        this.reelTimer = setTimeout(start, 220);
+      });
+      this.reelObs.observe(band);
+      // The track is what grows when the cards finally size themselves.
+      this.reelObs.observe(track);
+    }
+    const slow = () => { if (this.reel) this.reel.timeScale(0.12); };
+    const normal = () => { if (this.reel) this.reel.timeScale(1); };
+    band.addEventListener("mouseenter", slow);
+    band.addEventListener("mouseleave", normal);
+    band.addEventListener("focusin", slow);
+    band.addEventListener("focusout", normal);
+  };
+
+  clearScrollStyles = () => {
+    Array.prototype.forEach.call(document.querySelectorAll("[data-sec]"), (sec) => {
+      sec.style.filter = "";
+      sec.style.transform = "";
+      sec.style.opacity = "";
+      const inner = sec.firstElementChild;
+      if (inner) inner.style.transform = "";
+    });
+    Array.prototype.forEach.call(document.querySelectorAll("[data-reveal],[data-reveal-media]"), (el) => {
+      el.style.opacity = "";
+      el.style.transform = "";
+    });
+  };
+
+  retryScroll = () => {
+    this.scrollTries = (this.scrollTries || 0) + 1;
+    if (this.scrollTries > 60) { this.forceStatic(); return; }
+    clearTimeout(this.scrollTimer);
+    this.scrollTimer = setTimeout(this.buildScroll, 120);
+  };
+
+  buildScroll = () => {
+    if (this.reduced()) return;
+    const g = window.gsap;
+    const ST = window.ScrollTrigger;
+    if (!g || !ST || typeof ST.create !== "function") return this.retryScroll();
+    try { g.registerPlugin(ST); } catch (e) {}
+    if (!g.core || !g.core.globals || g.core.globals().ScrollTrigger !== ST) return this.retryScroll();
+
+    ST.getAll().forEach((t) => t.kill());
+    const ease = "power3.out";
+    const made = [];
+
+    g.utils.toArray("[data-reveal]").forEach((el) => {
+      if (el.closest("#hero")) return;
+      made.push(g.from(el, { y: 18, opacity: 0, duration: 0.65, ease, scrollTrigger: { trigger: el, start: "top 88%" } }));
+    });
+    g.utils.toArray("[data-reveal-media]").forEach((el) => {
+      if (el.closest("#hero")) return;
+      made.push(g.from(el, { y: 34, opacity: 0, duration: 0.85, ease, scrollTrigger: { trigger: el, start: "top 90%" } }));
+    });
+
+    [["[data-fill2]", "top 78%", 1.8, 0.7], ["[data-fill3]", "top 78%", 1.8, 0.7], ["[data-fill4]", "top 82%", 1.6, 0.6], ["[data-fill5]", "top 82%", 1.6, 0.6]].forEach((cfg) => {
+      const el = document.querySelector(cfg[0]);
+      if (!el) return;
+      const t = g.timeline({ scrollTrigger: { trigger: el, start: cfg[1] } });
+      t.to(el, { clipPath: "inset(8% 0 0 0)", duration: cfg[2], ease: "power1.inOut" });
+      t.to(el, { clipPath: "inset(0% 0 0 0)", duration: cfg[3], ease: "power2.out" });
+      made.push(t);
+    });
+
+    const soft = window.innerWidth < 768 ? 4 : 6;
+    g.utils.toArray("[data-sec]").forEach((sec) => {
+      if (sec.id === "hero") return;
+      const inner = sec.firstElementChild || sec;
+      const tl = g.timeline({
+        scrollTrigger: { trigger: sec, start: "top bottom", end: "bottom top", scrub: 0.5, invalidateOnRefresh: true }
+      });
+      tl.fromTo(sec,
+        { filter: "blur(" + soft + "px)", y: () => Math.min(88, window.innerHeight * 0.08) },
+        { filter: "blur(0px)", y: 0, duration: 34, ease: "none" }, 0);
+      tl.fromTo(inner, { y: 34 }, { y: 0, duration: 44, ease: "none" }, 0);
+      tl.to(sec, { filter: "blur(3px)", duration: 12, ease: "none" }, 88);
+      made.push(tl);
+    });
+
+    [["[data-portrait]", "[data-portrait-veil]", "[data-portrait-img]", "[data-portrait-rule]"],
+     ["[data-secfig]", "[data-secveil]", "[data-secimg-img]", "[data-secrule]"]].forEach((sel) => {
+      const fig = document.querySelector(sel[0]);
+      if (!fig) return;
+      const veil = fig.querySelector(sel[1]);
+      const im = fig.querySelector(sel[2]);
+      const rule = fig.querySelector(sel[3]);
+      const t = g.timeline({ scrollTrigger: { trigger: fig, start: "top 84%" } });
+      if (veil) t.fromTo(veil, { scaleY: 1 }, { scaleY: 0, duration: 1.05, ease: "power3.inOut" }, 0);
+      if (im) t.fromTo(im, { scale: 1.16 }, { scale: 1, duration: 1.5, ease: "power2.out", onComplete: () => g.set(im, { clearProps: "transform" }) }, 0);
+      if (rule) t.fromTo(rule, { scaleX: 0 }, { scaleX: 1, duration: 0.8, ease: "power3.out" }, 0.55);
+      if (rule) t.to(rule, { scaleX: 0, duration: 0.5, ease: "power2.in" }, 1.7);
+      made.push(t);
+    });
+
+    made.push(g.to("[data-progress]", { scaleY: 1, ease: "none", scrollTrigger: { trigger: document.body, start: "top top", end: "bottom bottom", scrub: 0.3 } }));
+
+    if (ST.getAll().length === 0) {
+      made.forEach((a) => a.kill());
+      this.forceStatic();
+      return this.retryScroll();
+    }
+
+    ST.refresh();
+    setTimeout(() => ST.refresh(), 1200);
+    setTimeout(() => ST.refresh(), 3200);
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(() => ST.refresh());
+  }
+
+  componentWillUnmount() {
+    clearTimeout(this.motionTimer);
+    clearTimeout(this.scrollTimer);
+    clearTimeout(this.reelTimer);
+    clearTimeout(this.watchdog);
+    if (this.reel) this.reel.kill();
+    if (this.reelObs) this.reelObs.disconnect();
+    clearInterval(this.clockId);
+    document.removeEventListener("keydown", this.onKey);
+    if (this.move) window.removeEventListener("mousemove", this.move);
+    if (this.onScroll) {
+      window.removeEventListener("scroll", this.onScroll);
+      window.removeEventListener("resize", this.onScroll);
+    }
+    if (this.raf) cancelAnimationFrame(this.raf);
+    document.body.style.overflow = "";
+  }
+
+  renderVals() {
+    const st = this.state;
+    const procVals = {};
+    for (let k = 0; k < 5; k++) {
+      procVals["pOn" + k] = st.proc === k ? "1" : "0";
+      procVals["pSet" + k] = () => { if (this.state.proc !== k) this.setState({ proc: k }); };
+    }
+    const sec = this.sections[st.active] || this.sections[0];
+    // Menu preview. Keys match data-prev on the index rows (01-05). This page has no
+    // "00 Front door" row, since the front door is where you already are.
+    const PREVIEW_IMG = {
+      "00": "assets/share-card.jpg",
+      "01": "assets/work-metalroofing.jpg",
+      "02": "assets/shot-04-spacesolar.jpg",
+      "03": "assets/security-detail.jpg",
+      "04": "assets/founder-portrait.jpg"
+    };
+    const PREVIEW_LABEL = {
+      "00": "FRONT DOOR / THE WHOLE STUDIO IN ONE SCROLL",
+      "01": "WORK / THIRTY-NINE PROJECTS, ONE STANDARD",
+      "02": "SERVICES / DESIGN, REDESIGN, SECURITY",
+      "03": "SECURITY / CONTAIN, RECOVER, HARDEN",
+      "04": "STUDIO / ONE ACCOUNTABLE PERSON",
+      "05": "OPEN BRIEF / FOUR SHORT STEPS"
+    };
+    const PREVIEW_NOTE = {
+      "00": "EVERY SECTION, IN ORDER",
+      "01": "LIVE SITES, LINKED",
+      "02": "THREE ENGAGEMENTS, ONE STANDARD",
+      "03": "INCIDENT RESPONSE AND PREVENTION",
+      "04": "FOUNDER-LED BY DESIGN",
+      "05": "NAME, SCOPE, BUDGET, TIMING"
+    };
+
+    return {
+      ...procVals,
+      activeName: sec.name,
+      clock: st.clock,
+      indexOpen: st.indexOpen,
+      indexExpanded: st.indexOpen ? "true" : "false",
+      openIndex: () => this.setState({ indexOpen: true }),
+      closeIndex: () => this.setState({ indexOpen: false }),
+      previewLabel: PREVIEW_LABEL[st.hover] || PREVIEW_LABEL["00"],
+      previewNote: PREVIEW_NOTE[st.hover] || PREVIEW_NOTE["00"],
+      previewFit: { "03": "cover", "04": "cover" }[st.hover] || "contain",
+      previewCss: PREVIEW_IMG[st.hover] ? "url(" + PREVIEW_IMG[st.hover] + ")" : "none",
+      previewForm: st.hover === "05",
+      onHover: (e) => {
+        const v = e.currentTarget.getAttribute("data-prev");
+        if (v && v !== this.state.hover) this.setState({ hover: v });
+      },
+      onWork: sec.id === "work" ? "1" : "0",
+      onServices: sec.id === "services" ? "1" : "0",
+      onSecurity: sec.id === "security" ? "1" : "0",
+      onStudio: sec.id === "studio" ? "1" : "0",
+      onNav: (e) => {
+        const t = e.currentTarget.getAttribute("data-target");
+        if (t === "brief") { window.location.href = "/open-brief"; return; }
+        if (t === "workpage") { window.location.href = "/work"; return; }
+        this.setState({ indexOpen: false });
+        setTimeout(() => this.scrollTo(t), 30);
+      },
+      copyright: "© " + new Date().getFullYear() + " HackProof Studio. All rights reserved.",
+      toTop: () => window.scrollTo({ top: 0, behavior: this.reduced() ? "auto" : "smooth" }),
+      onSkipFocus: (e) => { e.currentTarget.style.left = "16px"; e.currentTarget.style.top = "16px"; },
+      onSkipBlur: (e) => { e.currentTarget.style.left = "-9999px"; },
+
+      w0: st.work === 0 ? "1" : "0",
+      w1: st.work === 1 ? "1" : "0",
+      w2: st.work === 2 ? "1" : "0",
+      w3: st.work === 3 ? "1" : "0",
+      workStep: "0" + (st.work + 1),
+      workRatio: (this.projects[st.work] || this.projects[0]).ratio,
+      workIndustry: (this.projects[st.work] || this.projects[0]).industry,
+      workScope: (this.projects[st.work] || this.projects[0]).scope,
+      workChallenge: (this.projects[st.work] || this.projects[0]).challenge,
+      onWork: (e) => this.setWork(parseInt(e.currentTarget.getAttribute("data-i"), 10)),
+
+      zero: 0,
+      panelKey: "svc-" + st.stab,
+      num: (this.services[st.stab] || this.services[0]).num,
+      kicker: (this.services[st.stab] || this.services[0]).kicker,
+      title: (this.services[st.stab] || this.services[0]).title,
+      blurb: (this.services[st.stab] || this.services[0]).blurb,
+      notThis: (this.services[st.stab] || this.services[0]).notThis,
+      sv1t: (this.services[st.stab] || this.services[0]).s1t,
+      sv1d: (this.services[st.stab] || this.services[0]).s1d,
+      sv2t: (this.services[st.stab] || this.services[0]).s2t,
+      sv2d: (this.services[st.stab] || this.services[0]).s2d,
+      sv3t: (this.services[st.stab] || this.services[0]).s3t,
+      sv3d: (this.services[st.stab] || this.services[0]).s3d,
+      tags: (this.services[st.stab] || this.services[0]).tags,
+      a0: st.stab === 0 ? "true" : "false",
+      a1: st.stab === 1 ? "true" : "false",
+      a2: st.stab === 2 ? "true" : "false",
+      tabBg0: st.stab === 0 ? "#151614" : "transparent",
+      tabFg0: st.stab === 0 ? "#F2EFE8" : "#151614",
+      tabBd0: st.stab === 0 ? "#151614" : "#D8D3C8",
+      tabBg1: st.stab === 1 ? "#151614" : "transparent",
+      tabFg1: st.stab === 1 ? "#F2EFE8" : "#151614",
+      tabBd1: st.stab === 1 ? "#151614" : "#D8D3C8",
+      tabBg2: st.stab === 2 ? "#151614" : "transparent",
+      tabFg2: st.stab === 2 ? "#F2EFE8" : "#151614",
+      tabBd2: st.stab === 2 ? "#151614" : "#D8D3C8",
+      onTab: (e) => this.setState({ stab: parseInt(e.currentTarget.getAttribute("data-i"), 10) }),
+      onTabKey: (e) => {
+        if (e.key !== "ArrowRight" && e.key !== "ArrowLeft") return;
+        e.preventDefault();
+        const next = (st.stab + (e.key === "ArrowRight" ? 1 : 2)) % 3;
+        this.setState({ stab: next }, () => {
+          const el = document.getElementById("stab-" + next);
+          if (el) el.focus();
+        });
+      },
+
+      onService: (e) => {
+        const i = parseInt(e.currentTarget.getAttribute("data-i"), 10);
+        this.setState((s) => ({ svc: s.svc === i ? 0 : i }));
+      },
+      svc2: st.svc === 2, svc3: st.svc === 3,
+      svc2open: st.svc === 2 ? "true" : "false",
+      svc3open: st.svc === 3 ? "true" : "false",
+      svc2sign: st.svc === 2 ? "−" : "+",
+      svc3sign: st.svc === 3 ? "−" : "+",
+
+      booking: st.booking,
+      openBook: () => this.setState({ booking: true, indexOpen: false, brief: false }, this.mountTidy),
+      closeBook: () => this.setState({ booking: false }),
+
+      brief: st.brief,
+      openBrief: () => { window.location.href = "/open-brief"; },
+      closeBrief: () => this.setState({ brief: false }),
+      briefToBook: () => this.setState({ brief: false, booking: true }, this.mountTidy),
+
+      bs0: !st.bsent && st.bstep === 0,
+      bs1: !st.bsent && st.bstep === 1,
+      bs2: !st.bsent && st.bstep === 2,
+      bs3: !st.bsent && st.bstep === 3,
+      bsent: st.bsent, bnotSent: !st.bsent,
+
+      bnNew: st.bneed.includes("New website") ? "1" : "0",
+      bnRebuild: st.bneed.includes("Rebuild an existing site") ? "1" : "0",
+      bnSec: st.bneed.includes("Security and hardening") ? "1" : "0",
+      bnSpeed: st.bneed.includes("Speed and Core Web Vitals") ? "1" : "0",
+      bnCare: st.bneed.includes("Ongoing care") ? "1" : "0",
+      bnClean: st.bneed.includes("A clean-up after an incident") ? "1" : "0",
+      bneedT: this.bneedT,
+
+      bpWp: st.bplatform === "WordPress" ? "1" : "0",
+      bpWf: st.bplatform === "Webflow" ? "1" : "0",
+      bpSh: st.bplatform === "Shopify" ? "1" : "0",
+      bpOther: st.bplatform === "Something else" ? "1" : "0",
+      bpNone: st.bplatform === "Nothing yet" ? "1" : "0",
+      bplat: (e) => this.bset("bplatform", e.currentTarget.dataset.val),
+
+      btAsap: st.btimeline === "As soon as possible" ? "1" : "0",
+      bt4: st.btimeline === "Within 4 weeks" ? "1" : "0",
+      bt3m: st.btimeline === "One to three months" ? "1" : "0",
+      btExp: st.btimeline === "Still exploring" ? "1" : "0",
+      btime: (e) => this.bset("btimeline", e.currentTarget.dataset.val),
+
+      bb1: st.bbudget === "$1,500 – $2,500" ? "1" : "0",
+      bb2: st.bbudget === "$2,500 – $5,000" ? "1" : "0",
+      bb3: st.bbudget === "$5,000+" ? "1" : "0",
+      bbud: (e) => this.bset("bbudget", e.currentTarget.dataset.val),
+
+      burl: st.burl, bbrief: st.bbrief, bname: st.bname,
+      bemail: st.bemail, bphone: st.bphone, bcompany: st.bcompany,
+      bfield: this.bfield,
+
+      bnext: this.bnext, bback: this.bback,
+      bcanBack: st.bstep > 0,
+      bnextLabel: st.bstep === 3 ? "SEND BRIEF" : "CONTINUE",
+      bcounter: "STEP 0" + (st.bstep + 1) + " / 04",
+      berror: st.berr,
+      bthanks: st.bname.trim() ? ", " + st.bname.trim().split(" ")[0] : ""
+    };
+  }
+}
+
+</script>
+</body>
+</html>

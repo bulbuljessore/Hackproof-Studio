@@ -1,0 +1,1314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>WordPress Security and Malware Recovery | HackProof Studio</title>
+<meta name="description" content="Specialist WordPress security support: compromised website recovery, malware cleanup, reinfection investigation, hardening and preventive security reviews." />
+<link rel="canonical" href="https://hackproofwp.com/security" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="HackProof Studio" />
+<meta property="og:title" content="Website security | HackProof Studio" />
+<meta property="og:description" content="When the website is exposed, every minute matters. Incident response and preventive security for WordPress websites." />
+<meta property="og:url" content="https://hackproofwp.com/security" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<meta property="og:image" content="https://hackproofwp.com/assets/share-card.jpg" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="HackProof Studio — independent website design and security studio" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Website security | HackProof Studio" />
+<meta name="twitter:description" content="When the website is exposed, every minute matters. Incident response and preventive security for WordPress websites." />
+<meta name="twitter:image" content="https://hackproofwp.com/assets/share-card.jpg" />
+<meta name="twitter:image:alt" content="HackProof Studio — independent website design and security studio" />
+<link rel="icon" href="/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png" />
+<link rel="manifest" href="site.webmanifest" />
+<meta name="theme-color" content="#F2EFE8" />
+<script src="js/hp-offline.js" defer></script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-3TXVNF6YDR"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  if (!window.__gaBooted) {
+    window.__gaBooted = true;
+    gtag('js', new Date());
+    gtag('config', 'G-3TXVNF6YDR');
+  }
+</script>
+<!-- Hotjar Tracking Code for Hackproof Studio -->
+<script>
+  if (!window.__hjBooted) {
+    window.__hjBooted = true;
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:6765824,hjsv:6};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+  }
+</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://hackproofwp.com/security#page","url":"https://hackproofwp.com/security","name":"Website security","description":"Incident response and preventive security for WordPress websites.","isPartOf":{"@id":"https://hackproofwp.com/#website"},"about":{"@id":"https://hackproofwp.com/#studio"},"inLanguage":"en"},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://hackproofwp.com/"},{"@type":"ListItem","position":2,"name":"Security","item":"https://hackproofwp.com/security"}]},{"@type":"Service","name":"Website security","description":"Compromised website recovery, malware cleanup, reinfection investigation, hardening and preventive security reviews.","serviceType":"WordPress security","provider":{"@id":"https://hackproofwp.com/#studio"},"areaServed":"Worldwide"}]}</script>
+<link rel="preload" href="fonts/everett-regular.ttf" as="font" type="font/ttf" crossorigin="anonymous" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400&display=swap" />
+<style>
+  @font-face { font-family: "TWK Everett"; src: url("fonts/everett-regular.ttf") format("truetype"); font-weight: 400; font-style: normal; font-display: swap; }
+  @font-face { font-family: "TWK Everett"; src: url("fonts/everett-regular.ttf") format("truetype"); font-weight: 500; font-style: normal; font-display: swap; }
+  html { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; scroll-behavior: smooth; }
+  body { margin: 0; background: #F2EFE8; color: #151614; font-family: "TWK Everett", "Helvetica Neue", Arial, sans-serif; text-wrap: pretty; overflow-x: hidden; }
+  * { box-sizing: border-box; }
+  a { color: #151614; text-underline-offset: 4px; }
+  a:hover { color: #FF5A3C; }
+  ::selection { background: #FF5A3C; color: #151614; }
+  :focus-visible { outline: 2px solid #FF5A3C; outline-offset: 3px; }
+  button { font: inherit; color: inherit; background: none; border: none; padding: 0; cursor: pointer; text-align: left; }
+
+  [data-arrow] { display: inline-block; transition: transform 200ms cubic-bezier(.22,.61,.36,1); }
+  [data-link]:hover [data-arrow] { transform: translate(3px,-3px); }
+  @keyframes nudge { 0%,100% { transform: translateY(0); opacity: .55 } 50% { transform: translateY(5px); opacity: 1 } }
+  [data-cue] { animation: nudge 2.6s cubic-bezier(.4,0,.2,1) infinite; }
+  @keyframes studioWipe {
+    0% { clip-path: inset(0 36.7% 0 0); opacity: 1; }
+    26% { clip-path: inset(0 5.9% 0 0); opacity: 1; }
+    41% { clip-path: inset(0 5.9% 0 0); opacity: 1; }
+    47%, 100% { clip-path: inset(0 5.9% 0 0); opacity: 0; }
+  }
+  [data-mark-o] { opacity: 0; clip-path: inset(0 36.7% 0 0); transition: opacity 320ms ease; animation: studioWipe 9s cubic-bezier(.32,.1,.55,.95) 1.2s infinite both; }
+  a:hover [data-mark-o] { opacity: 1; clip-path: inset(0 5.9% 0 0); animation: none; }
+  @keyframes ovRow { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
+  @keyframes boxIn { from { opacity: 0; } to { opacity: 1; } }
+  [data-link-down]:hover [data-arrow] { transform: translateY(3px); }
+  [data-link-down]:hover { color: #FF5A3C; border-color: #FF5A3C !important; }
+  [data-nav-a]:hover { color: #FF5A3C; }
+  [data-nav-a][aria-current="page"] { color: #FF5A3C; }
+  [data-btn-dark]:hover { background: #F2EFE8 !important; color: #FF5A3C !important; }
+  [data-ghost]:hover { border-color: #FF5A3C !important; color: #FF5A3C !important; }
+  [data-navrow] { transition: color 180ms ease, padding-left 240ms cubic-bezier(0.22,0.61,0.36,1); }
+  [data-navrow]:hover { color: #FF5A3C; padding-left: 12px; }
+  [data-navrow] [data-navarrow] { opacity: 0; transform: translate(-8px,8px) rotate(-10deg); transition: opacity 220ms ease, transform 320ms cubic-bezier(.22,1,.36,1); }
+  [data-navrow]:hover [data-navarrow], [data-navrow]:focus-visible [data-navarrow] { opacity: 1; transform: none; }
+  [data-navrow] [data-navarrowon] { opacity: 1; transform: none; }
+  [data-navrow] [data-navnum] { transition: color 200ms ease; }
+  [data-navrow]:hover [data-navnum] { color: #FF5A3C; }
+  [data-navrow][data-navcur] { padding-left: 0 !important; }
+  [data-menubtn] { transition: border-color 200ms ease, color 200ms ease; }
+  [data-menubtn]:hover { border-color: #FF5A3C; color: #FF5A3C; }
+  [data-menubtn] [data-menuplus] { display: inline-block; transition: transform 320ms cubic-bezier(.22,1,.36,1); }
+  [data-menubtn]:hover [data-menuplus] { transform: rotate(90deg); }
+  [data-ovclose] [data-ovx] { display: inline-block; transition: transform 320ms cubic-bezier(.22,1,.36,1); }
+  [data-ovclose]:hover { color: #FF5A3C; }
+  [data-ovclose]:hover [data-ovx] { transform: rotate(90deg); }
+  [data-prevshot] { animation: boxIn 320ms ease both; }
+  [data-prevshot] { background-size: contain; }
+  [data-prevshot][data-prevfit="cover"] { background-size: cover; background-position: center 20%; }
+
+  [data-footnav] a:hover, [data-footmail]:hover { color: #FF5A3C !important; }
+
+  [data-idxrow] { transition: color 180ms ease, border-color 180ms ease, padding-left 240ms cubic-bezier(.22,.61,.36,1); }
+  [data-idxrow]:hover { color: #FF5A3C; border-color: #FF5A3C; padding-left: 10px; }
+  [data-idxrow]:hover [data-idxdot] { background: #FF5A3C; }
+  [data-startrow]:hover { color: #FF5A3C; }
+  [data-startrow]:hover [data-srule] { background: #FF5A3C; }
+  [data-cta-coral]:hover { background: #151614 !important; color: #F2EFE8 !important; border-color: #151614 !important; }
+  [data-cta-line] { border-bottom: 1px solid #D8D3C8; transition: border-color 180ms ease, color 180ms ease; }
+  [data-cta-line]:hover { border-color: #FF5A3C; }
+  [data-cta-line-inv] { border-bottom: 1px solid rgba(242,239,232,.35); transition: border-color 180ms ease, color 180ms ease; }
+  [data-cta-line-inv]:hover { border-color: #FF5A3C; color: #FF5A3C; }
+  [data-specrow]:hover { background: rgba(21,22,20,.035); }
+  [data-qrow] [data-qtitle] { transition: color 180ms ease; }
+  [data-qrow]:hover [data-qtitle] { color: #FF5A3C; }
+  /* One quiet hairline between questions, same weight as the specification table. */
+  [data-qrow] + [data-qrow] { border-top: 1px solid rgba(21,22,20,.08); }
+
+  /* Hover micro-interactions: a coral line draws under the row, the label leads. */
+  [data-idxrow], [data-startrow], [data-stagerow] { position: relative; }
+  [data-idxrow]::after, [data-startrow]::after, [data-stagerow]::after {
+    content: ""; position: absolute; left: 0; right: 0; bottom: -1px; height: 1px; background: #FF5A3C;
+    transform: scaleX(0); transform-origin: left; transition: transform 460ms cubic-bezier(.22,1,.36,1);
+  }
+  [data-idxrow]:hover::after, [data-startrow]:hover::after, [data-stagerow]:hover::after { transform: scaleX(1); }
+  [data-startrow] { transition: padding-left 300ms cubic-bezier(.22,.61,.36,1); }
+  [data-startrow]:hover { padding-left: 10px; }
+  [data-srule] { transition: width 380ms cubic-bezier(.22,1,.36,1), background 200ms ease; }
+  [data-startrow]:hover [data-srule] { width: 46px; background: #FF5A3C; }
+  [data-stagerow] { transition: padding-left 300ms cubic-bezier(.22,.61,.36,1); }
+  [data-stagerow]:hover { padding-left: 12px; }
+  [data-stagetitle] { transition: color 200ms ease; }
+  [data-stagerow]:hover [data-stagetitle] { color: #FF5A3C; }
+  [data-fitrow] { transition: padding-left 260ms cubic-bezier(.22,.61,.36,1); }
+  [data-fitrow]:hover { padding-left: 10px; }
+  [data-fitrow] span:last-child { transition: color 180ms ease; }
+  [data-fitrow]:hover span:last-child { color: #FF5A3C; }
+  [data-bridge] span[style*="border"] { transition: border-color 220ms ease, transform 420ms cubic-bezier(.22,1,.36,1); }
+  [data-bridge]:hover span[style*="border"] { border-color: #FF5A3C; transform: translateY(-3px); }
+  [data-bridgename] { transition: color 180ms ease; }
+  [data-bridge]:hover [data-bridgename] { color: #FF5A3C; }
+  [data-svcidx][data-sticky="1"] { position: sticky; top: 112px; align-self: start; }
+  [data-stage] { position: relative; }
+  [data-stages][data-progressline="1"] [data-stage]::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 1px; background: linear-gradient(#FF5A3C, rgba(255,90,60,0)); opacity: .5; }
+  [data-shot] { display: block; width: 100%; height: auto; filter: none; transition: filter 340ms ease, transform 600ms cubic-bezier(.22,1,.36,1); }
+  [data-shotframe]:hover [data-shot] { filter: saturate(.45) contrast(1.02); }
+  [data-axisitem] { transition: transform 320ms cubic-bezier(.22,1,.36,1); }
+  [data-axislabel], [data-axisconn], [data-axisdot] { transition: color 200ms ease, background 200ms ease, transform 260ms cubic-bezier(.22,1,.36,1); }
+  [data-axisitem]:hover [data-axislabel] { color: #FF5A3C; }
+  [data-axisitem]:hover [data-axisconn] { background: #FF5A3C; }
+  [data-axisitem]:hover [data-axisdot] { transform: scale(1.8); }
+  [data-band] { transition: background 240ms ease; }
+  [data-band]:hover { background: rgba(242,239,232,.07) !important; }
+  [data-bandnum], [data-bandtitle] { transition: color 240ms ease; }
+  [data-band]:hover [data-bandnum] { color: rgba(255,90,60,.55); }
+  [data-band]:hover [data-bandtitle] { color: #FF5A3C; }
+  [data-flowcell] { transition: background 260ms ease, color 260ms ease; }
+  [data-flowcell]:hover { background: #151614 !important; color: #F2EFE8; }
+  [data-flowcell]:hover [data-flownote] { color: rgba(242,239,232,.72) !important; }
+  [data-boxnav]:hover { color: #FF5A3C !important; border-color: #FF5A3C !important; }
+
+  /* Curtain, masked headline and coral wipe run on CSS alone: no script, nothing to stall. */
+  @keyframes curtainLift { 0%, 52% { transform: translateY(0); } 100% { transform: translateY(-100%); } }
+  @keyframes curtainLogo { 0% { opacity: 0; transform: translateY(10px); } 20% { opacity: 1; transform: none; } 42% { opacity: 1; } 52%, 100% { opacity: 0; } }
+  @keyframes lineUp { from { transform: translateY(108%); } to { transform: translateY(0); } }
+  @keyframes heroRise { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: none; } }
+  @keyframes coralFill { from { clip-path: inset(100% 0 0 0); } to { clip-path: inset(0% 0 0 0); } }
+  @keyframes ruleDraw { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+  [data-curtain] { animation: curtainLift 1.8s cubic-bezier(.76,0,.24,1) both; }
+  [data-curtain-logo] { animation: curtainLogo 1.8s ease both; }
+  [data-idxrule] { transform-origin: left; animation: ruleDraw .9s cubic-bezier(.22,1,.36,1) 1.5s both; }
+  @keyframes scanDown { 0% { top: 0; opacity: 0; } 10% { opacity: 1; } 88% { opacity: 1; } 100% { top: 100%; opacity: 0; } }
+  [data-scan] { animation: scanDown 3.2s cubic-bezier(.4,0,.6,1) 1.9s both; }
+  [data-layerrow] { transition: color 200ms ease, padding-left 260ms cubic-bezier(.22,.61,.36,1); }
+  [data-layerrow]:hover { color: #FF5A3C; padding-left: 8px; }
+
+  /* Reveals are driven from inline styles in script, so no-JS and reduced-motion stay sharp and visible. */
+
+  @media (max-width: 1023px) {
+    [data-hairgrid] { grid-template-columns: 1fr !important; gap: 1px !important; }
+    [data-axis] { grid-template-columns: 1fr 1fr !important; column-gap: clamp(18px,3vw,36px) !important; }
+    [data-axisitem] { height: auto !important; border-top: 1px solid rgba(242,239,232,.16); padding-top: 12px; margin-top: 16px; }
+    [data-axishalf] { flex: none !important; }
+    [data-axisline], [data-axisconn], [data-axisdot] { display: none !important; }
+    [data-axismid] { display: none !important; }
+    [data-band] { grid-template-columns: clamp(64px,8vw,110px) 1fr !important; }
+    [data-band] > span:last-child { grid-column: 2 !important; }
+    [data-rail] { display: none !important; }
+    [data-shell] { padding-left: 0 !important; }
+    [data-index-body] { grid-template-columns: 1fr !important; }
+    [data-index-right] { border-left: none !important; border-top: 1px solid rgba(242,239,232,0.16); }
+    [data-two] { grid-template-columns: 1fr !important; gap: 28px !important; }
+    [data-three] { grid-template-columns: 1fr !important; }
+    [data-four] { grid-template-columns: 1fr 1fr !important; }
+    [data-svcidx][data-sticky="1"] { position: static !important; }
+    [data-specrow] { grid-template-columns: 1.1fr 1.4fr !important; }
+    [data-specthird] { display: none !important; }
+    [data-doors] { grid-template-columns: 1fr !important; }
+    [data-door2] { padding-left: clamp(24px,3vw,40px) !important; }
+  }
+  @media (max-width: 767px) {
+    [data-axis] { grid-template-columns: 1fr !important; }
+    [data-band] { grid-template-columns: 1fr !important; gap: 10px !important; }
+    [data-band] > span:last-child { grid-column: 1 !important; }
+    [data-bandnum] { font-size: 1.5rem !important; }
+    [data-top-desktop] { display: none !important; }
+    [data-top-mobile] { display: flex !important; }
+    [data-four] { grid-template-columns: 1fr !important; }
+    [data-specrow] { grid-template-columns: 1fr !important; gap: 6px !important; }
+    [data-footbase] { grid-template-columns: 1fr !important; justify-items: center !important; gap: 18px !important; text-align: center; }
+    [data-footbase] > * { justify-self: center !important; }
+    [data-footnav] { justify-content: center !important; }
+    [data-index-nav] span[data-big] { font-size: 34px !important; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    /* Kill the intro outright: the shorthand with importance also clears inline animation-delay. */
+    [data-curtain], [data-curtain-logo], [data-idxrule] { animation: none !important; }
+    [data-curtain] { display: none !important; }
+    [data-fill], [data-fill-scroll] { clip-path: inset(0 0 0 0) !important; }
+    [data-cue] { animation: none; }
+    [data-idxrow]::after, [data-startrow]::after, [data-stagerow]::after { transition: none !important; }
+    [data-scan] { animation: none !important; display: none !important; }
+    *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+  }
+
+  /* --- responsive + touch fixes ------------------------------------------ */
+  /* The mobile top bar overflowed at 375px on every page with a label longer
+     than "WORK" (services/security 401px, studio 385px). The label shrinks
+     first, then drops out entirely, so MENU and START always stay reachable. */
+  @media (max-width: 767px) {
+    [data-top-mobile] > div { gap: 8px !important; padding: 0 12px !important; }
+    [data-toplabel] { min-width: 0; overflow: hidden; white-space: nowrap; flex-shrink: 1; }
+  }
+  @media (max-width: 430px) {
+    [data-toplabel] { display: none !important; }
+  }
+  /* Hit areas below the 24px minimum, enlarged without moving anything:
+     the process-stage bars render 8px tall and the footer email link 14px. */
+  [data-segwrap] { position: relative; }
+  [data-segwrap]::after { content: ""; position: absolute; left: 0; right: 0; top: -14px; bottom: -14px; }
+  [data-footmail] { position: relative; }
+  [data-footmail]::after { content: ""; position: absolute; left: -6px; right: -6px; top: -9px; bottom: -9px; }
+
+  /* The desktop header is still shown from 768px up, where its nav ran 3px past
+     the viewport on the longer pages. Tighten the rhythm across the tablet band
+     rather than dropping to the compact bar and changing the design at 768. */
+  @media (max-width: 900px) {
+    [data-top-desktop] > div { gap: 20px !important; padding-left: 20px !important; padding-right: 20px !important; }
+    [data-top-desktop] nav { gap: 18px !important; }
+  }
+  /* The vertical rail CTA renders 23px wide, a hair under the 24px minimum.
+     Widen the hit box only; the visible bar is unchanged. */
+  [data-rail] a, [data-rail] button { position: relative; }
+  [data-rail] a::after, [data-rail] button::after { content: ""; position: absolute; left: -6px; right: -6px; top: 0; bottom: 0; }
+
+  /* --- mobile-only adjustments ------------------------------------------- */
+  @media (max-width: 767px) {
+    /* Header: logo keeps the left edge, MENU and START pack in beside it
+       instead of being pushed to the right by the label's auto margin. */
+    [data-toplabel] { margin-left: 0 !important; }
+
+    /* No depth-of-field blur on mobile. The effect writes inline filter styles
+       from JS, so this has to be !important to win. */
+    [data-sec], [data-dof] { filter: none !important; }
+
+    /* Both doors line up on the same left edge. The 24px indent is a gutter for
+       the desktop two-column layout and only misaligns them once stacked. */
+    [data-door2] { padding-left: 0 !important; }
+  }
+</style>
+</helmet>
+
+<div style="background:#F2EFE8;position:relative">
+  <a href="#main" style="position:absolute;left:-9999px;top:0;z-index:200;background:#151614;color:#F2EFE8;padding:14px 20px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em" onFocus="{{ onSkipFocus }}" onBlur="{{ onSkipBlur }}">SKIP TO CONTENT</a>
+
+  <div data-curtain="1" aria-hidden="true" style="position:fixed;inset:0;z-index:120;background:#0D1512;display:flex;align-items:center;justify-content:center;pointer-events:none">
+    <img data-curtain-logo="1" src="assets/logo-paper-web.png" alt="" width="720" height="119" decoding="async" style="display:block;height:clamp(26px,3.4vw,44px);width:auto" />
+  </div>
+
+  <aside data-rail="1" aria-hidden="true" style="position:fixed;top:0;left:0;bottom:0;width:72px;border-right:1px solid #D8D3C8;background:#F2EFE8;z-index:50;display:flex;flex-direction:column;align-items:center;padding:26px 0 22px">
+    <span style="width:5px;height:5px;background:#FF5A3C;display:block"></span>
+    <div style="margin-top:24px;writing-mode:vertical-rl;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:#151614">SECURITY</div>
+    <div style="margin-top:22px;position:relative;width:1px;flex:1;background:#D8D3C8">
+      <div data-progress="1" style="position:absolute;top:0;left:0;width:1px;height:100%;background:#FF5A3C;transform:scaleY(0);transform-origin:top"></div>
+    </div>
+    <a href="/open-brief" style="margin-top:22px;writing-mode:vertical-rl;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;padding:8px 4px;min-height:96px;text-decoration:none;display:flex;align-items:center">START <span data-arrow="1">↗</span></a>
+  </aside>
+
+  <div data-shell="1" style="padding-left:72px">
+    <header data-top-desktop="1" style="position:sticky;top:0;z-index:40;background:rgba(242,239,232,0.92);backdrop-filter:blur(6px);border-bottom:1px solid #D8D3C8">
+      <div style="max-width:1440px;margin:0 auto;padding:0 clamp(20px,4vw,64px);height:88px;display:flex;align-items:center;gap:clamp(20px,4vw,48px)">
+        <a href="/" style="display:flex;align-items:center;text-decoration:none;flex:none" aria-label="HackProof Studio, home">
+          <span style="position:relative;display:block;height:34px;aspect-ratio:720 / 119">
+            <img src="assets/logo-ink-web.png" alt="HackProof Studio" width="720" height="119" decoding="async" style="display:block;height:100%;width:auto" />
+            <img data-mark-o="1" aria-hidden="true" src="assets/logo-studio-coral.png" alt="" width="1440" height="239" decoding="async" style="position:absolute;left:0;top:0;width:100%;height:100%;pointer-events:none" />
+          </span>
+        </a>
+        <a data-link-down="1" href="#situation" style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;border-bottom:1px solid #D8D3C8;padding:6px 0;min-height:44px;text-decoration:none;display:inline-flex;align-items:center;gap:8px">WHAT ARE YOU SEEING <span data-arrow="1">↓</span></a>
+        <nav aria-label="Sections" style="margin-left:auto;display:flex;align-items:center;gap:28px">
+          <a data-nav-a="1" href="/work" style="font-size:14px;font-weight:500;letter-spacing:0.01em;min-height:44px;display:inline-flex;align-items:center;text-decoration:none">Work</a>
+          <a data-nav-a="1" href="/services" style="font-size:14px;font-weight:500;letter-spacing:0.01em;min-height:44px;display:inline-flex;align-items:center;text-decoration:none">Services</a>
+          <a data-nav-a="1" aria-current="page" href="#top" style="font-size:14px;font-weight:500;letter-spacing:0.01em;min-height:44px;display:inline-flex;align-items:center;gap:8px;text-decoration:none"><span style="width:5px;height:5px;background:#FF5A3C;display:block;flex:none"></span>Security</a>
+          <a data-nav-a="1" href="/studio" style="font-size:14px;font-weight:500;letter-spacing:0.01em;min-height:44px;display:inline-flex;align-items:center;text-decoration:none">Studio</a>
+          <button type="button" data-menubtn="1" onClick="{{ openIndex }}" aria-expanded="{{ indexExpanded }}" aria-controls="project-index" style="display:flex;align-items:center;gap:10px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;border:1px solid #151614;padding:0 16px;min-height:44px">MENU <span data-menuplus="1" style="color:#FF5A3C;font-size:14px">+</span></button>
+        </nav>
+      </div>
+    </header>
+
+    <header data-top-mobile="1" style="display:none;position:sticky;top:0;z-index:40;background:rgba(242,239,232,0.94);backdrop-filter:blur(6px);border-bottom:1px solid #D8D3C8">
+      <div style="padding:0 16px;height:64px;display:flex;align-items:center;gap:12px">
+        <a href="/" style="display:flex;align-items:center;text-decoration:none;flex:none" aria-label="HackProof Studio, home">
+          <span style="position:relative;display:block;height:24px;aspect-ratio:720 / 119">
+            <img src="assets/logo-ink-web.png" alt="HackProof Studio" width="720" height="119" decoding="async" style="display:block;height:100%;width:auto" />
+            <img data-mark-o="1" aria-hidden="true" src="assets/logo-studio-coral.png" alt="" width="1440" height="239" decoding="async" style="position:absolute;left:0;top:0;width:100%;height:100%;pointer-events:none" />
+          </span>
+        </a>
+        <span data-toplabel="1" style="margin-left:auto;display:inline-flex;align-items:center;gap:7px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.1em;color:#151614"><span style="width:5px;height:5px;background:#FF5A3C;display:block"></span>SECURITY</span>
+        <button type="button" data-menubtn="1" onClick="{{ openIndex }}" aria-expanded="{{ indexExpanded }}" aria-controls="project-index" style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.1em;min-height:44px;padding:0 8px">MENU</button>
+        <a href="/open-brief" style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.1em;background:#FF5A3C;color:#F2EFE8;min-height:44px;padding:0 14px;display:inline-flex;align-items:center;text-decoration:none">START</a>
+      </div>
+    </header>
+
+  <main id="main">
+    <section data-dof="1" data-screen-label="Security hero" style="max-width:1440px;margin:0 auto;padding:clamp(30px,4vw,64px) clamp(20px,4vw,64px) clamp(26px,3vw,44px)">
+      <span data-hero-in="1" style="animation-delay:1.2s;display:inline-block;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.12em;color:#62655F">SECURITY / PROTECTION + RECOVERY</span>
+      <div data-two="1" style="display:grid;grid-template-columns:1.35fr 1fr;gap:clamp(24px,5vw,72px);align-items:end;margin-top:clamp(20px,2.6vw,36px)">
+        <div style="overflow:hidden;padding-bottom:.08em">
+          <h1 data-hero-line="1" style="margin:0;font-size:clamp(2.25rem,5.2vw,4.5rem);line-height:.95;letter-spacing:-.04em;font-weight:500;max-width:20ch">When the website is exposed, <span style="position:relative;display:inline-block;color:#62655F">every minute matters.<span data-fill="1" aria-hidden="true" style="position:absolute;left:0;top:0;width:100%;color:#FF5A3C">every minute matters.</span></span></h1>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:18px;padding-bottom:6px">
+          <p data-hero-in="1" style="animation-delay:1.45s;margin:0;font-size:clamp(1rem,1.25vw,1.125rem);line-height:1.55;color:#3C3F39;max-width:46ch">Specialist WordPress security support for compromised websites, persistent malware, urgent recovery and stronger protection after the immediate problem is contained.</p>
+          <div data-hero-in="1" style="animation-delay:1.6s;display:flex;flex-wrap:wrap;gap:12px 16px;align-items:center">
+            <a data-cta-coral="1" data-link="1" href="/open-brief?need=security" style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.12em;text-decoration:none;color:#F2EFE8;background:#FF5A3C;border:1px solid #FF5A3C;border-radius:3px;min-height:52px;padding:0 22px;display:inline-flex;align-items:center;gap:10px;transition:background 200ms ease,color 200ms ease,border-color 200ms ease">MY WEBSITE MAY BE HACKED <span data-arrow="1">↗</span></a>
+            <a data-ghost="1" data-link="1" href="/open-brief?need=security" style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.12em;text-decoration:none;color:#151614;border:1px solid #D8D3C8;border-radius:3px;min-height:52px;padding:0 22px;display:inline-flex;align-items:center;transition:border-color 200ms ease,color 200ms ease">I NEED A SECURITY REVIEW</a>
+          </div>
+          <span data-hero-in="1" style="animation-delay:1.75s;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.12em;color:#62655F;display:inline-flex;align-items:center;gap:9px"><span style="width:5px;height:5px;background:#FF5A3C;display:block"></span>URGENT AND PREVENTIVE SUPPORT</span>
+        </div>
+      </div>
+
+      <div data-layers="1" data-hero-in="1" style="animation-delay:1.9s;margin-top:clamp(28px,3.4vw,52px);border:1px solid #D8D3C8;background:#0D1512;color:#F2EFE8;position:relative;overflow:hidden">
+        <span data-scan="1" aria-hidden="true" style="position:absolute;left:0;right:0;top:0;height:1px;background:linear-gradient(90deg,rgba(255,90,60,0),#FF5A3C,rgba(255,90,60,0));pointer-events:none"></span>
+        <div style="display:flex;flex-wrap:wrap;gap:12px 24px;align-items:baseline;justify-content:space-between;padding:clamp(16px,2vw,24px) clamp(18px,2.4vw,32px);border-bottom:1px solid rgba(242,239,232,.16)">
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.12em;color:#FF5A3C">THE LAYERS A REVIEW LOOKS AT</span>
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.12em;color:#C9C5BB">SURFACE IS ONE LAYER OF SEVEN</span>
+        </div>
+        <div data-three="1" style="display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:rgba(242,239,232,.14)">
+          <div data-layerrow="1" style="background:#0D1512;padding:clamp(14px,1.8vw,22px) clamp(18px,2.4vw,32px);display:flex;gap:16px;align-items:baseline;color:#F2EFE8"><span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.12em;color:#FF5A3C;width:26px;flex:none">01</span><span style="display:flex;flex-direction:column;gap:5px"><span style="font-size:16px;letter-spacing:-.01em">Surface and interface</span><span style="font-size:14px;line-height:1.45;color:#C9C5BB">What a visitor and a search engine actually see.</span></span></div>
+          <div data-layerrow="1" style="background:#0D1512;padding:clamp(14px,1.8vw,22px) clamp(18px,2.4vw,32px);display:flex;gap:16px;align-items:baseline;color:#F2EFE8"><span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.12em;color:#FF5A3C;width:26px;flex:none">02</span><span style="display:flex;flex-direction:column;gap:5px"><span style="font-size:16px;letter-spacing:-.01em">Theme and templates</span><span style="font-size:14px;line-height:1.45;color:#C9C5BB">Injected markup, altered templates, unfamiliar includes.</span></span></div>
+          <div data-layerrow="1" style="background:#0D1512;padding:clamp(14px,1.8vw,22px) clamp(18px,2.4vw,32px);display:flex;gap:16px;align-items:baseline;color:#F2EFE8"><span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.12em;color:#FF5A3C;width:26px;flex:none">03</span><span style="display:flex;flex-direction:column;gap:5px"><span style="font-size:16px;letter-spacing:-.01em">Plugins and dependencies</span><span style="font-size:14px;line-height:1.45;color:#C9C5BB">Versions, abandoned code, known vulnerabilities.</span></span></div>
+          <div data-layerrow="1" style="background:#0D1512;padding:clamp(14px,1.8vw,22px) clamp(18px,2.4vw,32px);display:flex;gap:16px;align-items:baseline;color:#F2EFE8"><span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.12em;color:#FF5A3C;width:26px;flex:none">04</span><span style="display:flex;flex-direction:column;gap:5px"><span style="font-size:16px;letter-spacing:-.01em">Database</span><span style="font-size:14px;line-height:1.45;color:#C9C5BB">Stored redirects, injected options, unexpected content.</span></span></div>
+          <div data-layerrow="1" style="background:#0D1512;padding:clamp(14px,1.8vw,22px) clamp(18px,2.4vw,32px);display:flex;gap:16px;align-items:baseline;color:#F2EFE8"><span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.12em;color:#FF5A3C;width:26px;flex:none">05</span><span style="display:flex;flex-direction:column;gap:5px"><span style="font-size:16px;letter-spacing:-.01em">File system</span><span style="font-size:14px;line-height:1.45;color:#C9C5BB">Files that do not belong, permissions, timestamps.</span></span></div>
+          <div data-layerrow="1" style="background:#0D1512;padding:clamp(14px,1.8vw,22px) clamp(18px,2.4vw,32px);display:flex;gap:16px;align-items:baseline;color:#F2EFE8"><span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.12em;color:#FF5A3C;width:26px;flex:none">06</span><span style="display:flex;flex-direction:column;gap:5px"><span style="font-size:16px;letter-spacing:-.01em">Access and accounts</span><span style="font-size:14px;line-height:1.45;color:#C9C5BB">Who can get in, and who has been in.</span></span></div>
+          <div data-layerrow="1" style="background:#0D1512;padding:clamp(14px,1.8vw,22px) clamp(18px,2.4vw,32px);display:flex;gap:16px;align-items:baseline;color:#F2EFE8"><span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.12em;color:#FF5A3C;width:26px;flex:none">07</span><span style="display:flex;flex-direction:column;gap:5px"><span style="font-size:16px;letter-spacing:-.01em">Hosting environment</span><span style="font-size:14px;line-height:1.45;color:#C9C5BB">Neighbouring sites, notices, backups, server configuration.</span></span></div>
+          <div style="background:#0D1512;padding:clamp(14px,1.8vw,22px) clamp(18px,2.4vw,32px);display:flex;align-items:flex-end"><span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.12em;color:#C9C5BB;line-height:1.7">A COMPROMISE USUALLY LIVES<br />UNDER THE LAYER YOU CAN SEE.</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section data-dof="1" id="situation" data-screen-label="What are you seeing" style="max-width:1440px;margin:0 auto;padding:clamp(40px,5vw,88px) clamp(20px,4vw,64px)">
+      <div data-two="1" style="display:grid;grid-template-columns:1fr 1.3fr;gap:clamp(24px,5vw,72px);align-items:start;padding-top:6px">
+        <div style="display:flex;flex-direction:column;gap:16px">
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.12em;color:#FF5A3C">IMMEDIATE SITUATION CHECK</span>
+          <h2 style="margin:0;font-size:clamp(1.75rem,3.4vw,2.75rem);line-height:1;letter-spacing:-.035em;font-weight:500;max-width:14ch">What are you seeing?</h2>
+          <p style="margin:0;font-size:16px;line-height:1.6;color:#62655F;max-width:38ch">If the exact problem is unclear, begin with the website URL and what you have noticed. The issue can be assessed from there.</p>
+          <a data-cta-coral="1" data-link="1" href="/open-brief?need=security" style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.12em;text-decoration:none;color:#F2EFE8;background:#FF5A3C;border:1px solid #FF5A3C;border-radius:3px;min-height:52px;padding:0 22px;display:inline-flex;align-items:center;gap:10px;align-self:flex-start;transition:background 200ms ease,color 200ms ease,border-color 200ms ease">REQUEST AN URGENT WEBSITE REVIEW <span data-arrow="1">↗</span></a>
+        </div>
+        <ul style="margin:0;padding:0;list-style:none;display:flex;flex-direction:column">
+          <li data-startrow="1" style="display:grid;grid-template-columns:auto 1fr;gap:clamp(14px,2vw,24px);padding:clamp(12px,1.5vw,18px) 0;border-bottom:1px solid rgba(21,22,20,.08);font-size:clamp(1rem,1.2vw,1.0625rem);line-height:1.4"><span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.12em;color:#FF5A3C;padding-top:5px">01</span><span>The website redirects to unknown pages</span></li>
+          <li data-startrow="1" style="display:grid;grid-template-columns:auto 1fr;gap:clamp(14px,2vw,24px);padding:clamp(12px,1.5vw,18px) 0;border-bottom:1px solid rgba(21,22,20,.08);font-size:clamp(1rem,1.2vw,1.0625rem);line-height:1.4"><span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.12em;color:#FF5A3C;padding-top:5px">02</span><span>Visitors see spam or unexpected content</span></li>
+          <li data-startrow="1" style="display:grid;grid-template-columns:auto 1fr;gap:clamp(14px,2vw,24px);padding:clamp(12px,1.5vw,18px) 0;border-bottom:1px solid rgba(21,22,20,.08);font-size:clamp(1rem,1.2vw,1.0625rem);line-height:1.4"><span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.12em;color:#FF5A3C;padding-top:5px">03</span><span>Search engines display a warning</span></li>
+          <li data-startrow="1" style="display:grid;grid-template-columns:auto 1fr;gap:clamp(14px,2vw,24px);padding:clamp(12px,1.5vw,18px) 0;border-bottom:1px solid rgba(21,22,20,.08);font-size:clamp(1rem,1.2vw,1.0625rem);line-height:1.4"><span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.12em;color:#FF5A3C;padding-top:5px">04</span><span>New administrator accounts have appeared</span></li>
+          <li data-startrow="1" style="display:grid;grid-template-columns:auto 1fr;gap:clamp(14px,2vw,24px);padding:clamp(12px,1.5vw,18px) 0;border-bottom:1px solid rgba(21,22,20,.08);font-size:clamp(1rem,1.2vw,1.0625rem);line-height:1.4"><span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.12em;color:#FF5A3C;padding-top:5px">05</span><span>The website has been suspended by the host</span></li>
+          <li data-startrow="1" style="display:grid;grid-template-columns:auto 1fr;gap:clamp(14px,2vw,24px);padding:clamp(12px,1.5vw,18px) 0;border-bottom:1px solid rgba(21,22,20,.08);font-size:clamp(1rem,1.2vw,1.0625rem);line-height:1.4"><span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.12em;color:#FF5A3C;padding-top:5px">06</span><span>The WordPress dashboard is inaccessible</span></li>
+          <li data-startrow="1" style="display:grid;grid-template-columns:auto 1fr;gap:clamp(14px,2vw,24px);padding:clamp(12px,1.5vw,18px) 0;border-bottom:1px solid rgba(21,22,20,.08);font-size:clamp(1rem,1.2vw,1.0625rem);line-height:1.4"><span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.12em;color:#FF5A3C;padding-top:5px">07</span><span>Files or plugins keep returning after removal</span></li>
+          <li data-startrow="1" style="display:grid;grid-template-columns:auto 1fr;gap:clamp(14px,2vw,24px);padding:clamp(12px,1.5vw,18px) 0;border-bottom:1px solid rgba(21,22,20,.08);font-size:clamp(1rem,1.2vw,1.0625rem);line-height:1.4"><span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.12em;color:#FF5A3C;padding-top:5px">08</span><span>The website is sending suspicious email</span></li>
+          <li data-startrow="1" style="display:grid;grid-template-columns:auto 1fr;gap:clamp(14px,2vw,24px);padding:clamp(12px,1.5vw,18px) 0;border-bottom:1px solid rgba(21,22,20,.08);font-size:clamp(1rem,1.2vw,1.0625rem);line-height:1.4"><span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.12em;color:#FF5A3C;padding-top:5px">09</span><span>Performance has suddenly deteriorated</span></li>
+          <li data-startrow="1" style="display:grid;grid-template-columns:auto 1fr;gap:clamp(14px,2vw,24px);padding:clamp(12px,1.5vw,18px) 0;border-bottom:1px solid rgba(21,22,20,.08);font-size:clamp(1rem,1.2vw,1.0625rem);line-height:1.4"><span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.12em;color:#FF5A3C;padding-top:5px">10</span><span>The website was cleaned before, but became infected again</span></li>
+          <li data-startrow="1" style="display:grid;grid-template-columns:auto 1fr;gap:clamp(14px,2vw,24px);padding:clamp(12px,1.5vw,18px) 0;font-size:clamp(1rem,1.2vw,1.0625rem);line-height:1.4"><span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.12em;color:#FF5A3C;padding-top:5px">11</span><span>The problem is unclear, but something does not look right</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <section data-dof="1" data-screen-label="Two security pathways" style="background:#151614;color:#F2EFE8">
+      <div style="max-width:1440px;margin:0 auto;padding:clamp(56px,7vw,120px) clamp(20px,4vw,64px)">
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.12em;color:#FF5A3C">TWO PATHWAYS</span>
+        <h2 style="margin:clamp(20px,2.6vw,36px) 0 0;font-size:clamp(1.875rem,3.6vw,3rem);line-height:1;letter-spacing:-.035em;font-weight:500;max-width:24ch">Contain what is happening. <span style="position:relative;display:inline-block;color:#62655F">Strengthen what remains.<span data-fill-scroll="1" aria-hidden="true" style="position:absolute;left:0;top:0;width:100%;color:#FF5A3C">Strengthen what remains.</span></span></h2>
+        <div data-hairgrid="1" style="display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(242,239,232,.16);margin-top:clamp(28px,4vw,56px)">
+          <div style="background:#151614;padding:clamp(22px,3vw,40px);display:flex;flex-direction:column;gap:16px">
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.12em;color:#FF5A3C">01 / INCIDENT RESPONSE</span>
+            <div style="font-size:clamp(1.25rem,2.2vw,1.75rem);line-height:1.05;letter-spacing:-.025em;font-weight:500">For a website that may already be compromised</div>
+            <span style="font-size:16px;line-height:1.9;color:#F2EFE8">Initial situation review<br />Compromise investigation<br />Malware identification<br />Malicious file and code cleanup<br />Unauthorised account review<br />Redirect and spam investigation<br />Website recovery<br />Reinfection investigation<br />Post-cleanup checks<br />Immediate hardening</span>
+            <a data-btn-dark="1" data-link="1" href="/open-brief?need=security" style="margin-top:auto;align-self:flex-start;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.12em;text-decoration:none;color:#F2EFE8;background:#FF5A3C;border-radius:3px;min-height:52px;padding:0 22px;display:inline-flex;align-items:center;gap:10px;transition:background 200ms ease,color 200ms ease">START INCIDENT REQUEST <span data-arrow="1">↗</span></a>
+          </div>
+          <div style="background:#151614;padding:clamp(22px,3vw,40px);display:flex;flex-direction:column;gap:16px">
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.12em;color:#C9C5BB">02 / PREVENTIVE SECURITY</span>
+            <div style="font-size:clamp(1.25rem,2.2vw,1.75rem);line-height:1.05;letter-spacing:-.025em;font-weight:500">For a website that should be harder to reach</div>
+            <span style="font-size:16px;line-height:1.9;color:#F2EFE8">Website security audit<br />Platform hardening<br />Administrator access review<br />Authentication improvements<br />Plugin and theme risk review<br />Firewall configuration<br />Backup and recovery review<br />Monitoring preparation<br />Security configuration review<br />Maintenance planning where available</span>
+            <a data-cta-line-inv="1" data-link="1" href="/open-brief?need=security" style="margin-top:auto;align-self:flex-start;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.12em;text-decoration:none;color:#F2EFE8;min-height:44px;display:inline-flex;align-items:center;gap:9px;padding-bottom:4px">REQUEST A SECURITY REVIEW <span data-arrow="1">↗</span></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section data-dof="1" data-screen-label="Incident response process" style="background:#0D1512;color:#F2EFE8;border-top:1px solid rgba(242,239,232,.16)">
+      <div style="max-width:1440px;margin:0 auto;padding:clamp(56px,7vw,120px) clamp(20px,4vw,64px)">
+        <div data-two="1" style="display:grid;grid-template-columns:1fr 1.9fr;gap:clamp(24px,5vw,72px);align-items:start">
+          <div data-svcidx="1" data-sticky="{{ stickyIdx }}" style="display:flex;flex-direction:column;gap:16px">
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.12em;color:#FF5A3C">INCIDENT RESPONSE</span>
+            <h2 style="margin:0;font-size:clamp(1.625rem,3vw,2.5rem);line-height:1;letter-spacing:-.035em;font-weight:500;max-width:18ch">A compromised website needs a controlled response.</h2>
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.12em;color:#C9C5BB;line-height:1.7;max-width:32ch">THE EXACT RESPONSE DEPENDS ON THE WEBSITE, HOSTING ENVIRONMENT, ACCESS AVAILABLE AND NATURE OF THE COMPROMISE.</span>
+          </div>
+          <ol style="margin:0;padding:0;list-style:none;display:flex;flex-direction:column">
+            <li data-stagerow="1" style="display:grid;grid-template-columns:auto 1fr;gap:clamp(16px,3vw,36px);padding:clamp(15px,2vw,24px) 0;border-bottom:1px solid rgba(242,239,232,.12)">
+              <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.12em;color:#FF5A3C;padding-top:8px;width:58px">01 /</span>
+              <span style="display:flex;flex-direction:column;gap:8px">
+                <span data-stagetitle="1" style="font-size:clamp(1.25rem,2.2vw,1.75rem);line-height:1;letter-spacing:-.025em">Establish</span>
+                <span style="font-size:16px;line-height:1.55;color:#C9C5BB;max-width:56ch">Understand what has happened, what you are seeing, and what access is available.</span>
+              </span>
+            </li>
+            <li data-stagerow="1" style="display:grid;grid-template-columns:auto 1fr;gap:clamp(16px,3vw,36px);padding:clamp(15px,2vw,24px) 0;border-bottom:1px solid rgba(242,239,232,.12)">
+              <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.12em;color:#FF5A3C;padding-top:8px;width:58px">02 /</span>
+              <span style="display:flex;flex-direction:column;gap:8px">
+                <span data-stagetitle="1" style="font-size:clamp(1.25rem,2.2vw,1.75rem);line-height:1;letter-spacing:-.025em">Contain</span>
+                <span style="font-size:16px;line-height:1.55;color:#C9C5BB;max-width:56ch">Reduce the immediate exposure and prevent further avoidable damage where possible.</span>
+              </span>
+            </li>
+            <li data-stagerow="1" style="display:grid;grid-template-columns:auto 1fr;gap:clamp(16px,3vw,36px);padding:clamp(15px,2vw,24px) 0;border-bottom:1px solid rgba(242,239,232,.12)">
+              <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.12em;color:#FF5A3C;padding-top:8px;width:58px">03 /</span>
+              <span style="display:flex;flex-direction:column;gap:8px">
+                <span data-stagetitle="1" style="font-size:clamp(1.25rem,2.2vw,1.75rem);line-height:1;letter-spacing:-.025em">Investigate</span>
+                <span style="font-size:16px;line-height:1.55;color:#C9C5BB;max-width:56ch">Review the website, files, accounts, configuration, database, plugins, themes and relevant hosting information.</span>
+              </span>
+            </li>
+            <li data-stagerow="1" style="display:grid;grid-template-columns:auto 1fr;gap:clamp(16px,3vw,36px);padding:clamp(15px,2vw,24px) 0;border-bottom:1px solid rgba(242,239,232,.12)">
+              <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.12em;color:#FF5A3C;padding-top:8px;width:58px">04 /</span>
+              <span style="display:flex;flex-direction:column;gap:8px">
+                <span data-stagetitle="1" style="font-size:clamp(1.25rem,2.2vw,1.75rem);line-height:1;letter-spacing:-.025em">Clean</span>
+                <span style="font-size:16px;line-height:1.55;color:#C9C5BB;max-width:56ch">Remove identified malicious code, files, accounts, redirects, spam and compromised components within the agreed scope.</span>
+              </span>
+            </li>
+            <li data-stagerow="1" style="display:grid;grid-template-columns:auto 1fr;gap:clamp(16px,3vw,36px);padding:clamp(15px,2vw,24px) 0;border-bottom:1px solid rgba(242,239,232,.12)">
+              <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.12em;color:#FF5A3C;padding-top:8px;width:58px">05 /</span>
+              <span style="display:flex;flex-direction:column;gap:8px">
+                <span data-stagetitle="1" style="font-size:clamp(1.25rem,2.2vw,1.75rem);line-height:1;letter-spacing:-.025em">Recover</span>
+                <span style="font-size:16px;line-height:1.55;color:#C9C5BB;max-width:56ch">Restore normal website operation and verify that key functions are working.</span>
+              </span>
+            </li>
+            <li data-stagerow="1" style="display:grid;grid-template-columns:auto 1fr;gap:clamp(16px,3vw,36px);padding:clamp(15px,2vw,24px) 0;border-bottom:1px solid rgba(242,239,232,.12)">
+              <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.12em;color:#FF5A3C;padding-top:8px;width:58px">06 /</span>
+              <span style="display:flex;flex-direction:column;gap:8px">
+                <span data-stagetitle="1" style="font-size:clamp(1.25rem,2.2vw,1.75rem);line-height:1;letter-spacing:-.025em">Harden</span>
+                <span style="font-size:16px;line-height:1.55;color:#C9C5BB;max-width:56ch">Strengthen access, configuration, software, firewall rules, permissions and other relevant areas.</span>
+              </span>
+            </li>
+            <li data-stagerow="1" style="display:grid;grid-template-columns:auto 1fr;gap:clamp(16px,3vw,36px);padding:clamp(15px,2vw,24px) 0;border-bottom:1px solid rgba(242,239,232,.12)">
+              <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.12em;color:#FF5A3C;padding-top:8px;width:58px">07 /</span>
+              <span style="display:flex;flex-direction:column;gap:8px">
+                <span data-stagetitle="1" style="font-size:clamp(1.25rem,2.2vw,1.75rem);line-height:1;letter-spacing:-.025em">Verify</span>
+                <span style="font-size:16px;line-height:1.55;color:#C9C5BB;max-width:56ch">Complete post-cleanup checks and document any remaining concerns or recommended actions.</span>
+              </span>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <section data-dof="1" data-screen-label="Security services" style="max-width:1440px;margin:0 auto;padding:clamp(48px,6vw,104px) clamp(20px,4vw,64px) clamp(32px,4vw,64px)">
+      <div style="display:flex;flex-wrap:wrap;gap:16px 32px;align-items:baseline;justify-content:space-between;padding-top:6px">
+        <h2 style="margin:0;font-size:clamp(1.75rem,3.4vw,2.75rem);line-height:1;letter-spacing:-.035em;font-weight:500;max-width:20ch">Security support shaped around the website.</h2>
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.12em;color:#62655F;max-width:32ch;line-height:1.7">SCOPE IS CONFIRMED AFTER THE SITUATION IS UNDERSTOOD</span>
+      </div>
+      <div style="margin-top:clamp(24px,3vw,44px)">
+        <div style="display:grid;grid-template-columns:1.1fr 1.4fr .7fr;gap:clamp(16px,3vw,40px);padding:0 8px 10px;font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.12em;color:#62655F;border-bottom:1px solid #151614">
+          <span>SERVICE</span><span>WHAT IT COVERS</span><span data-specthird="1">PATHWAY</span>
+        </div>
+        <div data-specrow="1" style="display:grid;grid-template-columns:1.1fr 1.4fr .7fr;gap:clamp(16px,3vw,40px);padding:clamp(14px,1.6vw,20px) 8px;border-bottom:1px solid rgba(21,22,20,.08);transition:background 180ms ease">
+          <span style="display:flex;gap:12px;align-items:baseline"><span style="width:5px;height:5px;background:#FF5A3C;display:block;flex:none;transform:translateY(-3px)"></span><span style="font-size:17px;letter-spacing:-.01em">Website security audit</span></span>
+          <span style="font-size:16px;line-height:1.5;color:#62655F">A focused review of the website's security condition, configuration, access, software and visible areas of risk.</span>
+          <span data-specthird="1" style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.12em;color:#62655F">PREVENTIVE</span>
+        </div>
+        <div data-specrow="1" style="display:grid;grid-template-columns:1.1fr 1.4fr .7fr;gap:clamp(16px,3vw,40px);padding:clamp(14px,1.6vw,20px) 8px;border-bottom:1px solid rgba(21,22,20,.08);transition:background 180ms ease">
+          <span style="display:flex;gap:12px;align-items:baseline"><span style="width:5px;height:5px;background:#FF5A3C;display:block;flex:none;transform:translateY(-3px)"></span><span style="font-size:17px;letter-spacing:-.01em">Malware cleanup</span></span>
+          <span style="font-size:16px;line-height:1.5;color:#62655F">Investigation and removal of identified malicious files, code, redirects, spam or compromised components.</span>
+          <span data-specthird="1" style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.12em;color:#62655F">INCIDENT</span>
+        </div>
+        <div data-specrow="1" style="display:grid;grid-template-columns:1.1fr 1.4fr .7fr;gap:clamp(16px,3vw,40px);padding:clamp(14px,1.6vw,20px) 8px;border-bottom:1px solid rgba(21,22,20,.08);transition:background 180ms ease">
+          <span style="display:flex;gap:12px;align-items:baseline"><span style="width:5px;height:5px;background:#FF5A3C;display:block;flex:none;transform:translateY(-3px)"></span><span style="font-size:17px;letter-spacing:-.01em">Hacked website recovery</span></span>
+          <span style="font-size:16px;line-height:1.5;color:#62655F">Support for restoring an affected website to controlled and functional operation.</span>
+          <span data-specthird="1" style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.12em;color:#62655F">INCIDENT</span>
+        </div>
+        <div data-specrow="1" style="display:grid;grid-template-columns:1.1fr 1.4fr .7fr;gap:clamp(16px,3vw,40px);padding:clamp(14px,1.6vw,20px) 8px;border-bottom:1px solid rgba(21,22,20,.08);transition:background 180ms ease">
+          <span style="display:flex;gap:12px;align-items:baseline"><span style="width:5px;height:5px;background:#FF5A3C;display:block;flex:none;transform:translateY(-3px)"></span><span style="font-size:17px;letter-spacing:-.01em">Reinfection investigation</span></span>
+          <span style="font-size:16px;line-height:1.5;color:#62655F">Investigation into why malicious content or behaviour returns after a previous cleanup.</span>
+          <span data-specthird="1" style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.12em;color:#62655F">INCIDENT</span>
+        </div>
+        <div data-specrow="1" style="display:grid;grid-template-columns:1.1fr 1.4fr .7fr;gap:clamp(16px,3vw,40px);padding:clamp(14px,1.6vw,20px) 8px;border-bottom:1px solid rgba(21,22,20,.08);transition:background 180ms ease">
+          <span style="display:flex;gap:12px;align-items:baseline"><span style="width:5px;height:5px;background:#FF5A3C;display:block;flex:none;transform:translateY(-3px)"></span><span style="font-size:17px;letter-spacing:-.01em">WordPress hardening</span></span>
+          <span style="font-size:16px;line-height:1.5;color:#62655F">Improvement of access, configuration, permissions, administrative protection and other relevant controls.</span>
+          <span data-specthird="1" style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.12em;color:#62655F">BOTH</span>
+        </div>
+        <div data-specrow="1" style="display:grid;grid-template-columns:1.1fr 1.4fr .7fr;gap:clamp(16px,3vw,40px);padding:clamp(14px,1.6vw,20px) 8px;border-bottom:1px solid rgba(21,22,20,.08);transition:background 180ms ease">
+          <span style="display:flex;gap:12px;align-items:baseline"><span style="width:5px;height:5px;background:#FF5A3C;display:block;flex:none;transform:translateY(-3px)"></span><span style="font-size:17px;letter-spacing:-.01em">Firewall and protection</span></span>
+          <span style="font-size:16px;line-height:1.5;color:#62655F">Configuration of appropriate protective controls according to the website and hosting environment.</span>
+          <span data-specthird="1" style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.12em;color:#62655F">BOTH</span>
+        </div>
+        <div data-specrow="1" style="display:grid;grid-template-columns:1.1fr 1.4fr .7fr;gap:clamp(16px,3vw,40px);padding:clamp(14px,1.6vw,20px) 8px;border-bottom:1px solid rgba(21,22,20,.08);transition:background 180ms ease">
+          <span style="display:flex;gap:12px;align-items:baseline"><span style="width:5px;height:5px;background:#FF5A3C;display:block;flex:none;transform:translateY(-3px)"></span><span style="font-size:17px;letter-spacing:-.01em">Security monitoring and maintenance</span></span>
+          <span style="font-size:16px;line-height:1.5;color:#62655F">Ongoing review and maintenance where this service is available and included within an agreed scope.</span>
+          <span data-specthird="1" style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.12em;color:#62655F">PREVENTIVE</span>
+        </div>
+        <div data-specrow="1" style="display:grid;grid-template-columns:1.1fr 1.4fr .7fr;gap:clamp(16px,3vw,40px);padding:clamp(14px,1.6vw,20px) 8px;border-bottom:1px solid #151614;transition:background 180ms ease">
+          <span style="display:flex;gap:12px;align-items:baseline"><span style="width:5px;height:5px;background:#FF5A3C;display:block;flex:none;transform:translateY(-3px)"></span><span style="font-size:17px;letter-spacing:-.01em">Security-first website builds</span></span>
+          <span style="font-size:16px;line-height:1.5;color:#62655F">Security-conscious implementation carried into new website and redesign projects.</span>
+          <span data-specthird="1" style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.12em;color:#62655F">BUILD</span>
+        </div>
+      </div>
+    </section>
+
+    <section data-dof="1" data-screen-label="Access creates visibility" style="max-width:1440px;margin:0 auto;padding:clamp(32px,4vw,64px) clamp(20px,4vw,64px) clamp(48px,6vw,96px)">
+      <div data-two="1" style="display:grid;grid-template-columns:1fr 1.3fr;gap:clamp(24px,5vw,72px);align-items:start;padding-top:6px">
+        <div style="display:flex;flex-direction:column;gap:16px">
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.12em;color:#FF5A3C">WHAT THE WORK REQUIRES</span>
+          <h2 style="margin:0;font-size:clamp(1.75rem,3.2vw,2.5rem);line-height:1;letter-spacing:-.035em;font-weight:500;max-width:14ch">Access creates visibility.</h2>
+          <p style="margin:0;font-size:16px;line-height:1.6;color:#62655F;max-width:40ch">An investigation can only account for what it can see. Depending on the issue, some of the following may be needed.</p>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:clamp(18px,2.4vw,28px)">
+          <span style="font-size:clamp(1rem,1.2vw,1.0625rem);line-height:2;color:#151614">WordPress administrator<br /><span style="color:#62655F">Hosting control panel</span><br />Website files<br /><span style="color:#62655F">Database</span><br />Security or firewall platform<br /><span style="color:#62655F">Domain or DNS settings where relevant</span><br />Backup system<br /><span style="color:#62655F">Recent hosting or security notices</span></span>
+          <p style="margin:0;font-size:17px;line-height:1.6;max-width:52ch;border-top:1px solid #151614;padding-top:18px">Only access relevant to the agreed investigation is requested. Access details are handled through an approved secure process — never collected in a public form, and never more than the work needs.</p>
+        </div>
+      </div>
+    </section>
+
+    <section data-dof="1" data-screen-label="Security beneath every build" style="background:#151614;color:#F2EFE8">
+      <div style="max-width:1440px;margin:0 auto;padding:clamp(56px,7vw,120px) clamp(20px,4vw,64px)">
+        <div data-two="1" style="display:grid;grid-template-columns:1.25fr 1fr;gap:clamp(24px,5vw,72px);align-items:end">
+          <div style="display:flex;flex-direction:column;gap:clamp(14px,2vw,24px)">
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.12em;color:#FF5A3C">DESIGN AND SECURITY TOGETHER</span>
+            <h2 style="margin:0;font-size:clamp(2rem,5vw,4rem);line-height:.92;letter-spacing:-.042em;font-weight:500;max-width:16ch">Protection should not begin <span style="position:relative;display:inline-block;color:#62655F">after launch.<span data-fill-scroll="1" aria-hidden="true" style="position:absolute;left:0;top:0;width:100%;color:#FF5A3C">after launch.</span></span></h2>
+          </div>
+          <p style="margin:0;font-size:clamp(1rem,1.2vw,1.0625rem);line-height:1.58;color:#C9C5BB;max-width:40ch;border-top:1px solid rgba(242,239,232,.2);padding-top:18px">Security is considered during the design and development process, from implementation and access configuration to launch checks and long-term maintainability.</p>
+        </div>
+
+        <div style="margin-top:clamp(40px,6vw,96px)">
+          <div style="display:flex;justify-content:space-between;gap:16px;font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.12em;color:#62655F;padding-bottom:clamp(14px,2vw,22px)">
+            <span>PROJECT START</span><span data-axismid="1">EIGHT CHECKPOINTS ON THE BUILD LINE</span><span>LAUNCH AND ONWARD</span>
+          </div>
+          <div data-axiswrap="1" style="position:relative">
+            <div data-axisline="1" style="position:absolute;left:0;right:0;top:50%;height:1px;background:linear-gradient(90deg,#FF5A3C,rgba(255,90,60,.2))"></div>
+            <div data-axis="1" style="display:grid;grid-template-columns:repeat(8,1fr);column-gap:clamp(8px,1.4vw,24px)">
+            <div data-rev="1" data-axisitem="1" style="display:flex;flex-direction:column;height:clamp(168px,17vw,224px)">
+              <div data-axishalf="1" style="flex:1;display:flex;flex-direction:column;align-items:flex-start;justify-content:flex-end;gap:8px">
+              <span data-axisnum="1" style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.12em;color:#FF5A3C">01</span>
+              <span data-axislabel="1" style="font-size:clamp(.9375rem,1.1vw,1.0625rem);line-height:1.25;letter-spacing:-.01em">Clean implementation</span>
+              <span data-axisconn="1" style="width:1px;height:clamp(14px,2vw,26px);background:rgba(242,239,232,.3);display:block"></span>
+              <span data-axisdot="1" style="width:5px;height:5px;background:#FF5A3C;display:block;margin-bottom:-3px"></span>
+            </div>
+              <div data-axishalf="1" style="flex:1;display:flex;flex-direction:column;align-items:flex-start;justify-content:flex-start;gap:8px"></div>
+            </div>
+            <div data-rev="1" data-axisitem="1" style="display:flex;flex-direction:column;height:clamp(168px,17vw,224px)">
+              <div data-axishalf="1" style="flex:1;display:flex;flex-direction:column;align-items:flex-start;justify-content:flex-end;gap:8px"></div>
+              <div data-axishalf="1" style="flex:1;display:flex;flex-direction:column;align-items:flex-start;justify-content:flex-start;gap:8px">
+              <span data-axisdot="1" style="width:5px;height:5px;background:#FF5A3C;display:block;margin-top:-3px"></span>
+              <span data-axisconn="1" style="width:1px;height:clamp(14px,2vw,26px);background:rgba(242,239,232,.3);display:block"></span>
+              <span data-axisnum="1" style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.12em;color:#FF5A3C">02</span>
+              <span data-axislabel="1" style="font-size:clamp(.9375rem,1.1vw,1.0625rem);line-height:1.25;letter-spacing:-.01em">Controlled access</span>
+            </div>
+            </div>
+            <div data-rev="1" data-axisitem="1" style="display:flex;flex-direction:column;height:clamp(168px,17vw,224px)">
+              <div data-axishalf="1" style="flex:1;display:flex;flex-direction:column;align-items:flex-start;justify-content:flex-end;gap:8px">
+              <span data-axisnum="1" style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.12em;color:#FF5A3C">03</span>
+              <span data-axislabel="1" style="font-size:clamp(.9375rem,1.1vw,1.0625rem);line-height:1.25;letter-spacing:-.01em">Appropriate software selection</span>
+              <span data-axisconn="1" style="width:1px;height:clamp(14px,2vw,26px);background:rgba(242,239,232,.3);display:block"></span>
+              <span data-axisdot="1" style="width:5px;height:5px;background:#FF5A3C;display:block;margin-bottom:-3px"></span>
+            </div>
+              <div data-axishalf="1" style="flex:1;display:flex;flex-direction:column;align-items:flex-start;justify-content:flex-start;gap:8px"></div>
+            </div>
+            <div data-rev="1" data-axisitem="1" style="display:flex;flex-direction:column;height:clamp(168px,17vw,224px)">
+              <div data-axishalf="1" style="flex:1;display:flex;flex-direction:column;align-items:flex-start;justify-content:flex-end;gap:8px"></div>
+              <div data-axishalf="1" style="flex:1;display:flex;flex-direction:column;align-items:flex-start;justify-content:flex-start;gap:8px">
+              <span data-axisdot="1" style="width:5px;height:5px;background:#FF5A3C;display:block;margin-top:-3px"></span>
+              <span data-axisconn="1" style="width:1px;height:clamp(14px,2vw,26px);background:rgba(242,239,232,.3);display:block"></span>
+              <span data-axisnum="1" style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.12em;color:#FF5A3C">04</span>
+              <span data-axislabel="1" style="font-size:clamp(.9375rem,1.1vw,1.0625rem);line-height:1.25;letter-spacing:-.01em">Secure configuration</span>
+            </div>
+            </div>
+            <div data-rev="1" data-axisitem="1" style="display:flex;flex-direction:column;height:clamp(168px,17vw,224px)">
+              <div data-axishalf="1" style="flex:1;display:flex;flex-direction:column;align-items:flex-start;justify-content:flex-end;gap:8px">
+              <span data-axisnum="1" style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.12em;color:#FF5A3C">05</span>
+              <span data-axislabel="1" style="font-size:clamp(.9375rem,1.1vw,1.0625rem);line-height:1.25;letter-spacing:-.01em">Performance awareness</span>
+              <span data-axisconn="1" style="width:1px;height:clamp(14px,2vw,26px);background:rgba(242,239,232,.3);display:block"></span>
+              <span data-axisdot="1" style="width:5px;height:5px;background:#FF5A3C;display:block;margin-bottom:-3px"></span>
+            </div>
+              <div data-axishalf="1" style="flex:1;display:flex;flex-direction:column;align-items:flex-start;justify-content:flex-start;gap:8px"></div>
+            </div>
+            <div data-rev="1" data-axisitem="1" style="display:flex;flex-direction:column;height:clamp(168px,17vw,224px)">
+              <div data-axishalf="1" style="flex:1;display:flex;flex-direction:column;align-items:flex-start;justify-content:flex-end;gap:8px"></div>
+              <div data-axishalf="1" style="flex:1;display:flex;flex-direction:column;align-items:flex-start;justify-content:flex-start;gap:8px">
+              <span data-axisdot="1" style="width:5px;height:5px;background:#FF5A3C;display:block;margin-top:-3px"></span>
+              <span data-axisconn="1" style="width:1px;height:clamp(14px,2vw,26px);background:rgba(242,239,232,.3);display:block"></span>
+              <span data-axisnum="1" style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.12em;color:#FF5A3C">06</span>
+              <span data-axislabel="1" style="font-size:clamp(.9375rem,1.1vw,1.0625rem);line-height:1.25;letter-spacing:-.01em">Backup readiness</span>
+            </div>
+            </div>
+            <div data-rev="1" data-axisitem="1" style="display:flex;flex-direction:column;height:clamp(168px,17vw,224px)">
+              <div data-axishalf="1" style="flex:1;display:flex;flex-direction:column;align-items:flex-start;justify-content:flex-end;gap:8px">
+              <span data-axisnum="1" style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.12em;color:#FF5A3C">07</span>
+              <span data-axislabel="1" style="font-size:clamp(.9375rem,1.1vw,1.0625rem);line-height:1.25;letter-spacing:-.01em">Update planning</span>
+              <span data-axisconn="1" style="width:1px;height:clamp(14px,2vw,26px);background:rgba(242,239,232,.3);display:block"></span>
+              <span data-axisdot="1" style="width:5px;height:5px;background:#FF5A3C;display:block;margin-bottom:-3px"></span>
+            </div>
+              <div data-axishalf="1" style="flex:1;display:flex;flex-direction:column;align-items:flex-start;justify-content:flex-start;gap:8px"></div>
+            </div>
+            <div data-rev="1" data-axisitem="1" style="display:flex;flex-direction:column;height:clamp(168px,17vw,224px)">
+              <div data-axishalf="1" style="flex:1;display:flex;flex-direction:column;align-items:flex-start;justify-content:flex-end;gap:8px"></div>
+              <div data-axishalf="1" style="flex:1;display:flex;flex-direction:column;align-items:flex-start;justify-content:flex-start;gap:8px">
+              <span data-axisdot="1" style="width:5px;height:5px;background:#FF5A3C;display:block;margin-top:-3px"></span>
+              <span data-axisconn="1" style="width:1px;height:clamp(14px,2vw,26px);background:rgba(242,239,232,.3);display:block"></span>
+              <span data-axisnum="1" style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.12em;color:#FF5A3C">08</span>
+              <span data-axislabel="1" style="font-size:clamp(.9375rem,1.1vw,1.0625rem);line-height:1.25;letter-spacing:-.01em">Launch verification</span>
+            </div>
+            </div>
+            </div>
+          </div>
+        </div>
+
+        <div style="display:flex;flex-wrap:wrap;gap:16px 40px;align-items:center;justify-content:space-between;margin-top:clamp(36px,5vw,80px);border-top:1px solid rgba(242,239,232,.2);padding-top:22px">
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.12em;color:#62655F;line-height:1.7;max-width:44ch">THE SAME CHECKPOINTS APPLY TO NEW BUILDS AND REDESIGNS.</span>
+          <a data-cta-line-inv="1" data-link="1" href="/services" style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.12em;text-decoration:none;color:#F2EFE8;min-height:44px;display:inline-flex;align-items:center;gap:9px;padding-bottom:4px">EXPLORE WEBSITE SERVICES <span data-arrow="1">↗</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section data-dof="1" data-screen-label="Experience" style="max-width:1440px;margin:0 auto;padding:clamp(48px,6vw,104px) clamp(20px,4vw,64px)">
+      <div data-two="1" style="display:grid;grid-template-columns:1fr 1.3fr;gap:clamp(24px,5vw,72px);align-items:start;padding-top:6px">
+        <div style="display:flex;flex-direction:column;gap:16px">
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.12em;color:#FF5A3C">CAPABILITY</span>
+          <h2 style="margin:0;font-size:clamp(1.75rem,3.2vw,2.5rem);line-height:1;letter-spacing:-.035em;font-weight:500;max-width:16ch">Experience across complex website incidents.</h2>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:clamp(18px,2.4vw,26px)">
+          <p style="margin:0;font-size:clamp(1rem,1.25vw,1.125rem);line-height:1.58;color:#3C3F39;max-width:52ch">Security work is confidential by default, so incidents are described by type rather than by client. Specifics can be discussed directly, within what each client has agreed to share.</p>
+          <div data-four="1" style="display:grid;grid-template-columns:repeat(2,1fr);gap:12px clamp(24px,4vw,56px)">
+            <span style="display:flex;flex-direction:column;gap:5px;border-top:1px solid #D8D3C8;padding-top:12px"><span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.12em;color:#62655F">WORDPRESS</span><span style="font-size:16px;letter-spacing:-.01em">Malware cleanup</span></span>
+            <span style="display:flex;flex-direction:column;gap:5px;border-top:1px solid #D8D3C8;padding-top:12px"><span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.12em;color:#62655F">WORDPRESS</span><span style="font-size:16px;letter-spacing:-.01em">Repeated reinfection</span></span>
+            <span style="display:flex;flex-direction:column;gap:5px;border-top:1px solid #D8D3C8;padding-top:12px"><span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.12em;color:#62655F">BUSINESS WEBSITE</span><span style="font-size:16px;letter-spacing:-.01em">Hacked site recovery</span></span>
+            <span style="display:flex;flex-direction:column;gap:5px;border-top:1px solid #D8D3C8;padding-top:12px"><span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.12em;color:#62655F">WORDPRESS</span><span style="font-size:16px;letter-spacing:-.01em">Unauthorised redirects</span></span>
+            <span style="display:flex;flex-direction:column;gap:5px;border-top:1px solid #D8D3C8;padding-top:12px"><span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.12em;color:#62655F">E-COMMERCE</span><span style="font-size:16px;letter-spacing:-.01em">Incident response</span></span>
+            <span style="display:flex;flex-direction:column;gap:5px;border-top:1px solid #D8D3C8;padding-top:12px"><span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.12em;color:#62655F">IIS / ASP.NET</span><span style="font-size:16px;letter-spacing:-.01em">Malware investigation</span></span>
+          </div>
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.12em;color:#62655F;line-height:1.7">NO CLIENT NAME, VOLUME OR OUTCOME IS PUBLISHED WITHOUT WRITTEN APPROVAL.</span>
+        </div>
+      </div>
+    </section>
+
+    <section data-dof="1" data-screen-label="Security principles" style="background:#0D1512;color:#F2EFE8">
+      <div style="max-width:1440px;margin:0 auto;padding:clamp(56px,7vw,120px) clamp(20px,4vw,64px)">
+        <div data-two="1" style="display:grid;grid-template-columns:1.4fr 1fr;gap:clamp(24px,5vw,72px);align-items:end">
+          <div style="display:flex;flex-direction:column;gap:clamp(14px,2vw,24px)">
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.12em;color:#FF5A3C">HOW THE WORK IS RUN</span>
+            <h2 style="margin:0;font-size:clamp(2.25rem,6vw,5rem);line-height:.9;letter-spacing:-.046em;font-weight:500;max-width:14ch">No theatre. <span style="position:relative;display:inline-block;color:#62655F">No false certainty.<span data-fill-scroll="1" aria-hidden="true" style="position:absolute;left:0;top:0;width:100%;color:#FF5A3C">No false certainty.</span></span></h2>
+          </div>
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.12em;color:#62655F;line-height:1.8;border-top:1px solid rgba(242,239,232,.2);padding-top:18px">SIX PRINCIPLES<br />APPLIED TO EVERY SECURITY ENGAGEMENT</span>
+        </div>
+        <div style="margin-top:clamp(32px,4.5vw,76px);border-bottom:1px solid rgba(242,239,232,.14)">
+          <div data-rev="1" data-band="1" style="display:grid;grid-template-columns:clamp(86px,9vw,168px) 1fr clamp(210px,23vw,350px);gap:clamp(12px,2.4vw,44px);align-items:baseline;padding:clamp(20px,2.8vw,38px) clamp(10px,1.6vw,24px);border-top:1px solid rgba(242,239,232,.14);background:rgba(242,239,232,.035)">
+            <span data-bandnum="1" style="font-family:'IBM Plex Mono',monospace;font-size:clamp(2.25rem,5vw,4.5rem);line-height:.78;letter-spacing:-.045em;color:rgba(242,239,232,.17)">01</span>
+            <span data-bandtitle="1" style="font-size:clamp(1.375rem,2.6vw,2.125rem);line-height:1.02;letter-spacing:-.032em;max-width:20ch">Evidence before assumptions</span>
+            <span style="font-size:16px;line-height:1.55;color:#C9C5BB">Understand what is happening before declaring the cause.</span>
+          </div>
+          <div data-rev="1" data-band="1" style="display:grid;grid-template-columns:clamp(86px,9vw,168px) 1fr clamp(210px,23vw,350px);gap:clamp(12px,2.4vw,44px);align-items:baseline;padding:clamp(20px,2.8vw,38px) clamp(10px,1.6vw,24px);border-top:1px solid rgba(242,239,232,.14);">
+            <span data-bandnum="1" style="font-family:'IBM Plex Mono',monospace;font-size:clamp(2.25rem,5vw,4.5rem);line-height:.78;letter-spacing:-.045em;color:rgba(242,239,232,.17)">02</span>
+            <span data-bandtitle="1" style="font-size:clamp(1.375rem,2.6vw,2.125rem);line-height:1.02;letter-spacing:-.032em;max-width:20ch">Containment before cosmetics</span>
+            <span style="font-size:16px;line-height:1.55;color:#C9C5BB">Prioritise the active risk before the surface appearance.</span>
+          </div>
+          <div data-rev="1" data-band="1" style="display:grid;grid-template-columns:clamp(86px,9vw,168px) 1fr clamp(210px,23vw,350px);gap:clamp(12px,2.4vw,44px);align-items:baseline;padding:clamp(20px,2.8vw,38px) clamp(10px,1.6vw,24px);border-top:1px solid rgba(242,239,232,.14);background:rgba(242,239,232,.035)">
+            <span data-bandnum="1" style="font-family:'IBM Plex Mono',monospace;font-size:clamp(2.25rem,5vw,4.5rem);line-height:.78;letter-spacing:-.045em;color:rgba(242,239,232,.17)">03</span>
+            <span data-bandtitle="1" style="font-size:clamp(1.375rem,2.6vw,2.125rem);line-height:1.02;letter-spacing:-.032em;max-width:20ch">Recovery with context</span>
+            <span style="font-size:16px;line-height:1.55;color:#C9C5BB">Restore the website while considering how the compromise may have happened.</span>
+          </div>
+          <div data-rev="1" data-band="1" style="display:grid;grid-template-columns:clamp(86px,9vw,168px) 1fr clamp(210px,23vw,350px);gap:clamp(12px,2.4vw,44px);align-items:baseline;padding:clamp(20px,2.8vw,38px) clamp(10px,1.6vw,24px);border-top:1px solid rgba(242,239,232,.14);">
+            <span data-bandnum="1" style="font-family:'IBM Plex Mono',monospace;font-size:clamp(2.25rem,5vw,4.5rem);line-height:.78;letter-spacing:-.045em;color:rgba(242,239,232,.17)">04</span>
+            <span data-bandtitle="1" style="font-size:clamp(1.375rem,2.6vw,2.125rem);line-height:1.02;letter-spacing:-.032em;max-width:20ch">Hardening after cleanup</span>
+            <span style="font-size:16px;line-height:1.55;color:#C9C5BB">Cleaning without strengthening leaves the same weaknesses in place.</span>
+          </div>
+          <div data-rev="1" data-band="1" style="display:grid;grid-template-columns:clamp(86px,9vw,168px) 1fr clamp(210px,23vw,350px);gap:clamp(12px,2.4vw,44px);align-items:baseline;padding:clamp(20px,2.8vw,38px) clamp(10px,1.6vw,24px);border-top:1px solid rgba(242,239,232,.14);background:rgba(242,239,232,.035)">
+            <span data-bandnum="1" style="font-family:'IBM Plex Mono',monospace;font-size:clamp(2.25rem,5vw,4.5rem);line-height:.78;letter-spacing:-.045em;color:rgba(242,239,232,.17)">05</span>
+            <span data-bandtitle="1" style="font-size:clamp(1.375rem,2.6vw,2.125rem);line-height:1.02;letter-spacing:-.032em;max-width:20ch">Clear communication</span>
+            <span style="font-size:16px;line-height:1.55;color:#C9C5BB">Findings, priorities and next actions, without unnecessary technical fog.</span>
+          </div>
+          <div data-rev="1" data-band="1" style="display:grid;grid-template-columns:clamp(86px,9vw,168px) 1fr clamp(210px,23vw,350px);gap:clamp(12px,2.4vw,44px);align-items:baseline;padding:clamp(20px,2.8vw,38px) clamp(10px,1.6vw,24px);border-top:1px solid rgba(242,239,232,.14);">
+            <span data-bandnum="1" style="font-family:'IBM Plex Mono',monospace;font-size:clamp(2.25rem,5vw,4.5rem);line-height:.78;letter-spacing:-.045em;color:rgba(242,239,232,.17)">06</span>
+            <span data-bandtitle="1" style="font-size:clamp(1.375rem,2.6vw,2.125rem);line-height:1.02;letter-spacing:-.032em;max-width:20ch">Confidential handling</span>
+            <span style="font-size:16px;line-height:1.55;color:#C9C5BB">Website access and incident information treated with appropriate care.</span>
+          </div>
+        </div>
+        <p style="margin:clamp(32px,4.5vw,72px) 0 0;font-size:clamp(1.0625rem,1.5vw,1.375rem);line-height:1.5;letter-spacing:-.015em;color:#F2EFE8;max-width:44ch;border-left:1px solid #FF5A3C;padding-left:clamp(18px,2.4vw,28px)">Hardening reduces risk. No website can honestly be described as permanently immune, and this studio will not claim otherwise.</p>
+      </div>
+    </section>
+
+    <section data-dof="1" data-screen-label="Engagement flow" style="max-width:1440px;margin:0 auto;padding:clamp(48px,6vw,104px) clamp(20px,4vw,64px) clamp(32px,4vw,56px)">
+      <div style="display:flex;flex-wrap:wrap;gap:14px 40px;align-items:baseline;justify-content:space-between;padding-top:6px">
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.12em;color:#FF5A3C">AFTER THE REQUEST ARRIVES</span>
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.12em;color:#62655F">EVERY REQUEST IS READ BY A PERSON, NOT A QUEUE</span>
+      </div>
+      <h2 style="margin:clamp(18px,2.4vw,32px) 0 0;font-size:clamp(1.875rem,4.2vw,3.25rem);line-height:.98;letter-spacing:-.038em;font-weight:500;max-width:20ch">What happens after you submit a request.</h2>
+      <div data-four="1" style="display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:#D8D3C8;border:1px solid #D8D3C8;margin-top:clamp(26px,3.4vw,52px)">
+        <div data-rev="1" data-flowcell="1" style="background:#F2EFE8;padding:clamp(20px,2.4vw,32px);min-height:clamp(196px,19vw,264px);display:flex;flex-direction:column;gap:clamp(10px,1.2vw,14px)">
+          <span data-flownum="1" style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.12em;color:#FF5A3C">01 /</span>
+          <span data-flowtitle="1" style="margin-top:auto;font-size:clamp(1.5rem,2.6vw,2.125rem);line-height:1;letter-spacing:-.03em">Submit</span>
+          <span data-flownote="1" style="font-size:15px;line-height:1.55;color:#62655F">The website URL, what you have noticed, how urgent it is and how to reach you.</span>
+        </div>
+        <div data-rev="1" data-flowcell="1" style="background:#F2EFE8;padding:clamp(20px,2.4vw,32px);min-height:clamp(196px,19vw,264px);display:flex;flex-direction:column;gap:clamp(10px,1.2vw,14px)">
+          <span data-flownum="1" style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.12em;color:#FF5A3C">02 /</span>
+          <span data-flowtitle="1" style="margin-top:auto;font-size:clamp(1.5rem,2.6vw,2.125rem);line-height:1;letter-spacing:-.03em">Review</span>
+          <span data-flownote="1" style="font-size:15px;line-height:1.55;color:#62655F">The request is read to understand the situation and what information or access may be required.</span>
+        </div>
+        <div data-rev="1" data-flowcell="1" style="background:#F2EFE8;padding:clamp(20px,2.4vw,32px);min-height:clamp(196px,19vw,264px);display:flex;flex-direction:column;gap:clamp(10px,1.2vw,14px)">
+          <span data-flownum="1" style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.12em;color:#FF5A3C">03 /</span>
+          <span data-flowtitle="1" style="margin-top:auto;font-size:clamp(1.5rem,2.6vw,2.125rem);line-height:1;letter-spacing:-.03em">Scope</span>
+          <span data-flownote="1" style="font-size:15px;line-height:1.55;color:#62655F">Immediate priorities, investigation scope, required access, timing and commercial terms are clarified.</span>
+        </div>
+        <div data-rev="1" data-flowcell="1" style="background:#F2EFE8;padding:clamp(20px,2.4vw,32px);min-height:clamp(196px,19vw,264px);display:flex;flex-direction:column;gap:clamp(10px,1.2vw,14px)">
+          <span data-flownum="1" style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.12em;color:#FF5A3C">04 /</span>
+          <span data-flowtitle="1" style="margin-top:auto;font-size:clamp(1.5rem,2.6vw,2.125rem);line-height:1;letter-spacing:-.03em">Begin</span>
+          <span data-flownote="1" style="font-size:15px;line-height:1.55;color:#62655F">The agreed work starts once the required access and authorisation are in place.</span>
+        </div>
+      </div>
+    </section>
+
+    <section data-dof="1" data-screen-label="Security FAQ" style="max-width:1440px;margin:0 auto;padding:clamp(24px,3vw,48px) clamp(20px,4vw,64px) clamp(48px,6vw,104px)">
+      <div style="display:flex;flex-wrap:wrap;gap:16px 32px;align-items:baseline;justify-content:space-between">
+        <h2 style="margin:0;font-size:clamp(1.75rem,3.6vw,3rem);line-height:1;letter-spacing:-.03em;font-weight:500">Before access is provided.</h2>
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.12em;color:#62655F">ASKED FIRST, ANSWERED PLAINLY</span>
+      </div>
+      <div style="margin-top:clamp(24px,3.4vw,48px)">
+        <div data-two="1" data-qrow="1" style="display:grid;grid-template-columns:1fr 1.25fr;gap:clamp(20px,5vw,72px);padding:clamp(18px,2.4vw,30px) 0">
+          <div style="display:flex;gap:16px;align-items:flex-start">
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.12em;color:#FF5A3C;padding-top:9px">Q</span>
+            <h3 data-qtitle="1" style="margin:0;font-size:clamp(1.25rem,2vw,1.75rem);line-height:1.1;letter-spacing:-.025em;font-weight:500;max-width:20ch;transition:color 180ms ease">Can you tell whether my website has been hacked?</h3>
+          </div>
+          <p style="margin:0;font-size:17px;line-height:1.6;color:#62655F;max-width:56ch">Suspicious behaviour can be reviewed from the outside, and it is often a strong signal. A firm conclusion usually needs access to the website and its hosting environment.</p>
+        </div>
+        <div data-two="1" data-qrow="1" style="display:grid;grid-template-columns:1fr 1.25fr;gap:clamp(20px,5vw,72px);padding:clamp(18px,2.4vw,30px) 0">
+          <div style="display:flex;gap:16px;align-items:flex-start">
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.12em;color:#FF5A3C;padding-top:9px">Q</span>
+            <h3 data-qtitle="1" style="margin:0;font-size:clamp(1.25rem,2vw,1.75rem);line-height:1.1;letter-spacing:-.025em;font-weight:500;max-width:20ch;transition:color 180ms ease">Can you clean malware from a WordPress website?</h3>
+          </div>
+          <p style="margin:0;font-size:17px;line-height:1.6;color:#62655F;max-width:56ch">Yes — investigation and cleanup of identified malicious files, code, redirects and components. What is recoverable is confirmed after the review, not promised before it.</p>
+        </div>
+        <div data-two="1" data-qrow="1" style="display:grid;grid-template-columns:1fr 1.25fr;gap:clamp(20px,5vw,72px);padding:clamp(18px,2.4vw,30px) 0">
+          <div style="display:flex;gap:16px;align-items:flex-start">
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.12em;color:#FF5A3C;padding-top:9px">Q</span>
+            <h3 data-qtitle="1" style="margin:0;font-size:clamp(1.25rem,2vw,1.75rem);line-height:1.1;letter-spacing:-.025em;font-weight:500;max-width:20ch;transition:color 180ms ease">Why does malware keep returning?</h3>
+          </div>
+          <p style="margin:0;font-size:17px;line-height:1.6;color:#62655F;max-width:56ch">Reinfection usually means the entry point is still open: compromised access, vulnerable software, malicious content in the database, hidden files, or another affected website in the same environment.</p>
+        </div>
+        <div data-two="1" data-qrow="1" style="display:grid;grid-template-columns:1fr 1.25fr;gap:clamp(20px,5vw,72px);padding:clamp(18px,2.4vw,30px) 0">
+          <div style="display:flex;gap:16px;align-items:flex-start">
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.12em;color:#FF5A3C;padding-top:9px">Q</span>
+            <h3 data-qtitle="1" style="margin:0;font-size:clamp(1.25rem,2vw,1.75rem);line-height:1.1;letter-spacing:-.025em;font-weight:500;max-width:20ch;transition:color 180ms ease">Can you recover a suspended website?</h3>
+          </div>
+          <p style="margin:0;font-size:17px;line-height:1.6;color:#62655F;max-width:56ch">The website and the hosting notice both need reviewing. Recovery depends on the compromise, the hosting provider, the backups available and the access granted.</p>
+        </div>
+        <div data-two="1" data-qrow="1" style="display:grid;grid-template-columns:1fr 1.25fr;gap:clamp(20px,5vw,72px);padding:clamp(18px,2.4vw,30px) 0">
+          <div style="display:flex;gap:16px;align-items:flex-start">
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.12em;color:#FF5A3C;padding-top:9px">Q</span>
+            <h3 data-qtitle="1" style="margin:0;font-size:clamp(1.25rem,2vw,1.75rem);line-height:1.1;letter-spacing:-.025em;font-weight:500;max-width:20ch;transition:color 180ms ease">Will the website be completely secure afterward?</h3>
+          </div>
+          <p style="margin:0;font-size:17px;line-height:1.6;color:#62655F;max-width:56ch">Hardening reduces risk and closes what was found. No honest studio will tell you a website can never be compromised again.</p>
+        </div>
+        <div data-two="1" data-qrow="1" style="display:grid;grid-template-columns:1fr 1.25fr;gap:clamp(20px,5vw,72px);padding:clamp(18px,2.4vw,30px) 0">
+          <div style="display:flex;gap:16px;align-items:flex-start">
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.12em;color:#FF5A3C;padding-top:9px">Q</span>
+            <h3 data-qtitle="1" style="margin:0;font-size:clamp(1.25rem,2vw,1.75rem);line-height:1.1;letter-spacing:-.025em;font-weight:500;max-width:20ch;transition:color 180ms ease">Do you provide ongoing monitoring?</h3>
+          </div>
+          <p style="margin:0;font-size:17px;line-height:1.6;color:#62655F;max-width:56ch">Ongoing review and maintenance is available where it is included in an agreed scope. It is arranged separately from a cleanup or a build.</p>
+        </div>
+        <div data-two="1" data-qrow="1" style="display:grid;grid-template-columns:1fr 1.25fr;gap:clamp(20px,5vw,72px);padding:clamp(18px,2.4vw,30px) 0">
+          <div style="display:flex;gap:16px;align-items:flex-start">
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.12em;color:#FF5A3C;padding-top:9px">Q</span>
+            <h3 data-qtitle="1" style="margin:0;font-size:clamp(1.25rem,2vw,1.75rem);line-height:1.1;letter-spacing:-.025em;font-weight:500;max-width:20ch;transition:color 180ms ease">Is security included in a new website project?</h3>
+          </div>
+          <p style="margin:0;font-size:17px;line-height:1.6;color:#62655F;max-width:56ch">Security-conscious implementation is part of the build: access, updates, backups and hardening before launch. Monitoring, incident response and specialist security work are scoped separately.</p>
+        </div>
+        <div data-two="1" data-qrow="1" style="display:grid;grid-template-columns:1fr 1.25fr;gap:clamp(20px,5vw,72px);padding:clamp(18px,2.4vw,30px) 0">
+          <div style="display:flex;gap:16px;align-items:flex-start">
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.12em;color:#FF5A3C;padding-top:9px">Q</span>
+            <h3 data-qtitle="1" style="margin:0;font-size:clamp(1.25rem,2vw,1.75rem);line-height:1.1;letter-spacing:-.025em;font-weight:500;max-width:20ch;transition:color 180ms ease">What access will you need?</h3>
+          </div>
+          <p style="margin:0;font-size:17px;line-height:1.6;color:#62655F;max-width:56ch">It depends on the issue. It may include WordPress, hosting, files, the database, a firewall platform, backups or domain settings — and only what the agreed investigation needs.</p>
+        </div>
+        <div data-two="1" data-qrow="1" style="display:grid;grid-template-columns:1fr 1.25fr;gap:clamp(20px,5vw,72px);padding:clamp(18px,2.4vw,30px) 0">
+          <div style="display:flex;gap:16px;align-items:flex-start">
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.12em;color:#FF5A3C;padding-top:9px">Q</span>
+            <h3 data-qtitle="1" style="margin:0;font-size:clamp(1.25rem,2vw,1.75rem);line-height:1.1;letter-spacing:-.025em;font-weight:500;max-width:20ch;transition:color 180ms ease">How quickly can work begin?</h3>
+          </div>
+          <p style="margin:0;font-size:17px;line-height:1.6;color:#62655F;max-width:56ch">Urgency and availability are reviewed as soon as the request arrives. No fixed response time is promised before the situation is understood.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+    <footer data-dof="1" id="start" style="background:#0D1512;color:#F2EFE8;padding:clamp(72px,10vw,156px) 0 32px">
+      <div style="max-width:1440px;margin:0 auto;padding:0 clamp(20px,4vw,64px)">
+        <div style="display:flex;flex-wrap:wrap;gap:16px 24px;align-items:baseline;justify-content:space-between;border-top:1px solid rgba(242,239,232,0.16);padding-top:20px">
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:#FF5A3C">WEBSITE SECURITY</span>
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:rgba(242,239,232,0.6)">REPLY WITHIN ONE WORKING DAY</span>
+        </div>
+
+        <h2 style="margin:clamp(28px,4vw,48px) 0 0;font-size:clamp(2rem,3.6vw,3.25rem);line-height:0.98;letter-spacing:-0.035em;font-weight:500;max-width:24ch">If something feels wrong, <span style="position:relative;display:inline-block;color:#62655F">start with what you know.<span data-fill-scroll="1" aria-hidden="true" style="position:absolute;left:0;top:0;width:100%;color:#FF5A3C">start with what you know.</span></span></h2>
+
+        <div data-doors="1" style="display:grid;grid-template-columns:1.4fr 1fr;gap:1px;background:rgba(242,239,232,0.16);margin-top:clamp(28px,4vw,48px)">
+          <div style="background:#0D1512;padding:clamp(24px,3vw,40px) clamp(24px,3vw,40px) clamp(24px,3vw,40px) 0;display:flex;flex-direction:column;gap:16px">
+            <p style="margin:0;font-size:clamp(1rem,1.3vw,1.1875rem);line-height:1.55;color:rgba(242,239,232,0.72);max-width:46ch">Share the website, the behaviour you have noticed and when it began. The next step can be determined from there.</p>
+            <a data-btn-dark="1" href="/open-brief?need=security" style="margin-top:auto;align-self:flex-start;min-height:52px;padding:0 28px;background:#FF5A3C;color:#F2EFE8;border-radius:3px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;text-decoration:none;display:inline-flex;align-items:center;gap:10px;transition:background 200ms ease,color 200ms ease">REQUEST A SECURITY REVIEW <span data-arrow="1">↗</span></a>
+          </div>
+          <div data-door2="1" style="background:#0D1512;padding:clamp(24px,3vw,40px) 0 clamp(24px,3vw,40px) clamp(36px,5vw,80px);display:flex;flex-direction:column;gap:16px">
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:rgba(242,239,232,0.6)">OR START WITH THE WORK</span>
+            <div style="font-size:clamp(1.25rem,2vw,1.75rem);line-height:1.05;letter-spacing:-0.025em;font-weight:500">Design and build</div>
+            <a data-ghost="1" href="/services" style="margin-top:auto;align-self:flex-start;min-height:52px;padding:15px 22px;border:1px solid rgba(242,239,232,0.3);border-radius:3px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:#F2EFE8;text-decoration:none;display:inline-flex;align-items:center;gap:10px;transition:border-color 200ms ease,color 200ms ease">EXPLORE SERVICES <span data-arrow="1">→</span></a>
+          </div>
+        </div>
+
+        <div data-footbase="1" style="border-top:1px solid rgba(242,239,232,0.16);margin-top:clamp(56px,8vw,110px);padding-top:28px;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:24px 32px">
+          <a data-footmail="1" href="mailto:info@hackproofwp.com" style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:rgba(242,239,232,0.6);text-decoration:none;justify-self:start;transition:color 180ms ease">info@hackproofwp.com</a>
+          <a href="/" style="justify-self:center;display:flex;align-items:center;text-decoration:none" aria-label="HackProof Studio, home">
+            <span style="position:relative;display:block;height:30px;aspect-ratio:720 / 119">
+              <img src="assets/logo-paper-web.png" alt="HackProof Studio" width="720" height="119" loading="lazy" decoding="async" style="display:block;height:100%;width:auto" />
+              <img data-mark-o="1" aria-hidden="true" src="assets/logo-studio-coral.png" alt="" width="1440" height="239" decoding="async" style="position:absolute;left:0;top:0;width:100%;height:100%;pointer-events:none" />
+            </span>
+          </a>
+          <nav data-footnav="1" aria-label="Footer" style="display:flex;flex-wrap:wrap;gap:12px 26px;justify-self:end;align-items:center">
+            <a href="/work" style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:rgba(242,239,232,0.6);text-decoration:none;min-height:44px;display:inline-flex;align-items:center">WORK</a>
+            <a href="/services" style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:rgba(242,239,232,0.6);text-decoration:none;min-height:44px;display:inline-flex;align-items:center">SERVICES</a>
+            <a href="#top" aria-current="page" style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:#F2EFE8;text-decoration:none;min-height:44px;display:inline-flex;align-items:center;gap:7px"><span style="width:5px;height:5px;background:#FF5A3C;display:block"></span>SECURITY</a>
+            <a href="/studio" style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:rgba(242,239,232,0.6);text-decoration:none;min-height:44px;display:inline-flex;align-items:center">STUDIO</a>
+            <a href="/open-brief" style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:#FF5A3C;text-decoration:none;display:flex;align-items:center;min-height:44px">OPEN BRIEF</a>
+          </nav>
+        </div>
+
+        <div style="border-top:1px solid rgba(242,239,232,0.16);margin-top:24px;padding-top:20px;display:flex;justify-content:center">
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:rgba(242,239,232,0.62);text-align:center">{{ copyright }}</span>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <sc-if value="{{ indexOpen }}" hint-placeholder-val="{{ false }}">
+    <div id="project-index" role="dialog" aria-modal="true" aria-label="Menu" style="position:fixed;inset:0;z-index:100;background:#0D1512;color:#F2EFE8;overflow-y:auto;animation:boxIn 320ms ease both">
+      <div style="min-height:100%;display:flex;flex-direction:column">
+        <div style="display:flex;align-items:center;gap:16px;padding:0 clamp(20px,4vw,64px);height:clamp(64px,8vw,88px);border-bottom:1px solid rgba(242,239,232,0.16)">
+          <a href="/" style="display:flex;align-items:center;text-decoration:none" aria-label="HackProof Studio, home">
+            <span style="position:relative;display:block;height:26px;aspect-ratio:720 / 119">
+              <img src="assets/logo-paper-web.png" alt="HackProof Studio" width="720" height="119" decoding="async" style="display:block;height:100%;width:auto" />
+              <img data-mark-o="1" aria-hidden="true" src="assets/logo-studio-coral.png" alt="" width="1440" height="239" decoding="async" style="position:absolute;left:0;top:0;width:100%;height:100%;pointer-events:none" />
+            </span>
+          </a>
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:rgba(242,239,232,0.6);margin-left:8px">PROJECT INDEX</span>
+          <button type="button" data-ovclose="1" onClick="{{ closeIndex }}" style="margin-left:auto;display:inline-flex;align-items:center;gap:10px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:#F2EFE8;min-height:44px;padding:0 4px">CLOSE <span data-ovx="1" aria-hidden="true">✕</span></button>
+        </div>
+        <div data-index-body="1" style="flex:1;display:grid;grid-template-columns:1.3fr 1fr">
+          <div data-index-nav="1" style="padding:clamp(28px,4vw,56px) clamp(20px,4vw,64px)">
+            <a data-navrow="1" href="/" onMouseEnter="{{ onHover }}" data-prev="00" style="text-decoration:none;color:inherit;display:grid;grid-template-columns:auto 1fr auto;align-items:baseline;gap:clamp(14px,3vw,32px);width:100%;border-bottom:1px solid rgba(242,239,232,0.16);padding:clamp(14px,2vw,22px) 0;animation:ovRow 420ms cubic-bezier(.22,1,.36,1) 0ms both">
+              <span data-navnum="1" style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:rgba(242,239,232,0.4)">00</span>
+              <span data-big="1" style="font-size:clamp(2rem,4.4vw,3.5rem);line-height:1;letter-spacing:-0.035em;font-weight:500">Front door</span>
+              <span data-navarrow="1" aria-hidden="true" style="font-size:clamp(1rem,1.6vw,1.375rem);line-height:1;color:inherit">↗</span>
+            </a>
+            <a data-navrow="1" href="/work" onMouseEnter="{{ onHover }}" data-prev="01" style="text-decoration:none;color:inherit;display:grid;grid-template-columns:auto 1fr auto;align-items:baseline;gap:clamp(14px,3vw,32px);width:100%;border-bottom:1px solid rgba(242,239,232,0.16);padding:clamp(14px,2vw,22px) 0;animation:ovRow 420ms cubic-bezier(.22,1,.36,1) 60ms both">
+              <span data-navnum="1" style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:rgba(242,239,232,0.4)">01</span>
+              <span data-big="1" style="font-size:clamp(2rem,4.4vw,3.5rem);line-height:1;letter-spacing:-0.035em;font-weight:500">Work</span>
+              <span data-navarrow="1" aria-hidden="true" style="font-size:clamp(1rem,1.6vw,1.375rem);line-height:1;color:inherit">↗</span>
+            </a>
+            <a data-navrow="1" href="/services" onMouseEnter="{{ onHover }}" data-prev="02" style="text-decoration:none;color:inherit;display:grid;grid-template-columns:auto 1fr auto;align-items:baseline;gap:clamp(14px,3vw,32px);width:100%;border-bottom:1px solid rgba(242,239,232,0.16);padding:clamp(14px,2vw,22px) 0;animation:ovRow 420ms cubic-bezier(.22,1,.36,1) 120ms both">
+              <span data-navnum="1" style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:rgba(242,239,232,0.4)">02</span>
+              <span data-big="1" style="font-size:clamp(2rem,4.4vw,3.5rem);line-height:1;letter-spacing:-0.035em;font-weight:500">Services</span>
+              <span data-navarrow="1" aria-hidden="true" style="font-size:clamp(1rem,1.6vw,1.375rem);line-height:1;color:inherit">↗</span>
+            </a>
+            <a data-navrow="1" data-navcur="1" aria-current="page" href="#top" onClick="{{ closeIndex }}" onMouseEnter="{{ onHover }}" data-prev="03" style="text-decoration:none;color:#FF5A3C;display:grid;grid-template-columns:auto 1fr auto;align-items:baseline;gap:clamp(14px,3vw,32px);width:100%;border-bottom:1px solid rgba(242,239,232,0.16);padding:clamp(14px,2vw,22px) 0;animation:ovRow 420ms cubic-bezier(.22,1,.36,1) 180ms both">
+              <span data-navnum="1" style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:#FF5A3C">03</span>
+              <span data-big="1" style="font-size:clamp(2rem,4.4vw,3.5rem);line-height:1;letter-spacing:-0.035em;font-weight:500">Security</span>
+              <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.12em;color:#FF5A3C;display:inline-flex;align-items:center;gap:8px"><span style="width:5px;height:5px;background:#FF5A3C;display:block"></span>YOU ARE HERE</span>
+            </a>
+            <a data-navrow="1" href="/studio" onMouseEnter="{{ onHover }}" data-prev="04" style="text-decoration:none;color:inherit;display:grid;grid-template-columns:auto 1fr auto;align-items:baseline;gap:clamp(14px,3vw,32px);width:100%;border-bottom:1px solid rgba(242,239,232,0.16);padding:clamp(14px,2vw,22px) 0;animation:ovRow 420ms cubic-bezier(.22,1,.36,1) 240ms both">
+              <span data-navnum="1" style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:rgba(242,239,232,0.4)">04</span>
+              <span data-big="1" style="font-size:clamp(2rem,4.4vw,3.5rem);line-height:1;letter-spacing:-0.035em;font-weight:500">The studio</span>
+              <span data-navarrow="1" aria-hidden="true" style="font-size:clamp(1rem,1.6vw,1.375rem);line-height:1;color:inherit">↗</span>
+            </a>
+            <a data-navrow="1" href="/open-brief" onMouseEnter="{{ onHover }}" data-prev="05" style="text-decoration:none;color:inherit;display:grid;grid-template-columns:auto 1fr auto;align-items:baseline;gap:clamp(14px,3vw,32px);width:100%;padding:clamp(14px,2vw,22px) 0;animation:ovRow 420ms cubic-bezier(.22,1,.36,1) 300ms both">
+              <span data-navnum="1" style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:rgba(242,239,232,0.4)">05</span>
+              <span data-big="1" style="font-size:clamp(2rem,4.4vw,3.5rem);line-height:1;letter-spacing:-0.035em;font-weight:500">Open brief</span>
+              <span data-navarrow="1" data-navarrowon="1" aria-hidden="true" style="font-size:clamp(1rem,1.6vw,1.375rem);line-height:1;color:#FF5A3C">↗</span>
+            </a>
+          </div>
+          <div data-index-right="1" style="border-left:1px solid rgba(242,239,232,0.16);padding:clamp(28px,4vw,56px) clamp(20px,4vw,64px);display:flex;flex-direction:column">
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:rgba(242,239,232,0.6)">PREVIEW</span>
+            <div style="margin-top:18px;position:relative;overflow:hidden;border:1px solid rgba(242,239,232,0.16);background:#0B120F;aspect-ratio:16 / 10">
+              <span aria-hidden="true" style="position:absolute;inset:0;background:repeating-linear-gradient(135deg,rgba(242,239,232,0.06) 0 6px,rgba(242,239,232,0.015) 6px 12px)"></span>
+              <span data-prevshot="1" data-prevfit="{{ previewFit }}" role="img" aria-label="{{ previewLabel }}" style="position:absolute;inset:0;background-image:{{ previewCss }};background-repeat:no-repeat;background-position:center;background-color:#0B120F"></span>
+              <sc-if value="{{ previewForm }}" hint-placeholder-val="{{ false }}">
+                <span data-prevform="1" style="position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;gap:clamp(10px,1.6vw,16px);padding:clamp(18px,2.6vw,32px)">
+                  <span style="display:flex;flex-direction:column;gap:7px"><span style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:0.12em;color:#FF5A3C">NAME</span><span style="height:1px;background:rgba(242,239,232,0.28);display:block"></span></span>
+                  <span style="display:flex;flex-direction:column;gap:7px"><span style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:0.12em;color:rgba(242,239,232,0.45)">WEBSITE</span><span style="height:1px;background:rgba(242,239,232,0.28);display:block"></span></span>
+                  <span style="display:flex;flex-direction:column;gap:7px"><span style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:0.12em;color:rgba(242,239,232,0.45)">BUDGET</span><span style="height:1px;background:rgba(242,239,232,0.28);display:block"></span></span>
+                  <span style="display:flex;flex-direction:column;gap:7px"><span style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:0.12em;color:rgba(242,239,232,0.45)">TIMING</span><span style="height:1px;background:rgba(242,239,232,0.28);display:block"></span></span>
+                </span>
+              </sc-if>
+            </div>
+            <span style="margin-top:16px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:rgba(242,239,232,0.88)">{{ previewLabel }}</span>
+            <span style="margin-top:8px;font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.12em;color:rgba(242,239,232,0.45);line-height:1.8">{{ previewNote }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </sc-if>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;stickyServiceIndex&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Layout&quot;},&quot;showProcessRule&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Layout&quot;},&quot;workBridgeCount&quot;:{&quot;editor&quot;:&quot;int&quot;,&quot;default&quot;:2,&quot;min&quot;:1,&quot;max&quot;:2,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Layout&quot;}}">
+class Component extends DCLogic {
+  state = { indexOpen: false, hover: "03" };
+
+  onKey = (e) => {
+    if (e.key === "Escape" && this.state.indexOpen) this.setState({ indexOpen: false });
+  };
+
+  reduced = () => window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  // Motion is attached in script: markup stays clean, and no-JS or reduced-motion
+  // never leaves content hidden because the hiding CSS keys off these attributes.
+  hide = (el, dist, ms) => {
+    if (el.dataset.shown === "1") return;
+    el.style.opacity = "0";
+    el.style.transform = "translate3d(0," + dist + "px,0)";
+    el.style.transition = "opacity " + ms + "ms cubic-bezier(.22,1,.36,1), transform " + ms + "ms cubic-bezier(.22,1,.36,1)";
+  };
+
+  show = (el, delay) => {
+    if (el.dataset.shown === "1") return;
+    el.dataset.shown = "1";
+    el.style.transitionDelay = delay + "ms";
+    el.style.opacity = "1";
+    el.style.transform = "translate3d(0,0,0)";
+    // The frame may be throttled, so never leave the element depending on a
+    // transition: drop the inline properties and let the markup state stand.
+    setTimeout(() => {
+      el.style.removeProperty("transition");
+      el.style.removeProperty("transition-delay");
+      el.style.removeProperty("opacity");
+      el.style.removeProperty("transform");
+    }, delay + 1200);
+  };
+
+  buildMotion = () => {
+    if (this.reduced() || this.motionBuilt) return;
+    this.motionBuilt = true;
+    const targets = [];
+    Array.prototype.forEach.call(document.querySelectorAll("main > section"), (sec) => {
+      Array.prototype.forEach.call(
+        sec.querySelectorAll("h1, h2, h3, p, ol, [data-idxrow], [data-startrow], [data-specrow], [data-rev], [data-cta-coral], [data-cta-line], [data-btn-dark], [data-cta-line-inv]"),
+        (el) => {
+          // The hero runs on its own CSS intro after the curtain lifts.
+          if (el.closest("[data-shotframe]") || el.hasAttribute("data-hero-in") || el.hasAttribute("data-hero-line")) return;
+          this.hide(el, 18, 620);
+          targets.push(el);
+        }
+      );
+      Array.prototype.forEach.call(sec.querySelectorAll("[data-shotframe]"), (el) => {
+        this.hide(el, 34, 780);
+        targets.push(el);
+      });
+    });
+
+    const fills = [];
+    Array.prototype.forEach.call(document.querySelectorAll("[data-fill-scroll]"), (el) => {
+      if (el.dataset.filled === "1") return;
+      el.style.clipPath = "inset(100% 0 0 0)";
+      fills.push(el);
+    });
+
+    const runFill = (el) => {
+      if (el.dataset.filled === "1") return;
+      el.dataset.filled = "1";
+      el.style.transition = "clip-path 1.05s cubic-bezier(.22,1,.36,1) 140ms";
+      setTimeout(() => { el.style.clipPath = "inset(0 0 0 0)"; }, 30);
+      // The frame may be throttled: drop the inline state so the markup's own
+      // fully filled state stands whether or not the transition ran.
+      setTimeout(() => {
+        el.style.removeProperty("transition");
+        el.style.removeProperty("clip-path");
+      }, 1600);
+    };
+
+    const fire = (el) => {
+      const sibs = el.parentElement ? Array.prototype.indexOf.call(el.parentElement.children, el) : 0;
+      this.show(el, Math.min(220, Math.max(0, sibs) * 55));
+    };
+
+    // The host scrolls a container rather than the window, so neither scroll events
+    // on window nor IntersectionObserver are reliable here: poll positions instead.
+    let pending = targets.slice();
+    let pendingFills = fills.slice();
+    this.sweep = () => {
+      const line = window.innerHeight * 0.94;
+      const next = [];
+      pending.forEach((el) => {
+        const r = el.getBoundingClientRect();
+        if (r.top < line) fire(el);
+        else next.push(el);
+      });
+      pending = next;
+      const nextFills = [];
+      pendingFills.forEach((el) => {
+        const r = el.getBoundingClientRect();
+        if (r.top < window.innerHeight * 0.86) runFill(el);
+        else nextFills.push(el);
+      });
+      pendingFills = nextFills;
+      if (!pending.length && !pendingFills.length && this.poll) { clearInterval(this.poll); this.poll = null; }
+    };
+    window.addEventListener("scroll", this.sweep, { passive: true });
+    window.addEventListener("resize", this.sweep);
+    this.poll = setInterval(this.sweep, 140);
+    this.sweep();
+
+    // Safety net: nothing stays hidden if the sweep never runs.
+    this.revealAll = setTimeout(() => {
+      targets.forEach((el) => this.show(el, 0));
+      fills.forEach((el) => runFill(el));
+      if (this.poll) { clearInterval(this.poll); this.poll = null; }
+    }, 20000);
+  };
+
+  // Depth of field: sections arrive soft, sharpen on entry, soften on exit.
+  // Driven from inline styles on a poll — the host throttles rAF and does not
+  // fire IntersectionObserver, so nothing here can leave a section blurred.
+  buildDof = () => {
+    if (this.dofBuilt) return;
+    if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    let secs = Array.prototype.slice.call(document.querySelectorAll("[data-dof]"));
+    if (!secs.length) return;
+    this.dofBuilt = true;
+    this.dofStart = Date.now();
+    const soft = window.innerWidth < 768 ? 4 : 6;
+    // Gate on a real scroll offset, never on rect movement: intro reveals and
+    // late-loading images shift sections by hundreds of px without any scroll.
+    const dofOffset = () => {
+      let y = window.pageYOffset || 0;
+      const doc = document.scrollingElement;
+      if (!y && doc) y = doc.scrollTop || 0;
+      if (!y) {
+        let el = secs[0] ? secs[0].parentElement : null;
+        while (el) {
+          if (el.scrollTop > 0 && el.scrollHeight - el.clientHeight > 40) { y = el.scrollTop; break; }
+          el = el.parentElement;
+        }
+      }
+      return y;
+    };
+    this.dofSweep = () => {
+      // Re-read the list: imported children (footer) mount after this runs.
+      const all = document.querySelectorAll("[data-dof]");
+      if (all.length !== secs.length) {
+        secs = Array.prototype.slice.call(all);
+        if (this.dofActive) secs.forEach((s) => { s.style.willChange = "filter, transform"; s.style.transition = "filter 260ms ease"; });
+      }
+      const h = window.innerHeight || 800;
+      const rise = Math.min(72, h * 0.07);
+      const rects = [];
+      for (let i = 0; i < secs.length; i++) rects.push(secs[i].getBoundingClientRect());
+      // Only engage once the page has genuinely scrolled. Some hosts report a
+      // scrollable document but never move it: staying sharp is the safe state.
+      if (!this.dofActive) {
+        if (dofOffset() > 8) {
+          this.dofActive = true;
+          secs.forEach((s) => { s.style.willChange = "filter, transform"; s.style.transition = "filter 260ms ease"; });
+        } else {
+          for (let i = 0; i < secs.length; i++) {
+            if (secs[i].style.filter) secs[i].style.filter = "";
+            if (secs[i].style.transform) secs[i].style.transform = "";
+          }
+          if (!this.dofSlow && Date.now() - this.dofStart > 3000) {
+            this.dofSlow = true;
+            if (this.dofPoll) clearInterval(this.dofPoll);
+            this.dofPoll = setInterval(this.dofSweep, 400);
+          }
+          return;
+        }
+      }
+      for (let i = 0; i < secs.length; i++) {
+        const s = secs[i];
+        const r = rects[i];
+        let b = 0, y = 0;
+        if (r.top > h * 0.80) {
+          const t = Math.min(1, (r.top - h * 0.80) / (h * 0.32));
+          b = soft * t; y = rise * t;
+        } else if (r.bottom < h * 0.22) {
+          b = 3 * Math.min(1, (h * 0.22 - r.bottom) / (h * 0.28));
+        }
+        const f = b > 0.1 ? "blur(" + b.toFixed(2) + "px)" : "";
+        const tr = y > 0.5 ? "translate3d(0," + y.toFixed(1) + "px,0)" : "";
+        if (s.style.filter !== f) s.style.filter = f;
+        if (s.style.transform !== tr) s.style.transform = tr;
+      }
+    };
+    window.addEventListener("scroll", this.dofSweep, { passive: true });
+    window.addEventListener("resize", this.dofSweep);
+    this.dofPoll = setInterval(this.dofSweep, 90);
+    this.dofSweep();
+  };
+
+  componentDidMount() {
+    this.buildDof();
+    // The host re-renders often, which restarts CSS animations. Drive the intro from
+    // inline styles once instead: the markup's own state is the final, visible one.
+    this.introTimer = setTimeout(() => {
+      const seen = (el) => { if (el.dataset.introDone === "1") return true; el.dataset.introDone = "1"; return false; };
+      Array.prototype.forEach.call(document.querySelectorAll("[data-hero-line]"), (el) => {
+        if (seen(el)) return;
+        el.style.transform = "translateY(108%)";
+        el.style.transition = "transform 1.05s cubic-bezier(.22,1,.36,1)";
+        setTimeout(() => { el.style.transform = "translateY(0)"; }, 30);
+      // Timers keep running when the frame is throttled: strip the reveal properties
+      // once the animation window has passed so the element falls back to its
+      // natural, fully visible markup state whether or not a frame ticked.
+      setTimeout(() => {
+        el.style.removeProperty("transition");
+        el.style.removeProperty("transition-delay");
+        el.style.removeProperty("opacity");
+        el.style.removeProperty("transform");
+        el.style.removeProperty("clip-path");
+      }, 1400);
+      });
+      Array.prototype.forEach.call(document.querySelectorAll("[data-hero-in]"), (el, i) => {
+        if (seen(el)) return;
+        el.style.opacity = "0";
+        el.style.transform = "translateY(20px)";
+        el.style.transition = "opacity .8s cubic-bezier(.22,1,.36,1) " + (i * 90) + "ms, transform .8s cubic-bezier(.22,1,.36,1) " + (i * 90) + "ms";
+        setTimeout(() => { el.style.opacity = "1"; el.style.transform = "translateY(0)"; }, 30);
+      // Timers keep running when the frame is throttled: strip the reveal properties
+      // once the animation window has passed so the element falls back to its
+      // natural, fully visible markup state whether or not a frame ticked.
+      setTimeout(() => {
+        el.style.removeProperty("transition");
+        el.style.removeProperty("transition-delay");
+        el.style.removeProperty("opacity");
+        el.style.removeProperty("transform");
+        el.style.removeProperty("clip-path");
+      }, 1400);
+      });
+      Array.prototype.forEach.call(document.querySelectorAll("[data-lane]"), (el, i) => {
+        if (seen(el)) return;
+        el.style.opacity = "0";
+        el.style.transform = "translateY(26px)";
+        el.style.transition = "opacity .9s cubic-bezier(.22,1,.36,1) " + (i * 110) + "ms, transform .9s cubic-bezier(.22,1,.36,1) " + (i * 110) + "ms";
+        setTimeout(() => { el.style.opacity = "1"; el.style.transform = "translateY(0)"; }, 30);
+      // Timers keep running when the frame is throttled: strip the reveal properties
+      // once the animation window has passed so the element falls back to its
+      // natural, fully visible markup state whether or not a frame ticked.
+      setTimeout(() => {
+        el.style.removeProperty("transition");
+        el.style.removeProperty("transition-delay");
+        el.style.removeProperty("opacity");
+        el.style.removeProperty("transform");
+        el.style.removeProperty("clip-path");
+      }, 1400);
+      });
+    }, 950);
+    // The curtain owns the first 1.8s: the hero wipe starts only once it is gone,
+    // so the whole bottom-to-top fill is visible.
+    this.fillTimer = setTimeout(() => {
+      Array.prototype.forEach.call(document.querySelectorAll("[data-fill]"), (el) => {
+        if (el.dataset.filled === "1") return;
+        el.dataset.filled = "1";
+        el.style.clipPath = "inset(100% 0 0 0)";
+        el.style.transition = "clip-path 1.15s cubic-bezier(.22,1,.36,1)";
+        setTimeout(() => { el.style.clipPath = "inset(0 0 0 0)"; }, 40);
+        setTimeout(() => {
+          el.style.removeProperty("transition");
+          el.style.removeProperty("clip-path");
+        }, 1500);
+      });
+    }, 1900);
+
+    // Retire the curtain once it has lifted, so a later re-render cannot replay it.
+    this.curtainTimer = setTimeout(() => {
+      const c = document.querySelector("[data-curtain]");
+      if (c) { c.style.animation = "none"; c.style.display = "none"; }
+    }, 2000);
+    document.documentElement.lang = "en";
+    document.addEventListener("keydown", this.onKey);
+    this.buildMotion();
+    // Read progress from whichever element actually scrolls.
+    this.scroller = () => {
+      if (window.pageYOffset > 0) return null;
+      let el = document.querySelector("[data-shell]");
+      while (el) {
+        if (el.scrollHeight - el.clientHeight > 40 && el.scrollTop > 0) return el;
+        el = el.parentElement;
+      }
+      const doc = document.scrollingElement;
+      return doc && doc.scrollTop > 0 ? doc : null;
+    };
+    this.onProgress = () => {
+      const bar = document.querySelector("[data-progress]");
+      if (!bar) return;
+      const sc = this.scroller();
+      const y = sc ? sc.scrollTop : window.pageYOffset;
+      const max = (sc ? sc.scrollHeight : document.documentElement.scrollHeight) - (sc ? sc.clientHeight : window.innerHeight);
+      bar.style.transform = "scaleY(" + (max > 0 ? Math.min(1, y / max) : 0) + ")";
+    };
+    window.addEventListener("scroll", this.onProgress, { passive: true });
+    window.addEventListener("resize", this.onProgress);
+    this.progressPoll = setInterval(this.onProgress, 200);
+    this.onProgress();
+  }
+
+  componentDidUpdate() {
+    if (this.onProgress) this.onProgress();
+    document.body.style.overflow = this.state.indexOpen ? "hidden" : "";
+  }
+
+  componentWillUnmount() {
+    if (this.dofSweep) { window.removeEventListener("scroll", this.dofSweep); window.removeEventListener("resize", this.dofSweep); }
+    if (this.dofPoll) clearInterval(this.dofPoll);
+    if (this.introTimer) clearTimeout(this.introTimer);
+    if (this.curtainTimer) clearTimeout(this.fillTimer);
+    clearTimeout(this.curtainTimer);
+    document.removeEventListener("keydown", this.onKey);
+    if (this.sweep) {
+      window.removeEventListener("scroll", this.sweep);
+      window.removeEventListener("resize", this.sweep);
+    }
+    if (this.poll) clearInterval(this.poll);
+    if (this.progressPoll) clearInterval(this.progressPoll);
+    if (this.revealAll) clearTimeout(this.revealAll);
+    if (this.onProgress) {
+      window.removeEventListener("scroll", this.onProgress);
+      window.removeEventListener("resize", this.onProgress);
+    }
+    document.body.style.overflow = "";
+  }
+
+  renderVals() {
+    return {
+      indexOpen: this.state.indexOpen,
+      indexExpanded: this.state.indexOpen ? "true" : "false",
+      openIndex: () => this.setState({ indexOpen: true }),
+      closeIndex: () => this.setState({ indexOpen: false }),
+      previewLabel: {
+        "00": "FRONT DOOR / THE WHOLE STUDIO IN ONE SCROLL",
+        "01": "WORK / THIRTY-NINE PROJECTS, ONE STANDARD",
+        "02": "SERVICES / DESIGN, REDESIGN, SECURITY",
+        "03": "SECURITY / CONTAIN, RECOVER, HARDEN",
+        "04": "STUDIO / ONE ACCOUNTABLE PERSON",
+        "05": "OPEN BRIEF / FOUR SHORT STEPS"
+      }[this.state.hover] || "",
+      previewNote: {
+        "00": "EVERY SECTION, IN ORDER",
+        "01": "LIVE SITES, LINKED",
+        "02": "THREE ENGAGEMENTS, ONE STANDARD",
+        "03": "INCIDENT RESPONSE AND PREVENTION",
+        "04": "FOUNDER-LED BY DESIGN",
+        "05": "NAME, SCOPE, BUDGET, TIMING"
+      }[this.state.hover] || "",
+      previewImg: {
+        "00": "assets/share-card.jpg",
+        "01": "assets/work-metalroofing.jpg",
+        "02": "assets/shot-04-spacesolar.jpg",
+        "03": "assets/security-detail.jpg",
+        "04": "assets/founder-portrait.jpg"
+      }[this.state.hover] || null,
+      previewFit: { "03": "cover", "04": "cover" }[this.state.hover] || "contain",
+      previewCss: (() => {
+        const src = {
+          "00": "assets/share-card.jpg",
+          "01": "assets/work-metalroofing.jpg",
+          "02": "assets/shot-04-spacesolar.jpg",
+          "03": "assets/security-detail.jpg",
+          "04": "assets/founder-portrait.jpg"
+        }[this.state.hover];
+        return src ? "url(" + src + ")" : "none";
+      })(),
+      previewForm: this.state.hover === "05",
+      onHover: (e) => {
+        const v = e.currentTarget.getAttribute("data-prev");
+        if (v && v !== this.state.hover) this.setState({ hover: v });
+      },
+      onSkipFocus: (e) => { e.currentTarget.style.left = "16px"; e.currentTarget.style.top = "16px"; },
+      onSkipBlur: (e) => { e.currentTarget.style.left = "-9999px"; },
+      stickyIdx: (this.props.stickyServiceIndex ?? true) ? "1" : null,
+      showLine: (this.props.showProcessRule ?? true) ? "1" : null,
+      bridgeTwo: (this.props.workBridgeCount ?? 2) > 1,
+      copyright: "© " + new Date().getFullYear() + " HackProof Studio"
+    };
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400&display=swap" />
+<style>
+  @font-face { font-family: "TWK Everett"; src: url("fonts/everett-regular.ttf") format("truetype"); font-weight: 400; font-style: normal; font-display: swap; }
+  @font-face { font-family: "TWK Everett"; src: url("fonts/everett-regular.ttf") format("truetype"); font-weight: 500; font-style: normal; font-display: swap; }
+  [data-farrow] { display: inline-block; transition: transform 200ms cubic-bezier(0.22,0.61,0.36,1); }
+  [data-flink]:hover [data-farrow] { transform: translate(3px,-3px); }
+  [data-flink] { transition: color 180ms ease; }
+  [data-flink]:hover { color: #FF5A3C !important; }
+  [data-fbrief]:hover { color: #F2EFE8 !important; }
+  [data-fcols] a[href*="open-brief"]:hover { color: #F2EFE8 !important; }
+  [data-fprimary]:hover { background: #F2EFE8 !important; color: #FF5A3C !important; }
+  @media (max-width: 1120px) {
+    [data-fbase] { grid-template-columns: 1fr !important; justify-items: center !important; gap: 18px !important; }
+    [data-fbase] > * { justify-self: center !important; }
+    [data-fbase] nav { justify-content: center !important; gap: 12px 20px !important; }
+  }
+  @media (max-width: 1023px) {
+    [data-fgrid] { grid-template-columns: 1fr !important; gap: 40px !important; }
+    [data-fcols] { grid-template-columns: 1fr 1fr !important; }
+  }
+  @media (max-width: 767px) {
+    [data-fbase] { grid-template-columns: 1fr !important; justify-items: center !important; gap: 18px !important; }
+    [data-fbase] > * { justify-self: center !important; }
+    [data-fbase] nav { justify-content: center !important; }
+  }
+
+  /* --- responsive + touch fixes ------------------------------------------ */
+  [data-footmail] { position: relative; }
+  [data-footmail]::after { content: ""; position: absolute; left: -6px; right: -6px; top: -9px; bottom: -9px; }
+  [data-flink][href^="mailto:"] { position: relative; }
+  [data-flink][href^="mailto:"]::after { content: ""; position: absolute; left: -6px; right: -6px; top: -9px; bottom: -9px; }
+</style>
+</helmet>
+
+<footer data-dof="1" style="background:#0D1512;color:#F2EFE8;font-family:'TWK Everett','Helvetica Neue',Arial,sans-serif;padding:clamp(64px,9vw,140px) 0 32px">
+  <div style="max-width:1440px;margin:0 auto;padding:0 clamp(20px,4vw,64px)">
+    <div style="display:flex;flex-wrap:wrap;gap:16px 24px;align-items:baseline;border-top:1px solid rgba(242,239,232,0.16);padding-top:20px">
+      <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:rgba(242,239,232,0.6)">{{ railLeft }}</span>
+      <span style="margin-left:auto;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:rgba(242,239,232,0.6)">ONE ROUTE IN</span>
+    </div>
+
+    <div data-fgrid="1" style="display:grid;grid-template-columns:1.2fr 1fr;gap:clamp(32px,6vw,88px);margin-top:clamp(32px,4vw,56px);align-items:end">
+      <div>
+        <sc-if value="{{ showCta }}" hint-placeholder-val="{{ true }}">
+          <div>
+            <h2 style="margin:0;font-size:clamp(2.25rem,5vw,4.5rem);line-height:0.96;letter-spacing:-0.04em;font-weight:500;max-width:18ch">{{ ctaTitle }}</h2>
+            <p style="margin:clamp(20px,2.4vw,28px) 0 0;font-size:clamp(1.0625rem,1.3vw,1.25rem);line-height:1.55;color:#C9C5BB;max-width:46ch">{{ ctaBody }}</p>
+            <div style="display:flex;flex-wrap:wrap;gap:16px;margin-top:clamp(28px,3vw,40px)">
+              <a data-fprimary="1" href="/open-brief" style="font-size:14px;font-weight:500;letter-spacing:0.02em;min-height:52px;padding:0 30px;background:#FF5A3C;color:#F2EFE8;border-radius:3px;text-decoration:none;display:inline-flex;align-items:center;transition:background 200ms ease,color 200ms ease">START A PROJECT</a>
+              <a data-flink="1" href="https://tidycal.com/hackproofwp/thirty-minute-meeting" target="_blank" rel="noopener" style="font-size:14px;font-weight:500;letter-spacing:0.02em;min-height:52px;padding:0 28px;border:1px solid rgba(242,239,232,0.4);border-radius:3px;color:#F2EFE8;text-decoration:none;display:inline-flex;align-items:center">BOOK A CALL <span data-farrow="1" style="margin-left:8px">↗</span></a>
+            </div>
+          </div>
+        </sc-if>
+        <sc-if value="{{ hideCta }}" hint-placeholder-val="{{ false }}">
+          <div>
+            <h2 style="margin:0;font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.02;letter-spacing:-0.035em;font-weight:500;max-width:22ch">Rather talk it through first?</h2>
+            <p style="margin:20px 0 0;font-size:18px;line-height:1.55;color:#C9C5BB;max-width:44ch">A 30-minute call, no preparation needed. Bring the site you have and the problem you are trying to solve.</p>
+            <a data-flink="1" href="https://tidycal.com/hackproofwp/thirty-minute-meeting" target="_blank" rel="noopener" style="margin-top:28px;font-size:14px;font-weight:500;letter-spacing:0.02em;min-height:52px;padding:0 28px;border:1px solid rgba(242,239,232,0.4);border-radius:3px;color:#F2EFE8;text-decoration:none;display:inline-flex;align-items:center;width:max-content">BOOK A CALL <span data-farrow="1" style="margin-left:8px">↗</span></a>
+          </div>
+        </sc-if>
+      </div>
+
+      <div data-fcols="1" style="display:grid;grid-template-columns:1fr 1fr;gap:32px">
+        <nav aria-label="Pages" style="display:flex;flex-direction:column;gap:0">
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:rgba(242,239,232,0.6);padding-bottom:12px;border-bottom:1px solid rgba(242,239,232,0.16)">PAGES</span>
+          <a data-flink="1" href="/work" style="font-size:17px;color:#F2EFE8;text-decoration:none;padding:12px 0;border-bottom:1px solid rgba(242,239,232,0.1);min-height:44px;display:flex;align-items:center">Selected work</a>
+          <a data-flink="1" href="/services" style="font-size:17px;color:#F2EFE8;text-decoration:none;padding:12px 0;border-bottom:1px solid rgba(242,239,232,0.1);min-height:44px;display:flex;align-items:center">Services</a>
+          <a data-flink="1" href="/security" style="font-size:17px;color:#F2EFE8;text-decoration:none;padding:12px 0;border-bottom:1px solid rgba(242,239,232,0.1);min-height:44px;display:flex;align-items:center">Security</a>
+          <a data-flink="1" href="/studio" style="font-size:17px;color:#F2EFE8;text-decoration:none;padding:12px 0;border-bottom:1px solid rgba(242,239,232,0.1);min-height:44px;display:flex;align-items:center">The studio</a>
+          <a data-flink="1" href="/open-brief" style="font-size:17px;color:#FF5A3C;text-decoration:none;padding:12px 0;min-height:44px;display:flex;align-items:center">Open brief</a>
+        </nav>
+        <nav aria-label="Services" style="display:flex;flex-direction:column;gap:0">
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:rgba(242,239,232,0.6);padding-bottom:12px;border-bottom:1px solid rgba(242,239,232,0.16)">SERVICES</span>
+          <a data-flink="1" href="/services" style="font-size:17px;color:#F2EFE8;text-decoration:none;padding:12px 0;border-bottom:1px solid rgba(242,239,232,0.1);min-height:44px;display:flex;align-items:center">Design + build</a>
+          <a data-flink="1" href="/services#process" style="font-size:17px;color:#F2EFE8;text-decoration:none;padding:12px 0;border-bottom:1px solid rgba(242,239,232,0.1);min-height:44px;display:flex;align-items:center">How it runs</a>
+          <a data-flink="1" href="/security" style="font-size:17px;color:#F2EFE8;text-decoration:none;padding:12px 0;border-bottom:1px solid rgba(242,239,232,0.1);min-height:44px;display:flex;align-items:center">Website security</a>
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:rgba(242,239,232,0.6);padding-top:16px;line-height:1.9">SECURE DEVELOPMENT<br />IN EVERY BUILD</span>
+        </nav>
+      </div>
+    </div>
+
+    <div data-fbase="1" style="border-top:1px solid rgba(242,239,232,0.16);margin-top:clamp(56px,8vw,110px);padding-top:28px;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:24px 32px">
+      <a data-flink="1" href="mailto:info@hackproofwp.com" style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:rgba(242,239,232,0.6);text-decoration:none;justify-self:start">info@hackproofwp.com</a>
+      <a href="/" style="display:flex;align-items:center;text-decoration:none;justify-self:center">
+        <img src="assets/logo-paper.png" alt="HackProof Studio" width="1802" height="299" style="display:block;height:30px;width:auto" />
+      </a>
+      <nav aria-label="Footer" style="display:flex;flex-wrap:wrap;gap:12px 26px;justify-self:end;align-items:center">
+        <a data-flink="1" href="/work" style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:rgba(242,239,232,0.6);text-decoration:none;display:flex;align-items:center;min-height:44px">WORK</a>
+        <a data-flink="1" href="/services" style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:rgba(242,239,232,0.6);text-decoration:none;display:flex;align-items:center;min-height:44px">SERVICES</a>
+        <a data-flink="1" href="/security" style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:rgba(242,239,232,0.6);text-decoration:none;display:flex;align-items:center;min-height:44px">SECURITY</a>
+        <a data-flink="1" href="/studio" style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:rgba(242,239,232,0.6);text-decoration:none;display:flex;align-items:center;min-height:44px">STUDIO</a>
+        <a data-fbrief="1" href="/open-brief" style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:#FF5A3C;text-decoration:none;display:flex;align-items:center;min-height:44px;transition:color 180ms ease">OPEN BRIEF</a>
+      </nav>
+    </div>
+
+    <div style="border-top:1px solid rgba(242,239,232,0.16);margin-top:24px;padding-top:20px;display:flex;justify-content:center">
+      <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:rgba(242,239,232,0.62);text-align:center">{{ copyright }}</span>
+    </div>
+  </div>
+</footer>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1440},&quot;showCta&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;},&quot;ctaTitle&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;Tell me what needs to change.&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;ctaBody&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;Four short steps. You will get a written reply with scope, a figure, and the first thing I would fix — usually within one working day.&quot;,&quot;tsType&quot;:&quot;string&quot;}}">
+class Component extends DCLogic {
+
+  renderVals() {
+    const cta = this.props.showCta !== false;
+    return {
+      copyright: "© " + new Date().getFullYear() + " HackProof Studio. All rights reserved.",
+      showCta: cta,
+      hideCta: !cta,
+      railLeft: cta ? "START HERE" : "ALREADY HERE",
+      ctaTitle: this.props.ctaTitle ?? "Tell me what needs to change.",
+      ctaBody: this.props.ctaBody ?? "Four short steps. You will get a written reply with scope, a figure, and the first thing I would fix — usually within one working day.",
+      copyrightYear: new Date().getFullYear()
+    };
+  }
+}
+</script>
+</body>
+</html>
