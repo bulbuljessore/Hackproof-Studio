@@ -347,8 +347,11 @@
      full loop. */
   @keyframes reelV { from { transform: translate3d(0,0,0); } to { transform: translate3d(0,-50%,0); } }
   #hero [data-track] { animation: reelV 60s linear infinite; will-change: transform; }
+  /* Pause, never re-time. Changing animation-duration on hover recomputes the
+     position as elapsed ÷ duration, which snapped the track back to the top and
+     made the card under the cursor unclickable. Pausing holds it still. */
   #hero [data-band-inner]:hover [data-track],
-  #hero [data-band-inner]:focus-within [data-track] { animation-duration: 500s; }
+  #hero [data-band-inner]:focus-within [data-track] { animation-play-state: paused; }
   @media (prefers-reduced-motion: reduce) {
     #hero [data-track] { animation: none !important; }
   }
@@ -493,7 +496,7 @@
               </div>
               <div style="display:flex;flex-wrap:wrap;gap:12px 24px;align-items:center;justify-content:flex-end">
                 <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:#62655F">SECURE DEVELOPMENT IN EVERY BUILD</span>
-                <span style="display:flex;align-items:center;gap:10px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:#FF5A3C"><span style="width:5px;height:5px;background:#FF5A3C;display:block"></span>AVAILABLE / Q4</span>
+                <span style="display:flex;align-items:center;gap:10px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:#FF5A3C"><span style="width:5px;height:5px;background:#FF5A3C;display:block"></span>TAKING BRIEFS</span>
               </div>
             </div>
             <div style="margin-top:28px;display:flex;justify-content:space-between;align-items:center;gap:24px">
@@ -504,7 +507,7 @@
           <div data-band="1" style="position:absolute;top:0;bottom:0;right:0;width:clamp(70px,calc(30vw + 50px),490px);overflow:hidden;clip-path:inset(0 0 0 0)">
             <div data-band-inner="1" style="position:absolute;inset:-4%;overflow:hidden;background:#0D1512;border-left:1px solid #D8D3C8;-webkit-mask-image:linear-gradient(to bottom,transparent 0,#000 7%,#000 93%,transparent 100%);mask-image:linear-gradient(to bottom,transparent 0,#000 7%,#000 93%,transparent 100%)">
               <div data-track="1" style="position:absolute;left:0;right:0;top:0;display:flex;flex-direction:column;gap:clamp(16px,2vw,26px);padding:clamp(16px,2vw,30px);will-change:transform">
-                <a data-card="1" href="#work" style="display:block;text-decoration:none;border-radius:5px;overflow:hidden;background:#151614;border:1px solid rgba(242,239,232,0.14);box-shadow:0 26px 54px -24px rgba(0,0,0,0.7)">
+                <a data-card="1" href="/work?p=monolith" style="display:block;text-decoration:none;border-radius:5px;overflow:hidden;background:#151614;border:1px solid rgba(242,239,232,0.14);box-shadow:0 26px 54px -24px rgba(0,0,0,0.7)">
                   <span style="display:flex;align-items:center;gap:5px;height:22px;padding:0 9px;background:#22261F;border-bottom:1px solid rgba(242,239,232,0.1)">
                     <span style="width:6px;height:6px;border-radius:50%;background:rgba(242,239,232,0.28);display:block"></span>
                     <span style="width:6px;height:6px;border-radius:50%;background:rgba(242,239,232,0.28);display:block"></span>
@@ -516,7 +519,7 @@
                     <span data-cardcta="1" style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:#F2EFE8;margin-left:auto;white-space:nowrap">CASE STUDY <span data-arrow="1">↗</span></span>
                   </span>
                 </a>
-                <a data-card="1" href="#work" style="display:block;text-decoration:none;border-radius:5px;overflow:hidden;background:#151614;border:1px solid rgba(242,239,232,0.14);box-shadow:0 26px 54px -24px rgba(0,0,0,0.7)">
+                <a data-card="1" href="/work?p=about-smiles-sydney" style="display:block;text-decoration:none;border-radius:5px;overflow:hidden;background:#151614;border:1px solid rgba(242,239,232,0.14);box-shadow:0 26px 54px -24px rgba(0,0,0,0.7)">
                   <span style="display:flex;align-items:center;gap:5px;height:22px;padding:0 9px;background:#22261F;border-bottom:1px solid rgba(242,239,232,0.1)">
                     <span style="width:6px;height:6px;border-radius:50%;background:rgba(242,239,232,0.28);display:block"></span>
                     <span style="width:6px;height:6px;border-radius:50%;background:rgba(242,239,232,0.28);display:block"></span>
@@ -528,7 +531,7 @@
                     <span data-cardcta="1" style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:#F2EFE8;margin-left:auto;white-space:nowrap">CASE STUDY <span data-arrow="1">↗</span></span>
                   </span>
                 </a>
-                <a data-card="1" href="#work" style="display:block;text-decoration:none;border-radius:5px;overflow:hidden;background:#151614;border:1px solid rgba(242,239,232,0.14);box-shadow:0 26px 54px -24px rgba(0,0,0,0.7)">
+                <a data-card="1" href="/work?p=lexmens-lawyers" style="display:block;text-decoration:none;border-radius:5px;overflow:hidden;background:#151614;border:1px solid rgba(242,239,232,0.14);box-shadow:0 26px 54px -24px rgba(0,0,0,0.7)">
                   <span style="display:flex;align-items:center;gap:5px;height:22px;padding:0 9px;background:#22261F;border-bottom:1px solid rgba(242,239,232,0.1)">
                     <span style="width:6px;height:6px;border-radius:50%;background:rgba(242,239,232,0.28);display:block"></span>
                     <span style="width:6px;height:6px;border-radius:50%;background:rgba(242,239,232,0.28);display:block"></span>
@@ -540,7 +543,7 @@
                     <span data-cardcta="1" style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:#F2EFE8;margin-left:auto;white-space:nowrap">CASE STUDY <span data-arrow="1">↗</span></span>
                   </span>
                 </a>
-                <a data-card="1" href="#work" style="display:block;text-decoration:none;border-radius:5px;overflow:hidden;background:#151614;border:1px solid rgba(242,239,232,0.14);box-shadow:0 26px 54px -24px rgba(0,0,0,0.7)">
+                <a data-card="1" href="/work?p=space-solar" style="display:block;text-decoration:none;border-radius:5px;overflow:hidden;background:#151614;border:1px solid rgba(242,239,232,0.14);box-shadow:0 26px 54px -24px rgba(0,0,0,0.7)">
                   <span style="display:flex;align-items:center;gap:5px;height:22px;padding:0 9px;background:#22261F;border-bottom:1px solid rgba(242,239,232,0.1)">
                     <span style="width:6px;height:6px;border-radius:50%;background:rgba(242,239,232,0.28);display:block"></span>
                     <span style="width:6px;height:6px;border-radius:50%;background:rgba(242,239,232,0.28);display:block"></span>
@@ -552,7 +555,7 @@
                     <span data-cardcta="1" style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:#F2EFE8;margin-left:auto;white-space:nowrap">CASE STUDY <span data-arrow="1">↗</span></span>
                   </span>
                 </a>
-                <a data-card="1" href="#work" style="display:block;text-decoration:none;border-radius:5px;overflow:hidden;background:#151614;border:1px solid rgba(242,239,232,0.14);box-shadow:0 26px 54px -24px rgba(0,0,0,0.7)">
+                <a data-card="1" href="/work?p=dr-justine-o-hara" style="display:block;text-decoration:none;border-radius:5px;overflow:hidden;background:#151614;border:1px solid rgba(242,239,232,0.14);box-shadow:0 26px 54px -24px rgba(0,0,0,0.7)">
                   <span style="display:flex;align-items:center;gap:5px;height:22px;padding:0 9px;background:#22261F;border-bottom:1px solid rgba(242,239,232,0.1)">
                     <span style="width:6px;height:6px;border-radius:50%;background:rgba(242,239,232,0.28);display:block"></span>
                     <span style="width:6px;height:6px;border-radius:50%;background:rgba(242,239,232,0.28);display:block"></span>
@@ -564,7 +567,7 @@
                     <span data-cardcta="1" style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:#F2EFE8;margin-left:auto;white-space:nowrap">CASE STUDY <span data-arrow="1">↗</span></span>
                   </span>
                 </a>
-                <a data-card="1" href="#work" style="display:block;text-decoration:none;border-radius:5px;overflow:hidden;background:#151614;border:1px solid rgba(242,239,232,0.14);box-shadow:0 26px 54px -24px rgba(0,0,0,0.7)">
+                <a data-card="1" href="/work?p=roof-smart-roofing" style="display:block;text-decoration:none;border-radius:5px;overflow:hidden;background:#151614;border:1px solid rgba(242,239,232,0.14);box-shadow:0 26px 54px -24px rgba(0,0,0,0.7)">
                   <span style="display:flex;align-items:center;gap:5px;height:22px;padding:0 9px;background:#22261F;border-bottom:1px solid rgba(242,239,232,0.1)">
                     <span style="width:6px;height:6px;border-radius:50%;background:rgba(242,239,232,0.28);display:block"></span>
                     <span style="width:6px;height:6px;border-radius:50%;background:rgba(242,239,232,0.28);display:block"></span>
@@ -576,7 +579,7 @@
                     <span data-cardcta="1" style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:#F2EFE8;margin-left:auto;white-space:nowrap">CASE STUDY <span data-arrow="1">↗</span></span>
                   </span>
                 </a>
-                <a data-card="1" href="#work" aria-hidden="true" tabindex="-1" style="display:block;text-decoration:none;border-radius:5px;overflow:hidden;background:#151614;border:1px solid rgba(242,239,232,0.14);box-shadow:0 26px 54px -24px rgba(0,0,0,0.7)">
+                <a data-card="1" href="/work?p=monolith" aria-hidden="true" tabindex="-1" style="display:block;text-decoration:none;border-radius:5px;overflow:hidden;background:#151614;border:1px solid rgba(242,239,232,0.14);box-shadow:0 26px 54px -24px rgba(0,0,0,0.7)">
                   <span style="display:flex;align-items:center;gap:5px;height:22px;padding:0 9px;background:#22261F;border-bottom:1px solid rgba(242,239,232,0.1)">
                     <span style="width:6px;height:6px;border-radius:50%;background:rgba(242,239,232,0.28);display:block"></span>
                     <span style="width:6px;height:6px;border-radius:50%;background:rgba(242,239,232,0.28);display:block"></span>
@@ -588,7 +591,7 @@
                     <span data-cardcta="1" style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:#F2EFE8;margin-left:auto;white-space:nowrap">CASE STUDY <span data-arrow="1">↗</span></span>
                   </span>
                 </a>
-                <a data-card="1" href="#work" aria-hidden="true" tabindex="-1" style="display:block;text-decoration:none;border-radius:5px;overflow:hidden;background:#151614;border:1px solid rgba(242,239,232,0.14);box-shadow:0 26px 54px -24px rgba(0,0,0,0.7)">
+                <a data-card="1" href="/work?p=about-smiles-sydney" aria-hidden="true" tabindex="-1" style="display:block;text-decoration:none;border-radius:5px;overflow:hidden;background:#151614;border:1px solid rgba(242,239,232,0.14);box-shadow:0 26px 54px -24px rgba(0,0,0,0.7)">
                   <span style="display:flex;align-items:center;gap:5px;height:22px;padding:0 9px;background:#22261F;border-bottom:1px solid rgba(242,239,232,0.1)">
                     <span style="width:6px;height:6px;border-radius:50%;background:rgba(242,239,232,0.28);display:block"></span>
                     <span style="width:6px;height:6px;border-radius:50%;background:rgba(242,239,232,0.28);display:block"></span>
@@ -600,7 +603,7 @@
                     <span data-cardcta="1" style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:#F2EFE8;margin-left:auto;white-space:nowrap">CASE STUDY <span data-arrow="1">↗</span></span>
                   </span>
                 </a>
-                <a data-card="1" href="#work" aria-hidden="true" tabindex="-1" style="display:block;text-decoration:none;border-radius:5px;overflow:hidden;background:#151614;border:1px solid rgba(242,239,232,0.14);box-shadow:0 26px 54px -24px rgba(0,0,0,0.7)">
+                <a data-card="1" href="/work?p=lexmens-lawyers" aria-hidden="true" tabindex="-1" style="display:block;text-decoration:none;border-radius:5px;overflow:hidden;background:#151614;border:1px solid rgba(242,239,232,0.14);box-shadow:0 26px 54px -24px rgba(0,0,0,0.7)">
                   <span style="display:flex;align-items:center;gap:5px;height:22px;padding:0 9px;background:#22261F;border-bottom:1px solid rgba(242,239,232,0.1)">
                     <span style="width:6px;height:6px;border-radius:50%;background:rgba(242,239,232,0.28);display:block"></span>
                     <span style="width:6px;height:6px;border-radius:50%;background:rgba(242,239,232,0.28);display:block"></span>
@@ -612,7 +615,7 @@
                     <span data-cardcta="1" style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:#F2EFE8;margin-left:auto;white-space:nowrap">CASE STUDY <span data-arrow="1">↗</span></span>
                   </span>
                 </a>
-                <a data-card="1" href="#work" aria-hidden="true" tabindex="-1" style="display:block;text-decoration:none;border-radius:5px;overflow:hidden;background:#151614;border:1px solid rgba(242,239,232,0.14);box-shadow:0 26px 54px -24px rgba(0,0,0,0.7)">
+                <a data-card="1" href="/work?p=space-solar" aria-hidden="true" tabindex="-1" style="display:block;text-decoration:none;border-radius:5px;overflow:hidden;background:#151614;border:1px solid rgba(242,239,232,0.14);box-shadow:0 26px 54px -24px rgba(0,0,0,0.7)">
                   <span style="display:flex;align-items:center;gap:5px;height:22px;padding:0 9px;background:#22261F;border-bottom:1px solid rgba(242,239,232,0.1)">
                     <span style="width:6px;height:6px;border-radius:50%;background:rgba(242,239,232,0.28);display:block"></span>
                     <span style="width:6px;height:6px;border-radius:50%;background:rgba(242,239,232,0.28);display:block"></span>
@@ -624,7 +627,7 @@
                     <span data-cardcta="1" style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:#F2EFE8;margin-left:auto;white-space:nowrap">CASE STUDY <span data-arrow="1">↗</span></span>
                   </span>
                 </a>
-                <a data-card="1" href="#work" aria-hidden="true" tabindex="-1" style="display:block;text-decoration:none;border-radius:5px;overflow:hidden;background:#151614;border:1px solid rgba(242,239,232,0.14);box-shadow:0 26px 54px -24px rgba(0,0,0,0.7)">
+                <a data-card="1" href="/work?p=dr-justine-o-hara" aria-hidden="true" tabindex="-1" style="display:block;text-decoration:none;border-radius:5px;overflow:hidden;background:#151614;border:1px solid rgba(242,239,232,0.14);box-shadow:0 26px 54px -24px rgba(0,0,0,0.7)">
                   <span style="display:flex;align-items:center;gap:5px;height:22px;padding:0 9px;background:#22261F;border-bottom:1px solid rgba(242,239,232,0.1)">
                     <span style="width:6px;height:6px;border-radius:50%;background:rgba(242,239,232,0.28);display:block"></span>
                     <span style="width:6px;height:6px;border-radius:50%;background:rgba(242,239,232,0.28);display:block"></span>
@@ -636,7 +639,7 @@
                     <span data-cardcta="1" style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:#F2EFE8;margin-left:auto;white-space:nowrap">CASE STUDY <span data-arrow="1">↗</span></span>
                   </span>
                 </a>
-                <a data-card="1" href="#work" aria-hidden="true" tabindex="-1" style="display:block;text-decoration:none;border-radius:5px;overflow:hidden;background:#151614;border:1px solid rgba(242,239,232,0.14);box-shadow:0 26px 54px -24px rgba(0,0,0,0.7)">
+                <a data-card="1" href="/work?p=roof-smart-roofing" aria-hidden="true" tabindex="-1" style="display:block;text-decoration:none;border-radius:5px;overflow:hidden;background:#151614;border:1px solid rgba(242,239,232,0.14);box-shadow:0 26px 54px -24px rgba(0,0,0,0.7)">
                   <span style="display:flex;align-items:center;gap:5px;height:22px;padding:0 9px;background:#22261F;border-bottom:1px solid rgba(242,239,232,0.1)">
                     <span style="width:6px;height:6px;border-radius:50%;background:rgba(242,239,232,0.28);display:block"></span>
                     <span style="width:6px;height:6px;border-radius:50%;background:rgba(242,239,232,0.28);display:block"></span>
@@ -769,7 +772,7 @@
               </div>
               <p style="margin:18px 0 0;font-size:18px;line-height:1.58;max-width:44ch">{{ workChallenge }}</p>
               <div style="display:flex;flex-wrap:wrap;gap:16px;align-items:center;margin-top:22px">
-                <a data-link="1" href="#work" style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:0.06em;text-decoration:none;border-bottom:1px solid #151614;padding-bottom:3px;min-height:44px;display:inline-flex;align-items:center">VIEW CASE STUDY <span data-arrow="1">↗</span></a>
+                <a data-link="1" href="/work" style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:0.06em;text-decoration:none;border-bottom:1px solid #151614;padding-bottom:3px;min-height:44px;display:inline-flex;align-items:center">VIEW CASE STUDY <span data-arrow="1">↗</span></a>
               </div>
             </div>
           </div>

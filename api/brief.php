@@ -34,10 +34,71 @@ register_shutdown_function(static function (): void {
 // ---------------------------------------------------------------- config
 const MAIL_TO       = 'info@hackproofwp.com';
 const MAIL_SUBJECT  = 'New brief — HackProof Studio';
-// Must be a mailbox on your own domain or the mail is likely to be rejected
-// or spam-filed. Never put the visitor's address here; it goes in Reply-To.
-const MAIL_FROM     = 'no-reply@hackproofwp.com';
+// Must be a mailbox that really exists on your own domain. Only the mail()
+// fallback reads this — the SMTP path builds From from SMTP_USER instead, so the
+// header always matches whoever authenticated. Never put the visitor's address
+// here; it goes in Reply-To.
+const MAIL_FROM     = 'info@hackproofwp.com';
 const MAIL_FROM_NAME = 'HackProof Studio';
+
+// ---------------------------------------------------------------- SMTP
+// PHP mail() is not reliable on Hostinger. The local sendmail accepts the
+// message and returns true, then the relay discards it because the web server
+// is not an authorised sender for this domain — SPF here lists only
+// _spf.mail.hostinger.com, which covers the MAIL servers, not the web host.
+// The result is a form that reports success and delivers nothing.
+//
+// Sending over authenticated SMTP fixes both halves: it relays through the
+// server SPF already authorises, Hostinger DKIM-signs it, and a refusal comes
+// back as a real error instead of a silent drop.
+//
+// Fill these in from hPanel -> Emails -> Email Accounts. SMTP_USER must be a
+// mailbox that really exists, and MAIL_FROM should match it so the From header
+// aligns with the authenticated sender. Leave SMTP_USER empty and the endpoint
+// falls back to mail(), so the form keeps working exactly as it does now.
+const SMTP_HOST   = 'smtp.hostinger.com';
+const SMTP_PORT   = 465;          // 465 = implicit TLS, 587 = STARTTLS
+const SMTP_TIMEOUT = 15;          // seconds; a hung relay must not hang the request
+
+// Credentials are read from a file ABOVE the web root when one exists.
+// This file is executed rather than served, but if the PHP handler ever breaks,
+// every .php file is served as plain text — and on a one-mailbox plan this
+// password also opens the studio's main inbox. Anything above public_html
+// cannot be requested over HTTP at all, however badly the server misbehaves.
+//
+// Create /home/USERNAME/hp-mail-config.php — one level ABOVE public_html:
+//
+//     <?php return ['user' => 'info@hackproofwp.com', 'pass' => 'the password'];
+//
+// If you cannot place a file there, fill the two INLINE constants below instead.
+// It still works; it is simply the weaker of the two.
+const SMTP_USER_INLINE = '';
+const SMTP_PASS_INLINE = '';
+
+// Hostinger's directory layout varies between accounts — some put the site at
+// /home/uX/public_html, others at /home/uX/domains/site.com/public_html. Guessing
+// one parent means a misplaced file silently falls back to mail() and the form
+// goes on reporting success while delivering nothing. So check every plausible
+// spot and record which one answered.
+$docRoot = rtrim($_SERVER['DOCUMENT_ROOT'] ?? dirname(__DIR__), '/');
+$candidates = array_unique(array_filter([
+    dirname($docRoot) . '/hp-mail-config.php',          // beside public_html
+    dirname(dirname($docRoot)) . '/hp-mail-config.php', // one level further up
+    dirname(dirname(__DIR__)) . '/hp-mail-config.php',  // above public_html
+    rtrim($_SERVER['HOME'] ?? '', '/') . '/hp-mail-config.php',
+]));
+
+$mailCfg = [];
+$cfgFound = false;
+foreach ($candidates as $candidate) {
+    if ($candidate !== '/hp-mail-config.php' && is_readable($candidate)) {
+        $loaded = @include $candidate;
+        if (is_array($loaded)) { $mailCfg = $loaded; $cfgFound = true; break; }
+    }
+}
+
+define('SMTP_USER', (string) ($mailCfg['user'] ?? SMTP_USER_INLINE));
+define('SMTP_PASS', (string) ($mailCfg['pass'] ?? SMTP_PASS_INLINE));
 
 // reCAPTCHA v3. Paste the secret key here when you have it; leave it empty and
 // verification is skipped so the form keeps working in the meantime.
@@ -302,6 +363,124 @@ if ($name === '' || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
     respond(400, ['ok' => false, 'error' => 'name-and-valid-email-required']);
 }
 
+// ---------------------------------------------------------------- smtp send
+// A small, dependency-free SMTP client. Hostinger shared hosting has no
+// Composer and no PHPMailer, and this endpoint is the only thing that sends.
+//
+// Returns [bool $ok, string $detail]. $detail never contains the password.
+function smtpSend(string $to, string $subject, string $body, string $replyName, string $replyEmail): array
+{
+    $transport = (SMTP_PORT === 465 ? 'ssl://' : 'tcp://') . SMTP_HOST . ':' . SMTP_PORT;
+
+    $ctx = stream_context_create([
+        'ssl' => [
+            // Verify the relay's certificate. A MITM here would see the mailbox
+            // password, so this must never be relaxed to get a connection up.
+            'verify_peer'       => true,
+            'verify_peer_name'  => true,
+            'allow_self_signed' => false,
+        ],
+    ]);
+
+    $errNo = 0; $errStr = '';
+    $fp = @stream_socket_client($transport, $errNo, $errStr, SMTP_TIMEOUT,
+                                STREAM_CLIENT_CONNECT, $ctx);
+    if (!$fp) {
+        return [false, 'connect-failed: ' . $errStr];
+    }
+    stream_set_timeout($fp, SMTP_TIMEOUT);
+
+    // Reads one reply, following multi-line continuations ("250-" vs "250 ").
+    $read = static function () use ($fp): array {
+        $lines = [];
+        while (($line = fgets($fp, 8192)) !== false) {
+            $lines[] = rtrim($line, "\r\n");
+            if (strlen($line) < 4 || $line[3] !== '-') { break; }
+        }
+        $last = end($lines) ?: '';
+        return [(int) substr($last, 0, 3), implode(' | ', $lines)];
+    };
+    $say = static function (string $cmd) use ($fp): void {
+        fwrite($fp, $cmd . "\r\n");
+    };
+
+    $quit = static function () use ($fp, $say): void {
+        @$say('QUIT');
+        @fclose($fp);
+    };
+
+    [$code, $msg] = $read();
+    if ($code !== 220) { $quit(); return [false, 'banner: ' . $msg]; }
+
+    $helo = 'hackproofwp.com';
+    $say('EHLO ' . $helo);
+    [$code, $msg] = $read();
+    if ($code !== 250) { $quit(); return [false, 'ehlo: ' . $msg]; }
+
+    // Port 587 negotiates TLS after the greeting, then re-sends EHLO.
+    if (SMTP_PORT !== 465) {
+        $say('STARTTLS');
+        [$code, $msg] = $read();
+        if ($code !== 220) { $quit(); return [false, 'starttls: ' . $msg]; }
+        if (!@stream_socket_enable_crypto($fp, true, STREAM_CRYPTO_METHOD_TLS_CLIENT)) {
+            $quit(); return [false, 'starttls-handshake-failed'];
+        }
+        $say('EHLO ' . $helo);
+        [$code, $msg] = $read();
+        if ($code !== 250) { $quit(); return [false, 'ehlo-tls: ' . $msg]; }
+    }
+
+    $say('AUTH LOGIN');
+    [$code, $msg] = $read();
+    if ($code !== 334) { $quit(); return [false, 'auth-login: ' . $msg]; }
+    $say(base64_encode(SMTP_USER));
+    [$code, $msg] = $read();
+    if ($code !== 334) { $quit(); return [false, 'auth-user: ' . $msg]; }
+    $say(base64_encode(SMTP_PASS));
+    [$code, $msg] = $read();
+    // Deliberately not echoing the server text here: a rejection can quote the
+    // credential back, and this string is written to the error log.
+    if ($code !== 235) { $quit(); return [false, 'auth-rejected (code ' . $code . ')']; }
+
+    $say('MAIL FROM:<' . SMTP_USER . '>');
+    [$code, $msg] = $read();
+    if ($code !== 250) { $quit(); return [false, 'mail-from: ' . $msg]; }
+
+    $say('RCPT TO:<' . $to . '>');
+    [$code, $msg] = $read();
+    if ($code !== 250 && $code !== 251) { $quit(); return [false, 'rcpt-to: ' . $msg]; }
+
+    $say('DATA');
+    [$code, $msg] = $read();
+    if ($code !== 354) { $quit(); return [false, 'data: ' . $msg]; }
+
+    $headers = [
+        'Date: ' . date('r'),
+        'From: ' . headerSafe(MAIL_FROM_NAME) . ' <' . SMTP_USER . '>',
+        'To: ' . $to,
+        'Reply-To: ' . headerSafe($replyName) . ' <' . headerSafe($replyEmail) . '>',
+        'Subject: =?UTF-8?B?' . base64_encode($subject) . '?=',
+        'MIME-Version: 1.0',
+        'Content-Type: text/plain; charset=UTF-8',
+        'Content-Transfer-Encoding: 8bit',
+        'Message-ID: <' . bin2hex(random_bytes(12)) . '@hackproofwp.com>',
+        'X-Mailer: HackProof Brief Endpoint',
+    ];
+
+    // A line that is just "." would end the message early, so any leading dot is
+    // doubled. Bare newlines are normalised to CRLF, which some relays require.
+    $data = implode("\r\n", $headers) . "\r\n\r\n" . $body;
+    $data = preg_replace('/\r\n|\r|\n/', "\r\n", $data);
+    $data = preg_replace('/^\./m', '..', $data);
+
+    fwrite($fp, $data . "\r\n.\r\n");
+    [$code, $msg] = $read();
+    $quit();
+
+    if ($code !== 250) { return [false, 'not-accepted: ' . $msg]; }
+    return [true, 'queued: ' . $msg];
+}
+
 // ---------------------------------------------------------------- captcha
 // A brief queued offline is delivered when the connection returns, which may be
 // hours later — long after a v3 token has expired. Rejecting on an expired
@@ -317,7 +496,13 @@ if (!$capOk) {
         // Google is down. Transient: keep it queued and try again.
         respond(503, ['ok' => false, 'error' => 'captcha-unavailable']);
     }
-    if (!$isDelayed) {
+    // A low score is a suspicion, not proof. Rejecting it destroys the lead:
+    // the client drops any 4xx from its queue, so the visitor sees the thank-you
+    // screen and the studio never hears from them. A real person on a VPN or a
+    // privacy browser scores badly through no fault of their own, and that costs
+    // far more than an occasional flagged email. Deliver it, clearly marked.
+    // A missing or forged token still gets rejected — that is the actual bot case.
+    if (!$isDelayed && $capReason !== 'low-score') {
         respond(400, ['ok' => false, 'error' => 'captcha-failed', 'reason' => $capReason]);
     }
     // Delayed submission with a stale token: deliver it, clearly marked.
@@ -372,17 +557,32 @@ $headers = implode("\r\n", [
     'X-Mailer: HackProof Brief Endpoint',
 ]);
 
-$sent = @mail(
-    MAIL_TO,
-    '=?UTF-8?B?' . base64_encode($subject) . '?=',
-    $body,
-    $headers,
-    '-f' . MAIL_FROM
-);
+// Authenticated SMTP when it is configured, mail() otherwise. mail() is kept
+// only as a fallback: on this host it returns true and delivers nothing, so a
+// deployment that has not filled in SMTP_USER yet behaves exactly as before
+// rather than breaking outright.
+$via = 'mail';
+if (SMTP_USER !== '' && SMTP_PASS !== '') {
+    $via = 'smtp';
+    [$sent, $detail] = smtpSend(MAIL_TO, $subject, $body, $name, $email);
+    if (!$sent) {
+        error_log('[hackproof-brief] smtp failed for ' . $email . ' — ' . $detail);
+    }
+} else {
+    $sent = @mail(
+        MAIL_TO,
+        '=?UTF-8?B?' . base64_encode($subject) . '?=',
+        $body,
+        $headers,
+        '-f' . MAIL_FROM
+    );
+    if (!$sent) {
+        error_log('[hackproof-brief] mail() failed for ' . $email);
+    }
+}
 
 if (!$sent) {
-    // Mail failed. 5xx so the brief stays queued and is retried rather than lost.
-    error_log('[hackproof-brief] mail() failed for ' . $email);
+    // 5xx so the brief stays queued and is retried rather than lost.
     respond(500, ['ok' => false, 'error' => 'mail-failed']);
 }
 
@@ -390,4 +590,4 @@ if ($briefId !== '') {
     markSeen($briefId);
 }
 
-respond(200, ['ok' => true]);
+respond(200, ['ok' => true, 'via' => $via, 'config' => $cfgFound ? 'file' : 'inline']);

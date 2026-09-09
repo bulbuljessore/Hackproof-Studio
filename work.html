@@ -861,8 +861,28 @@ class Component extends DCLogic {
     this.dofSweep();
   };
 
+  // Opens the project named in ?p= — the homepage reel cards link straight here.
+  // Slug, not index: this.projects gets reordered, and an index would quietly open the
+  // wrong project. An unknown slug just leaves the page as it is.
+  slugOf = (n) => String(n).toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "");
+
+  openFromQuery = () => {
+    try {
+      const want = new URLSearchParams(window.location.search).get("p");
+      if (!want) return;
+      const slug = this.slugOf(want);
+      let i = this.projects.findIndex((p) => this.slugOf(p.name) === slug);
+      // Fall back to a prefix match so a shortened or slightly renamed slug still
+      // resolves rather than dumping the visitor on an unopened list.
+      if (i === -1) i = this.projects.findIndex((p) => this.slugOf(p.name).startsWith(slug) || slug.startsWith(this.slugOf(p.name)));
+      if (i === -1) return;
+      this.setState({ open: true, sel: i });
+    } catch (e) { /* a bad query string must never stop the page rendering */ }
+  };
+
   componentDidMount() {
     this.buildDof();
+    this.openFromQuery();
     // The host re-renders often, which restarts CSS animations. Drive the intro from
     // inline styles once instead: the markup's own state is the final, visible one.
     this.introTimer = setTimeout(() => {

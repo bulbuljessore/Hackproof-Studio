@@ -98,7 +98,10 @@ DirectoryIndex index.html
 
 # ---------------------------------------------------------------- protection
 # Project notes and dotfiles must never be served.
-<FilesMatch "^(CLAUDE\.md|\.thumbnail|.*\.md)$">
+# hp-mail-config.php belongs ABOVE public_html and should never be here at all.
+# This is the safety net for the day it is uploaded to the wrong place: it holds
+# the mailbox password, so it must not be readable over HTTP either way.
+<FilesMatch "^(CLAUDE\.md|\.thumbnail|hp-mail-config\.php|.*\.md)$">
   <IfModule mod_authz_core.c>
     Require all denied
   </IfModule>
