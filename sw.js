@@ -10,7 +10,7 @@
  *
  * Bump CACHE_VERSION on every deploy. Old caches are deleted on activate.
  */
-const CACHE_VERSION = "hp-v7";
+const CACHE_VERSION = "hp-v8";
 const SHELL_CACHE = `${CACHE_VERSION}-shell`;
 const ASSET_CACHE = `${CACHE_VERSION}-assets`;
 const PAGE_CACHE = `${CACHE_VERSION}-pages`;
@@ -27,6 +27,7 @@ const SHELL = [
   "/security",
   "/studio",
   "/open-brief",
+  "/roofers",
   "/hp-nav.html",
   "/hp-footer.html",
   "/support.js",
@@ -36,6 +37,7 @@ const SHELL = [
   "/assets/logo-ink-web.png",
   "/assets/logo-paper-web.png",
   "/assets/logo-studio-coral.png",
+  "/assets/roofers-review-poster.jpg",
   "/assets/favicon/favicon-32.png",
   "/assets/favicon/apple-touch-icon.png",
 ];

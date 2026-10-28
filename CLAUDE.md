@@ -79,6 +79,20 @@ Depth-of-field runs on EVERY page: sections arrive at 6px blur (4px under 768px)
 - Frame aspect ratio follows the active project so nothing crops. Metal Roofing re-rendered to 1280×616 to match.
 - Mobile stacks each row with its own framed screenshot.
 
+## /roofers landing page (2026-10-28)
+- `roofers.html`, served at `/roofers` by the same clean-URL rewrite as every other page. **There must be NO `roofers/` folder**: the rewrite has a `!-d` condition, so a directory of that name makes `/roofers` 404.
+- It arrived as a Claude Design **self-extracting bundle** (2.5 MB, assets minted as `blob:`/`data:` URLs at runtime). The production CSP has no `blob:` or `data:` in `img-src`/`font-src`/`script-src`, so the bundle rendered with EVERY image, font and the runtime blocked. It was unpacked into a normal page (88 KB) with real asset files. **If a bundle like this is dropped in again, unpack it — do not loosen the CSP to fit it.**
+- Fonts are the site's own: IBM Plex Mono via the same Google Fonts link as every page, and `fonts/everett-regular.ttf` (byte-identical to the bundle's copy). The bundle's five inline IBM Plex Mono subsets were removed.
+- React and ReactDOM are local (`js/react*.production.min.js`), loaded before `support.js`, so this is the only page with no CDN dependency for its framework.
+- **The form used to send nothing**: it validated, set `sent:true` and showed a thank-you. It now calls `sendLead()` -> `HPOffline.submitBrief()` -> `/api/brief.php`, the same audited path as Open Brief (reCAPTCHA token, offline queue, dedupe, SMTP). Fields map as business->Company, link->Website, mobile+suburb into the Summary block. Verified by intercepting `submitBrief`: one call, every field present. A real end-to-end email test is still needed after deploy.
+- The canvas ships every page `noindex,nofollow`. It was changed to `index, follow`; left alone this page would never have been indexed.
+- **`encodeCamelAttrs` in `support.js` mangles a bare camelCase assignment inside helmet scripts**: `var sGa = ...` became `var sc-camel-s-ga = ...` and threw `Unexpected token '-'`. camelCase after a `.` is safe (`window.__gaBooted`). Use lowercase names for local variables in any helmet `<script>`. It passes `node --check` from the file, so only running it in the page reveals it.
+- `componentDidUpdate(_, prev)` threw on every update (documented runtime constraint). Fixed by tracking `prevModalOpen` on the instance; the popup scroll lock now works.
+- `.htaccess` `frame-src` gained `youtube-nocookie.com` and `youtube.com` for the client video review embed.
+- The 1.4 MB PNG video poster became a 174 KB JPEG. Four of the five bundle images already existed in `assets/` and were reused.
+- In the Claude preview pane `loading="lazy"` images never fetch (the pane is hidden), so they look broken. They are not; force one to `eager` to confirm.
+- Default `phone` prop is `+880 1843 908029` and feeds a wa.me link, on a page aimed at Australian roofers. Left as-is; a business decision.
+
 ## Hero reel + project deep links (2026-09-09)
 - **Hover PAUSES the reel. Never re-time it.** The hover rule used to set
   `animation-duration: 500s`. A CSS animation's position is elapsed ÷ duration, so

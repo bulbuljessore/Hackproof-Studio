@@ -587,6 +587,11 @@ Each of these produced a working-looking site that was broken:
 | Mobile fixed, tablet still broken | rule written into the wrong breakpoint block |
 | Credentials gone after a redeploy | secrets live only on the server; re-uploading the file wipes them |
 | Config file uploaded but never read | host's directory layout differs from the one assumed |
+| Imported design renders with no images, fonts or scripts | a self-extracting bundle mints `blob:`/`data:` URLs the CSP blocks. Unpack it into real files; do not loosen the CSP |
+| `Unexpected token '-'` from a helmet script that parses fine | the canvas runtime rewrote a bare camelCase variable (`sGa =`) as an attribute. Use lowercase locals |
+| A new page 404s though the file exists | a folder with the same name beats the `!-d` rewrite condition |
+| Landing page never appears in Google | the canvas default is `noindex,nofollow` on every page |
+| Lazy images look broken in the preview pane | the pane never fetches lazy images; force one to `eager` before concluding anything |
 | Leads vanish silently, form looks perfect | a low bot score returned 4xx and the client dropped it from the queue |
 
 **Vendored/generated runtimes:** if a page depends on a generated file marked
