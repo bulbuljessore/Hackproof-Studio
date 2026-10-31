@@ -24,7 +24,7 @@
 
   // reCAPTCHA v3 site key (the public one). Paste it here and load Google's
   // script on the page; leave it empty and the form works without a token.
-  var RECAPTCHA_SITE_KEY = "6LdgpZItAAAAAFyEUijHWF5-olSk_I34Ln_DbaPz";
+  var RECAPTCHA_SITE_KEY = "6LdHFAYuAAAAABMcSSD0kypRO25T5v13a67EOujY";
 
   var DB_NAME = "hp-briefs";
   var STORE = "queue";

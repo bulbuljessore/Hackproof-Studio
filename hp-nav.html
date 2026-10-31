@@ -64,7 +64,7 @@
         <a data-navlink="1" data-on="{{ onWork }}" href="/work" style="font-size:14px;font-weight:500;letter-spacing:0.01em;text-decoration:none;display:inline-flex;align-items:center;min-height:44px">Work</a>
         <a data-navlink="1" data-on="{{ onServices }}" href="/services" style="font-size:14px;font-weight:500;letter-spacing:0.01em;text-decoration:none;display:inline-flex;align-items:center;min-height:44px">Services</a>
         <a data-navlink="1" data-on="{{ onSecurity }}" href="/security" style="font-size:14px;font-weight:500;letter-spacing:0.01em;text-decoration:none;display:inline-flex;align-items:center;min-height:44px">Security</a>
-        <a data-navlink="1" data-on="{{ onStudio }}" href="/studio" style="font-size:14px;font-weight:500;letter-spacing:0.01em;text-decoration:none;display:inline-flex;align-items:center;min-height:44px">Studio</a>
+        <a data-navlink="1" data-on="{{ onStudio }}" href="/studio" style="font-size:14px;font-weight:500;letter-spacing:0.01em;text-decoration:none;display:inline-flex;align-items:center;min-height:44px">Studio</a><a data-navlink="1" data-on="0" href="/blog/" style="font-size:14px;font-weight:500;letter-spacing:0.01em;text-decoration:none;display:inline-flex;align-items:center;min-height:44px">Blog</a>
         <button type="button" data-menubtn="1" onClick="{{ openMenu }}" aria-expanded="{{ menuExpanded }}" aria-controls="project-index" style="display:flex;align-items:center;gap:10px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;border:1px solid #151614;padding:0 16px;min-height:44px;transition:background 200ms ease,color 200ms ease">MENU <span style="color:#FF5A3C;font-size:14px">+</span></button>
       </nav>
     </div>
@@ -110,8 +110,13 @@
               <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:rgba(242,239,232,0.6)">04</span>
               <span data-big="1" style="font-size:clamp(2rem,4.4vw,3.5rem);line-height:1;letter-spacing:-0.035em;font-weight:500">The studio</span>
             </a>
-            <a data-menurow="1" href="/open-brief" onMouseEnter="{{ onHover }}" data-prev="OPEN BRIEF / FOUR STEPS" style="display:flex;align-items:baseline;gap:clamp(16px,3vw,36px);width:100%;padding:clamp(14px,2vw,22px) 0;text-decoration:none;color:inherit;animation:ovRow 420ms cubic-bezier(.22,1,.36,1) 240ms both">
+            <a data-menurow="1" href="/blog/" onMouseEnter="{{ onHover }}" data-prev="BLOG / CITY-BY-CITY WEBSITE GUIDES" style="display:flex;align-items:baseline;gap:clamp(16px,3vw,36px);width:100%;padding:clamp(14px,2vw,22px) 0;text-decoration:none;color:inherit;animation:ovRow 420ms cubic-bezier(.22,1,.36,1) 240ms both">
               <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:#FF5A3C">05</span>
+              <span data-big="1" style="font-size:clamp(2rem,4.4vw,3.5rem);line-height:1;letter-spacing:-0.035em;font-weight:500;color:#FF5A3C">Blog</span>
+              
+            </a>
+            <a data-menurow="1" href="/open-brief" onMouseEnter="{{ onHover }}" data-prev="OPEN BRIEF / FOUR STEPS" style="display:flex;align-items:baseline;gap:clamp(16px,3vw,36px);width:100%;padding:clamp(14px,2vw,22px) 0;text-decoration:none;color:inherit;animation:ovRow 420ms cubic-bezier(.22,1,.36,1) 300ms both">
+              <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:#FF5A3C">06</span>
               <span data-big="1" style="font-size:clamp(2rem,4.4vw,3.5rem);line-height:1;letter-spacing:-0.035em;font-weight:500;color:#FF5A3C">Open brief</span>
               <span style="margin-left:auto;font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.12em;color:#FF5A3C;display:inline-flex;align-items:center;gap:8px"><span style="width:5px;height:5px;background:#FF5A3C;display:block"></span>YOU ARE HERE</span>
             </a>

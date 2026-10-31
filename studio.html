@@ -409,7 +409,7 @@
           <a data-nav-a="1" href="/work" style="font-size:14px;font-weight:500;letter-spacing:0.01em;min-height:44px;display:inline-flex;align-items:center;text-decoration:none">Work</a>
           <a data-nav-a="1" href="/services" style="font-size:14px;font-weight:500;letter-spacing:0.01em;min-height:44px;display:inline-flex;align-items:center;text-decoration:none">Services</a>
           <a data-nav-a="1" href="/security" style="font-size:14px;font-weight:500;letter-spacing:0.01em;min-height:44px;display:inline-flex;align-items:center;text-decoration:none">Security</a>
-          <a data-nav-a="1" aria-current="page" href="#top" style="font-size:14px;font-weight:500;letter-spacing:0.01em;min-height:44px;display:inline-flex;align-items:center;gap:8px;text-decoration:none"><span style="width:5px;height:5px;background:#FF5A3C;display:block;flex:none"></span>Studio</a>
+          <a data-nav-a="1" aria-current="page" href="#top" style="font-size:14px;font-weight:500;letter-spacing:0.01em;min-height:44px;display:inline-flex;align-items:center;gap:8px;text-decoration:none"><span style="width:5px;height:5px;background:#FF5A3C;display:block;flex:none"></span>Studio</a><a data-nav-a="1" href="/blog/" style="font-size:14px;font-weight:500;letter-spacing:0.01em;min-height:44px;display:inline-flex;align-items:center;gap:8px;text-decoration:none">Blog</a>
           <button type="button" data-menubtn="1" onClick="{{ openIndex }}" aria-expanded="{{ indexExpanded }}" aria-controls="project-index" style="display:flex;align-items:center;gap:10px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;border:1px solid #151614;padding:0 16px;min-height:44px">MENU <span data-menuplus="1" style="color:#FF5A3C;font-size:14px">+</span></button>
         </nav>
       </div>
@@ -1035,7 +1035,7 @@
             <a href="/work" style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:rgba(242,239,232,0.6);text-decoration:none;min-height:44px;display:inline-flex;align-items:center">WORK</a>
             <a href="/services" style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:rgba(242,239,232,0.6);text-decoration:none;min-height:44px;display:inline-flex;align-items:center">SERVICES</a>
             <a href="/security" style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:rgba(242,239,232,0.6);text-decoration:none;min-height:44px;display:inline-flex;align-items:center">SECURITY</a>
-            <a href="#top" aria-current="page" style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:#F2EFE8;text-decoration:none;min-height:44px;display:inline-flex;align-items:center;gap:7px"><span style="width:5px;height:5px;background:#FF5A3C;display:block"></span>STUDIO</a>
+            <a href="#top" aria-current="page" style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:#F2EFE8;text-decoration:none;min-height:44px;display:inline-flex;align-items:center;gap:7px"><span style="width:5px;height:5px;background:#FF5A3C;display:block"></span>STUDIO</a><a href="/blog/" style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:#F2EFE8;text-decoration:none;min-height:44px;display:inline-flex;align-items:center;gap:7px">BLOG</a>
             <a href="/open-brief" style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:#FF5A3C;text-decoration:none;display:flex;align-items:center;min-height:44px">OPEN BRIEF</a>
           </nav>
         </div>
@@ -1087,8 +1087,13 @@
               <span data-big="1" style="font-size:clamp(2rem,4.4vw,3.5rem);line-height:1;letter-spacing:-0.035em;font-weight:500">The studio</span>
               <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.12em;color:#FF5A3C;display:inline-flex;align-items:center;gap:8px"><span style="width:5px;height:5px;background:#FF5A3C;display:block"></span>YOU ARE HERE</span>
             </a>
-            <a data-navrow="1" href="/open-brief" onMouseEnter="{{ onHover }}" data-prev="05" style="text-decoration:none;color:inherit;display:grid;grid-template-columns:auto 1fr auto;align-items:baseline;gap:clamp(14px,3vw,32px);width:100%;padding:clamp(14px,2vw,22px) 0;animation:ovRow 420ms cubic-bezier(.22,1,.36,1) 300ms both">
+            <a data-navrow="1" href="/blog/" onMouseEnter="{{ onHover }}" data-prev="05" style="text-decoration:none;color:inherit;display:grid;grid-template-columns:auto 1fr auto;align-items:baseline;gap:clamp(14px,3vw,32px);width:100%;padding:clamp(14px,2vw,22px) 0;animation:ovRow 420ms cubic-bezier(.22,1,.36,1) 300ms both">
               <span data-navnum="1" style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:rgba(242,239,232,0.4)">05</span>
+              <span data-big="1" style="font-size:clamp(2rem,4.4vw,3.5rem);line-height:1;letter-spacing:-0.035em;font-weight:500">Blog</span>
+              <span data-navarrow="1" aria-hidden="true" style="font-size:clamp(1rem,1.6vw,1.375rem);line-height:1;color:inherit">↗</span>
+            </a>
+            <a data-navrow="1" href="/open-brief" onMouseEnter="{{ onHover }}" data-prev="06" style="text-decoration:none;color:inherit;display:grid;grid-template-columns:auto 1fr auto;align-items:baseline;gap:clamp(14px,3vw,32px);width:100%;padding:clamp(14px,2vw,22px) 0;animation:ovRow 420ms cubic-bezier(.22,1,.36,1) 360ms both">
+              <span data-navnum="1" style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:rgba(242,239,232,0.4)">06</span>
               <span data-big="1" style="font-size:clamp(2rem,4.4vw,3.5rem);line-height:1;letter-spacing:-0.035em;font-weight:500">Open brief</span>
               <span data-navarrow="1" data-navarrowon="1" aria-hidden="true" style="font-size:clamp(1rem,1.6vw,1.375rem);line-height:1;color:#FF5A3C">↗</span>
             </a>
@@ -1478,7 +1483,8 @@ class Component extends DCLogic {
         "02": "SERVICES / DESIGN, REDESIGN, SECURITY",
         "03": "SECURITY / CONTAIN, RECOVER, HARDEN",
         "04": "STUDIO / ONE ACCOUNTABLE PERSON",
-        "05": "OPEN BRIEF / FOUR SHORT STEPS"
+        "05": "BLOG / CITY-BY-CITY WEBSITE GUIDES",
+        "06": "OPEN BRIEF / FOUR SHORT STEPS"
       }[this.state.hover] || "",
       previewNote: {
         "00": "EVERY SECTION, IN ORDER",
@@ -1486,14 +1492,16 @@ class Component extends DCLogic {
         "02": "THREE ENGAGEMENTS, ONE STANDARD",
         "03": "INCIDENT RESPONSE AND PREVENTION",
         "04": "FOUNDER-LED BY DESIGN",
-        "05": "NAME, SCOPE, BUDGET, TIMING"
+        "05": "BLOG / WRITTEN BY THE BUILDER",
+        "06": "NAME, SCOPE, BUDGET, TIMING"
       }[this.state.hover] || "",
       previewImg: {
         "00": "assets/share-card.jpg",
         "01": "assets/work-metalroofing.jpg",
         "02": "assets/shot-04-spacesolar.jpg",
         "03": "assets/security-detail.jpg",
-        "04": "assets/founder-portrait.jpg"
+        "04": "assets/founder-portrait.jpg",
+        "05": "assets/menu-blog.png"
       }[this.state.hover] || null,
       previewFit: { "03": "cover", "04": "cover" }[this.state.hover] || "contain",
       previewCss: (() => {
@@ -1502,11 +1510,12 @@ class Component extends DCLogic {
           "01": "assets/work-metalroofing.jpg",
           "02": "assets/shot-04-spacesolar.jpg",
           "03": "assets/security-detail.jpg",
-          "04": "assets/founder-portrait.jpg"
+          "04": "assets/founder-portrait.jpg",
+        "05": "assets/menu-blog.png"
         }[this.state.hover];
         return src ? "url(" + src + ")" : "none";
       })(),
-      previewForm: this.state.hover === "05",
+      previewForm: this.state.hover === "06",
       onHover: (e) => {
         const v = e.currentTarget.getAttribute("data-prev");
         if (v && v !== this.state.hover) this.setState({ hover: v });
